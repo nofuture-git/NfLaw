@@ -32,7 +32,7 @@ namespace NoFuture.Law.Contract.Tests.EstoppelTests
                 IsOffereePositionWorse = lp => true
             };
             var testResult = testSubject.IsValid(new Fields(), new Conrad());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
             Console.WriteLine(testSubject.ToString());
         }
     }

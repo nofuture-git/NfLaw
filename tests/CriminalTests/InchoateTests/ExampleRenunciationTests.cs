@@ -4,12 +4,19 @@ using NoFuture.Law.Criminal.US.Defense.Excuse;
 using NoFuture.Law.Criminal.US.Elements.Inchoate;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.InchoateTests
 {
-    
     public class ExampleRenunciationTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleRenunciationTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleRenunciation()
         {
@@ -26,7 +33,7 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
                 }
             };
             var testResult = testCrime.IsValid(new ShellyDriverEg());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new Renunciation(testCrime)
             {
@@ -36,8 +43,8 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
             };
 
             testResult = testSubject.IsValid(new ShellyDriverEg());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 }

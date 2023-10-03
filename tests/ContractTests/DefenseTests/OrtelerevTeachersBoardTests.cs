@@ -39,7 +39,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
             };
             var testSubject = new ByMentalIncompetent<Promise>(testContract) {IsMentallyIncompetent = lp => lp is Ortelere};
             var testResult = testSubject.IsValid(new Ortelere(), new TeachersBoard());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
             Console.WriteLine(testSubject.ToString());
         }
     }

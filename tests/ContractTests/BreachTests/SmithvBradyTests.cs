@@ -55,7 +55,7 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
             };
 
             var testResult = testContract.IsValid(new Smith(), new Brady());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new PerfectTender<Promise>(testContract)
             {
@@ -73,7 +73,7 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
 
             testResult = testSubject.IsValid(new Smith(), new Brady());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

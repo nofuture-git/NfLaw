@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using NoFuture.Law;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tests
 {
@@ -10,10 +11,18 @@ namespace NoFuture.Law.Tests
     public class TermTests
     {
         private static object something = new object();
+        private readonly ITestOutputHelper output;
+
+        public TermTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
 
         [Fact]
         public void TestExample()
         {
+            
             var myTerm = new Term<object>("something's name", DBNull.Value);
             myTerm.As(new ColorGreen());
             myTerm.As(new SmoothSurface());
@@ -21,13 +30,13 @@ namespace NoFuture.Law.Tests
             myTerm.As(new SmallSize());
             myTerm.As(new RoundShape());
 
-            Assert.IsTrue(myTerm.IsCategory(new SmallSize()));
-            Console.WriteLine(myTerm.ToString()); //something's name
-            Console.WriteLine(myTerm.GetCategory());
+            Assert.True(myTerm.IsCategory(new SmallSize()));
+            output.WriteLine(myTerm.ToString()); //something's name
+            output.WriteLine(myTerm.GetCategory());
 
             var myTerm2 = new Term<object>("another name for same thing", DBNull.Value);
-            Assert.IsFalse(myTerm2.Equals(myTerm));
-            Assert.IsTrue(myTerm2.EqualRefersTo(myTerm));
+            Assert.False(myTerm2.Equals(myTerm));
+            Assert.True(myTerm2.EqualRefersTo(myTerm));
 
         }
 
@@ -37,13 +46,13 @@ namespace NoFuture.Law.Tests
             var testSubj00 = new Term<object>("Swiss Coin Collection", new object());
             var testSubj01 = new Term<object>("Swiss Coin Collection", new object());
 
-            Assert.IsTrue(testSubj00.Equals(testSubj01));
-            Assert.IsFalse(testSubj00.EqualRefersTo(testSubj01));
+            Assert.True(testSubj00.Equals(testSubj01));
+            Assert.False(testSubj00.EqualRefersTo(testSubj01));
             testSubj00 = new Term<object>("Swiss Coin Collection", something);
             testSubj01 = new Term<object>("Swiss Coin Collection", something);
 
-            Assert.IsTrue(testSubj00.Equals(testSubj01));
-            Assert.IsTrue(testSubj00.EqualRefersTo(testSubj01));
+            Assert.True(testSubj00.Equals(testSubj01));
+            Assert.True(testSubj00.EqualRefersTo(testSubj01));
 
         }
 
@@ -63,8 +72,8 @@ namespace NoFuture.Law.Tests
 
             var intersect = set00.Where(oo => set01.Any(ee => oo.Equals(ee))).ToList();
             
-            Assert.IsTrue(intersect.Any());
-            Console.WriteLine(intersect.Count);
+            Assert.True(intersect.Any());
+            output.WriteLine(intersect.Count.ToString());
 
         }
     }

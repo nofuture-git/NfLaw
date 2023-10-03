@@ -5,6 +5,7 @@ using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Tort.Tests
     /// Damage is NOT required for trespass to land
     /// ]]>
     /// </remarks>
-    
     public class DoughertyvSteppTests
     {
+        private readonly ITestOutputHelper output;
+
+        public DoughertyvSteppTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void DoughertyvStepp()
         {
@@ -39,8 +46,8 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = testSubject.IsValid(new Dougherty(), new Stepp());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -74,8 +81,8 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = testSubject.IsValid(new Dougherty(), new Stepp());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
             testSubject.ClearReasons();
 
             testSubject.Injury = new Damage(ExtensionMethods.Tortfeasor)
@@ -84,8 +91,8 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             testResult = testSubject.IsValid(new Dougherty(), new Stepp());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 

@@ -16,17 +16,17 @@ namespace NoFuture.Law.Contract.Tests
             var testSubject01 = new ContractTerm<object>("car parts", "car parts");
 
             var testResult = testSubject00.CompareTo(null);
-            Assert.AreEqual(1, testResult);
+            Assert.Equal(1, testResult);
 
             testResult = testSubject00.CompareTo(testSubject01);
-            Assert.AreEqual(0, testResult);
+            Assert.Equal(0, testResult);
 
             testSubject00.As(new WrittenTerm());
             testResult = testSubject00.CompareTo(testSubject01);
-            Assert.AreEqual(-1, testResult);
+            Assert.Equal(-1, testResult);
 
             testResult = testSubject01.CompareTo(testSubject00);
-            Assert.AreEqual(1, testResult);
+            Assert.Equal(1, testResult);
         }
 
         [Fact]
@@ -36,35 +36,35 @@ namespace NoFuture.Law.Contract.Tests
             var testSubject01 = new ContractTerm<object>("car parts", "car parts", new ExpressTerm());
 
             var testResult = testSubject00.CompareTo(testSubject01);
-            Assert.AreEqual(0, testResult);
+            Assert.Equal(0, testResult);
 
             testSubject00 = new ContractTerm<object>("car parts", "car parts", new ExpressTerm());
             testSubject01 = new ContractTerm<object>("car parts", "car parts", new CourseOfPerformanceTerm());
 
             testResult = testSubject00.CompareTo(testSubject01);
-            Assert.IsTrue(testResult < 0);
+            Assert.True(testResult < 0);
 
             testResult = testSubject01.CompareTo(testSubject00);
-            Assert.IsTrue(testResult > 0);
+            Assert.True(testResult > 0);
 
 
             testSubject00 = new ContractTerm<object>("car parts", "car parts", new CourseOfPerformanceTerm());
             testSubject01 = new ContractTerm<object>("car parts", "car parts", new CourseOfDealingTerm());
 
             testResult = testSubject00.CompareTo(testSubject01);
-            Assert.IsTrue(testResult < 0);
+            Assert.True(testResult < 0);
 
             testResult = testSubject01.CompareTo(testSubject00);
-            Assert.IsTrue(testResult > 0);
+            Assert.True(testResult > 0);
 
             testSubject00 = new ContractTerm<object>("car parts", "car parts", new CourseOfDealingTerm());
             testSubject01 = new ContractTerm<object>("car parts", "car parts", new UsageOfTradeTerm());
 
             testResult = testSubject00.CompareTo(testSubject01);
-            Assert.IsTrue(testResult < 0);
+            Assert.True(testResult < 0);
 
             testResult = testSubject01.CompareTo(testSubject00);
-            Assert.IsTrue(testResult > 0);
+            Assert.True(testResult > 0);
         }
 
         [Fact]
@@ -77,13 +77,13 @@ namespace NoFuture.Law.Contract.Tests
             Console.WriteLine(testResultName);
 
             var testResult = testSubject.IsCategory(new OralTerm());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             testResult = testSubject.IsCategory(typeof(TechnicalTerm));
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             testResult = testSubject.IsCategory(typeof(CommonUseTerm));
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
         }
 
         [Fact]
@@ -101,8 +101,8 @@ namespace NoFuture.Law.Contract.Tests
 
             var testResult = Term<object>.GetAdditionalTerms(terms00, terms01);
 
-            Assert.IsNotNull(testResult);
-            Assert.IsTrue(testResult.Any());
+            Assert.NotNull(testResult);
+            Assert.True(testResult.Any());
 
         }
 
@@ -121,10 +121,10 @@ namespace NoFuture.Law.Contract.Tests
 
             var testResult = Term<object>.GetInNameAgreedTerms(terms00, terms01);
 
-            Assert.IsNotNull(testResult);
-            Assert.IsTrue(testResult.Any());
-            Assert.IsTrue(testResult.Count == 1);
-            Assert.AreEqual("sell ranch", testResult.First().Name);
+            Assert.NotNull(testResult);
+            Assert.True(testResult.Any());
+            Assert.True(testResult.Count == 1);
+            Assert.Equal("sell ranch", testResult.First().Name);
         }
 
         [Fact]
@@ -145,10 +145,10 @@ namespace NoFuture.Law.Contract.Tests
 
             var testResult = Term<object>.GetAgreedTerms(terms00, terms01);
 
-            Assert.IsNotNull(testResult);
-            Assert.IsTrue(testResult.Any());
-            Assert.IsTrue(testResult.Count == 1);
-            Assert.AreEqual("sell ranch", testResult.First().Name);
+            Assert.NotNull(testResult);
+            Assert.True(testResult.Any());
+            Assert.True(testResult.Count == 1);
+            Assert.Equal("sell ranch", testResult.First().Name);
         }
 
         [Fact]

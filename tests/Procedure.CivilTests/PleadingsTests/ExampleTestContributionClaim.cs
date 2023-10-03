@@ -3,12 +3,19 @@ using NoFuture.Law.Procedure.Civil.US.Pleadings;
 using NoFuture.Law.US.Courts;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Civil.Tests
 {
-    
     public class ExampleTestContributionClaim
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleTestContributionClaim(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestContributionClaimIsValid()
         {
@@ -23,8 +30,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests
 
             var testResult =
                 testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant(), new ExampleThirdParty());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(testSubject.ToString());
         }
 
     }

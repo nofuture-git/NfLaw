@@ -53,7 +53,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             };
 
             var testResult = testContract.IsValid(new Harrahs(), new HnedakBobo());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new Expectation<Promise>(testContract)
             {
@@ -65,7 +65,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
 
             testResult = testSubject.IsValid(new Harrahs(), new HnedakBobo());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
 
         }
     }

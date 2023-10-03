@@ -3,6 +3,7 @@ using NoFuture.Law.Criminal.US.Defense.Justification;
 using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctine issue: reasonable error in self-defense
     /// ]]>
     /// </remarks>
-    
     public class CourvoisiervRaymondTests
     {
+        private readonly ITestOutputHelper output;
+
+        public CourvoisiervRaymondTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void CourvoisiervRaymond()
         {
@@ -31,8 +38,8 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new Courvoisier(), new Raymond());
-            Console.WriteLine(test.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(test.ToString());
+            Assert.True(testResult);
 
         }
     }

@@ -4,12 +4,19 @@ using NoFuture.Law.Criminal.US.Elements.Inchoate;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.InchoateTests
 {
-    [TestFixture()]
     public class ExampleSolicitationTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleSolicitationTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleSolicitation()
         {
@@ -26,8 +33,8 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
             };
 
             var testResult = testCrime.IsValid(new JimmyRequestorEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
     }
 

@@ -7,6 +7,7 @@ using NoFuture.Law.Property.US.FormsOf.InTerra.Sequential;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, illustrates fee simple subject to conditional subsequent and fee simple determinable
     /// ]]>
     /// </remarks>
-    
     public class WoodvFremontCountyTests
     {
+        private readonly ITestOutputHelper output;
+
+        public WoodvFremontCountyTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void WoodvFremontCounty()
         {
@@ -29,8 +36,8 @@ namespace NoFuture.Law.Property.Tests
                 IsSpecialLimitationPresent = lp => SomeLandInWyoming.WillExpireAutoIfNotUsedAsStated,
             };
             var testResult = test00.IsValid(new Wood(), new FremontCounty());
-            Assert.IsFalse(testResult);
-            Console.WriteLine(test00.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(test00.ToString());
 
             var test01 = new FeeSimpleSubject2ConditionSubsequent(ExtensionMethods.Defendant)
             {
@@ -38,8 +45,8 @@ namespace NoFuture.Law.Property.Tests
             };
 
             testResult = test01.IsValid(new Wood(), new FremontCounty());
-            Assert.IsFalse(testResult);
-            Console.WriteLine(test00.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(test00.ToString());
 
         }
     }

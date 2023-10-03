@@ -42,7 +42,7 @@ namespace NoFuture.Law.Constitutional.Tests
 
             var testResult2 = testSubject2.IsValid(new Jackson(), new MetropolitanEdisonCompany());
             Console.WriteLine(testResult2.ToString());
-            Assert.IsFalse(testResult2);
+            Assert.False(testResult2);
         }
     }
 

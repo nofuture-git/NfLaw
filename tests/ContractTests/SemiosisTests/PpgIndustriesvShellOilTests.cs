@@ -11,7 +11,7 @@ using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
-    [TestFixture()]
+    
     public class PpgIndustriesvShellOilTests
     {
         [Fact]
@@ -52,7 +52,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
 
             var testResult = testSubject.IsValid(new PpgIndustries(), new ShellOil());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

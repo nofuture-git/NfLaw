@@ -47,7 +47,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
 
             var testResult = testSubject.IsValid(new CharterGolf(), new McInerney());
             //so it is a valid defense because it lacks sufficient writing (was oral agreement)
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
             Console.WriteLine(testSubject.ToString());
         }
 

@@ -35,7 +35,7 @@ namespace NoFuture.Law.Contract.Tests.AcceptanceTests
 
             var testResult = testSubject.IsValid(new UnitedStatesLifeInsCo(), new Wilson());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

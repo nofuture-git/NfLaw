@@ -11,6 +11,7 @@ using NoFuture.Law.Criminal.US.Terms.Violence;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
 {
@@ -23,9 +24,15 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
     /// doctrine issue, self-defense concerning a wild animal attack
     /// ]]>
     /// </remarks>
-    
     public class ShulervBabbittTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ShulervBabbittTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ShulervBabbitt()
         {
@@ -40,7 +47,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
             };
 
             var testResult = testCrime.IsValid(new Shuler());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new DefenseOfSelf
             {
@@ -60,8 +67,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
             };
 
             testResult = testSubject.IsValid(new Shuler(), new GrizzlyBear());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 

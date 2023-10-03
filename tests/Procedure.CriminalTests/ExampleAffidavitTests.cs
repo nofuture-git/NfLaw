@@ -5,12 +5,19 @@ using NoFuture.Law;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    
     public class ExampleAffidavitTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleAffidavitTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestAffidavitIsValid()
         {
@@ -24,7 +31,7 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             };
 
             var testResult = testSubject.IsValid(new ExampleAffiant(), new ExampleNotaryPublic());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

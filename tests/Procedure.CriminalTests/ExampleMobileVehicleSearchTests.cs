@@ -3,12 +3,19 @@ using System.Linq;
 using NoFuture.Law.Procedure.Criminal.US;
 using NoFuture.Law.Procedure.Criminal.US.Searches;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    
     public class ExampleMobileVehicleSearchTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleMobileVehicleSearchTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestMobileVehicleSearchIsValid00()
         {
@@ -19,8 +26,8 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             };
 
             var testResult = testSubject.IsValid(new ExampleSuspect(), new ExampleLawEnforcement());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 }

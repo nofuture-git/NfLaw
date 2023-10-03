@@ -4,12 +4,19 @@ using NoFuture.Law.US;
 using NoFuture.Law.US.Courts;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Civil.Tests.JudgmentTests
 {
-    
     public class ExampleTestNewTrial
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleTestNewTrial(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestNewTrialIsValid00()
         {
@@ -22,8 +29,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests.JudgmentTests
             };
             var testResult =
                 testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant(), new ExampleCourtJudge());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
 
         }
 
@@ -39,8 +46,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests.JudgmentTests
             };
             var testResult =
                 testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant(), new ExampleCourtJudge());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
 
         }
 
@@ -56,8 +63,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests.JudgmentTests
             };
             var testResult =
                 testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant(), new ExampleCourtJudge());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
 
         }
     }

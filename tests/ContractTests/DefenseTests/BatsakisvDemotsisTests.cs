@@ -17,7 +17,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, unconscionable contract will have everything needed to enforce it except for it being just wrong
     /// ]]>
     /// </remarks>
-    [TestFixture()]
+    
     public class BatsakisvDemotsisTests
     {
         [Fact]
@@ -44,7 +44,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
 
             var testResult = testSubject.IsValid(new Batsakis(), new Demotsis());
             //this case is present to present an unconscionable contract
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
 
             Console.WriteLine(testSubject.ToString());
             

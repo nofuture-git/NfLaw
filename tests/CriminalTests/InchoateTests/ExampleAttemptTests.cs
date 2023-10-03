@@ -6,13 +6,21 @@ using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.InchoateTests
 {
-    
     public class ExampleAttemptTests
     {
-        [Test(Description = "test that having reckless intent is valid for an attempt")]
+        private readonly ITestOutputHelper output;
+
+        public ExampleAttemptTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
+        [Fact]
+        //test that having reckless intent is valid for an attempt
         public void ExampleRecklessIntent()
         {
             var testCrime = new Misdemeanor()
@@ -28,11 +36,12 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
                 }
             };
             var testResult = testCrime.IsValid(new MelissaEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
 
-        [Test(Description = "one of four attempt tests must be true to be an attempt")]
+        [Fact]
+        //one of four attempt tests must be true to be an attempt
         public void ExampleAttemptAllFalse()
         {
             var testCrime = new Misdemeanor()
@@ -46,8 +55,8 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
             };
 
             var testResult = testCrime.IsValid(new MelissaEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
 
         /// <summary>
@@ -70,8 +79,8 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
             };
 
             var testResult = testCrime.IsValid(new MelissaEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -92,8 +101,8 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
             };
 
             var testResult = testCrime.IsValid(new HarryEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -113,8 +122,8 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
             };
 
             var testResult = testCrime.IsValid(new JudyEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -139,8 +148,8 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
             };
 
             var testResult = testCrime.IsValid(new KevinEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
     }
 

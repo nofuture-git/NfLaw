@@ -5,6 +5,7 @@ using NoFuture.Law.Property.US.FormsOf.InTerra.Sequential;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, ambiguous words looking like life estate, ruled as not
     /// ]]>
     /// </remarks>
-    
     public class WhitevBrownTests
     {
+        private readonly ITestOutputHelper output;
+
+        public WhitevBrownTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void WhitevBrown()
         {
@@ -32,9 +39,9 @@ namespace NoFuture.Law.Property.Tests
             };
 
             var testResult = test.IsValid(new Brown01(), new White());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
-            Console.WriteLine(test.ToString());
+            this.output.WriteLine(test.ToString());
         }
     }
 

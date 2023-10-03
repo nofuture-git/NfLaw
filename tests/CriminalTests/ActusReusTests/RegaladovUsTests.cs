@@ -4,6 +4,7 @@ using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.ActusReusTests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Criminal.Tests.ActusReusTests
     /// doctrine issue, criminal intent as general intent with malice
     /// ]]>
     /// </remarks>
-    
     public class RegaladovUsTests
     {
+        private readonly ITestOutputHelper output;
+
+        public RegaladovUsTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void RegaladovUs()
         {
@@ -36,7 +43,7 @@ namespace NoFuture.Law.Criminal.Tests.ActusReusTests
             };
 
             var testResult = testSubject.IsValid(new Regalado());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

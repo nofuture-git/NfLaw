@@ -4,12 +4,19 @@ using NoFuture.Law.Procedure.Criminal.US;
 using NoFuture.Law.Procedure.Criminal.US.SearchReasons;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    
     public class ExampleProbableCauseTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleProbableCauseTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestProbableCauseIsValid00()
         {
@@ -19,8 +26,8 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             };
 
             var testResult = testSubject.IsValid(new ExampleSuspect(), new ExampleLawEnforcement());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(testSubject.ToString());
         }
 
         [Fact]
@@ -36,8 +43,8 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
                 new ExampleSuspect(),
                 new ExampleInformant {IsInformationSufficientlyReliable = true, IsPersonSufficientlyCredible = true},
                 new ExampleLawEnforcement());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -53,8 +60,8 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
                 new ExampleSuspect(),
                 new ExampleInformant { IsInformationSufficientlyReliable = true, IsPersonSufficientlyCredible = false },
                 new ExampleLawEnforcement());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 

@@ -4,6 +4,7 @@ using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.Tort.US.UnintentionalTort;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, failure to follow command of statue means negligence by its standard
     /// ]]>
     /// </remarks>
-    
     public class MartinvHerzogTests
     {
+        private readonly ITestOutputHelper output;
+
+        public MartinvHerzogTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void MartinvHerzog()
         {
@@ -26,9 +33,9 @@ namespace NoFuture.Law.Tort.Tests
                 IsObeyStatute = lp => !(lp is Herzog),
             };
             var testResult = test.IsValid(new Martin(), new Herzog());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
-            Console.WriteLine(test.ToString());
+            this.output.WriteLine(test.ToString());
         }
     }
 

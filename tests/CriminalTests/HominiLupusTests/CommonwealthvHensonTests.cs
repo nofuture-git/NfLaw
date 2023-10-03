@@ -5,6 +5,7 @@ using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
     /// doctrine issue, an threatened battery is valid when it very much appears the threat it real
     /// ]]>
     /// </remarks>
-    
     public class CommonwealthvHensonTests
     {
+        private readonly ITestOutputHelper output;
+
+        public CommonwealthvHensonTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void CommonwealthvHenson()
         {
@@ -40,8 +47,8 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             };
 
             var testResult = testCrime.IsValid(new Henson());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
     }
 

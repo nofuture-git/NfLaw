@@ -6,12 +6,19 @@ using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
 {
-    
     public class ExampleKidnappingTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleKidnappingTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleNotKidnapping()
         {
@@ -28,8 +35,8 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             };
 
             var testResult = testCrime.IsValid(new JosephAbbyraperEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
 
         [Fact]
@@ -49,8 +56,8 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             };
 
             var testResult = testCrime.IsValid(new JosephAbbyraperEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
 
         [Fact]
@@ -70,8 +77,8 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             };
 
             var testResult = testCrime.IsValid(new JosephAbbyraperEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -98,8 +105,8 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             };
 
             var testResult = testCrime.IsValid(new ThomasHitchhikerEg(), new ShawnaHitchinhikenEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
     }
 

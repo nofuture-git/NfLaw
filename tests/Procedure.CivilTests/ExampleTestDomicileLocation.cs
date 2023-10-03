@@ -2,12 +2,19 @@
 using System.Linq;
 using NoFuture.Law.Procedure.Civil.US;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Civil.Tests
 {
-    
     public class ExampleTestDomicileLocation
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleTestDomicileLocation(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestDomicileLocationIsValid()
         {
@@ -19,11 +26,11 @@ namespace NoFuture.Law.Procedure.Civil.Tests
             };
 
             var testResult = testSubject.IsValid(new ExamplePlaintiff());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             testResult = testSubject.IsValid(new ExampleDefendant());
-            Assert.IsFalse(testResult);
-            Console.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 }

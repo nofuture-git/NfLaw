@@ -19,7 +19,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     /// doctrine issue, what does the court do when a common use word has two possible meanings
     /// ]]>
     /// </remarks>
-    [TestFixture()]
+    
     public class InReEstateOfSoperTests
     {
         [Fact]
@@ -62,10 +62,10 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
             };
 
             var testResult = testSubject.IsValid(new IraSoper(), new GertrudeWhitby());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
             testResult = testSubject.IsValid(new IraSoper(), new AdelineWestphal());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
         }
     }
 

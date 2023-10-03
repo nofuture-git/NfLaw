@@ -6,6 +6,7 @@ using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.TrespassTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Criminal.Tests.TrespassTests
     /// doctrine issue, predicate tests of the Necessity defense
     /// ]]>
     /// </remarks>
-    [TestFixture()]
     public class ButlervFloridaTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ButlervFloridaTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ButlervFlorida()
         {
@@ -41,8 +48,8 @@ namespace NoFuture.Law.Criminal.Tests.TrespassTests
             };
 
             var testResult = testCrime.IsValid(new Butler(), new ThelmaHarvey());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
 
             var testDefense = new NecessityDefense<ITermCategory>
             {
@@ -63,8 +70,8 @@ namespace NoFuture.Law.Criminal.Tests.TrespassTests
             };
 
             testResult = testDefense.IsValid(new Butler(), new ThelmaHarvey());
-            Console.WriteLine(testDefense.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testDefense.ToString());
+            Assert.False(testResult);
         }
     }
 

@@ -6,12 +6,19 @@ using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.Criminal.US.Terms;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
 {
-    
     public class ExampleDrugCrimeTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleDrugCrimeTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestDrugManfacture()
         {
@@ -29,8 +36,8 @@ namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
                 }
             };
             var testResult = testCrime.IsValid(new CriminalNameHereEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -49,8 +56,8 @@ namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
                 }
             };
             var testResult = testCrime.IsValid(new CriminalNameHereEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -73,8 +80,8 @@ namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
                 }
             };
             var testResult = testCrime.IsValid(new CriminalNameHereEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -93,8 +100,8 @@ namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
                 }
             };
             var testResult = testCrime.IsValid(new CriminalNameHereEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
     }
 

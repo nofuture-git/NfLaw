@@ -5,6 +5,7 @@ using NoFuture.Law.US;
 using NoFuture.Law.US.Courts;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Civil.Tests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Procedure.Civil.Tests
     /// 
     /// ]]>
     /// </remarks>
-    
     public class ExampleSmokyMountainVWTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleSmokyMountainVWTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void HudsonvSmokyMountainVW()
         {
@@ -40,8 +47,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests
             };
 
             var testResult = testSubject.IsValid(new Hudson(), new SmokyMountainVW());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
 
         [Fact]
@@ -66,8 +73,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests
             };
 
             var testResult = testSubject.IsValid(new FloridaFord(), new SmokyMountainVW());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(testSubject.ToString());
         }
 
         [Fact]
@@ -90,8 +97,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests
             };
 
             var testResult = testSubject.IsValid(new PennsylvaniaPackard(), new SmokyMountainVW());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(testSubject.ToString());
 
         }
     }

@@ -10,6 +10,7 @@ using NoFuture.Law.Criminal.US.Terms.Violence;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
 {
@@ -21,9 +22,15 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
     /// doctrine issue, defense of others is subjective test
     /// ]]>
     /// </remarks>
-    [TestFixture()]
     public class CommonwealthvMirandaTests
     {
+        private readonly ITestOutputHelper output;
+
+        public CommonwealthvMirandaTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void CommonwealthvMiranda()
         {
@@ -42,7 +49,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
             };
 
             var testResult = testCrime.IsValid(new Miranda());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
 
             var testSubject = new DefenseOfOthers
             {
@@ -63,8 +70,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
             };
 
             testResult = testSubject.IsValid(new Miranda(), new DemetriaBattle());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 

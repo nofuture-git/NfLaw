@@ -6,6 +6,7 @@ using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests
     /// doctrine issue, the intent was recklessness and voluntary intoxication brings such things to an end
     /// ]]>
     /// </remarks>
-    [TestFixture()]
     public class PeoplevRegisterTests
     {
+        private readonly ITestOutputHelper output;
+
+        public PeoplevRegisterTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void PeoplevRegister()
         {
@@ -37,7 +44,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests
             };
 
             var testResult = testCrime.IsValid(new Register());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new Intoxication
             {
@@ -46,8 +53,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests
             };
 
             testResult = testSubject.IsValid(new Register());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 

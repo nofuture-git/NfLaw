@@ -6,12 +6,19 @@ using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.InsanityTests
 {
-    [TestFixture()]
     public class ExampleMNaghtenTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleMNaghtenTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleMNaghtenFake()
         {
@@ -29,7 +36,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.InsanityTests
             };
 
             var testResult = testCrime.IsValid(new SusanEg());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new MNaghten
             {
@@ -39,8 +46,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.InsanityTests
             };
 
             testResult = testSubject.IsValid(new SusanEg());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
 
         }
 
@@ -61,7 +68,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.InsanityTests
             };
 
             var testResult = testCrime.IsValid(new AndreaEg());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new MNaghten
             {
@@ -71,8 +78,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.InsanityTests
             };
 
             testResult = testSubject.IsValid(new AndreaEg());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 

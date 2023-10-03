@@ -4,12 +4,19 @@ using NoFuture.Law.Criminal.US.Elements.AgainstPublic;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
 {
-    
     public class ExampleProstitutionTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleProstitutionTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestProstitution()
         {
@@ -34,12 +41,12 @@ namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
                 }
             };
             var testResult = testCrime.IsValid(new SueProstitueEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
 
             testResult = testCrime.IsValid(new JohnPayerEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -58,8 +65,8 @@ namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
                 }
             };
             var testResult = testCrime.IsValid(new UpgraddPimpEg(), new SueProstitueEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
     }
 

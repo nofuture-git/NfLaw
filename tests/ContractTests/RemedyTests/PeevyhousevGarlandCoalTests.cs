@@ -54,7 +54,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             };
 
             var testResult = testContract.IsValid(new Peevyhouse(), new GarlandCoal());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new PropertyExpectation<Promise>(testContract)
             {
@@ -63,7 +63,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             };
             testResult = testSubject.IsValid(new Peevyhouse(), new GarlandCoal());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

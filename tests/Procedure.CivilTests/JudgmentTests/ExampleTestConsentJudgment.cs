@@ -3,12 +3,19 @@ using NoFuture.Law.Procedure.Civil.US.Judgment;
 using NoFuture.Law.US.Courts;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Civil.Tests.JudgmentTests
 {
-    
     public class ExampleTestConsentJudgment
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleTestConsentJudgment(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestConsentJudgmentIsValid()
         {
@@ -23,8 +30,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests.JudgmentTests
 
             var testResult = testSubject.IsValid(new ConsentJudgmentPlaintiff00(), new ConsentJudgmentPlaintiff01(),
                 new ConsentJudgmentDefendant00(), new ConsentJudgmentDefendant01());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 

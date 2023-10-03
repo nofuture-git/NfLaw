@@ -56,7 +56,7 @@ namespace NoFuture.Law.Contract.Tests.AcceptanceTests
 
             var testResult = testSubject.IsValid(new Municipal(), new TownOfRamapo());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
         }
     }

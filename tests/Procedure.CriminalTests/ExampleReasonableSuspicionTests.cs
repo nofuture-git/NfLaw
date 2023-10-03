@@ -5,12 +5,19 @@ using NoFuture.Law.Procedure.Criminal.US.Intrusions;
 using NoFuture.Law.Procedure.Criminal.US.SearchReasons;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    
     public class ExampleReasonableSuspicionTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleReasonableSuspicionTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestReasonableSuspicionIsValid00()
         {
@@ -27,8 +34,8 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
 
             var testResult =
                 testSubject.IsValid(new ExampleSuspect(), new ExampleLawEnforcement(), new ExampleInformant());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(testSubject.ToString());
         }
 
         [Fact]
@@ -49,8 +56,8 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             var testResult =
                 testSubject.IsValid(new ExampleSuspect(), new ExampleLawEnforcement(),
                     new ExampleInformant {IsInformationSufficientlyReliable = true});
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -71,8 +78,8 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             var testResult =
                 testSubject.IsValid(new ExampleSuspect(), new ExampleLawEnforcement(),
                     new ExampleInformant { IsInformationSufficientlyReliable = true });
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 }

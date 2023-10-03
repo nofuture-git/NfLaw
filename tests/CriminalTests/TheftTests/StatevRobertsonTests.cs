@@ -4,6 +4,7 @@ using NoFuture.Law.Criminal.US.Elements.AgainstProperty.Theft;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.TheftTests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
     /// doctrine issue, without violence of force, its larceny not robbery
     /// ]]>
     /// </remarks>
-    [TestFixture()]
     public class StatevRobertsonTests
     {
+        private readonly ITestOutputHelper output;
+
+        public StatevRobertsonTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void StatevRobertson()
         {
@@ -41,8 +48,8 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
                 }
             };
             var testResult = testCrime.IsValid(new Robertson(), new MsDover());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
     }
 

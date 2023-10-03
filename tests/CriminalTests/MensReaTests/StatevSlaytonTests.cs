@@ -6,6 +6,7 @@ using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.MensReaTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Criminal.Tests.MensReaTests
     /// doctrine issue, strict liability 
     /// ]]>
     /// </remarks>
-    
     public class StatevSlaytonTests
     {
+        private readonly ITestOutputHelper output;
+
+        public StatevSlaytonTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void StatevSlayton()
         {
@@ -34,8 +41,8 @@ namespace NoFuture.Law.Criminal.Tests.MensReaTests
             };
 
             var testResult = testSubject.IsValid(new Slayton());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 

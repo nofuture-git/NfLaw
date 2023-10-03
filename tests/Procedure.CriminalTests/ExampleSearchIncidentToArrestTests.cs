@@ -4,12 +4,19 @@ using NoFuture.Law.Procedure.Criminal.US;
 using NoFuture.Law.Procedure.Criminal.US.Intrusions;
 using NoFuture.Law.Procedure.Criminal.US.Searches;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    
     public class ExampleSearchIncidentToArrestTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleSearchIncidentToArrestTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestSearchIncidentToArrestIsValid00()
         {
@@ -36,8 +43,8 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             };
 
             var testResult = testSubject.IsValid(new ExampleLawEnforcement(), new ExampleSuspect());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -67,8 +74,8 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             };
 
             var testResult = testSubject.IsValid(new ExampleLawEnforcement(), new ExampleSuspect());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -97,8 +104,8 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             };
 
             var testResult = testSubject.IsValid(new ExampleLawEnforcement(), new ExampleSuspect());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 }

@@ -11,6 +11,7 @@ using NoFuture.Law.Criminal.US.Terms.Violence;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
 {
@@ -22,9 +23,15 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
     /// doctrine issue, with duress, actus reus is true since an action taken under threat is still voluntary
     /// ]]>
     /// </remarks>
-    [TestFixture()]
     public class StatevDaoudTests
     {
+        private readonly ITestOutputHelper output;
+
+        public StatevDaoudTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void StatevDaoud()
         {
@@ -39,7 +46,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
             };
 
             var testResult = testCrime.IsValid(new Daoud());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new ChoiceThereof<ITermCategory>(ExtensionMethods.Defendant)
             {
@@ -48,8 +55,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
             };
 
             testResult = testSubject.IsValid(new Daoud(), new JohnHilane());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
 
         }
     }

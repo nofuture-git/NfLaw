@@ -3,12 +3,19 @@ using NoFuture.Law.Criminal.US.Elements.AgainstProperty.Damage;
 using NoFuture.Law.Criminal.US.Elements.AttendantCircumstances;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.PropertyDestruction
 {
-    
     public class ExampleCrimMischiefTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleCrimMischiefTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestCriminalMischiefAct()
         {
@@ -28,8 +35,8 @@ namespace NoFuture.Law.Criminal.Tests.PropertyDestruction
                 }
             };
             var testResult = testAct.IsValid(new JohnnyDestroyerEg(), new SueBrokenstuffEg());
-            Console.WriteLine(testAct.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testAct.ToString());
+            Assert.True(testResult);
         }
     }
 

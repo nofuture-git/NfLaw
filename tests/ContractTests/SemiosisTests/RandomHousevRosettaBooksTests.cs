@@ -19,7 +19,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     /// new use: licensees may exploit licensed works through new marketing channels made possible by technologies developed after the licensing contract
     /// ]]>
     /// </remarks>
-    [TestFixture()]
+    
     public class RandomHousevRosettaBooksTests
     {
         [Fact]
@@ -56,9 +56,9 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
             };
 
             var testResult = testContract.IsValid(new AnyAuthorOfBook(), new RandomHouse());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
             testResult = testContract.IsValid(new AnyAuthorOfBook(), new RosettaBooks());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new SemanticDilemma<Promise>(testContract)
             {
@@ -67,7 +67,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
 
             testResult = testSubject.IsValid(new AnyAuthorOfBook(), new RandomHouse());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
 
         [Fact]

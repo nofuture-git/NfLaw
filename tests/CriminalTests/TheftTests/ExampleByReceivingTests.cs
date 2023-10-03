@@ -2,12 +2,19 @@
 using NoFuture.Law.Criminal.US.Elements.AgainstProperty.Theft;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.TheftTests
 {
-    
     public class ExampleByReceivingTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleByReceivingTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleByReceivingActTest()
         {
@@ -19,8 +26,8 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
             };
 
             var testResult = testAct.IsValid(new ChanelFenceEg(), new BurtThiefEg(), new SandraVictimEg());
-            Console.WriteLine(testAct.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testAct.ToString());
+            Assert.True(testResult);
         }
     }
 

@@ -44,7 +44,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
 
             //court found that there was not threat made
             var testResult = testSubject.IsValid(new Ellis(), new StandardFinance());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
             Console.WriteLine(testSubject.ToString());
 
         }

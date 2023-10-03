@@ -6,12 +6,19 @@ using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
 {
-    
     public class ExampleDefenseOfHabitationTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleDefenseOfHabitationTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleDefenseOfHabitation()
         {
@@ -29,7 +36,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
                 }
             };
             var testResult = testCrime.IsValid(new BobEg());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new DefenseOfHabitation
             {
@@ -38,8 +45,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
             };
 
             testResult = testSubject.IsValid(new NateEg(), new NateEg());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 

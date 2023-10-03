@@ -4,12 +4,19 @@ using NoFuture.Law.Criminal.US.Elements.Intent;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.MensReaTests
 {
-    
     public class ExampleAccessoryIntentTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleAccessoryIntentTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleAccessoryTests()
         {
@@ -28,7 +35,7 @@ namespace NoFuture.Law.Criminal.Tests.MensReaTests
             };
 
             var testResult = testCrime.IsValid(new JimEg());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
 
         public class JimEg : LegalPerson, IDefendant

@@ -17,7 +17,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, fraud requires misrepresentation
     /// ]]>
     /// </remarks>
-    [TestFixture()]
+    
     public class WoodvBoyntonTests
     {
         [Fact]
@@ -44,7 +44,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
             var testSubject = new ByFraud<Promise>(testContract);
 
             var testResult = testSubject.IsValid(new Boynton(), new Wood());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
             Console.WriteLine(testSubject.ToString());
         }
         public static ISet<Term<object>> GetTerms()

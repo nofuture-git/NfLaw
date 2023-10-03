@@ -4,12 +4,19 @@ using NoFuture.Law.Criminal.US.Elements.Homicide;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.HomicideTests
 {
-    
     public class ExampleNegligentInvolManslaughterTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleNegligentInvolManslaughterTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleNegligentInvoluntaryManslaughter()
         {
@@ -27,8 +34,8 @@ namespace NoFuture.Law.Criminal.Tests.HomicideTests
             };
 
             var testResult = testCrime.IsValid(new StevenSheriffEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
     }
 

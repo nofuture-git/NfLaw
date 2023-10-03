@@ -3,6 +3,7 @@ using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, illustrate vicarious Liability
     /// ]]>
     /// </remarks>
-    
     public class IraSBusheySonsIncvUnitedStatesTests
     {
+        private readonly ITestOutputHelper output;
+
+        public IraSBusheySonsIncvUnitedStatesTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void IraSBusheySonsIncvUnitedStates()
         {
@@ -29,8 +36,8 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new IraSBusheySonsInc(), new UnitedStatesAgain(), new SeamanLane());
-            Console.WriteLine(test.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(test.ToString());
+            Assert.True(testResult);
         }
     }
 

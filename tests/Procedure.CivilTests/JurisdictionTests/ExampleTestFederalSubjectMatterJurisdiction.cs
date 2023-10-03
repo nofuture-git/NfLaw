@@ -2,12 +2,19 @@
 using NoFuture.Law;
 using NoFuture.Law.Procedure.Civil.US.Jurisdiction;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Civil.Tests
 {
-    
     public class ExampleTestFederalSubjectMatterJurisdiction
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleTestFederalSubjectMatterJurisdiction(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestSubjectMatterJurisdictionIsValid()
         {
@@ -18,8 +25,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests
                 GetAssertion = lp => new SomeFederalLegalMatter()
             };
             var testResult = testSubject.IsValid();
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 

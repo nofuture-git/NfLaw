@@ -52,7 +52,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
 
             //the defendant was attempting to avoid contract enforcement by 
             // saying it lacked signature part required by statute of frauds
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
             Console.WriteLine(testSubject.ToString());
         }
         public static ISet<Term<object>> GetTerms()

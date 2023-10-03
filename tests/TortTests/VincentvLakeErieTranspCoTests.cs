@@ -6,6 +6,7 @@ using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, necessity defense is a incomplete privilege since you are responsible for damage caused during trespass
     /// ]]>
     /// </remarks>
-    
     public class VincentvLakeErieTranspCoTests
     {
+        private readonly ITestOutputHelper output;
+
+        public VincentvLakeErieTranspCoTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void VincentvLakeErieTranspCo()
         {
@@ -50,8 +57,8 @@ namespace NoFuture.Law.Tort.Tests
 
             //assert that a trespass has occured
             var testResult = tresspass.IsValid(new Vincent(), new LakeErieTranspCo());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(tresspass.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(tresspass.ToString());
 
             var testDefense = new NecessityPrivilege<ITermCategory>(ExtensionMethods.Tortfeasor)
             {
@@ -67,14 +74,14 @@ namespace NoFuture.Law.Tort.Tests
 
             //w/o trespass assigned, no way to know damage so its a valid defense
             testResult = testDefense.IsValid(new Vincent(), new LakeErieTranspCo());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(testDefense.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(testDefense.ToString());
 
             testDefense.ClearReasons();
             testDefense.Trespass = tresspass;
             testResult = testDefense.IsValid(new Vincent(), new LakeErieTranspCo());
-            Assert.IsFalse(testResult);
-            Console.WriteLine(testDefense.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(testDefense.ToString());
         }
     }
 

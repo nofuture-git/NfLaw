@@ -6,12 +6,19 @@ using NoFuture.Law.Criminal.US.Elements.Intent;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.TrespassTests
 {
-    
     public class ExampleBurglaryTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleBurglaryTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleBurglaryActTest()
         {
@@ -25,8 +32,8 @@ namespace NoFuture.Law.Criminal.Tests.TrespassTests
             };
 
             var testResult = testAct.IsValid(new JedBurglarToolEg());
-            Console.WriteLine(testAct.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testAct.ToString());
+            Assert.True(testResult);
 
             testAct = new Burglary
             {
@@ -36,8 +43,8 @@ namespace NoFuture.Law.Criminal.Tests.TrespassTests
             };
 
             testResult = testAct.IsValid(new JedBurglarToolEg());
-            Console.WriteLine(testAct.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testAct.ToString());
+            Assert.True(testResult);
 
             testAct = new Burglary
             {
@@ -53,8 +60,8 @@ namespace NoFuture.Law.Criminal.Tests.TrespassTests
             };
 
             testResult = testAct.IsValid(new JedBurglarToolEg());
-            Console.WriteLine(testAct.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testAct.ToString());
+            Assert.True(testResult);
 
         }
 
@@ -72,8 +79,8 @@ namespace NoFuture.Law.Criminal.Tests.TrespassTests
                 MensRea = new IsHouseHaunted()
             };
             var testResult = testCrime.IsValid(new ChristianShovesEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
 
             testCrime = new Misdemeanor
             {
@@ -88,8 +95,8 @@ namespace NoFuture.Law.Criminal.Tests.TrespassTests
             };
 
             testResult = testCrime.IsValid(new ChristianShovesEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
     }
 

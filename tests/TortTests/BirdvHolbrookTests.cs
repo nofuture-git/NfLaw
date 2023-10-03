@@ -5,6 +5,7 @@ using NoFuture.Law.US.Persons;
 using NoFuture.Law.US;
 using NoFuture.Law.Criminal.US.Terms;
 using NoFuture.Law.Criminal.US.Terms.Violence;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Tort.Tests
     /// is not an effective defense since they do not distinguish a thief from a trespassor
     /// ]]>
     /// </remarks>
-    
     public class BirdvHolbrookTests
     {
+        private readonly ITestOutputHelper output;
+
+        public BirdvHolbrookTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void BirdvHolbrook()
         {
@@ -37,8 +44,8 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new Holbrook(), new Bird());
-            Console.WriteLine(test.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(test.ToString());
+            Assert.False(testResult);
         }
     }
 

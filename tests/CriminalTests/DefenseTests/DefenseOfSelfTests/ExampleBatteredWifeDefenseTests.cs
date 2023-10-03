@@ -10,12 +10,19 @@ using NoFuture.Law.Criminal.US.Terms.Violence;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
 {
-    
     public class ExampleBatteredWifeDefenseTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleBatteredWifeDefenseTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleBatteredWifeDefense()
         {
@@ -33,7 +40,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
                 }
             };
             var testResult = testCrime.IsValid(new VeronicaEg());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new DefenseOfSelf
             {
@@ -50,8 +57,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
             };
 
             testResult = testSubject.IsValid(new VeronicaEg(), new SpikeEg());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 

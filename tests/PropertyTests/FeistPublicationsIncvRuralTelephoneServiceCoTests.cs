@@ -2,6 +2,7 @@
 using NoFuture.Law.Property.US.FormsOf.Intellectus;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -13,9 +14,15 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, copyright requires creativity and originality, not a reward for artistic labour
     /// ]]>
     /// </remarks>
-    
     public class FeistPublicationsIncvRuralTelephoneServiceCoTests
     {
+        private readonly ITestOutputHelper output;
+
+        public FeistPublicationsIncvRuralTelephoneServiceCoTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void FeistPublicationsIncvRuralTelephoneServiceCo()
         {
@@ -26,8 +33,8 @@ namespace NoFuture.Law.Property.Tests
             };
 
             var testResult = test.IsValid(new FeistPublicationsInc(), new RuralTelephoneServiceCo());
-            Assert.IsFalse(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 

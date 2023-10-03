@@ -1,12 +1,19 @@
 ﻿using System;
 using NoFuture.Law.Procedure.Criminal.US.Interrogations;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    
     public class ExampleVoluntarinessTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleVoluntarinessTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestVoluntarinessIsValid00()
         {
@@ -17,8 +24,8 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             };
 
             var testResult = testSubject.IsValid(new ExampleLawEnforcement(), new ExampleSuspect());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 }

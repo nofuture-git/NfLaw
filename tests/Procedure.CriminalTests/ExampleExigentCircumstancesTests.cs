@@ -2,12 +2,19 @@
 using NoFuture.Law.Procedure.Criminal.US.Intrusions;
 using NoFuture.Law.Procedure.Criminal.US.SearchReasons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    
     public class ExampleExigentCircumstancesTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleExigentCircumstancesTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestExigentCircumstancesIsValid00()
         {
@@ -19,8 +26,8 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             };
 
             var testResult = testSubject.IsValid(new ExampleSuspect(), new ExampleLawEnforcement());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 

@@ -41,7 +41,7 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
             };
 
             var testResult = testSubject.IsValid(new Weavertown(), new Moran());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
             Console.WriteLine(testSubject.ToString());
         }
     }

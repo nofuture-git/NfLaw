@@ -2,12 +2,19 @@
 using NoFuture.Law;
 using NoFuture.Law.Procedure.Criminal.US.Intrusions;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    
     public class ExamplePlainViewSeizureTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExamplePlainViewSeizureTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestPlainViewSeizureIsValid00()
         {
@@ -29,8 +36,8 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             };
 
             var testResult = testSubject.IsValid(new ExampleSuspect(), new ExampleLawEnforcement());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 

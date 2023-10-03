@@ -6,6 +6,7 @@ using NoFuture.Law.Property.US.FormsOf;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Property.Tests
     /// 
     /// ]]>
     /// </remarks>
-    
     public class GruensonvGruenstepmotherTests
     {
+        private readonly ITestOutputHelper output;
+
+        public GruensonvGruenstepmotherTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void GruensonvGruenstepmother()
         {
@@ -45,8 +52,8 @@ namespace NoFuture.Law.Property.Tests
             };
 
             var testResult = test.IsValid(new GruenSon(), new GruenStepmother(), new GruenFather());
-            Console.WriteLine(test.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(test.ToString());
+            Assert.True(testResult);
         }
     }
 

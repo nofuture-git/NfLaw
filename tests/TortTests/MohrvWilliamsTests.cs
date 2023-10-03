@@ -4,6 +4,7 @@ using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, consent may depend on specific directions and not the general intent
     /// ]]>
     /// </remarks>
-    
     public class MohrvWilliamsTests
     {
+        private readonly ITestOutputHelper output;
+
+        public MohrvWilliamsTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void MohrvWilliams()
         {
@@ -55,8 +62,8 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new Mohr(), new Williams());
-            Console.WriteLine(test.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(test.ToString());
+            Assert.True(testResult);
         }
     }
 

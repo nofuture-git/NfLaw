@@ -3,6 +3,7 @@ using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, not public nuisance since everyone in the area lost money from having closed roads
     /// ]]>
     /// </remarks>
-    
     public class _532MadisonAveGourmetFoodsIncvFinlandiaCenterTests
     {
+        private readonly ITestOutputHelper output;
+
+        public _532MadisonAveGourmetFoodsIncvFinlandiaCenterTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void _532MadisonAveGourmetFoodsIncvFinlandiaCenter()
         {
@@ -27,8 +34,8 @@ namespace NoFuture.Law.Tort.Tests
                 IsPrivatePeculiarInjury = lp => false
             };
             var testResult = test.IsValid(new _532MadisonAveGourmetFoodsInc(), new FinlandiaCenter());
-            Assert.IsFalse(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 

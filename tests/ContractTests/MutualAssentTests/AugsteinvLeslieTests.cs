@@ -31,7 +31,7 @@ namespace NoFuture.Law.Contract.Tests.MutualAssentTests
                     augstein is ArminAugstein && reward is TwentyThousandUsdReward
             };
 
-            Assert.IsTrue(testSubject.IsValid(new RyanLeslie(), new ArminAugstein()));
+            Assert.True(testSubject.IsValid(new RyanLeslie(), new ArminAugstein()));
 
         }
 

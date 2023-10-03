@@ -7,6 +7,7 @@ using NoFuture.Law.Property.US.FormsOf;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.TheftTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
     /// doctrine issue, security deposit is a debt and a person cannot be put in jail for not paying a debt.
     /// ]]>
     /// </remarks>
-    [TestFixture()]
     public class StatevLarsonTests
     {
+        private readonly ITestOutputHelper output;
+
+        public StatevLarsonTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void StatevLarson()
         {
@@ -65,8 +72,8 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
             };
 
             var testResult = testCrime.IsValid(larson, lessee);
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
 
         }
     }

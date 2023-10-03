@@ -3,12 +3,19 @@ using System.Linq;
 using NoFuture.Law;
 using NoFuture.Law.Criminal.US;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests
 {
-    
     public class CrimeTests
     {
+        private readonly ITestOutputHelper output;
+
+        public CrimeTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
 
         [Fact]
         public void TestCompareTo()
@@ -24,9 +31,9 @@ namespace NoFuture.Law.Criminal.Tests
             Array.Sort(testSubjects);
 
             foreach(var c in testSubjects)
-                Console.WriteLine(c.GetType().Name);
-            Assert.IsTrue(testSubjects.First() is Infraction);
-            Assert.IsTrue(testSubjects.Last() is Felony);
+                this.output.WriteLine(c.GetType().Name);
+            Assert.True(testSubjects.First() is Infraction);
+            Assert.True(testSubjects.Last() is Felony);
         }
 
     }

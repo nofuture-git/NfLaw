@@ -29,7 +29,6 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
     /// (3) reduced price was roughly the fair market value of the property
     /// ]]>
     /// </remarks>
-    [TestFixture()]
     public class QuigleyvWilsonTests
     {
         [Fact]
@@ -56,7 +55,7 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
 
             var testResult = testSubject.IsValid(new Quigley(), new Wilson());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

@@ -2,12 +2,19 @@
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.US;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
-    
     public class ExampleVicariousLiabilityTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleVicariousLiabilityTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestVicariousLiabilityIsValid()
         {
@@ -20,8 +27,8 @@ namespace NoFuture.Law.Tort.Tests
                 IsAttempt2LimitOthersAct = lp => false
             };
             var testResult = test.IsValid(new SomePlaintiff(), new SomeDefendant(), new Some3rdParty());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 }

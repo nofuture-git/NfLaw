@@ -67,7 +67,7 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
             };
 
             var testResult = testSubject.IsValid(new CrundenMartin(), new Fairmount());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
             System.Console.WriteLine(testSubject.ToString());
         }
     }

@@ -4,13 +4,19 @@ using NoFuture.Law.Procedure.Civil.US.Jurisdiction;
 using NoFuture.Law.US.Courts;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Civil.Tests
 {
-
-    
     public class ExampleTestRemoval
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleTestRemoval(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestRemovalIsValid()
         {
@@ -33,8 +39,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests
                 IsRequestRemoval = lp => lp is IDefendant
             };
             var testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant());
-            Assert.IsFalse(testResult);
-            Console.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 }

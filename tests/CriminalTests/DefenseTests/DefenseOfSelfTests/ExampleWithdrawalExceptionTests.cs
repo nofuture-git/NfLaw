@@ -9,12 +9,19 @@ using NoFuture.Law.Criminal.US.Terms;
 using NoFuture.Law.Criminal.US.Terms.Violence;
 using NoFuture.Law.US;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
 {
-    
     public class ExampleWithdrawalExceptionTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleWithdrawalExceptionTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleWithdrawalException()
         {
@@ -33,7 +40,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
             };
 
             var testResult = testCrime.IsValid(new PattyEg());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new DefenseOfSelf
             {
@@ -56,8 +63,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
                 }
             };
             testResult = testSubject.IsValid(new PattyEg(), new PaigeEg());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 }

@@ -17,7 +17,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, objective crit. concerning restrictive competition
     /// ]]>
     /// </remarks>
-    [TestFixture()]
+    
     public class ValleyMedvFarberTests
     {
         [Fact]
@@ -48,7 +48,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
 
             var testResult = testSubject.IsValid(new ValleyMed(), new Farber());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
         }
         public static ISet<Term<object>> GetTerms()

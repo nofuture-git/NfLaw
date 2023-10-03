@@ -69,7 +69,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
             };
             var testResult = testSubject.IsValid(new WwwAssociates(), new Giancontieri());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
         }
     }

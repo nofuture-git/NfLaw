@@ -5,12 +5,19 @@ using NoFuture.Law.Criminal.US.Elements.AttendantCircumstances;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
 {
-    
     public class ExampleBatteryTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleBatteryTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleBattery()
         {
@@ -27,8 +34,8 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             };
 
             var testResult = testCrime.IsValid(new HarrietIncestEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -51,8 +58,8 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
                 },
             };
             var testResult = testCrime.IsValid(new Combatent00(), new Combatent01());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
     }
 

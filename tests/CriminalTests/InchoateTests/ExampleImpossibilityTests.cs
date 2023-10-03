@@ -5,13 +5,21 @@ using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.Criminal.US.Elements.Inchoate;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.InchoateTests
 {
-    
     public class ExampleImpossibilityTests
     {
-        [Test(Description = "Impossibility is only applicable to Attempt")]
+        private readonly ITestOutputHelper output;
+
+        public ExampleImpossibilityTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
+        [Fact]
+        //Impossibility is only applicable to Attempt
         public void TestOnlyForAttempt()
         {
             var testCrime = new Misdemeanor
@@ -29,7 +37,7 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
             };
 
             var testResult = testCrime.IsValid(new MelissaEg2());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new Impossibility(testCrime)
             {
@@ -38,15 +46,19 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
 
             var melissa = new MelissaEg2 { ItActuallyIsRatThatsBarking = true };
             testResult = testSubject.IsValid(melissa);
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
 
-        [Test(Description = "Melissa trys to poison neighbors dog for " +
-                            "barking but it was actually a giant rat that " +
-                            "was barking. Killing the rat is not illegal.")]
+        [Fact]
+        /*
+        Melissa trys to poison neighbors dog for 
+        barking but it was actually a giant rat that 
+        was barking. Killing the rat is not illegal.
+         */
         public void LegalImpossibilityTest()
         {
+
             var testCrime = new Misdemeanor
             {
                 MensRea = new GeneralIntent
@@ -64,7 +76,7 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
             };
 
             var testResult = testCrime.IsValid(new MelissaEg2());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new Impossibility(testCrime)
             {
@@ -73,12 +85,15 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
 
             var melissa = new MelissaEg2 {ItActuallyIsRatThatsBarking = true};
             testResult = testSubject.IsValid(melissa);
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
 
-        [Test(Description = "Melissa trys to poison neighbors dog " +
-                            "for barking but its not in the yard at the time.")]
+        [Fact]
+        /*
+         Melissa trys to poison neighbors dog 
+         for barking but its not in the yard at the time.
+         */
         public void FactualImpossibilityTest()
         {
             var testCrime = new Misdemeanor
@@ -99,7 +114,7 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
             };
 
             var testResult = testCrime.IsValid(new MelissaEg2());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new Impossibility(testCrime)
             {
@@ -107,8 +122,8 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
             };
             
             testResult = testSubject.IsValid(new MelissaEg2());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 

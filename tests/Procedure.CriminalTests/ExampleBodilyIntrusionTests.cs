@@ -3,12 +3,19 @@ using System.Linq;
 using NoFuture.Law.Procedure.Criminal.US.Intrusions;
 using NoFuture.Law.Procedure.Criminal.US.Warrants;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    
     public class ExampleBodilyIntrusionTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleBodilyIntrusionTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestBodilyIntrusionIsValid00()
         {
@@ -18,8 +25,8 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             };
 
             var testResult = testSubject.IsValid(new ExampleLawEnforcement(), new ExampleSuspect());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -39,8 +46,8 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             };
 
             var testResult = testSubject.IsValid(new ExampleLawEnforcement(), new ExampleSuspect(), new ExampleJudge());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -61,8 +68,8 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             };
 
             var testResult = testSubject.IsValid(new ExampleLawEnforcement(), new ExampleSuspect(), new ExampleJudge());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 }

@@ -48,7 +48,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             };
 
             var testResult = testContract.IsValid(new Brandeis(), new CapitolCrane());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
             var testSubject = new UccExpectation(testContract)
             {
                 UccOrigContractPrice = lp =>
@@ -75,7 +75,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             };
             testResult = testSubject.IsValid(new Brandeis(), new CapitolCrane());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

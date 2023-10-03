@@ -5,6 +5,7 @@ using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.Tort.US.ReasonableCare;
 using NoFuture.Law.Tort.US.Terms;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, children are considered invitees when something is attractive on private property
     /// ]]>
     /// </remarks>
-    
     public class BankervMcLaughlinTests
     {
+        private readonly ITestOutputHelper output;
+
+        public BankervMcLaughlinTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void BankervMcLaughlin()
         {
@@ -47,8 +54,8 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new Banker(), new McLaughlin());
-            Console.WriteLine(test.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(test.ToString());
+            Assert.True(testResult);
         }
     }
 

@@ -17,7 +17,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, with telecom tech, it is very easy to satisfy the two requirements of the statute of frauds
     /// ]]>
     /// </remarks>
-    [TestFixture()]
+    
     public class StevensvPublicisTests
     {
         [Fact]
@@ -48,7 +48,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
             var testResult = testSubject.IsValid(new Stevens(), new Publicis());
 
             //the statute of frauds written\signed bits are very easy with electronic emails and such
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
             Console.WriteLine(testSubject.ToString());
 
         }

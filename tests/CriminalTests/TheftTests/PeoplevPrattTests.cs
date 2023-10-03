@@ -3,6 +3,7 @@ using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.AgainstProperty.Theft;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.TheftTests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
     /// doctrine issue, stolen means taking witout permission, intenting to return it doesn't make it anything less
     /// ]]>
     /// </remarks>
-    [TestFixture()]
     public class PeoplevPrattTests
     {
+        private readonly ITestOutputHelper output;
+
+        public PeoplevPrattTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void PeoplevPratt()
         {
@@ -38,8 +45,8 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
             };
 
             var testResult = testCrime.IsValid(new Pratt(), new PrattFormerGirlfriend());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
     }
 

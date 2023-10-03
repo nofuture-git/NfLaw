@@ -38,9 +38,9 @@ namespace NoFuture.Law.Contract.Tests.UccTests
                 }
             };
             var testResult = testSubject.GetAgreedTerms(new FlenderCorp(), new Tippins());
-            Assert.IsNotNull(testResult);
+            Assert.NotNull(testResult);
             //knockout rule where two terms with different meanings are not included in set-union
-            Assert.IsTrue(testResult.All(t => t.Name != "arbitration provision"));
+            Assert.True(testResult.All(t => t.Name != "arbitration provision"));
             Console.WriteLine(testSubject.ToString());
         }
     }

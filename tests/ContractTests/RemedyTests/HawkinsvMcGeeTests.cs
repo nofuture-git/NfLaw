@@ -55,7 +55,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             };
 
             var testResult = testContract.IsValid(new Hawkins(), new McGee());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new Expectation<Promise>(testContract)
             {
@@ -63,7 +63,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             };
             testResult = testSubject.IsValid(new Hawkins(), new McGee());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

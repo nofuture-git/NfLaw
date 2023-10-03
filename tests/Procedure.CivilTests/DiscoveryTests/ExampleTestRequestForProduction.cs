@@ -4,12 +4,19 @@ using NoFuture.Law.US;
 using NoFuture.Law.US.Courts;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Civil.Tests.DiscoveryTests
 {
-    
     public class ExampleTestRequestForProduction
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleTestRequestForProduction(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestRequestForProductionIsValid00()
         {
@@ -22,8 +29,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests.DiscoveryTests
             };
 
             var testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
 
         }
 
@@ -39,8 +46,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests.DiscoveryTests
             };
 
             var testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
 
         }
 
@@ -56,8 +63,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests.DiscoveryTests
             };
 
             var testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
 
         }
 
@@ -73,8 +80,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests.DiscoveryTests
             };
 
             var testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
 
         }
 
@@ -90,8 +97,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests.DiscoveryTests
             };
 
             var testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
 
         }
     }

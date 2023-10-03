@@ -10,6 +10,7 @@ using NoFuture.Law.Criminal.US.Terms.Violence;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
 {
@@ -21,9 +22,15 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
     /// doctrine issue, necessity defense of prisoners is strict and limiting
     /// ]]>
     /// </remarks>
-    [TestFixture()]
     public class PeoplevLovercampTests
     {
+        private readonly ITestOutputHelper output;
+
+        public PeoplevLovercampTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void PeoplevLovercamp()
         {
@@ -42,7 +49,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
             };
 
             var testResult = testCrime.IsValid(new Lovercamp());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new NecessityDefense<ITermCategory>
             {
@@ -66,8 +73,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
             };
 
             testResult = testSubject.IsValid(new Lovercamp(), new LesbianInmates());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
 
         }
     }

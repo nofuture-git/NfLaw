@@ -54,7 +54,7 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
 
             var testResult = testContract.IsValid(new CarverBoat(), new Fanok());
             Console.WriteLine(testContract.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
             var testSubject = new PerfectTender<Goods>(testContract)
             {
                 ActualPerformance = lp =>
@@ -68,7 +68,7 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
             };
             testResult = testSubject.IsValid(new CarverBoat(), new Fanok());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

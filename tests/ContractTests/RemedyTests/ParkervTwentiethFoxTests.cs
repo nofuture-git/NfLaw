@@ -53,7 +53,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             };
 
             var testResult = testContract.IsValid(new Parker(), new TwentiethFox());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new Expectation<Promise>(testContract)
             {
@@ -66,7 +66,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
 
             testResult = testSubject.IsValid(new Parker(), new TwentiethFox());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
         }
     }

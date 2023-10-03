@@ -3,6 +3,7 @@ using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, proving defect based on circumstantial evidence is enough for product strict liability
     /// ]]>
     /// </remarks>
-    
     public class SpellervSearsRoebuckandCoTests
     {
+        private readonly ITestOutputHelper output;
+
+        public SpellervSearsRoebuckandCoTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void SpellervSearsRoebuckandCo()
         {
@@ -34,8 +41,8 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new Speller(), new SearsRoebuckandCo());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 

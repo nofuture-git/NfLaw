@@ -3,6 +3,7 @@ using Xunit;
 using NoFuture.Law.US;
 using NoFuture.Law.Property.US.Acquisition;
 using NoFuture.Law.US.Persons;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, spins around on the open and notorious part when the property is some underground cave
     /// ]]>
     /// </remarks>
-    
     public class MarengoCaveCovRossTests
     {
+        private readonly ITestOutputHelper output;
+
+        public MarengoCaveCovRossTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void MarengoCaveCovRoss()
         {
@@ -38,8 +45,8 @@ namespace NoFuture.Law.Property.Tests
             };
 
             var testResult = test.IsValid(new MarengoCaveCo(), new Ross());
-            Assert.IsFalse(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 

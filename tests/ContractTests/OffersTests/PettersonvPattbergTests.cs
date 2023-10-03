@@ -34,7 +34,7 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
             };
 
             var testResult = testSubject.IsValid(new Petterson(), new Pattberg());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
             Console.WriteLine(testSubject.ToString());
         }
     }

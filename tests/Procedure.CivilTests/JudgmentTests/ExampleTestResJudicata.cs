@@ -2,12 +2,19 @@
 using NoFuture.Law.Procedure.Civil.US.Judgment;
 using NoFuture.Law.US.Courts;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Civil.Tests.JudgmentTests
 {
-    
     public class ExampleTestResJudicata
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleTestResJudicata(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestResJudicataIsValid()
         {
@@ -22,8 +29,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests.JudgmentTests
             };
 
             var testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 }

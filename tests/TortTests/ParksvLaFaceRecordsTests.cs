@@ -3,6 +3,7 @@ using Xunit;
 using NoFuture.Law.US;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US.Persons;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Tort.Tests
     /// protected even when such expression is promoted for commercial reasons
     /// ]]>
     /// </remarks>
-    
     public class ParksvLaFaceRecordsTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ParksvLaFaceRecordsTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ParksvLaFaceRecords()
         {
@@ -29,8 +36,8 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new Parks(), new LaFaceRecords());
-            Assert.IsFalse(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 

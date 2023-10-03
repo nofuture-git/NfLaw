@@ -6,6 +6,7 @@ using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, misappropriation requires somekind of loss in competitive edge 
     /// ]]>
     /// </remarks>
-    
     public class NationalBasketballAssociationvMotorolaIncTests
     {
+        private readonly ITestOutputHelper output;
+
+        public NationalBasketballAssociationvMotorolaIncTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void NationalBasketballAssociationvMotorolaInc()
         {
@@ -33,8 +40,8 @@ namespace NoFuture.Law.Tort.Tests
                 IsInformationUseDirectCompetition = lp => false,
             };
             var testResult = test.IsValid(new NationalBasketballAssociation(), new MotorolaInc());
-            Assert.IsFalse(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 

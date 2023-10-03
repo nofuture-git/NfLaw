@@ -20,7 +20,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     /// expressly in contract, course of preformance, course of dealing and usage of trade
     /// ]]>
     /// </remarks>
-    [TestFixture()]
+    
     public class FrigalimentvBnsInternationalTests
     {
         [Fact]
@@ -56,7 +56,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
             var testResult = testContract.IsValid(new Frigaliment(), new BnsInternational());
             //this is true any kind of chicken is the "Chicken" type
             Console.WriteLine(testContract.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new SemanticDilemma<Promise>(testContract)
             {

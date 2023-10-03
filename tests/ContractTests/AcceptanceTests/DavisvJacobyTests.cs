@@ -44,7 +44,7 @@ namespace NoFuture.Law.Contract.Tests.AcceptanceTests
             };
 
             var testResult = testSubject.IsValid(new RupertWhitehead(), new FrankAndCaroDavis());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
             Console.WriteLine(testSubject.ToString());
 
             var testSubjectAsPerformance = new ComLawContract<Performance>
@@ -59,7 +59,7 @@ namespace NoFuture.Law.Contract.Tests.AcceptanceTests
             };
 
             testResult = testSubjectAsPerformance.IsValid(new RupertWhitehead(), new FrankAndCaroDavis());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
             Console.WriteLine(testSubjectAsPerformance.ToString());
 
         }

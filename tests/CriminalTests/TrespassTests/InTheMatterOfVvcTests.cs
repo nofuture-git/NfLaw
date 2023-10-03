@@ -5,6 +5,7 @@ using NoFuture.Law.Criminal.US.Elements.AgainstProperty.Damage;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.TrespassTests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Criminal.Tests.TrespassTests
     /// doctrine issue, defense by technicality
     /// ]]>
     /// </remarks>
-    [TestFixture()]
     public class InTheMatterOfVvcTests
     {
+        private readonly ITestOutputHelper output;
+
+        public InTheMatterOfVvcTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void InTheMatterOfVcc()
         {
@@ -36,8 +43,8 @@ namespace NoFuture.Law.Criminal.Tests.TrespassTests
                 }
             };
             var testResult = testCrime.IsValid(new MinorVvc());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
 
             var testDefense = new Technicality
             {
@@ -47,8 +54,8 @@ namespace NoFuture.Law.Criminal.Tests.TrespassTests
             };
 
             testResult = testDefense.IsValid();
-            Console.WriteLine(testDefense.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testDefense.ToString());
+            Assert.True(testResult);
 
         }
     }

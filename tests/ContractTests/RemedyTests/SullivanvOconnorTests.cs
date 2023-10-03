@@ -52,7 +52,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
                 IsSoughtByOfferor = (lp, p) => true
             };
             var testResult = testContract.IsValid(new Sullivan(), new Oconnor());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new Reliance<Promise>(testContract)
             {
@@ -61,7 +61,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             };
             testResult = testSubject.IsValid(new Sullivan(), new Oconnor());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

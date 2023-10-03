@@ -5,12 +5,19 @@ using NoFuture.Law.Criminal.US.Elements.AgainstPersons.Credible;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
 {
-    
     public class ExampleStalkingTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleStalkingTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleNotStalking()
         {
@@ -27,8 +34,8 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
                 }
             };
             var testResult = testCrime.IsValid(new ElliotStalkerEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
 
         [Fact]
@@ -65,8 +72,8 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
                 }
             };
             var testResult = testCrime.IsValid(new ElliotStalkerEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
     }
 

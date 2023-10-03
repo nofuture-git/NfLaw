@@ -3,12 +3,19 @@ using NoFuture.Law;
 using NoFuture.Law.Procedure.Civil.US.Jurisdiction;
 using NoFuture.Law.US.Courts;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Civil.Tests
 {
-    
     public class ExampleTestMinContact
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleTestMinContact(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestMinimumContactIsValid00()
         {
@@ -19,9 +26,9 @@ namespace NoFuture.Law.Procedure.Civil.Tests
             };
 
             var testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
 
         [Fact]
@@ -34,9 +41,9 @@ namespace NoFuture.Law.Procedure.Civil.Tests
                 GetDomicileLocation = lp => lp is ExamplePlaintiff ? new VocaBase("NV") : null,
             };
             var testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
 
         }
     }

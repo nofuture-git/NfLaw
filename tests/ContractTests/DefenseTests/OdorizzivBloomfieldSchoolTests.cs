@@ -51,7 +51,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
             };
 
             var testResult = testSubject.IsValid(new BloomfieldSchool(), new Odorizzi());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
             Console.WriteLine(testSubject.ToString());
 
         }

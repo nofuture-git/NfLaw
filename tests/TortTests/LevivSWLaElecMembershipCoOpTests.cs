@@ -3,6 +3,7 @@ using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.ReasonableCare;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, being an expert alone does not raise the level of reasonable care, it must be distinct\dangerous or relied upon
     /// ]]>
     /// </remarks>
-    
     public class LevivSWLaElecMembershipCoOpTests
     {
+        private readonly ITestOutputHelper output;
+
+        public LevivSWLaElecMembershipCoOpTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void LevivSWLaElecMembershipCoOp()
         {
@@ -27,8 +34,8 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new Levi(), new SWLaElecMembershipCoOp());
-            Assert.IsFalse(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 

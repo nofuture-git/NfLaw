@@ -10,12 +10,19 @@ using NoFuture.Law.Criminal.US.Terms.Violence;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
 {
-    
     public class ExampleAttackIsRetaliatoryTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleAttackIsRetaliatoryTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleAttackIsRetaliatory()
         {
@@ -33,7 +40,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
                 }
             };
             var testResult = testCrime.IsValid(new DwightEg());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new DefenseOfSelf
             {
@@ -56,8 +63,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
             };
 
             testResult = testSubject.IsValid(new DwightEg(), new AbelEg());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 

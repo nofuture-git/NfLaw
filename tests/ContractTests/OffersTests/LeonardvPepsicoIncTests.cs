@@ -31,7 +31,7 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
 
             var testResult = testSubject.IsValid(new PepsicoInc(), new Leonard());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
         }
     }
 

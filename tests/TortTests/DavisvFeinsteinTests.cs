@@ -3,6 +3,7 @@ using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.ReasonableCare;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Tort.Tests
     /// actually meet the same nimble results of the unafflicted - only to try.
     /// ]]>
     /// </remarks>
-    
     public class DavisvFeinsteinTests
     {
+        private readonly ITestOutputHelper output;
+
+        public DavisvFeinsteinTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void DavisvFeinstein()
         {
@@ -29,9 +36,9 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new Davis(), new Feinstein());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
-            Console.WriteLine(test.ToString());
+            this.output.WriteLine(test.ToString());
         }
     }
 

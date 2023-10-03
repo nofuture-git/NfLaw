@@ -6,12 +6,19 @@ using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests
 {
-    
     public class ExampleInfancyDefenseTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleInfancyDefenseTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleInfancyDefense()
         {
@@ -29,13 +36,13 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests
             };
 
             var testResult = testCrime.IsValid(new MarioEg());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new Infancy();
 
             testResult = testSubject.IsValid(new MarioEg());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 

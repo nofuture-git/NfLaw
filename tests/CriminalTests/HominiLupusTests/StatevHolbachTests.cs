@@ -5,6 +5,7 @@ using NoFuture.Law.Criminal.US.Elements.AgainstPersons.Credible;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
     /// doctrine issue, the agitation must induce a real fear
     /// ]]>
     /// </remarks>
-    
     public class StatevHolbachTests
     {
+        private readonly ITestOutputHelper output;
+
+        public StatevHolbachTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void StatevHolbach()
         {
@@ -46,8 +53,8 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             };
 
             var testResult = testCrime.IsValid(new Holbach());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
     }
 

@@ -4,6 +4,7 @@ using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.Tort.US.UnintentionalTort;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, some act increased probability such-and-such and, indeed, such-and-such happened.
     /// ]]>
     /// </remarks>
-    
     public class ZuchowiczvUnitedStatesTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ZuchowiczvUnitedStatesTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ZuchowiczvUnitedStates()
         {
@@ -38,9 +45,9 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new Zuchowicz(), new UnitedStates());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
-            Console.WriteLine(test.ToString());
+            this.output.WriteLine(test.ToString());
         }
     }
 

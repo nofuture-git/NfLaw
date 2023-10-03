@@ -3,12 +3,19 @@ using NoFuture.Law.Procedure.Civil.US.Jurisdiction;
 using NoFuture.Law.Procedure.Civil.US.Pleadings;
 using NoFuture.Law.US.Courts;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Civil.Tests.PleadingsTests
 {
-    
     public class ExampleTestMotionToDismiss
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleTestMotionToDismiss(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestMotionToDismissIsValid()
         {
@@ -26,8 +33,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests.PleadingsTests
             };
 
             var testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
 
             testSubject = new PreAnswerMotion
             {
@@ -43,8 +50,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests.PleadingsTests
             };
 
             testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
 
             testSubject = new PreAnswerMotion
             {
@@ -60,8 +67,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests.PleadingsTests
             };
 
             testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 

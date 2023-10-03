@@ -49,7 +49,7 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
             };
 
             var testResult = testContract.IsValid(new KcaElectronics(), new LegacyElectronics());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var whatKcaShipped = new OfferSellSolderBalls
             {
@@ -74,7 +74,7 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
 
             testResult = testSubject.IsValid(new KcaElectronics(), new LegacyElectronics());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
         }
     }
 

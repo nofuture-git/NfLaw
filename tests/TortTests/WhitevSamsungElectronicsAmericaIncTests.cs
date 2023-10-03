@@ -3,6 +3,7 @@ using Xunit;
 using NoFuture.Law.US;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US.Persons;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Tort.Tests
     /// 
     /// ]]>
     /// </remarks>
-    
     public class WhitevSamsungElectronicsAmericaIncTests
     {
+        private readonly ITestOutputHelper output;
+
+        public WhitevSamsungElectronicsAmericaIncTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void WhitevSamsungElectronicsAmericaInc()
         {
@@ -28,8 +35,8 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new White(), new SamsungElectronicsAmericaInc());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 

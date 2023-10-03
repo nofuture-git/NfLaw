@@ -3,6 +3,7 @@ using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.ReasonableCare;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, liability for children is typically not applicable unless they are performing some adult activity
     /// ]]>
     /// </remarks>
-    
     public class DellwovPearsonTests
     {
+        private readonly ITestOutputHelper output;
+
+        public DellwovPearsonTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void DellwovPearson()
         {
@@ -27,8 +34,8 @@ namespace NoFuture.Law.Tort.Tests
                 IsExercisedAdultCare = lp => !(lp is Pearson)
             };
             var testResult = test.IsValid(new Dellwo(), new Pearson());
-            Assert.IsFalse(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 

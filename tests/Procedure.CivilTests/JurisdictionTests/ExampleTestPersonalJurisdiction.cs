@@ -5,12 +5,19 @@ using NoFuture.Law.US;
 using NoFuture.Law.US.Courts;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Civil.Tests
 {
-    
     public class ExampleTestPersonalJurisdiction
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleTestPersonalJurisdiction(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestPersonalJurisdictionIsValid()
         {
@@ -20,8 +27,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests
             };
 
             var testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(testSubject.ToString());
         }
 
         [Fact]
@@ -39,13 +46,13 @@ namespace NoFuture.Law.Procedure.Civil.Tests
             };
 
             var testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant());
-            Assert.IsFalse(testResult);
-            Console.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(testSubject.ToString());
 
             testSubject.Consent = Consent.IsGiven();
             testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(testSubject.ToString());
         }
 
         [Fact]
@@ -61,8 +68,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests
             };
 
             var testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

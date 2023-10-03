@@ -53,13 +53,13 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
             };
 
             var contractTerms = testContract.Assent as IAssentTerms;
-            Assert.IsNotNull(contractTerms);
+            Assert.NotNull(contractTerms);
 
             var additonalTerms = contractTerms.GetAdditionalTerms(new Mitchill(), new Lath());
 
-            Assert.IsNotNull(additonalTerms);
-            Assert.AreEqual(1, additonalTerms.Count);
-            Assert.AreEqual("remove ice house", additonalTerms.First().Name);
+            Assert.NotNull(additonalTerms);
+            Assert.Equal(1, additonalTerms.Count);
+            Assert.Equal("remove ice house", additonalTerms.First().Name);
 
             var testSubject = new ParolEvidenceRule<Promise>(testContract)
             {
@@ -72,7 +72,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
 
             var testResult = testSubject.IsValid(new Mitchill(), new Lath());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
         }
     }
 

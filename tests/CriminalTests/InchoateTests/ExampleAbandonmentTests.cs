@@ -5,12 +5,19 @@ using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.Criminal.US.Elements.Inchoate;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.InchoateTests
 {
-    
     public class ExampleAbandonmentTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleAbandonmentTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void VoluntaryAbandonmentTest()
         {
@@ -31,7 +38,7 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
             };
 
             var testResult = testCrime.IsValid(new MelissaEg3());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new Abandonment(testCrime)
             {
@@ -40,8 +47,8 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
             };
 
             testResult = testSubject.IsValid(new MelissaEg3());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 

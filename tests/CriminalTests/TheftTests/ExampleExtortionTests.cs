@@ -4,12 +4,19 @@ using NoFuture.Law.Criminal.US.Elements.AttendantCircumstances;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.TheftTests
 {
-    
     public class ExampleExtortionTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleExtortionTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleExtortionAct()
         {
@@ -24,8 +31,8 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
             };
 
             var testResult = testAct.IsValid(new RodneyBlackmailEg(), new LindseyDealinEg());
-            Console.WriteLine(testAct.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testAct.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -45,8 +52,8 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
             };
 
             var testResult = testAct.IsValid(new TrentThreatenEg(), new TaraLyingEg());
-            Console.WriteLine(testAct.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testAct.ToString());
+            Assert.False(testResult);
         }
 
         [Fact]
@@ -68,8 +75,8 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
             };
 
             var testResult = testAct.IsValid(new RodneyBlackmailEg(), new LindseyDealinEg());
-            Console.WriteLine(testAct.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testAct.ToString());
+            Assert.True(testResult);
         }
     }
 

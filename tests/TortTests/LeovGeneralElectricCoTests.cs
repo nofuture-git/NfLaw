@@ -3,6 +3,7 @@ using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, demo's the idea of private peculiar injury since it was a loss suffered only by commercial fishermen on public waters
     /// ]]>
     /// </remarks>
-    
     public class LeovGeneralElectricCoTests
     {
+        private readonly ITestOutputHelper output;
+
+        public LeovGeneralElectricCoTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void LeovGeneralElectricCo()
         {
@@ -29,8 +36,8 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new Leo(), new GeneralElectricCo());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 

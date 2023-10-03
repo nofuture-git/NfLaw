@@ -3,6 +3,7 @@ using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.UnintentionalTort;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, defendent cannot have mutually exclusive duty
     /// ]]>
     /// </remarks>
-    
     public class CooleyvPublicServiceCoTests
     {
+        private readonly ITestOutputHelper output;
+
+        public CooleyvPublicServiceCoTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void CooleyvPublicServiceCo()
         {
@@ -26,9 +33,9 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new PublicServiceCo(), new Cooley());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
 
-            Console.WriteLine(test.ToString());
+            this.output.WriteLine(test.ToString());
         }
     }
 

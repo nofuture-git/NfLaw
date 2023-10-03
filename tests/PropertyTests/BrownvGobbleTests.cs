@@ -3,6 +3,7 @@ using NoFuture.Law.Property.US.Acquisition;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, example of adverse possession with the concept of "tacking" (where prior owners already satisfied adverse possession)
     /// ]]>
     /// </remarks>
-    
     public class BrownvGobbleTests
     {
+        private readonly ITestOutputHelper output;
+
+        public BrownvGobbleTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void BrownvGobble()
         {
@@ -35,8 +42,8 @@ namespace NoFuture.Law.Property.Tests
             };
 
             var testResult = test.IsValid(new Brown(), new Gobble());
-            Console.WriteLine(test.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(test.ToString());
+            Assert.True(testResult);
         }
     }
 

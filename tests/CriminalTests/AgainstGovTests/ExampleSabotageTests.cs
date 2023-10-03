@@ -5,12 +5,19 @@ using NoFuture.Law.Criminal.US.Elements.AttendantCircumstances;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.AgainstGovTests
 {
-    
     public class ExampleSabotageTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleSabotageTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestSabotage()
         {
@@ -31,8 +38,8 @@ namespace NoFuture.Law.Criminal.Tests.AgainstGovTests
             };
 
             var testResult = testCrime.IsValid(new MoSabotageEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
     }
 

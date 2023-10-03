@@ -53,7 +53,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             };
 
             var testResult = testContract.IsValid(new TruckRent(), new PuritanFarms());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new LiquidatedDmg<Promise>(testContract)
             {
@@ -63,7 +63,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
 
             testResult = testSubject.IsValid(new TruckRent(), new PuritanFarms());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

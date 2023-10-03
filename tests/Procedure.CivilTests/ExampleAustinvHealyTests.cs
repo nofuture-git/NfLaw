@@ -7,6 +7,7 @@ using NoFuture.Law.US;
 using NoFuture.Law.US.Courts;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Civil.Tests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Procedure.Civil.Tests
     /// 
     /// ]]>
     /// </remarks>
-    
     public class ExampleAustinvHealyTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleAustinvHealyTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         /// <summary>
         /// Defendant has nothing to do with North Dakota, that&apos;s the plaintiff&apos;s home state...
         /// </summary>
@@ -44,8 +51,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests
             };
 
             var testResult = testSubject.IsValid(new AustinAsPlaintiff(), new HealyAsDefendant());
-            Assert.IsFalse(testResult);
-            Console.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(testSubject.ToString());
         }
 
         /// <summary>
@@ -71,8 +78,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests
             };
 
             var testResult = testSubject.IsValid(new HealyAsPlaintiff(), new AustinAsDefendant());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
 
         /// <summary>
@@ -97,8 +104,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests
             };
 
             var testResult = testSubject.IsValid(new HealyAsPlaintiff(), new AustinAsDefendant());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(testSubject.ToString());
         }
 
         public IVoca GetState(ILegalPerson lp)

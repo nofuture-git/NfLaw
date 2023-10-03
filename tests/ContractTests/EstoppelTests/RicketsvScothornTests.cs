@@ -23,7 +23,7 @@ namespace NoFuture.Law.Contract.Tests.EstoppelTests
     /// (6) estoppel is used ignore X lacking consideration
     /// ]]>
     /// </remarks>
-    [TestFixture()]
+    
     public class RicketsvScothornTests
     {
         [Fact]
@@ -36,7 +36,7 @@ namespace NoFuture.Law.Contract.Tests.EstoppelTests
             testSubject.Consideration = new PromissoryEstoppel<DonativePromise>(testSubject);
 
             var testResult = testSubject.IsValid(new Rickets(), new Scothorn());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
             Console.WriteLine(testSubject.ToString());
         }
     }

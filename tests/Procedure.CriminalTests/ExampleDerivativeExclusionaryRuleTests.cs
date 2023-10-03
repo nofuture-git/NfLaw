@@ -2,12 +2,19 @@
 using NoFuture.Law;
 using NoFuture.Law.Procedure.Criminal.US.Challenges;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    
     public class ExampleDerivativeExclusionaryRuleTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleDerivativeExclusionaryRuleTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestDerivativeExclusionaryRuleIsValid00()
         {
@@ -19,8 +26,8 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             };
 
             var testResult = testSubject.IsValid(new ExampleSuspect(), new ExampleLawEnforcement());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
 
         }
     }

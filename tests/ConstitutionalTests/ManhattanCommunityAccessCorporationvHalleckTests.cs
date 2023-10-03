@@ -38,7 +38,7 @@ namespace NoFuture.Law.Constitutional.Tests
 
             var testResult = testSubject.IsValid(new ManhattanCommunityAccessCorporation(), new Halleck());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
         }
     }
 

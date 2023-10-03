@@ -5,6 +5,7 @@ using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.MensReaTests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Criminal.Tests.MensReaTests
     /// doctrine issue, in depth look at what kinds of crimes which don't require intent
     /// ]]>
     /// </remarks>
-    [TestFixture()]
     public class MorissettevUsTests
     {
+        private readonly ITestOutputHelper output;
+
+        public MorissettevUsTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void MorrisettevUs()
         {
@@ -35,13 +42,13 @@ namespace NoFuture.Law.Criminal.Tests.MensReaTests
             testSubject.MensRea = null;
 
             var testResult = testSubject.IsValid(new Morrisette());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             //the court ruled that intent was required
             testSubject.MensRea = new GeneralIntent();
             testResult = testSubject.IsValid(new Morrisette());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 

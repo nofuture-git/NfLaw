@@ -15,7 +15,7 @@ namespace NoFuture.Law.Contract.Tests.EstoppelTests
     /// Doctrine issue, need both predicates to test as true for consideration substitute to be valid
     /// ]]>
     /// </remarks>
-    [TestFixture()]
+    
     public class MayervKingColaTests
     {
         [Fact]
@@ -31,7 +31,7 @@ namespace NoFuture.Law.Contract.Tests.EstoppelTests
             };
 
             var testResult = testSubject.IsValid(new KingCola(), new Mayer());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
             Console.WriteLine(testSubject.ToString());
         }
     }

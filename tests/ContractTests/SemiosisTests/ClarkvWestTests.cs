@@ -73,7 +73,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
 
             var testResult = testSubject.IsValid(new Clark(), new West());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
         }
     }
 

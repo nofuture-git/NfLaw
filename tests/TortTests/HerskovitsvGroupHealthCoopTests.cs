@@ -3,6 +3,7 @@ using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.UnintentionalTort;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, illustrate the lost-chance approach
     /// ]]>
     /// </remarks>
-    
     public class HerskovitsvGroupHealthCoopTests
     {
+        private readonly ITestOutputHelper output;
+
+        public HerskovitsvGroupHealthCoopTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void HerskovitsvGroupHealthCoop()
         {
@@ -31,8 +38,8 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new Herskovits(), new GroupHealthCoop());
-            Console.WriteLine(test.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(test.ToString());
+            Assert.True(testResult);
 
         }
     }

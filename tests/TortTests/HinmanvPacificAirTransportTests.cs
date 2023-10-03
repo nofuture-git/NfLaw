@@ -4,6 +4,7 @@ using NoFuture.Law.US;
 using NoFuture.Law.Property.US;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US.Persons;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, passing over or under land outside of the useable range is not trespass
     /// ]]>
     /// </remarks>
-    
     public class HinmanvPacificAirTransportTests
     {
+        private readonly ITestOutputHelper output;
+
+        public HinmanvPacificAirTransportTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void HinmanvPacificAirTransport()
         {
@@ -42,9 +49,9 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new Hinman(), new PacificAirTransport());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
 
-            Console.WriteLine(test.ToString());
+            this.output.WriteLine(test.ToString());
         }
     }
 

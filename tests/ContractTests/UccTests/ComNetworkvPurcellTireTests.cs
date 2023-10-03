@@ -28,7 +28,7 @@ namespace NoFuture.Law.Contract.Tests.UccTests
                 Acceptance = o => new IbmPersonalComputers()
             };
             var testResult = testSubject.IsValid(new ComNetwork(), new PurcellTire());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
             Console.WriteLine(testSubject.ToString());
         }
     }

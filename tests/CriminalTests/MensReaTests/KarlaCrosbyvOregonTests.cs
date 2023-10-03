@@ -5,6 +5,7 @@ using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.MensReaTests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Criminal.Tests.MensReaTests
     /// 
     /// ]]>
     /// </remarks>
-    
     public class KarlaCrosbyvOregonTests
     {
+        private readonly ITestOutputHelper output;
+
+        public KarlaCrosbyvOregonTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void KarlaCrosbyvOregon()
         {
@@ -38,13 +45,13 @@ namespace NoFuture.Law.Criminal.Tests.MensReaTests
             };
 
             var testResult = testSubject.IsValid(new KarlaCrosby());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             //the oregon supreme court found that the wording given to the jury made this false
             recklessly.IsDisregardOfRisk = lp => false;
             testResult = testSubject.IsValid(new KarlaCrosby());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 

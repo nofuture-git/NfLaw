@@ -7,12 +7,19 @@ using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
 {
-    
     public class ExampleAssaultTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleAssaultTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleAttemptedBatteryAssault()
         {
@@ -28,8 +35,8 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             };
 
             var testResult = testCrime.IsValid(new DianaPistolEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -47,8 +54,8 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             };
 
             var testResult = testCrime.IsValid(new DianaPistolEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
 
         [Fact]
@@ -67,8 +74,8 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             };
 
             var testResult = testCrime.IsValid(new DianaPistolEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -87,8 +94,8 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             };
 
             var testResult = testCrime.IsValid(new DianaPistolEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
     }
 

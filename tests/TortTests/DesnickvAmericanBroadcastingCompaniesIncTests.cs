@@ -4,6 +4,7 @@ using NoFuture.Law.US;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US.Persons;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, trespass requires some protectable interest
     /// ]]>
     /// </remarks>
-    
     public class DesnickvAmericanBroadcastingCompaniesIncTests
     {
+        private readonly ITestOutputHelper output;
+
+        public DesnickvAmericanBroadcastingCompaniesIncTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void DesnickvAmericanBroadcastingCompaniesInc()
         {
@@ -35,7 +42,7 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new Desnick(), new AmericanBroadcastingCompaniesInc());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
 
             test.Injury = new InvasionOfPrivacy(ExtensionMethods.Tortfeasor)
@@ -45,9 +52,9 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             testResult = test.IsValid(new Desnick(), new AmericanBroadcastingCompaniesInc());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
 
-            Console.WriteLine(test.ToString());
+            this.output.WriteLine(test.ToString());
         }
     }
 

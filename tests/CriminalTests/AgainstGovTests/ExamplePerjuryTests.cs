@@ -4,12 +4,19 @@ using NoFuture.Law.Criminal.US.Elements.AgainstGov;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.AgainstGovTests
 {
-    
     public class ExamplePerjuryTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExamplePerjuryTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void PerjuryTest()
         {
@@ -30,8 +37,8 @@ namespace NoFuture.Law.Criminal.Tests.AgainstGovTests
             };
 
             var testResult = testCrime.IsValid(new MarcusWitnessEg());
-            Console.WriteLine(testCrime);
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
     }
 

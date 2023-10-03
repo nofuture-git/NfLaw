@@ -74,7 +74,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
 
             var testResult = testSubject.IsValid(new NorthHouston(), new PwRealEstate());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
         }
     }
 

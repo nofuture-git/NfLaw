@@ -6,6 +6,7 @@ using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.InsanityTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.InsanityTests
     /// doctrine issue, the mental defect has meaning in its effect, not as a medical label
     /// ]]>
     /// </remarks>
-    [TestFixture()]
     public class StatevGuidoTests
     {
+        private readonly ITestOutputHelper output;
+
+        public StatevGuidoTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void StatevGuido()
         {
@@ -37,7 +44,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.InsanityTests
             };
 
             var testResult = testCrime.IsValid(new Guido());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new MNaghten
             {
@@ -46,8 +53,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.InsanityTests
             };
 
             testResult = testSubject.IsValid(new Guido());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
 
         }
     }

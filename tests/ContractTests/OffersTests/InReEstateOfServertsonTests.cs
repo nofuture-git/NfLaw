@@ -45,10 +45,10 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
             var markAndKelly = new MarkAndKellyThorson();
 
             var testResult = testSubject.IsValid(helen, markAndKelly);
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
             helen.HasDied = true;
             testResult = testSubject.IsValid(helen, markAndKelly);
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
             Console.WriteLine(testSubject.ToString());
         }
     }

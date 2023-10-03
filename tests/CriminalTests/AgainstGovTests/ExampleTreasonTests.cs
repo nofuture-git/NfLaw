@@ -5,12 +5,19 @@ using NoFuture.Law.Criminal.US.Elements.AgainstGov;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.AgainstGovTests
 {
-    
     public class ExampleTreasonTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleTreasonTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TreasonTest()
         {
@@ -30,8 +37,8 @@ namespace NoFuture.Law.Criminal.Tests.AgainstGovTests
             };
 
             var testResult = testCrime.IsValid(new MildredGillars());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -53,8 +60,8 @@ namespace NoFuture.Law.Criminal.Tests.AgainstGovTests
             };
 
             var testResult = testCrime.IsValid(new MildredGillars());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
     }
 

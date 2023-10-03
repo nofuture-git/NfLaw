@@ -3,12 +3,19 @@ using NoFuture.Law.Procedure.Civil.US.Pleadings;
 using NoFuture.Law.US.Courts;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Civil.Tests
 {
-    
     public class ExampleTestInterveneJoiner
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleTestInterveneJoiner(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestInterveneJoinerIsValid()
         {
@@ -21,20 +28,20 @@ namespace NoFuture.Law.Procedure.Civil.Tests
 
             var testResult =
                 testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant(), new ExampleThirdParty());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
             testSubject.ClearReasons();
 
             testResult =
                 testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant(), new ExampleAbsentee());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             testSubject.IsFeasible = lp => false;
             testSubject.IsStatueAuthorizedRight = lp => false;
             testResult =
                 testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant(), new ExampleAbsentee{IsIndispensable = true});
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
             testSubject.IsFeasible = lp => true;
             testSubject.IsStatueAuthorizedRight = lp => lp is ExampleAbsentee;
 

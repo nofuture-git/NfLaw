@@ -4,12 +4,19 @@ using NoFuture.Law.Criminal.US.Elements.AgainstGov;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.AgainstGovTests
 {
-    
     public class ExampleEspionageTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleEspionageTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestEspionage()
         {
@@ -26,8 +33,8 @@ namespace NoFuture.Law.Criminal.Tests.AgainstGovTests
             };
 
             var testResult = testCrime.IsValid(new EthelRosenberg(), new JuliusRosenberg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
     }
 

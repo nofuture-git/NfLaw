@@ -5,12 +5,19 @@ using NoFuture.Law.Criminal.US.Elements.Homicide;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.HomicideTests
 {
-    [TestFixture()]
     public class ExampleHomicideInOtherTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleHomicideInOtherTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleFelonyMurder()
         {
@@ -29,8 +36,8 @@ namespace NoFuture.Law.Criminal.Tests.HomicideTests
             };
 
             var testResult = testFirstCrime.IsValid(new JouquinBurnerEg());
-            Console.WriteLine(testFirstCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testFirstCrime.ToString());
+            Assert.True(testResult);
 
             var testCrime = new Felony
             {
@@ -42,8 +49,8 @@ namespace NoFuture.Law.Criminal.Tests.HomicideTests
             };
 
             testResult = testCrime.IsValid(new JouquinBurnerEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -64,8 +71,8 @@ namespace NoFuture.Law.Criminal.Tests.HomicideTests
             };
 
             var testResult = testFirstCrime.IsValid(new JouquinBurnerEg());
-            Console.WriteLine(testFirstCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testFirstCrime.ToString());
+            Assert.True(testResult);
             var yyyy = DateTime.Today.Year;
 
             var testCrime = new Felony
@@ -81,8 +88,8 @@ namespace NoFuture.Law.Criminal.Tests.HomicideTests
             };
 
             testResult = testCrime.IsValid(new JouquinBurnerEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
 
         [Fact]
@@ -103,8 +110,8 @@ namespace NoFuture.Law.Criminal.Tests.HomicideTests
             };
 
             var testResult = testInputCrime.IsValid(new RobertaBrandishEg());
-            Console.WriteLine(testInputCrime);
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testInputCrime.ToString());
+            Assert.True(testResult);
 
             var testCrime = new Felony
             {
@@ -116,8 +123,8 @@ namespace NoFuture.Law.Criminal.Tests.HomicideTests
             };
 
             testResult = testCrime.IsValid(new RobertaBrandishEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
     }
 

@@ -4,12 +4,19 @@ using NoFuture.Law.Criminal.US.Elements.Homicide;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.HomicideTests
 {
-    
     public class ExampleAdequateProvocationTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleAdequateProvocationTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleIndequateProvocation()
         {
@@ -29,8 +36,8 @@ namespace NoFuture.Law.Criminal.Tests.HomicideTests
             };
 
             var testResult = testCrime.IsValid(new DillonRagerEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
 
         [Fact]
@@ -51,8 +58,8 @@ namespace NoFuture.Law.Criminal.Tests.HomicideTests
             };
 
             var testResult = testCrime.IsValid(new JoseRagerEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -71,8 +78,8 @@ namespace NoFuture.Law.Criminal.Tests.HomicideTests
             };
 
             var testResult = testCrime.IsValid(new JoseRagerEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
 
         [Fact]
@@ -98,8 +105,8 @@ namespace NoFuture.Law.Criminal.Tests.HomicideTests
             };
 
             var testResult = testCrime.IsValid(new JoseRagerEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
     }
 

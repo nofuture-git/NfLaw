@@ -33,7 +33,7 @@ namespace NoFuture.Law.Contract.Tests.MutualAssentTests
             var testResult = testSubject.IsValid(new WOLucy(), new AHZehmer());
             Console.WriteLine(string.Join(", ", testSubject.GetReasonEntries()));
             Console.WriteLine(string.Join(", ", testSubject.Assent.GetReasonEntries()));
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

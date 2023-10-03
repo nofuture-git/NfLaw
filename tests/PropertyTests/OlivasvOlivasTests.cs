@@ -6,6 +6,7 @@ using NoFuture.Law.Property.US.FormsOf.InTerra.Shared;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Property.Tests
     /// 
     /// ]]>
     /// </remarks>
-    
     public class OlivasvOlivasTests
     {
+        private readonly ITestOutputHelper output;
+
+        public OlivasvOlivasTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void OlivasvOlivas()
         {
@@ -31,15 +38,15 @@ namespace NoFuture.Law.Property.Tests
 
             var testResult = testsubject.IsValid(new SamOlivas(), new CarolinaOlivas());
 
-            Assert.IsTrue(testResult);
-            Console.WriteLine(testsubject.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(testsubject.ToString());
 
             var testSubject2 = new Ouster(testsubject) {IsVacated = p => p is SamOlivas};
 
             testResult = testSubject2.IsValid(new SamOlivas(), new CarolinaOlivas());
 
-            Assert.IsFalse(testResult);
-            Console.WriteLine(testSubject2.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(testSubject2.ToString());
 
         }
     }

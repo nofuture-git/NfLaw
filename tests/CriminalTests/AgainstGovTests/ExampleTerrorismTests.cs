@@ -4,15 +4,22 @@ using NoFuture.Law.Criminal.US.Elements.AgainstGov;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.AgainstGovTests
 {
     /// <summary>
     /// (U.S. v. Moussaoui, 2011)
     /// </summary>
-    
     public class ExampleTerrorismTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleTerrorismTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TerrorismTest()
         {
@@ -30,8 +37,8 @@ namespace NoFuture.Law.Criminal.Tests.AgainstGovTests
                 }
             };
             var testResult = testCrime.IsValid(new ZacariasMoussaoui());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
     }
 

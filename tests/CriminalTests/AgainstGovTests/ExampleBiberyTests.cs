@@ -4,12 +4,19 @@ using NoFuture.Law.Criminal.US.Elements.AgainstGov;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.AgainstGovTests
 {
-    
     public class ExampleBiberyTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleBiberyTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestBibery()
         {
@@ -27,8 +34,8 @@ namespace NoFuture.Law.Criminal.Tests.AgainstGovTests
             };
 
             var testResult = testCrime.IsValid(new IsabelBriberEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
     }
 

@@ -18,7 +18,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     ///  doctrine issue, a term which states that no oral terms are allowed means just that
     /// ]]>
     /// </remarks>
-    [TestFixture()]
+    
     public class NelsonvElwayTests
     {
         [Fact]
@@ -62,7 +62,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
             var testResult = testSubject.IsValid(new Nelson(), new Elway());
             Console.WriteLine(testSubject.ToString());
             //is still false since the terms include the Expressly Conditional term
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
         }
     }
 

@@ -53,7 +53,7 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
             };
 
             var testResult = testContract.IsValid(new JacobYoung(), new Kent());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new SubstantialPerformance<Promise>(testContract)
             {
@@ -72,7 +72,7 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
 
             testResult = testSubject.IsValid(new JacobYoung(), new Kent());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

@@ -15,7 +15,7 @@ namespace NoFuture.Law.Contract.Tests.UccTests
     /// Doctrine issue, what makes one a merchant can be subtle 
     /// ]]>
     /// </remarks>
-    [TestFixture()]
+    
     public class GaredHoldingsvBestBoltTests
     {
         [Fact]
@@ -34,8 +34,8 @@ namespace NoFuture.Law.Contract.Tests.UccTests
                 IsPackagedAndLabeled = true
             };
             var testResult01 = testSubject01.IsValid(null, null);
-            Assert.IsTrue(testResult01);
-            Assert.IsTrue(testResult00);
+            Assert.True(testResult01);
+            Assert.True(testResult00);
 
         }
     }

@@ -10,12 +10,19 @@ using NoFuture.Law.Criminal.US.Terms.Violence;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
 {
-    
     public class ExampleDefenseOfPropertyTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleDefenseOfPropertyTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleDefenseOfProperty()
         {
@@ -34,7 +41,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
             };
 
             var testResult = testCrime.IsValid(new KelseyEg());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new DefenseOfProperty
             {
@@ -54,8 +61,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
             };
 
             testResult = testSubject.IsValid(new KelseyEg(), new KeithEg());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 

@@ -60,7 +60,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
 
             var testResult = testSubject.IsValid(new AcmeMarket(), new FedArmored());
             Console.WriteLine(testSubject);
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
         }
     }
 

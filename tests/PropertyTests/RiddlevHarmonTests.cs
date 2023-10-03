@@ -5,6 +5,7 @@ using NoFuture.Law.Property.US.FormsOf.InTerra.Shared;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Property.Tests
     /// 
     /// ]]>
     /// </remarks>
-    
     public class RiddlevHarmonTests
     {
+        private readonly ITestOutputHelper output;
+
+        public RiddlevHarmonTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void RiddlevHarmon()
         {
@@ -31,8 +38,8 @@ namespace NoFuture.Law.Property.Tests
             };
 
             var testResult = testSubject.IsValid(new Riddle(), new Harmon());
-            Assert.IsFalse(testResult);
-            Console.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

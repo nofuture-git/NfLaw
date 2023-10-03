@@ -3,6 +3,7 @@ using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.UnintentionalTort;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, the predicates for econ loss negligence
     /// ]]>
     /// </remarks>
-    
     public class PeopleExpressAirlinesvConsolidatedRailTests
     {
+        private readonly ITestOutputHelper output;
+
+        public PeopleExpressAirlinesvConsolidatedRailTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void PeopleExpressAirlinesvConsolidatedRail()
         {
@@ -40,8 +47,8 @@ namespace NoFuture.Law.Tort.Tests
                 IsLocationOfEntityPredictable = lp => lp is PeopleExpressAirlinesInc,
             };
             var testResult = test.IsValid(new PeopleExpressAirlinesInc(), new ConsolidatedRailCorporation());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 

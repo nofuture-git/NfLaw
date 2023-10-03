@@ -2,12 +2,19 @@
 using NoFuture.Law.US;
 using NoFuture.Law.US.Courts;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Civil.Tests.JudgmentTests
 {
-    
     public class ExampleTestJudgmentAsMatterOfLaw
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleTestJudgmentAsMatterOfLaw(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestJudgmentAsMatterOfLawIsValid()
         {
@@ -20,7 +27,7 @@ namespace NoFuture.Law.Procedure.Civil.Tests.JudgmentTests
             };
 
             var testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 }

@@ -3,6 +3,7 @@ using NoFuture.Law.Property.US.FormsOf.InTerra;
 using NoFuture.Law.Property.US.FormsOf.InTerra.Sequential;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, commerical lease are in favor of landlord
     /// ]]>
     /// </remarks>
-    
     public class RuckervWynnTests
     {
+        private readonly ITestOutputHelper output;
+
+        public RuckervWynnTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void RuckervWynn()
         {
@@ -31,7 +38,7 @@ namespace NoFuture.Law.Property.Tests
             };
 
             var testResult = lease.IsValid(new Rucker(), new Wynn());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var test = new Eviction(lease)
             {
@@ -43,8 +50,8 @@ namespace NoFuture.Law.Property.Tests
             };
 
             testResult = test.IsValid(new Rucker(), new Wynn());
-            Console.WriteLine(test.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(test.ToString());
+            Assert.True(testResult);
         }
     }
 

@@ -4,6 +4,7 @@ using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.ActusReusTests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Criminal.Tests.ActusReusTests
     /// doctrine issue, there is a difference between being high or drunk and being an addict or alcoholic
     /// ]]>
     /// </remarks>
-    
     public class PowellvTexasTests
     {
+        private readonly ITestOutputHelper output;
+
+        public PowellvTexasTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void PowellvTexas()
         {
@@ -28,8 +35,8 @@ namespace NoFuture.Law.Criminal.Tests.ActusReusTests
             testSubject.IsAction = lp => lp is Powell;
 
             var testResult = testSubject.IsValid(new Powell());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 

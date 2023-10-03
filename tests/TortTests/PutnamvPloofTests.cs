@@ -4,6 +4,7 @@ using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.US;
 using NoFuture.Law.Criminal.US.Defense.Justification;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctine issue, necessity defense again 
     /// ]]>
     /// </remarks>
-    
     public class PutnamvPloofTests
     {
+        private readonly ITestOutputHelper output;
+
+        public PutnamvPloofTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void PutnamvPloof()
         {
@@ -33,8 +40,8 @@ namespace NoFuture.Law.Tort.Tests
                     }
                 };
             var testResult = test.IsValid(new Putnam(), new Ploof());
-            Console.WriteLine(test.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(test.ToString());
+            Assert.True(testResult);
         }
     }
 

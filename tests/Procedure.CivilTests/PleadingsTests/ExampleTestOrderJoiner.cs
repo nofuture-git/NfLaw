@@ -2,12 +2,19 @@
 using NoFuture.Law.Procedure.Civil.US.Pleadings;
 using NoFuture.Law.US.Courts;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Civil.Tests
 {
-    
     public class ExampleTestOrderJoiner
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleTestOrderJoiner(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestOrderJoinerIsValid()
         {
@@ -21,30 +28,30 @@ namespace NoFuture.Law.Procedure.Civil.Tests
             };
 
             var testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant(), new ExampleAbsentee());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
             testSubject.ClearReasons();
 
             testSubject.IsRequiredForCompleteRelief = lp => false;
             testSubject.IsRequiredToProtectOthersExposure = lp => lp is ExampleAbsentee;
 
             testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant(), new ExampleAbsentee());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
             testSubject.ClearReasons();
 
             testSubject.IsRequiredToProtectOthersExposure = lp => false;
             testSubject.IsRequiredToAvoidContradictoryObligations = lp => lp is ExampleAbsentee;
 
             testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant(), new ExampleAbsentee());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
             testSubject.ClearReasons();
 
             testSubject.IsRequiredToAvoidContradictoryObligations = lp => false;
             testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant(), new ExampleAbsentee());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 }

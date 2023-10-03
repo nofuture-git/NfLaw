@@ -6,12 +6,19 @@ using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.InsanityTests
 {
-    [TestFixture()]
     public class ExampleSubstanCapacityTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleSubstanCapacityTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleSubstantialCapacity()
         {
@@ -29,7 +36,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.InsanityTests
             };
 
             var testResult = testCrime.IsValid(new LoreenEg());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new SubstantialCapacity
             {
@@ -39,8 +46,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.InsanityTests
             };
 
             testResult = testSubject.IsValid(new LoreenEg());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 

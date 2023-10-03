@@ -32,7 +32,7 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
                 IsSoughtByOfferor = (lp, p) => true
             };
             var testResult = testSubject.IsValid(new Harrington(), new Taylor());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
             Console.WriteLine(testSubject.ToString());
         }
     }

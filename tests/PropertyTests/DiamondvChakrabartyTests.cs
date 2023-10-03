@@ -2,6 +2,7 @@
 using NoFuture.Law.Property.US.FormsOf.Intellectus;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -13,9 +14,15 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, being a alive does not preclude it from being patented
     /// ]]>
     /// </remarks>
-    
     public class DiamondvChakrabartyTests
     {
+        private readonly ITestOutputHelper output;
+
+        public DiamondvChakrabartyTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void DiamondvChakrabarty()
         {
@@ -29,8 +36,8 @@ namespace NoFuture.Law.Property.Tests
                 IsObviousIdea = false
             };
             var testResult = test.IsValid(new Diamond(), new Chakrabarty());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 

@@ -4,12 +4,19 @@ using NoFuture.Law.Procedure.Criminal.US;
 using NoFuture.Law.Procedure.Criminal.US.Searches;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    
     public class ExampleInstrumentOfTheStateTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleInstrumentOfTheStateTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestInstrumentOfTheStateIsValid00()
         {
@@ -20,8 +27,8 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
                 IsPromoteInterestOfTheState = lp => false
             };
             var testResult = testSubject.IsValid(new ExampleCitizenSearchConductor(), new ExampleLawEnforcement());
-            Assert.IsFalse(testResult);
-            Console.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(testSubject.ToString());
         }
 
         [Fact]
@@ -34,8 +41,8 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
                 IsPromoteInterestOfTheState = lp => true
             };
             var testResult = testSubject.IsValid(new ExampleCitizenSearchConductor(), new ExampleLawEnforcement());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

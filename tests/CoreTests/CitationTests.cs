@@ -5,12 +5,18 @@ using System.Linq;
 using System.Reflection;
 using NoFuture.Law.US.CaseReading;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tests
 {
-    
     public class CitationTests
     {
+        private readonly ITestOutputHelper output;
+
+        public CitationTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
 
         [Fact]
         public void TestTryFindCaseName()
@@ -68,7 +74,7 @@ namespace NoFuture.Law.Tests
             };
 
             foreach(var expect in expectedCitations)
-                Assert.IsTrue(testResults.Any(v => string.Equals(v, expect)));
+                Assert.True(testResults.Any(v => string.Equals(v, expect)));
         }
 
         [Fact]
@@ -94,7 +100,7 @@ namespace NoFuture.Law.Tests
             {
                 var rslt = Citation.IsNumberEsque(test);
                 Console.WriteLine(new Tuple<string, bool>(test, rslt));
-                Assert.IsTrue(rslt);
+                Assert.True(rslt);
             }
         }
 
@@ -102,7 +108,7 @@ namespace NoFuture.Law.Tests
         public void TestTrimStopWords()
         {
             var testResult = Citation.TrimStopWords("in in of and, to N.J.S.A. 9:2 -17,".Split(' ').ToList());
-            Assert.AreEqual("N.J.S.A. 9:2 -17,", string.Join(" ", testResult));
+            Assert.Equal("N.J.S.A. 9:2 -17,", string.Join(" ", testResult));
         }
 
         [Fact]
@@ -180,7 +186,7 @@ namespace NoFuture.Law.Tests
             };
 
             foreach (var expect in expectedCitations)
-                Assert.IsTrue(testResults.Any(v => string.Equals(v, expect)));
+                Assert.True(testResults.Any(v => string.Equals(v, expect)));
         }
 
         public static string[] GetCaseExample00()

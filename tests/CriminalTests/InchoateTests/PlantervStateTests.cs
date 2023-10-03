@@ -4,6 +4,7 @@ using NoFuture.Law.Criminal.US.Elements.Inchoate;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.InchoateTests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
     /// doctrine issue, with solicitation, which is mostly what is said, understanding the lang is critical
     /// ]]>
     /// </remarks>
-    
     public class PlantervStateTests
     {
+        private readonly ITestOutputHelper output;
+
+        public PlantervStateTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void PlantervState()
         {
@@ -38,8 +45,8 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
                 }
             };
             var testResult = testCrime.IsValid(new Planter());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
     }
 

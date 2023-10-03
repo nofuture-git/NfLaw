@@ -4,12 +4,19 @@ using NoFuture.Law.Criminal.US.Elements.AgainstPublic;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
 {
-    
     public class ExampleFailureToDisperseTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleFailureToDisperseTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleUnlawfullAssembly()
         {
@@ -28,8 +35,8 @@ namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
             };
             var testResult = testCrime.IsValid(new BuckShouterEg(), new BuckBudoneEg(), new BuckBudtwoEg(),
                 new BuckBudthreeEg(), new BuckBudfourEg(), new BuckBudfiveEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -51,8 +58,8 @@ namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
             };
             var testResult = testCrime.IsValid(new BuckShouterEg(), new BuckBudoneEg(), new BuckBudtwoEg(),
                 new BuckBudthreeEg(), new BuckBudfourEg(), new BuckBudfiveEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -74,8 +81,8 @@ namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
             };
             var testResult = testCrime.IsValid(new BuckShouterEg(), new BuckBudoneEg(), new BuckBudtwoEg(),
                 new BuckBudthreeEg(), new BuckBudfourEg(), new BuckBudfiveEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
     }
 

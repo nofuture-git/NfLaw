@@ -17,7 +17,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, the writing was not sufficient, despite there being everything else being obvious
     /// ]]>
     /// </remarks>
-    [TestFixture()]
+    
     public class GuenthervAmerTexTests
     {
         [Fact]
@@ -54,7 +54,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
 
             var testResult = testSubject.IsValid(new Guenther(), new AmerTex());
             //the court concludes the map is too vague to be used to plot the ground
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
             Console.WriteLine(testSubject.ToString());
         }
 

@@ -4,12 +4,19 @@ using NoFuture.Law.Criminal.US.Elements.AgainstPublic;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
 {
-    
     public class ExampleLoiteringTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleLoiteringTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestLoiteringIsValid()
         {
@@ -26,8 +33,8 @@ namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
             };
 
             var testResult = testCrime.IsValid(new SomeBumEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
     }
 

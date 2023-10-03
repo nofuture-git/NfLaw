@@ -2,12 +2,19 @@
 using NoFuture.Law.Criminal.US.Elements.AgainstProperty.Theft;
 using NoFuture.Law.Criminal.US.Elements.AttendantCircumstances;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.TheftTests
 {
-    [TestFixture()]
     public class ExampleRobberyTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleRobberyTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleRobberyActTest()
         {
@@ -27,8 +34,8 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
             };
 
             var testResult = testAct.IsValid(new RodneyBlackmailEg(), new LindseyDealinEg());
-            Console.WriteLine(testAct.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testAct.ToString());
+            Assert.True(testResult);
         }
     }
 }

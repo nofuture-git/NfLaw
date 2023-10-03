@@ -5,12 +5,19 @@ using NoFuture.Law.Property.US.FormsOf.InTerra.Sequential;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Property.Tests
 {
-    
     public class PropertyInterestFactoryTests
     {
+        private readonly ITestOutputHelper output;
+
+        public PropertyInterestFactoryTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestApiLookAndStyle()
         {
@@ -18,25 +25,25 @@ namespace NoFuture.Law.Property.Tests
                 new PropertyInterestFactory(new RealProperty("some land"), ExtensionMethods.Defendant)
                     .IsPresentInterestPossibleInfinite(lp => true, new CurtisLandholder()) as FeeSimpleFactory;
 
-            Assert.IsNotNull(test00 );
+            Assert.NotNull(test00 );
 
             var test01 = test00.IsPresentInterestDefinitelyInfinite(lp => false, new CurtisLandholder()) as DefeasibleFeeFactory;
 
-            Assert.IsNotNull(test01);
+            Assert.NotNull(test01);
 
             var test02 =
                 test01.IsFutureInterestInGrantor(lp => true, new CurtisLandholder()) as
                     PropertyInterestFactoryValue<FeeSimpleSubject2ExecutoryInterest>;
 
-            Assert.IsNotNull(test02);
+            Assert.NotNull(test02);
 
             var testResult = test02.GetValue();
 
-            Assert.IsNotNull(testResult);
+            Assert.NotNull(testResult);
 
-            Assert.IsInstanceOf<FeeSimpleSubject2ExecutoryInterest>(testResult);
+            Assert.IsAssignableFrom<FeeSimpleSubject2ExecutoryInterest>(testResult);
 
-            Console.WriteLine(test02.ToString());
+            this.output.WriteLine(test02.ToString());
 
         }
 
@@ -55,9 +62,9 @@ namespace NoFuture.Law.Property.Tests
             }
 
             var testResultFactory00 = test as PropertyInterestFactoryValue<FeeSimpleAbsolute>;
-            Assert.IsNotNull(testResultFactory00);
+            Assert.NotNull(testResultFactory00);
 
-            Assert.IsInstanceOf<FeeSimpleAbsolute>(testResultFactory00.GetValue());
+            Assert.IsAssignableFrom<FeeSimpleAbsolute>(testResultFactory00.GetValue());
 
             count = 0;
             test = new PropertyInterestFactory(new RealProperty("some land"), ExtensionMethods.Defendant);
@@ -68,9 +75,9 @@ namespace NoFuture.Law.Property.Tests
             }
 
             var testResultFactory01 = test as PropertyInterestFactoryValue<FeeSimpleSubject2ExecutoryInterest>;
-            Assert.IsNotNull(testResultFactory01);
+            Assert.NotNull(testResultFactory01);
 
-            Assert.IsInstanceOf<FeeSimpleSubject2ExecutoryInterest>(testResultFactory01.GetValue());
+            Assert.IsAssignableFrom<FeeSimpleSubject2ExecutoryInterest>(testResultFactory01.GetValue());
 
             count = 0;
             test = new PropertyInterestFactory(new RealProperty("some land"), ExtensionMethods.Defendant);
@@ -81,9 +88,9 @@ namespace NoFuture.Law.Property.Tests
             }
 
             var testResultFactory02 = test as PropertyInterestFactoryValue<FeeSimpleDeterminable>;
-            Assert.IsNotNull(testResultFactory02);
+            Assert.NotNull(testResultFactory02);
 
-            Assert.IsInstanceOf<FeeSimpleDeterminable>(testResultFactory02.GetValue());
+            Assert.IsAssignableFrom<FeeSimpleDeterminable>(testResultFactory02.GetValue());
 
             count = 0;
             test = new PropertyInterestFactory(new RealProperty("some land"), ExtensionMethods.Defendant);
@@ -94,9 +101,9 @@ namespace NoFuture.Law.Property.Tests
             }
 
             var testResultFactory03 = test as PropertyInterestFactoryValue<FeeSimpleSubject2ConditionSubsequent>;
-            Assert.IsNotNull(testResultFactory03);
+            Assert.NotNull(testResultFactory03);
 
-            Assert.IsInstanceOf<FeeSimpleSubject2ConditionSubsequent>(testResultFactory03.GetValue());
+            Assert.IsAssignableFrom<FeeSimpleSubject2ConditionSubsequent>(testResultFactory03.GetValue());
 
             count = 0;
             test = new PropertyInterestFactory(new RealProperty("some land"), ExtensionMethods.Defendant);
@@ -107,9 +114,9 @@ namespace NoFuture.Law.Property.Tests
             }
 
             var testResultFactory04 = test as PropertyInterestFactoryValue<Reversion>;
-            Assert.IsNotNull(testResultFactory04);
+            Assert.NotNull(testResultFactory04);
 
-            Assert.IsInstanceOf<Reversion>(testResultFactory04.GetValue());
+            Assert.IsAssignableFrom<Reversion>(testResultFactory04.GetValue());
 
             count = 0;
             test = new PropertyInterestFactory(new RealProperty("some land"), ExtensionMethods.Defendant);
@@ -120,9 +127,9 @@ namespace NoFuture.Law.Property.Tests
             }
 
             var testResultFactory05 = test as PropertyInterestFactoryValue<VestedRemainderSubjectToOpen>;
-            Assert.IsNotNull(testResultFactory05);
+            Assert.NotNull(testResultFactory05);
 
-            Assert.IsInstanceOf<VestedRemainderSubjectToOpen>(testResultFactory05.GetValue());
+            Assert.IsAssignableFrom<VestedRemainderSubjectToOpen>(testResultFactory05.GetValue());
 
             count = 0;
             test = new PropertyInterestFactory(new RealProperty("some land"), ExtensionMethods.Defendant);
@@ -133,9 +140,9 @@ namespace NoFuture.Law.Property.Tests
             }
 
             var testResultFactory06 = test as PropertyInterestFactoryValue<VestedRemainderSubjectToOpen>;
-            Assert.IsNotNull(testResultFactory06);
+            Assert.NotNull(testResultFactory06);
 
-            Assert.IsInstanceOf<VestedRemainderSubjectToOpen>(testResultFactory06.GetValue());
+            Assert.IsAssignableFrom<VestedRemainderSubjectToOpen>(testResultFactory06.GetValue());
 
             count = 0;
             test = new PropertyInterestFactory(new RealProperty("some land"), ExtensionMethods.Defendant);
@@ -146,9 +153,9 @@ namespace NoFuture.Law.Property.Tests
             }
 
             var testResultFactory07 = test as PropertyInterestFactoryValue<ContingentRemainder>;
-            Assert.IsNotNull(testResultFactory07);
+            Assert.NotNull(testResultFactory07);
 
-            Assert.IsInstanceOf<ContingentRemainder>(testResultFactory07.GetValue());
+            Assert.IsAssignableFrom<ContingentRemainder>(testResultFactory07.GetValue());
 
             count = 0;
             test = new PropertyInterestFactory(new RealProperty("some land"), ExtensionMethods.Defendant);
@@ -159,9 +166,9 @@ namespace NoFuture.Law.Property.Tests
             }
 
             var testResultFactory08 = test as PropertyInterestFactoryValue<ContingentRemainder>;
-            Assert.IsNotNull(testResultFactory08);
+            Assert.NotNull(testResultFactory08);
 
-            Assert.IsInstanceOf<ContingentRemainder>(testResultFactory08.GetValue());
+            Assert.IsAssignableFrom<ContingentRemainder>(testResultFactory08.GetValue());
 
             count = 0;
             test = new PropertyInterestFactory(new RealProperty("some land"), ExtensionMethods.Defendant);
@@ -172,9 +179,9 @@ namespace NoFuture.Law.Property.Tests
             }
 
             var testResultFactory09 = test as PropertyInterestFactoryValue<AbsolutelyVestedRemainder>;
-            Assert.IsNotNull(testResultFactory09);
+            Assert.NotNull(testResultFactory09);
 
-            Assert.IsInstanceOf<AbsolutelyVestedRemainder>(testResultFactory09.GetValue());
+            Assert.IsAssignableFrom<AbsolutelyVestedRemainder>(testResultFactory09.GetValue());
 
             count = 0;
             test = new PropertyInterestFactory(new RealProperty("some land"), ExtensionMethods.Defendant);
@@ -185,9 +192,9 @@ namespace NoFuture.Law.Property.Tests
             }
 
             var testResultFactory0A = test as PropertyInterestFactoryValue<VestedRemainderSubjectToDivestment>;
-            Assert.IsNotNull(testResultFactory0A);
+            Assert.NotNull(testResultFactory0A);
 
-            Assert.IsInstanceOf<VestedRemainderSubjectToDivestment>(testResultFactory0A.GetValue());
+            Assert.IsAssignableFrom<VestedRemainderSubjectToDivestment>(testResultFactory0A.GetValue());
 
             count = 0;
             test = new PropertyInterestFactory(new RealProperty("some land"), ExtensionMethods.Defendant);
@@ -198,9 +205,9 @@ namespace NoFuture.Law.Property.Tests
             }
 
             var testResultFactory0B = test as PropertyInterestFactoryValue<VestedRemainderSubjectToDivestment>;
-            Assert.IsNotNull(testResultFactory0B);
+            Assert.NotNull(testResultFactory0B);
 
-            Assert.IsInstanceOf<VestedRemainderSubjectToDivestment>(testResultFactory0B.GetValue());
+            Assert.IsAssignableFrom<VestedRemainderSubjectToDivestment>(testResultFactory0B.GetValue());
 
         }
 

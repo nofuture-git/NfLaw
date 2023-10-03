@@ -32,7 +32,7 @@ namespace NoFuture.Law.Contract.Tests.UccTests
                     Acceptance = o => new Pay4EarthenClay()
                 };
             var testResult = testSubject.IsValid(new Colgate(), new TousleyBixler());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
             Console.WriteLine(testSubject.ToString());
         }
     }

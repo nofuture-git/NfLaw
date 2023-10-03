@@ -2,6 +2,7 @@
 using NoFuture.Law.Property.US.FormsOf.Intellectus;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -13,16 +14,22 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, trademark is to distinguish product source
     /// ]]>
     /// </remarks>
-    
     public class QualitexCovJacobsonProductsCoTests
     {
+        private readonly ITestOutputHelper output;
+
+        public QualitexCovJacobsonProductsCoTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void QualitexCovJacobsonProductsCo()
         {
             var test = new GreenGoldColoredCleaningPads();
             test.IsSecondaryMeaning = true;
-            Assert.IsTrue(test.IsValid(new QualitexCo(), new JacobsonProductsCo()));
-            Console.WriteLine(test.ToString());
+            Assert.True(test.IsValid(new QualitexCo(), new JacobsonProductsCo()));
+            this.output.WriteLine(test.ToString());
         }
     }
 

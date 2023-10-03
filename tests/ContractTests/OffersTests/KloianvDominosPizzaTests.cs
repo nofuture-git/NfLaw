@@ -27,7 +27,7 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
             var dpLawyer = new DominosPizzaLlcAttorney();
 
             var testSubject = new OfferDefendantPay2SettleLawsuit();
-            Assert.IsTrue(testSubject.IsValid(ekLawyer, dpLawyer));
+            Assert.True(testSubject.IsValid(ekLawyer, dpLawyer));
         }
 
         [Fact]
@@ -57,7 +57,7 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
 
             var testResult = testSubject.IsValid(new EdwardKloianAttorney(), new DominosPizzaLlcAttorney());
             
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
             Console.WriteLine(testSubject.ToString());
         }
 

@@ -4,12 +4,19 @@ using NoFuture.Law.Criminal.US.Elements.AgainstPublic;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
 {
-    
     public class ExampleDisorderlyConductTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleDisorderlyConductTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleDirorderlyConductAct()
         {
@@ -19,8 +26,8 @@ namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
             };
 
             var testResult = testAct.IsValid(new DavidInebriatedEg(), new DanielDrunkbuddyEg());
-            Console.WriteLine(testAct.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testAct.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -42,14 +49,14 @@ namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
                 AttendantCircumstances = { publicPlace }
             };
             var testResult = testCrime.IsValid(new DavidInebriatedEg(), new DanielDrunkbuddyEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
 
             publicPlace.IsAccessibleToPublic = false;
             publicPlace.Name = "private residence in the country";
             testResult = testCrime.IsValid(new DavidInebriatedEg(), new DanielDrunkbuddyEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
     }
 

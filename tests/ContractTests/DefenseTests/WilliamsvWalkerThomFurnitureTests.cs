@@ -17,7 +17,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, unconsionable can be on unreasonably favorable terms alone
     /// ]]>
     /// </remarks>
-    [TestFixture()]
+    
     public class WilliamsvWalkerThomFurnitureTests
     {
         [Fact]
@@ -47,7 +47,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
 
             var testResult = testSubject.IsValid(new WalkerThom(), new Williams());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
 
         public static ISet<Term<object>> GetTerms()

@@ -5,6 +5,7 @@ using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.ActusReusTests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Criminal.Tests.ActusReusTests
     /// doctrine issue, possession is another kind of actus reus 
     /// ]]>
     /// </remarks>
-    
     public class WendellHolisvTexasTests
     {
+        private readonly ITestOutputHelper output;
+
+        public WendellHolisvTexasTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void WendllHolisvTexas()
         {
@@ -28,13 +35,13 @@ namespace NoFuture.Law.Criminal.Tests.ActusReusTests
             testSubject.ActusReus = testPossession;
             testPossession.IsKnowinglyProcured = lp => lp is WendellHollis;
             var testResult = testPossession.IsValid(new WendellHollis());
-            Console.WriteLine(testPossession.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testPossession.ToString());
+            Assert.True(testResult);
 
             //defendant contents no statute duty to report multiple prescriptions
             var testOmission = new Duty {IsStatuteOrigin = lp => false};
             testResult = testOmission.IsValid(new WendellHollis());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
         }
     }
 

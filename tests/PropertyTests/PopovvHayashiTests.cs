@@ -6,6 +6,7 @@ using NoFuture.Law.Property.US.FormsOf;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, illustrate concept of taking possession, and resolution by way of equitable division
     /// ]]>
     /// </remarks>
-    
     public class PopovvHayashiTests
     {
+        private readonly ITestOutputHelper output;
+
+        public PopovvHayashiTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void PopovvHayashi()
         {
@@ -39,7 +46,7 @@ namespace NoFuture.Law.Property.Tests
             };
 
             var testResult = hitBall.IsValid(new Popov(), new Hayashi(), new MajorLeagueBaseball());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
             
             baseball.IsInPossessionOf = lp => lp is Hayashi;
 
@@ -56,8 +63,8 @@ namespace NoFuture.Law.Property.Tests
                 SubjectProperty = baseball
             };
             testResult = test.IsValid(new Popov(), new Hayashi(), new MajorLeagueBaseball());
-            Assert.IsFalse(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(test.ToString());
 
         }
     }

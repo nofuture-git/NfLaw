@@ -6,12 +6,19 @@ using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.Property.US.FormsOf;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.TheftTests
 {
-    
     public class ExampleByDeceptionTest
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleByDeceptionTest(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleByFalseImpression()
         {
@@ -31,8 +38,8 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
             };
 
             var testResult = testCrime.IsValid(new JeremyTheifEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -61,8 +68,8 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
             testCrime.AttendantCircumstances.Add(testReliance);
 
             var testResult = testCrime.IsValid(new JeremyTheifEg(), new ChuckUnrelianceEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
 
         [Fact]
@@ -91,8 +98,8 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
             testCrime.AttendantCircumstances.Add(testReliance);
 
             var testResult = testCrime.IsValid(new JeremyTheifEg(), new ChuckUnrelianceEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
     }
 

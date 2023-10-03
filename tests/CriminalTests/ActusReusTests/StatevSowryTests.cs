@@ -5,6 +5,7 @@ using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.ActusReusTests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Criminal.Tests.ActusReusTests
     /// doctrine issue, one cannot act voluntarily while under the direct control of arresting officer
     /// ]]>
     /// </remarks>
-    
     public class StatevSowryTests
     {
+        private readonly ITestOutputHelper output;
+
+        public StatevSowryTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void StatevSowry()
         {
@@ -36,8 +43,8 @@ namespace NoFuture.Law.Criminal.Tests.ActusReusTests
             };
 
             var testResult = testSubject.IsValid(new Sowry());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 

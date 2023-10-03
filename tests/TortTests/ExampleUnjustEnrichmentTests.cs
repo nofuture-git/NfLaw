@@ -3,12 +3,19 @@ using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
-    
     public class ExampleUnjustEnrichmentTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleUnjustEnrichmentTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestUnjustEnrichmentIsValid()
         {
@@ -25,8 +32,8 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new SomePlaintiff(), new SomeDefendant());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 

@@ -3,6 +3,7 @@ using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, when the loose requirements of cause in abnormal danger acts is just too loose
     /// ]]>
     /// </remarks>
-    
     public class MadsenvEastJordanIrrigationCoTests
     {
+        private readonly ITestOutputHelper output;
+
+        public MadsenvEastJordanIrrigationCoTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void MadsenvEastJordanIrrigationCo()
         {
@@ -46,8 +53,8 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new Madsen(), new EastJordanIrrigationCo());
-            Console.WriteLine(test.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(test.ToString());
+            Assert.False(testResult);
         }
     }
 

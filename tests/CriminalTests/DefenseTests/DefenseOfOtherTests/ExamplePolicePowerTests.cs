@@ -6,12 +6,19 @@ using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
 {
-    
     public class ExamplePolicePowerTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExamplePolicePowerTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExamplePolicePower()
         {
@@ -29,7 +36,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
                 }
             };
             var testResult = testCrime.IsValid(new OfficerColinEg());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new PolicePower
             {
@@ -39,8 +46,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
             };
 
             testResult = testSubject.IsValid(new OfficerColinEg(), new LindaEg());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 

@@ -41,7 +41,7 @@ namespace NoFuture.Law.Contract.Tests.AcceptanceTests
             };
 
             var testResult = testSubject.IsValid(new Behee(), new Smiths());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
             Console.WriteLine(testSubject.ToString());
         }
 

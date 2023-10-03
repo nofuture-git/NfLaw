@@ -34,7 +34,7 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
 
             var testResult = testSubject.IsValid(new Webb(), new McGowin());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

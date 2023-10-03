@@ -4,6 +4,7 @@ using NoFuture.Law.Property.US.FormsOf.Intellectus;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, parody is a form of fair use
     /// ]]>
     /// </remarks>
-    
     public class SuntrustBankvHoughtonMifflinCoTests
     {
+        private readonly ITestOutputHelper output;
+
+        public SuntrustBankvHoughtonMifflinCoTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void SuntrustBankvHoughtonMifflinCo()
         {
@@ -34,8 +41,8 @@ namespace NoFuture.Law.Property.Tests
             };
 
             var testResult = test.IsValid(new SuntrustBank(), new HoughtonMifflinCo());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 

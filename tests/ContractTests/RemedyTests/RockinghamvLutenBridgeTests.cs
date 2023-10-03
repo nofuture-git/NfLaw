@@ -53,7 +53,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             };
 
             var testResult = testContract.IsValid(new Rockingham(), new LutenBridge());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new Expectation<Promise>(testContract)
             {
@@ -63,7 +63,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
 
             testSubject.Limits.CalcAvoidable = lp => 50m;
             testResult = testSubject.IsValid(new Rockingham(), new LutenBridge());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
             Console.WriteLine(testSubject.ToString());
         }
     }

@@ -4,12 +4,19 @@ using System.Linq;
 using NoFuture.Law.Property.US.Acquisition.Found;
 using NoFuture.Law.US;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Property.Tests
 {
-    
     public class ExampleFoundPropertyTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleFoundPropertyTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         private ILegalPerson _propertyOwner = new LegalPerson("Jim Owner");
 
         private ILegalProperty _property = new LegalProperty("something");
@@ -34,8 +41,8 @@ namespace NoFuture.Law.Property.Tests
             };
 
             var testResult = test.IsValid(_propertyOwner);
-            Assert.IsTrue(testResult);
-            Console.Write(test.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(test.ToString());
         }
 
         [Fact]
@@ -52,8 +59,8 @@ namespace NoFuture.Law.Property.Tests
             };
 
             var testResult = test.IsValid(_propertyOwner);
-            Assert.IsFalse(testResult);
-            Console.Write(test.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(test.ToString());
         }
 
         [Fact]
@@ -71,8 +78,8 @@ namespace NoFuture.Law.Property.Tests
             };
 
             var testResult = test.IsValid(_propertyOwner);
-            Assert.IsFalse(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(test.ToString());
         }
 
         [Fact]
@@ -86,8 +93,8 @@ namespace NoFuture.Law.Property.Tests
             };
 
             var testResult = test.IsValid(_propertyOwner);
-            Assert.IsTrue(testResult);
-            Console.Write(test.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 }

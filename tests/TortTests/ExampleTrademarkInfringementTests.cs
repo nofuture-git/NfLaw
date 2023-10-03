@@ -9,12 +9,19 @@ using NoFuture.Law.Property.US.Terms.Tm;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
-    
     public class ExampleTrademarkInfringementTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleTrademarkInfringementTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestTrademarkInfringementIsValid()
         {
@@ -48,8 +55,8 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(plaintiff, defendant);
-            Console.WriteLine(test.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(test.ToString());
+            Assert.True(testResult);
         }
     }
 

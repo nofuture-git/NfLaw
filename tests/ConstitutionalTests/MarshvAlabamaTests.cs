@@ -38,7 +38,7 @@ namespace NoFuture.Law.Constitutional.Tests
 
             var testResult2 = testSubject2.IsValid(new Marsh(), new Alabama());
             Console.WriteLine(testSubject2.ToString());
-            Assert.IsTrue(testResult2);
+            Assert.True(testResult2);
         }
     }
 

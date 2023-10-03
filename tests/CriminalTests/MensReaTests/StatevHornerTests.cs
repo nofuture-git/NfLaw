@@ -4,6 +4,7 @@ using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.MensReaTests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Criminal.Tests.MensReaTests
     /// doctrine issue, failure to object to defect (mens rea not said specifically) in indictment constitutes waiver of all but plain error.
     /// ]]>
     /// </remarks>
-    
     public class StatevHornerTests
     {
+        private readonly ITestOutputHelper output;
+
+        public StatevHornerTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void StatevHorner()
         {
@@ -32,8 +39,8 @@ namespace NoFuture.Law.Criminal.Tests.MensReaTests
             };
 
             var testResult = testSubject.IsValid(new Horner());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 

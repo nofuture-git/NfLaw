@@ -53,7 +53,7 @@ namespace NoFuture.Law.Contract.Tests.ExcuseTests
             };
 
             var testResult = testContract.IsValid(new UsBancorp(), new Ameriquest());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new ImpracticabilityOfPerformance<Promise>(testContract)
             {
@@ -64,7 +64,7 @@ namespace NoFuture.Law.Contract.Tests.ExcuseTests
 
             testResult = testSubject.IsValid(new UsBancorp(), new Ameriquest());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
         }
     }
 

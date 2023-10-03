@@ -3,6 +3,7 @@ using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, encroachment can be ignored is some slight circumstances
     /// ]]>
     /// </remarks>
-    
     public class GoldenPressIncvRylandsTests
     {
+        private readonly ITestOutputHelper output;
+
+        public GoldenPressIncvRylandsTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void GoldenPressIncvRylands()
         {
@@ -32,8 +39,8 @@ namespace NoFuture.Law.Tort.Tests
                 IsRemovalCostGreat = lp => lp is Rylands
             };
             var testResult = test.IsValid(new GoldenPressInc(), new Rylands());
-            Assert.IsFalse(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 

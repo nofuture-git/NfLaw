@@ -3,6 +3,7 @@ using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.UnintentionalTort;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, enhanced duty for legal person type of "Common Carriers"
     /// ]]>
     /// </remarks>
-    
     public class AndrewsvUnitedAirlinesTests
     {
+        private readonly ITestOutputHelper output;
+
+        public AndrewsvUnitedAirlinesTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void AndrewsvUnitedAirlines()
         {
@@ -55,11 +62,11 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var calcCost = test.Calculate(new UnitedAirlines());
-            Console.WriteLine(calcCost);
+            this.output.WriteLine(calcCost.ToString());
             test.ClearReasons();
             var testResult = test.IsValid(new UnitedAirlines(), new Andrews());
-            Assert.IsFalse(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 

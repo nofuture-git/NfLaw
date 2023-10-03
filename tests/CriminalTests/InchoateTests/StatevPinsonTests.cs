@@ -4,6 +4,7 @@ using NoFuture.Law.Criminal.US.Elements.Inchoate;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.InchoateTests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
     /// particular name, the charge of solicitation must match the defendant's role in the crime
     /// ]]>
     /// </remarks>
-    
     public class StatevPinsonTests
     {
+        private readonly ITestOutputHelper output;
+
+        public StatevPinsonTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void StatevPinson()
         {
@@ -36,8 +43,8 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
             };
 
             var testResult = testCrime.IsValid(new Pinson());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
     }
 

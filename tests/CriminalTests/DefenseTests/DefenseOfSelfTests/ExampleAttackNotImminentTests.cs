@@ -10,12 +10,19 @@ using NoFuture.Law.Criminal.US.Terms.Violence;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
 {
-    
     public class ExampleAttackNotImminentTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleAttackNotImminentTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleAttackNotImminent()
         {
@@ -34,7 +41,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
             };
 
             var testResult = testCrime.IsValid(new FionaEg());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new DefenseOfSelf
             {
@@ -55,8 +62,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
             };
 
             testResult = testSubject.IsValid(new FionaEg(), new VinnyEg());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 

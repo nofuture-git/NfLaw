@@ -65,7 +65,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
 
             var testResult = testSubject.IsValid(new TownFairfield(), new Daddario());
             Console.WriteLine(testResult.ToString());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
         }
     }
 

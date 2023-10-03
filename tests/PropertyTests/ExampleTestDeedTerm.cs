@@ -2,12 +2,19 @@
 using NoFuture.Law.Property.US.Terms;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Property.Tests
 {
-    
     public class ExampleTestDeedTerm
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleTestDeedTerm(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestDeedTermIsValid()
         {
@@ -25,7 +32,7 @@ namespace NoFuture.Law.Property.Tests
             };
 
             var testResult = testSubject.IsValid(new ExampleOfferor(), new ExampleOfferee());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
         }
     }

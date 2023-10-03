@@ -2,12 +2,19 @@
 using NoFuture.Law.Procedure.Civil.US.Pleadings;
 using NoFuture.Law.US.Courts;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Civil.Tests
 {
-    
     public class ExampleTestCounterclaim
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleTestCounterclaim(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestCounterclaimIsValid()
         {
@@ -29,8 +36,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests
             };
 
             var testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 

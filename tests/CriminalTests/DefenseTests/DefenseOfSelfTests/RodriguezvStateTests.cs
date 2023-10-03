@@ -10,6 +10,7 @@ using NoFuture.Law.Criminal.US.Terms.Violence;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
 {
@@ -21,9 +22,15 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
     /// doctrine issue, self-defense is invalid when defendant is the insigator
     /// ]]>
     /// </remarks>
-    
     public class RodriguezvStateTests
     {
+        private readonly ITestOutputHelper output;
+
+        public RodriguezvStateTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void RodriguezvState()
         {
@@ -42,7 +49,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
             };
 
             var testResult = testCrime.IsValid(new Rodriguez());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new DefenseOfSelf
             {
@@ -63,8 +70,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
                 }
             };
             testResult = testSubject.IsValid(new Rodriguez());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 

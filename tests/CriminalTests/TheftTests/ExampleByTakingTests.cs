@@ -7,12 +7,19 @@ using NoFuture.Law.Property.US.FormsOf;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.TheftTests
 {
-    
     public class ExampleByTakingTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleByTakingTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleFiveFingerTheft()
         {
@@ -30,8 +37,8 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
                 }
             };
             var testResult = testCrime.IsValid(new JeremyTheifEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -51,8 +58,8 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
                 }
             };
             var testResult = testCrime.IsValid(new JeremyTheifEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -74,8 +81,8 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
                 }
             };
             var testResult = testCrime.IsValid(new JeremyTheifEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
 
         [Fact]
@@ -104,8 +111,8 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
                 },
             };
             var testResult = testCrime.IsValid(new JeremyTheifEg(), new CodyFriendEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
 
         [Fact]
@@ -132,8 +139,8 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
             };
             testCrime.AttendantCircumstances.Add(testAttendantCircumstance);
             var testResult = testCrime.IsValid(new JeremyTheifEg(), new CodyFriendEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
     }
 

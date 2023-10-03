@@ -6,12 +6,19 @@ using NoFuture.Law.Criminal.US.Elements.Intent;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests
 {
-    
     public class ExampleMistakeOfFactTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleMistakeOfFactTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleMistakeOfFactCorrect()
         {
@@ -30,7 +37,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests
             };
 
             var testResult = testCrime.IsValid(new MickieEg());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new MistakeOfFact
             {
@@ -39,8 +46,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests
             };
 
             testResult = testSubject.IsValid(new MickieEg());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -57,7 +64,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests
             };
 
             var testResult = testCrime.IsValid(new TinaEg());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new MistakeOfFact
             {
@@ -66,8 +73,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests
             };
 
             testResult = testSubject.IsValid(new TinaEg());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 

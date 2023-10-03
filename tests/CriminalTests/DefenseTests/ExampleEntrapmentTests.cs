@@ -6,12 +6,19 @@ using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests
 {
-    
     public class ExampleEntrapmentTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleEntrapmentTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleEntrapment()
         {
@@ -29,7 +36,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests
             };
 
             var testResult = testCrime.IsValid(new WinifredEg());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new Entrapment(testCrime)
             {
@@ -38,8 +45,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests
             };
 
             testResult = testSubject.IsValid(new WinifredEg());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -59,7 +66,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests
             };
 
             var testResult = testCrime.IsValid(new WinifredEg());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new Entrapment(testCrime)
             {
@@ -68,8 +75,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests
             };
 
             testResult = testSubject.IsValid(new WinifredEg());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 

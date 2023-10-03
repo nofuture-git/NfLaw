@@ -3,6 +3,7 @@ using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Tort.Tests
     /// (aka priority in time)
     /// ]]>
     /// </remarks>
-    
     public class EnsignvWallsTests
     {
+        private readonly ITestOutputHelper output;
+
+        public EnsignvWallsTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void EnsignvWalls()
         {
@@ -34,8 +41,8 @@ namespace NoFuture.Law.Tort.Tests
                 IsNegligentInvasion = lp => lp is Walls
             };
             var testResult = test.IsValid(new Ensign(), new Walls());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 

@@ -38,7 +38,7 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
                 IsGivenByOfferee = (lp, p) => true
             };
             var testResult = testSubject.IsValid(new Mills(), new Wyman());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
             Console.WriteLine(testSubject.ToString());
         }
     }

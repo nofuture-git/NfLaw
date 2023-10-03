@@ -3,6 +3,7 @@ using Xunit;
 using NoFuture.Law.US;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.US.Persons;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, when both parties have acted in good faith court of equity will just make one pay the other to bring balance
     /// ]]>
     /// </remarks>
-    
     public class SomervillevJacobsTests
     {
+        private readonly ITestOutputHelper output;
+
+        public SomervillevJacobsTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void SomervillevJacobs()
         {
@@ -29,8 +36,8 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new Somerville(), new Jacobs());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 

@@ -3,12 +3,19 @@ using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.AgainstPersons;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
 {
-    
     public class ExampleFalseImprisonmentTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleFalseImprisonmentTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleIsFalseImprisonment()
         {
@@ -25,8 +32,8 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             };
 
             var testResult = testCrime.IsValid(new ThomasHitchhikerEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
     }
 }

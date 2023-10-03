@@ -4,12 +4,19 @@ using NoFuture.Law.Criminal.US.Elements.AgainstGov;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.AgainstGovTests
 {
-    
     public class ExampleSeditionTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleSeditionTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestSedition()
         {
@@ -27,8 +34,8 @@ namespace NoFuture.Law.Criminal.Tests.AgainstGovTests
                 }
             };
             var testResult = testCrime.IsValid(new MoDisgruntledEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
     }
 

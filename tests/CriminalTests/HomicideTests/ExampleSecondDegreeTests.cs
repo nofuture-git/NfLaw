@@ -4,12 +4,19 @@ using NoFuture.Law.Criminal.US.Elements.Homicide;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.HomicideTests
 {
-    
     public class ExampleSecondDegreeTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleSecondDegreeTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleSecondDegree()
         {
@@ -28,8 +35,8 @@ namespace NoFuture.Law.Criminal.Tests.HomicideTests
             };
 
             var testResult = testCrime.IsValid(new DougCrackheadEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
 
         }
     }

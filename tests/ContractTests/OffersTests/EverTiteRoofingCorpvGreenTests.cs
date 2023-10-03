@@ -54,7 +54,7 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
             };
 
             var testResult = testSubject.IsValid(new EverTiteRoofingCorp(), new Green());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
             Console.WriteLine(testSubject.ToString());
         }
 

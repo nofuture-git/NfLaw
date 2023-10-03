@@ -6,6 +6,7 @@ using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.Property.US.FormsOf;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.TheftTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
     /// both possession and title
     /// ]]>
     /// </remarks>
-    
     public class PeoplevTrasterTests
     {
+        private readonly ITestOutputHelper output;
+
+        public PeoplevTrasterTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void PeoplevTraster()
         {
@@ -53,11 +60,11 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
             testCrime.AttendantCircumstances.Add(reliance);
             var testResult = testCrime.IsValid(new Traster(), new DemlerArmstrongAndRowlandLawFirm(),
                 new DemennoKerdoonCompany());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
 
             //this is larceny by trick since the MS Licx titles where still due 
-            Assert.IsTrue(testCriminalAct.IsLarcenyByTrick);
+            Assert.True(testCriminalAct.IsLarcenyByTrick);
         }
     }
 

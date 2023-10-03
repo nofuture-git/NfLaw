@@ -4,6 +4,7 @@ using NoFuture.Law.Criminal.US.Elements.Inchoate;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.InchoateTests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
     /// doctrine issue, one does not commit an assault intending to attempt to commit a crime
     /// ]]>
     /// </remarks>
-    [TestFixture()]
     public class PeoplevStrandTests
     {
+        private readonly ITestOutputHelper output;
+
+        public PeoplevStrandTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void PeoplevStrand()
         {
@@ -33,8 +40,8 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
             };
 
             var testResult = testCrime.IsValid(new Strand());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
     }
 

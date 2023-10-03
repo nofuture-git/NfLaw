@@ -4,12 +4,19 @@ using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.Criminal.US.Terms;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
 {
-    
     public class ExampleCriminalGangTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleCriminalGangTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestIsCriminalGang()
         {
@@ -24,8 +31,8 @@ namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
 
             var testResult = testGang.IsValid(new MikeWannbeEg());
             testGang.Add(new MikeWannbeEg());
-            Console.WriteLine(testGang.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testGang.ToString());
+            Assert.True(testResult);
 
         }
 
@@ -42,7 +49,7 @@ namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
             testGang.CriminalActivity.Add(new DrugDealin());
             testGang.Add(new MikeWannbeEg());
 
-            Assert.IsTrue(testGang.IsGangMember(new MikeWannbeEg()));
+            Assert.True(testGang.IsGangMember(new MikeWannbeEg()));
         }
     }
 

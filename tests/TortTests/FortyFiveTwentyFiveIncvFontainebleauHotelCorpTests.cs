@@ -4,6 +4,7 @@ using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, private nuisance may be intentional but needs to invade a protected interest of which air and sun are not
     /// ]]>
     /// </remarks>
-    
     public class FortyFiveTwentyFiveIncvFontainebleauHotelCorpTests
     {
+        private readonly ITestOutputHelper output;
+
+        public FortyFiveTwentyFiveIncvFontainebleauHotelCorpTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void FortyFiveTwentyFiveIncvFontainebleauHotelCorp()
         {
@@ -38,8 +45,8 @@ namespace NoFuture.Law.Tort.Tests
                 }
             };
             var testResult = test.IsValid(new FortyFiveTwentyFiveInc(), new FontainebleauHotelCorp());
-            Assert.IsFalse(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 

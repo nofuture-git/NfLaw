@@ -3,6 +3,7 @@ using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.Homicide;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.HomicideTests
 {
@@ -12,9 +13,15 @@ namespace NoFuture.Law.Criminal.Tests.HomicideTests
     /// <remarks>
     /// <![CDATA[ doctrine issue, adequate provocation cannot be just words and cannot be due to fear of prosecution ]]>
     /// </remarks>
-    
     public class StevensvStateTests
     {
+        private readonly ITestOutputHelper output;
+
+        public StevensvStateTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void StevensvState()
         {
@@ -34,8 +41,8 @@ namespace NoFuture.Law.Criminal.Tests.HomicideTests
             };
 
             var testResult = testCrime.IsValid(new Stevens());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
     }
 

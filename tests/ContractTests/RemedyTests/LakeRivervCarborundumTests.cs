@@ -53,7 +53,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             };
 
             var testResult = testContract.IsValid(new LakeRiver(), new Carborundum());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new LiquidatedDmg<Promise>(testContract)
             {
@@ -62,7 +62,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
 
             testResult = testSubject.IsValid(new LakeRiver(), new Carborundum());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
 
         }
     }

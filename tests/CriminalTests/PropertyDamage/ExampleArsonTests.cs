@@ -4,12 +4,19 @@ using NoFuture.Law.Criminal.US.Elements.AgainstProperty.Damage;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.PropertyDestruction
 {
-    
     public class ExampleArsonTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleArsonTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestArsonAct()
         {
@@ -20,8 +27,8 @@ namespace NoFuture.Law.Criminal.Tests.PropertyDestruction
                 IsFireStarter = lp => lp is ClarkBoredburnEg || lp is MannyBoredtwobrunEg
             };
             var testResult = testAct.IsValid(new ClarkBoredburnEg(), new MannyBoredtwobrunEg());
-            Console.WriteLine(testAct.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testAct.ToString());
+            Assert.True(testResult);
         }
 
         [Fact]
@@ -45,8 +52,8 @@ namespace NoFuture.Law.Criminal.Tests.PropertyDestruction
             };
 
             var testResult = testCrime.IsValid(new TimBrokenheartEg());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
     }
 

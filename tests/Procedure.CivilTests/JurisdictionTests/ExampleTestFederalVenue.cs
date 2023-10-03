@@ -4,12 +4,19 @@ using NoFuture.Law.Procedure.Civil.US.Jurisdiction;
 using NoFuture.Law.US.Courts;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Civil.Tests
 {
-    
     public class ExampleTestFederalVenue
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleTestFederalVenue(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestFederalVenueIsValid()
         {
@@ -29,8 +36,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests
             };
 
             var testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 }

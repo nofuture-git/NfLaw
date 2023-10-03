@@ -3,6 +3,7 @@ using NoFuture.Law.Property.US.Acquisition.Found;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, artifacts buired with dead are not relinquished
     /// ]]>
     /// </remarks>
-    
     public class CharriervBellTests
     {
+        private readonly ITestOutputHelper output;
+
+        public CharriervBellTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void CharriervBell()
         {
@@ -27,8 +34,8 @@ namespace NoFuture.Law.Property.Tests
             };
 
             var testResult = test.IsValid(new Charrier(), new Bell());
-            Assert.IsFalse(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 

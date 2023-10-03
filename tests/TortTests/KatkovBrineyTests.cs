@@ -5,6 +5,7 @@ using NoFuture.Law.US.Persons;
 using NoFuture.Law.US;
 using NoFuture.Law.Criminal.US.Terms;
 using NoFuture.Law.Criminal.US.Terms.Violence;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Tort.Tests
     /// deadly force in defense of property.
     /// ]]>
     /// </remarks>
-    
     public class KatkovBrineyTests
     {
+        private readonly ITestOutputHelper output;
+
+        public KatkovBrineyTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void KatkovBriney()
         {
@@ -37,8 +44,8 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new Briney(), new Katko());
-            Console.WriteLine(test.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(test.ToString());
+            Assert.False(testResult);
         }
     }
 

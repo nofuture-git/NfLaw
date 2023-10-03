@@ -53,7 +53,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             };
 
             var testResult = testContract.IsValid(new HollywoodFan(), new Gabor());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new Reliance<Promise>(testContract)
             {
@@ -62,7 +62,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
 
             testResult = testSubject.IsValid(new HollywoodFan(), new Gabor());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

@@ -4,6 +4,7 @@ using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.Terms;
 using NoFuture.Law.Tort.US.UnintentionalTort;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, claiming due care of custom when its not actually a custom
     /// ]]>
     /// </remarks>
-    
     public class BrunevBelinkoffTests
     {
+        private readonly ITestOutputHelper output;
+
+        public BrunevBelinkoffTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void BrunevBelinkoff()
         {
@@ -44,9 +51,9 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new Brune(), new Belinkoff());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
-            Console.WriteLine(test.ToString());
+            this.output.WriteLine(test.ToString());
         }
     }
 

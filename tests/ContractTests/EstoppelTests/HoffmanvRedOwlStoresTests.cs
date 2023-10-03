@@ -34,7 +34,7 @@ namespace NoFuture.Law.Contract.Tests.EstoppelTests
             };
 
             var testResult = testSubject.IsValid(new RedOwlStores(), new Hoffman());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
             Console.WriteLine(testSubject.ToString());
         }
     }

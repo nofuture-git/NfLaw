@@ -5,12 +5,19 @@ using NoFuture.Law.US;
 using NoFuture.Law.US.Courts;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Civil.Tests.PleadingsTests
 {
-    
     public class ExampleTestAmendment
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleTestAmendment(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestAmendmentIsValid()
         {
@@ -22,8 +29,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests.PleadingsTests
             };
 
             var testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
 
 
             testSubject = new Amendment()
@@ -34,8 +41,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests.PleadingsTests
             };
 
             testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
 
         [Fact]
@@ -51,8 +58,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests.PleadingsTests
             };
 
             var testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 }

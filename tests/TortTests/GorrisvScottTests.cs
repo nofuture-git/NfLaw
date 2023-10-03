@@ -4,6 +4,7 @@ using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.Tort.US.UnintentionalTort;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, demo of non-negligence when attempting to use a statute's disobedience completely out of context
     /// ]]>
     /// </remarks>
-    
     public class GorrisvScottTests
     {
+        private readonly ITestOutputHelper output;
+
+        public GorrisvScottTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void GorrisvScott()
         {
@@ -28,9 +35,9 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new Gorris(), new Scott());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
 
-            Console.WriteLine(test.ToString());
+            this.output.WriteLine(test.ToString());
         }
     }
 

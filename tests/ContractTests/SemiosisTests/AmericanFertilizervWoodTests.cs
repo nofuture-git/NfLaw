@@ -48,7 +48,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
 
             var testResult = testContract.IsValid(new AmericanFertilizer(), new Wood2());
             Console.WriteLine(testContract.ToString());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
         }
     }
 

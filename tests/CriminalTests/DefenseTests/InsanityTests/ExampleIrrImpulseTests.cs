@@ -6,12 +6,19 @@ using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.InsanityTests
 {
-    
     public class ExampleIrrImpulseTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleIrrImpulseTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleIrrImpulseFake()
         {
@@ -29,7 +36,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.InsanityTests
             };
 
             var testResult = testCrime.IsValid(new JoleneEg());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new IrresistibleImpulse
             {
@@ -39,8 +46,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.InsanityTests
             };
 
             testResult = testSubject.IsValid(new JoleneEg());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 

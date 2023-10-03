@@ -4,6 +4,7 @@ using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.Tort.US.UnintentionalTort;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, detailed explaination of comparative negligence
     /// ]]>
     /// </remarks>
-    
     public class NgaLivYellowCabCompanyofCaliforniaTests
     {
+        private readonly ITestOutputHelper output;
+
+        public NgaLivYellowCabCompanyofCaliforniaTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void NgaLivYellowCabCompanyofCalifornia()
         {
@@ -34,9 +41,9 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new NgaLi(), new YellowCabCompanyofCalifornia());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
-            Console.WriteLine(test.ToString());
+            this.output.WriteLine(test.ToString());
         }
     }
 

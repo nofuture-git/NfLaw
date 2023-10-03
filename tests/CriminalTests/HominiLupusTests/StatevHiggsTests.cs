@@ -4,6 +4,7 @@ using NoFuture.Law.Criminal.US.Elements.AgainstPersons;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
     /// doctrine issue, body harm is physical pain or injury, illness, or any impairment of physical condition
     /// ]]>
     /// </remarks>
-    
     public class StatevHiggsTests
     {
+        private readonly ITestOutputHelper output;
+
+        public StatevHiggsTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void StatevHiggs()
         {
@@ -34,8 +41,8 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             };
 
             var testResult = testCrime.IsValid(new Higgs());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.True(testResult);
         }
     }
 

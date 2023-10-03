@@ -53,7 +53,7 @@ namespace NoFuture.Law.Contract.Tests.ExcuseTests
             };
 
             var testResult = testContract.IsValid(new Bush(), new ProtravelIntl());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new ImpracticabilityOfPerformance<Promise>(testContract)
             {
@@ -65,7 +65,7 @@ namespace NoFuture.Law.Contract.Tests.ExcuseTests
 
             testResult = testSubject.IsValid(new Bush(), new ProtravelIntl());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

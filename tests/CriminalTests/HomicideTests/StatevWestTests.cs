@@ -4,6 +4,7 @@ using NoFuture.Law.Criminal.US.Elements.Homicide;
 using NoFuture.Law.Criminal.US.Elements.Intent;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.HomicideTests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Criminal.Tests.HomicideTests
     /// doctrine issue, the prosecution must prove premeditation 
     /// ]]>
     /// </remarks>
-    
     public class StatevWestTests
     {
+        private readonly ITestOutputHelper output;
+
+        public StatevWestTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void StatevWest()
         {
@@ -37,8 +44,8 @@ namespace NoFuture.Law.Criminal.Tests.HomicideTests
             };
 
             var testResult = testCrime.IsValid(new West());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
     }
 

@@ -5,6 +5,7 @@ using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.InchoateTests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
     /// doctrine issue, possession as actus reus failed because it was not a residence the defendant had sole control of
     /// ]]>
     /// </remarks>
-    [TestFixture()]
     public class StatevWithrowTests
     {
+        private readonly ITestOutputHelper output;
+
+        public StatevWithrowTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void StatevWithrow()
         {
@@ -32,8 +39,8 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
             };
 
             var testResult = testCrime.IsValid(new Withrow());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
     }
 

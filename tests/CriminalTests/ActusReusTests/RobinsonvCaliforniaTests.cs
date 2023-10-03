@@ -4,6 +4,7 @@ using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.ActusReusTests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Criminal.Tests.ActusReusTests
     /// doctrine issue, the status of a person does not work as actus rea
     /// ]]>
     /// </remarks>
-    
     public class RobinsonvCaliforniaTests
     {
+        private readonly ITestOutputHelper output;
+
+        public RobinsonvCaliforniaTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void RobinsonvCalifornia()
         {
@@ -28,8 +35,8 @@ namespace NoFuture.Law.Criminal.Tests.ActusReusTests
             testSubject.IsAction = lp => false;
 
             var testResult = testSubject.IsValid(new Robinson());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 

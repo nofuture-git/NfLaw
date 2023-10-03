@@ -53,7 +53,7 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
             };
 
             var testResult = testContract.IsValid(new OwGrunRoofing(), new Cope());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new SubstantialPerformance<Promise>(testContract)
             {
@@ -69,7 +69,7 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
 
             testResult = testSubject.IsValid(new OwGrunRoofing(), new Cope());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
         }
     }
     public class OfferInstallNewRoof : Promise

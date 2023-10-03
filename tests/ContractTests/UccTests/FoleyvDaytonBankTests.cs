@@ -27,8 +27,8 @@ namespace NoFuture.Law.Contract.Tests.UccTests
 
             var testResult = testSubject.IsSkilledOrKnowledgeableOf(testGoods);
             testSubject.AddReasonEntryRange(testGoods.GetReasonEntries());
-            Assert.IsFalse(testResult);
-            Assert.IsTrue(testSubject.GetReasonEntries().Any());
+            Assert.False(testResult);
+            Assert.True(testSubject.GetReasonEntries().Any());
             Console.WriteLine(testSubject.ToString());
         }
     }

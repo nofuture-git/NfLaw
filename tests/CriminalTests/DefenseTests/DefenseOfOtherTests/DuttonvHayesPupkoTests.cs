@@ -5,6 +5,7 @@ using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.Criminal.US.Elements.Intent;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
     /// doctrine issue, the use of police power must be reasonable
     /// ]]>
     /// </remarks>
-    
     public class DuttonvHayesPupkoTests
     {
+        private readonly ITestOutputHelper output;
+
+        public DuttonvHayesPupkoTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void DuttonvHayesPupko()
         {
@@ -33,7 +40,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
             };
 
             var testResult = testSue.IsValid(new Dutton());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new PolicePower
             {
@@ -42,8 +49,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
             };
 
             testResult = testSubject.IsValid(new Dutton(), new HayesPupko());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 

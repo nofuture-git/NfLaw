@@ -32,7 +32,7 @@ namespace NoFuture.Law.Contract.Tests.UccTests
                 Acceptance = o => new AcceptanceArranged2SellMillet()
             };
             var testResult = testSubject.IsValid(new Denney(), new ScoularCo());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
             Console.WriteLine(testSubject.ToString());
         }
     }

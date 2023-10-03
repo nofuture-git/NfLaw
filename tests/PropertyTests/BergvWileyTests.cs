@@ -3,6 +3,7 @@ using NoFuture.Law.Property.US.FormsOf.InTerra;
 using NoFuture.Law.Property.US.FormsOf.InTerra.Sequential;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, eviction requires peaceful repossession 
     /// ]]>
     /// </remarks>
-    
     public class BergvWileyTests
     {
+        private readonly ITestOutputHelper output;
+
+        public BergvWileyTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void BergvWiley()
         {
@@ -29,7 +36,7 @@ namespace NoFuture.Law.Property.Tests
             };
 
             var testResult = testLease.IsValid(new Berg(), new Wiley());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var test = new Eviction(testLease)
             {
@@ -40,8 +47,8 @@ namespace NoFuture.Law.Property.Tests
             };
 
             testResult = test.IsValid(new Berg(), new Wiley());
-            Console.WriteLine(test.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(test.ToString());
+            Assert.False(testResult);
         }
     }
 

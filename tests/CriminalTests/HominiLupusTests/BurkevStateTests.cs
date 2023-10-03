@@ -5,6 +5,7 @@ using NoFuture.Law.Criminal.US.Elements.AgainstPersons.Credible;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
     /// doctrine issue, stalking requires two or more violations 
     /// ]]>
     /// </remarks>
-    [TestFixture()]
     public class BurkevStateTests
     {
+        private readonly ITestOutputHelper output;
+
+        public BurkevStateTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void BurkevState()
         {
@@ -47,8 +54,8 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             };
 
             var testResult = testCrime.IsValid(new Burke());
-            Console.WriteLine(testCrime.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testCrime.ToString());
+            Assert.False(testResult);
         }
     }
 

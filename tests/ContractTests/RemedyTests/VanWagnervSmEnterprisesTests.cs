@@ -53,7 +53,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             };
 
             var testResult = testContract.IsValid(new VanWagner(), new SmEnterprises());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new SpecificPerformance<Promise>(testContract)
             {
@@ -62,7 +62,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
 
             testResult = testSubject.IsValid(new VanWagner(), new SmEnterprises());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

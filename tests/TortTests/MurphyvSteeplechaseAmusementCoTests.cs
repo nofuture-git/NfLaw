@@ -3,6 +3,7 @@ using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.UnintentionalTort;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, plaintiff understood risk, to continue means they contributed 
     /// ]]>
     /// </remarks>
-    
     public class MurphyvSteeplechaseAmusementCoTests
     {
+        private readonly ITestOutputHelper output;
+
+        public MurphyvSteeplechaseAmusementCoTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void MurphyvSteeplechaseAmusementCo()
         {
@@ -33,9 +40,9 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new Murphy(), new SteeplechaseAmusementCo());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
 
-            Console.WriteLine(test.ToString());
+            this.output.WriteLine(test.ToString());
         }
     }
 

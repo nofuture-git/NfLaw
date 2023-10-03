@@ -53,7 +53,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
 
             var testResult = testSubject.IsValid(new PowderRidge(), new Hanks());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
         public static ISet<Term<object>> GetTerms()
         {

@@ -53,7 +53,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
 
             var testResult = testContract.IsValid(new Mendenhall(), new HanesBrands());
             Console.WriteLine(testContract.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

@@ -3,12 +3,19 @@ using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
-    
     public class ExampleContributoryLiabilityTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleContributoryLiabilityTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestContributoryLiabilityIsValid()
         {
@@ -22,9 +29,9 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new SomePlaintiff(), new SomeDefendant(), new Some3rdParty());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
-            Console.WriteLine(test.ToString());
+            this.output.WriteLine(test.ToString());
         }
     }
 

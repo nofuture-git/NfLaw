@@ -53,7 +53,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
             };
 
             var testResult = testSubject.IsValid(new LoralCorp(), new AustinInstruments());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
             Console.WriteLine(testSubject.ToString());
         }
         public static ISet<Term<object>> GetTerms()

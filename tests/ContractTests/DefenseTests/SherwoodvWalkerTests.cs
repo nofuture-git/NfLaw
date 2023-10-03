@@ -42,7 +42,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
 
             var testSubject = new ByFraud<Promise>(testContract);
             var testResult = testSubject.IsValid(new Sherwood(), new Walker());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
             Console.WriteLine(testSubject.ToString());
         }
     }

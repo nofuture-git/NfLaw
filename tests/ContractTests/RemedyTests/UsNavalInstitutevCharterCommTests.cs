@@ -52,7 +52,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
                 IsSoughtByOfferor = (lp, p) => true
             };
             var testResult = testContract.IsValid(new UsNavalInstitute(), new CharterComm());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new Expectation<Promise>(testContract)
             {
@@ -61,7 +61,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
 
             testResult = testSubject.IsValid(new UsNavalInstitute(), new CharterComm());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

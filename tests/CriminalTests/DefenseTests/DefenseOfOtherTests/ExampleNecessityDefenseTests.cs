@@ -10,12 +10,19 @@ using NoFuture.Law.Criminal.US.Terms.Violence;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
 {
-    
     public class ExampleNecessityDefenseTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleNecessityDefenseTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleNecessityDefense()
         {
@@ -34,7 +41,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
             };
 
             var testResult = testCrime.IsValid(new TamaraEg());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new NecessityDefense<ITermCategory>
             {
@@ -51,8 +58,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
                 }
             };
             testResult = testSubject.IsValid(new TamaraEg());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 

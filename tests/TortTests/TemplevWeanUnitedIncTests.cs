@@ -3,6 +3,7 @@ using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, product liability requires defect is not a later mod
     /// ]]>
     /// </remarks>
-    
     public class TemplevWeanUnitedIncTests
     {
+        private readonly ITestOutputHelper output;
+
+        public TemplevWeanUnitedIncTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TemplevWeanUnitedInc()
         {
@@ -34,8 +41,8 @@ namespace NoFuture.Law.Tort.Tests
                 SubjectProperty = new Warco75TonPowerPunchPress()
             };
             var testResult = test.IsValid(new Temple(), new WeanUnitedInc());
-            Assert.IsFalse(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 

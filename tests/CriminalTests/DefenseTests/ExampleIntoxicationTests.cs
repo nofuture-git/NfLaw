@@ -6,12 +6,19 @@ using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests
 {
-    [TestFixture()]
     public class ExampleIntoxicationTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleIntoxicationTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExampleIntoxication()
         {
@@ -29,7 +36,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests
             };
 
             var testResult = testCrime.IsValid(new DelilahEg());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new Intoxication
             {
@@ -39,8 +46,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests
             };
 
             testResult = testSubject.IsValid(new DelilahEg());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 

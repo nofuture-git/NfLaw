@@ -36,7 +36,7 @@ namespace NoFuture.Law.Constitutional.Tests
 
             var testResult2 = testSubject2.IsValid(new Irvis(), new MooseLodge());
             Console.WriteLine(testSubject2.ToString());
-            Assert.IsFalse(testResult2);
+            Assert.False(testResult2);
         }
     }
 

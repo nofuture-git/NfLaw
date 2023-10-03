@@ -53,7 +53,7 @@ namespace NoFuture.Law.Contract.Tests.ExcuseTests
             };
 
             var testResult = testContract.IsValid(new KarlWendt(), new IntlHarvester());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             ExcuseBase<Promise> testSubject = new ImpracticabilityOfPerformance<Promise>(testContract)
             {
@@ -65,7 +65,7 @@ namespace NoFuture.Law.Contract.Tests.ExcuseTests
             };
 
             testResult = testSubject.IsValid(new KarlWendt(), new IntlHarvester());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
 
             testSubject = new FrustrationOfPurpose<Promise>(testContract)
             {
@@ -76,7 +76,7 @@ namespace NoFuture.Law.Contract.Tests.ExcuseTests
                 IsPrincipalPurposeFrustrated = lp => false
             };
             testResult = testSubject.IsValid(new KarlWendt(), new IntlHarvester());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
 
             //test if the conditions had indeed been met
             testSubject = new FrustrationOfPurpose<Promise>(testContract)
@@ -89,7 +89,7 @@ namespace NoFuture.Law.Contract.Tests.ExcuseTests
             };
             testResult = testSubject.IsValid(new KarlWendt(), new IntlHarvester());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

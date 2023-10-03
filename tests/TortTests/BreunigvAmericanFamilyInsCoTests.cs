@@ -3,6 +3,7 @@ using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.ReasonableCare;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Tort.Tests
     /// 
     /// ]]>
     /// </remarks>
-    
     public class BreunigvAmericanFamilyInsCoTests
     {
+        private readonly ITestOutputHelper output;
+
+        public BreunigvAmericanFamilyInsCoTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void BreunigvAmericanFamilyInsCo()
         {
@@ -27,8 +34,8 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = test.IsValid(new AmericanFamilyInsCo(), new Breunig());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(test.ToString());
 
         }
     }

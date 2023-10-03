@@ -5,6 +5,7 @@ using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.CausationTests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Criminal.Tests.CausationTests
     /// doctrine issue, intervening superseding cause in that the death of a person was partially caused by their own unlawful actions
     /// ]]>
     /// </remarks>
-    [TestFixture()]
     public class BullockvDelawareTests
     {
+        private readonly ITestOutputHelper output;
+
+        public BullockvDelawareTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void BullockvDelaware()
         {
@@ -42,8 +49,8 @@ namespace NoFuture.Law.Criminal.Tests.CausationTests
             };
 
             var testResult = testSubject.IsValid(new Bullock());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
 
         }
     }

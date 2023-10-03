@@ -3,6 +3,7 @@ using Xunit;
 using NoFuture.Law.US;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US.Persons;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, personality identity need not be specific picture or name but enought to recognize
     /// ]]>
     /// </remarks>
-    
     public class MidlervFordMotorCompanyTests
     {
+        private readonly ITestOutputHelper output;
+
+        public MidlervFordMotorCompanyTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void MidlervFordMotorCompany()
         {
@@ -27,8 +34,8 @@ namespace NoFuture.Law.Tort.Tests
                 IsAppropriatedPersonIdentity = (l1, l2) => l1 is Midler && l2 is FordMotorCompany
             };
             var testResult = test.IsValid(new Midler(), new FordMotorCompany());
-            Assert.IsTrue(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.True(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 

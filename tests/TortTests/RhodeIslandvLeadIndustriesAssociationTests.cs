@@ -3,6 +3,7 @@ using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, limits the fuzzy meaning of safety, health, peace, etc. to the actual shared things of air, water and rights of way
     /// ]]>
     /// </remarks>
-    
     public class RhodeIslandvLeadIndustriesAssociationTests
     {
+        private readonly ITestOutputHelper output;
+
+        public RhodeIslandvLeadIndustriesAssociationTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void RhodeIslandvLeadIndustriesAssociation()
         {
@@ -26,8 +33,8 @@ namespace NoFuture.Law.Tort.Tests
                 IsRightCommonToPublic = lp => false,
             };
             var testResult = test.IsValid(new RhodeIsland(), new LeadIndustriesAssociation());
-            Assert.IsFalse(testResult);
-            Console.WriteLine(test.ToString());
+            Assert.False(testResult);
+            this.output.WriteLine(test.ToString());
         }
     }
 

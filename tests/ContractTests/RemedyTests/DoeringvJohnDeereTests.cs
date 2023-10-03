@@ -53,7 +53,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             };
 
             var testResult = testContract.IsValid(new Doering(), new JohnDeere());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new Reliance<Promise>(testContract)
             {
@@ -61,7 +61,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             };
             testResult = testSubject.IsValid(new Doering(), new JohnDeere());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
         }
     }
 

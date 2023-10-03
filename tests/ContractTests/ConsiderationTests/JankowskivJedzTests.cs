@@ -38,7 +38,7 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
                 IsSoughtByOfferor = (lp, p) => true
             };
             var testResult = testSubject.IsValid(new Jankowski(), new Jedz());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
             Console.WriteLine(testSubject.ToString());
         }
     }

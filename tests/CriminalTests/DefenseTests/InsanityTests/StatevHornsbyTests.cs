@@ -6,6 +6,7 @@ using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.InsanityTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.InsanityTests
     /// true is the mental defect part
     /// ]]>
     /// </remarks>
-    [TestFixture()]
     public class StatevHornsbyTests
     {
+        private readonly ITestOutputHelper output;
+
+        public StatevHornsbyTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void StatevHornsby()
         {
@@ -39,15 +46,15 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.InsanityTests
             };
 
             var testResult = testCrime.IsValid(new Hornsby());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new MNaghten
             {
                 IsMentalDefect = lp => lp is Hornsby,
             };
             testResult = testSubject.IsValid(new Hornsby());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 

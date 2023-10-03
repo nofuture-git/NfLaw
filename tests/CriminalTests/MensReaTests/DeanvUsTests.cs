@@ -3,6 +3,7 @@ using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.MensReaTests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Criminal.Tests.MensReaTests
     /// occured because Dean was already involved in an unlawful act.
     /// ]]>
     /// </remarks>
-    
     public class DeanvUsTests
     {
+        private readonly ITestOutputHelper output;
+
+        public DeanvUsTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void DeanvUs()
         {
@@ -31,7 +38,7 @@ namespace NoFuture.Law.Criminal.Tests.MensReaTests
             };
 
             var testResult = testSubject.ActusReus.IsValid(new Dean());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

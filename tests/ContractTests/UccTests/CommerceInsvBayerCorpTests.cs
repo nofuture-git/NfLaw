@@ -39,10 +39,10 @@ namespace NoFuture.Law.Contract.Tests.UccTests
                 }
             };
             var testResult = testSubject.GetAgreedTerms(new CommerceIns(), new BayerCorp());
-            Assert.IsNotNull(testResult);
-            Assert.IsTrue(testResult.Count == 1);
+            Assert.NotNull(testResult);
+            Assert.True(testResult.Count == 1);
             //Bayer wanted the "arbitration provision" but its gone
-            Assert.IsTrue(testResult.Any(t => t.Name == "bulk nylon fiber"));
+            Assert.True(testResult.Any(t => t.Name == "bulk nylon fiber"));
         }
     }
 

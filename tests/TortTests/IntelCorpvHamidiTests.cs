@@ -4,6 +4,7 @@ using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, its not trespass to personal property without damage or loss of possession
     /// ]]>
     /// </remarks>
-    
     public class IntelCorpvHamidiTests
     {
+        private readonly ITestOutputHelper output;
+
+        public IntelCorpvHamidiTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void IntelCorpvHamidi()
         {
@@ -55,8 +62,8 @@ namespace NoFuture.Law.Tort.Tests
             };
 
             var testResult = testSubject.IsValid(new IntelCorp(), new Hamidi());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 

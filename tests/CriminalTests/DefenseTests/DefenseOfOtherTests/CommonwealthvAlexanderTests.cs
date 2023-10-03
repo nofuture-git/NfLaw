@@ -10,6 +10,7 @@ using NoFuture.Law.Criminal.US.Terms.Violence;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
 {
@@ -21,9 +22,15 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
     /// doctrine issue, defense of property with deadly force is not lawful
     /// ]]>
     /// </remarks>
-    
     public class CommonwealthvAlexanderTests
     {
+        private readonly ITestOutputHelper output;
+
+        public CommonwealthvAlexanderTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void CommonwealthvAlexander()
         {
@@ -41,7 +48,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
                 }
             };
             var testResult = testCrime.IsValid(new Alexander());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new DefenseOfProperty
             {
@@ -67,8 +74,8 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
                 }
             };
             testResult = testSubject.IsValid(new Alexander(), new MichaelTEustler());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsFalse(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.False(testResult);
         }
     }
 

@@ -48,7 +48,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
             };
 
             var testResult = testContract.IsValid(new Nanakuli(), new ShellOil2());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
             var testSubject = new SemanticDilemma<Goods>(testContract)
             {
                 IsIntendedMeaningAtTheTime = t => t.RefersTo is PriceProtection
@@ -56,7 +56,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
 
             testResult = testSubject.IsValid(new Nanakuli(), new ShellOil2());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

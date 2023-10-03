@@ -30,7 +30,7 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
             };
 
             var testResult = testSubject.IsValid(new ConfedMotorsInc(), new Terny());
-            Assert.IsFalse(testResult);
+            Assert.False(testResult);
             Console.WriteLine(testSubject.ToString());
         }
 

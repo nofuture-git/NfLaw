@@ -6,6 +6,7 @@ using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Criminal.Tests.MensReaTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Criminal.Tests.MensReaTests
     /// doctrine issue, transferred intent is anyone else hurt by the intent and suffices as the intent element of the crime charged
     /// ]]>
     /// </remarks>
-    
     public class StatevAndrewsTests
     {
+        private readonly ITestOutputHelper output;
+
+        public StatevAndrewsTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void StatevAndrews()
         {
@@ -40,8 +47,8 @@ namespace NoFuture.Law.Criminal.Tests.MensReaTests
             };
 
             var testResult = testSubject.IsValid(new Andrews());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 

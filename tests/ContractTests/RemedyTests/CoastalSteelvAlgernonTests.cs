@@ -52,7 +52,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             };
 
             var testResult = testContract.IsValid(new CoastalSteel(), new Algernon());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
             var testSubject = new Restitution<Promise>(testContract)
             {
@@ -61,7 +61,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
 
             testResult = testSubject.IsValid(new CoastalSteel(), new Algernon());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
         }
     }
 

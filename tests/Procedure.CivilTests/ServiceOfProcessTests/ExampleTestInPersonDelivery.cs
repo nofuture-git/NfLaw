@@ -3,12 +3,19 @@ using NoFuture.Law.Procedure.Civil.US.ServiceOfProcess;
 using NoFuture.Law.US.Courts;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Procedure.Civil.Tests.ServiceOfProcessTests
 {
-    
     public class ExampleTestInPersonDelivery
     {
+        private readonly ITestOutputHelper output;
+
+        public ExampleTestInPersonDelivery(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestInPersonDeliveryIsValid()
         {
@@ -23,8 +30,8 @@ namespace NoFuture.Law.Procedure.Civil.Tests.ServiceOfProcessTests
 
             var testResult = testSubject.IsValid(new ExamplePlaintiff(), new ExampleDefendant(),
                 new ExampleLawEnforcement());
-            Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            this.output.WriteLine(testSubject.ToString());
+            Assert.True(testResult);
         }
     }
 
