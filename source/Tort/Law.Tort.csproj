@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Law.csproj" />
+    <ProjectReference Include="..\Core\Law.csproj" />
     <ProjectReference Include="..\Criminal\Law.Criminal.csproj" />
     <ProjectReference Include="..\Property\Law.Property.csproj" />
   </ItemGroup>
