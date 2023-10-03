@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\..\..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\..\..\..\packages\NUnit.3.12.0\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{106C2C8F-B342-4A1D-9797-97B40F0CBF12}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NoFuture.Law.Procedure.Civil.Tests</RootNamespace>
+    <AssemblyName>NoFuture.Law.Procedure.Civil.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DiscoveryTests\ExampleTestRequestForProduction.cs" />
+    <Compile Include="ExampleAustinvHealyTests.cs" />
+    <Compile Include="ExampleSmokyMountainVWTests.cs" />
+    <Compile Include="JudgmentTests\ExampleTestConsentJudgment.cs" />
+    <Compile Include="JudgmentTests\ExampleTestJnov.cs" />
+    <Compile Include="JudgmentTests\ExampleTestJudgmentAsMatterOfLaw.cs" />
+    <Compile Include="JudgmentTests\ExampleTestNewTrial.cs" />
+    <Compile Include="JudgmentTests\ExampleTestResJudicata.cs" />
+    <Compile Include="JudgmentTests\ExampleTestSummaryJudgment.cs" />
+    <Compile Include="PleadingsTests\ExampleTestAmendment.cs" />
+    <Compile Include="PleadingsTests\ExampleTestContributionClaim.cs" />
+    <Compile Include="PleadingsTests\ExampleTestCounterclaim.cs" />
+    <Compile Include="ExampleTestDomicileLocation.cs" />
+    <Compile Include="JurisdictionTests\ExampleTestFederalDiversityJurisdiction.cs" />
+    <Compile Include="JurisdictionTests\ExampleTestFederalVenue.cs" />
+    <Compile Include="PleadingsTests\ExampleTestInterveneJoiner.cs" />
+    <Compile Include="JurisdictionTests\ExampleTestMinContact.cs" />
+    <Compile Include="PleadingsTests\ExampleTestMotionToDismiss.cs" />
+    <Compile Include="PleadingsTests\ExampleTestOrderJoiner.cs" />
+    <Compile Include="JurisdictionTests\ExampleTestPersonalJurisdiction.cs" />
+    <Compile Include="JurisdictionTests\ExampleTestFederalSubjectMatterJurisdiction.cs" />
+    <Compile Include="JurisdictionTests\ExampleTestRemoval.cs" />
+    <Compile Include="PleadingsTests\ExampleTestSummons.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceOfProcessTests\ExampleTestInPersonDelivery.cs" />
+    <Compile Include="ServiceOfProcessTests\ExampleTestVoluntaryEntry.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\NoFuture\Rand\Law\Procedure\Civil\Law.Procedure.Civil.csproj">
+      <Project>{3527cf45-740b-4175-bc1f-ff2eb3675e7c}</Project>
+      <Name>Law.Procedure.Civil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\NoFuture\Rand\Law\Law.csproj">
+      <Project>{4667e45a-0eb2-40cf-b431-319d2960f469}</Project>
+      <Name>Law</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\NUnit.3.12.0\build\NUnit.props'))" />
+  </Target>
+</Project>
