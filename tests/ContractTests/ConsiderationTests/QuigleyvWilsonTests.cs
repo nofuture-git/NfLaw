@@ -5,6 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.ConsiderationTests
 {
@@ -31,6 +32,13 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
     /// </remarks>
     public class QuigleyvWilsonTests
     {
+        private readonly ITestOutputHelper output;
+
+        public QuigleyvWilsonTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void QuigleyvWilson()
         {
@@ -54,7 +62,7 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
             };
 
             var testResult = testSubject.IsValid(new Quigley(), new Wilson());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
         }
     }

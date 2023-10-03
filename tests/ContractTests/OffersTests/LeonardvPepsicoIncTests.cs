@@ -5,15 +5,22 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.OffersTests
 {
     /// <summary>
     /// LEONARD v. PEPSICO, INC. United States District Court for the Southern District of New York 88 F.Supp. 2d 116 (S.D.N.Y. 1999)
     /// </summary>
-    
     public class LeonardvPepsicoIncTests
     {
+        private readonly ITestOutputHelper output;
+
+        public LeonardvPepsicoIncTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void LeonardvPepsicoInc()
         {
@@ -30,7 +37,7 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
             };
 
             var testResult = testSubject.IsValid(new PepsicoInc(), new Leonard());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.False(testResult);
         }
     }

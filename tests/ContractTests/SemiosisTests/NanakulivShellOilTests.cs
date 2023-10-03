@@ -8,6 +8,7 @@ using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
@@ -19,9 +20,15 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     /// doctrine issue, with UCC inclusion of implied terms from trade usage, it may produce some exotic and very complex definitions
     /// ]]>
     /// </remarks>
-    
     public class NanakulivShellOilTests
     {
+        private readonly ITestOutputHelper output;
+
+        public NanakulivShellOilTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void NanakulivShellOil()
         {
@@ -55,7 +62,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
             };
 
             testResult = testSubject.IsValid(new Nanakuli(), new ShellOil2());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
         }
     }

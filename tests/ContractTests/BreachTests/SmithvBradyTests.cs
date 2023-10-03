@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.BreachTests
 {
@@ -20,9 +21,15 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
     /// "innocent" in the sense the court is using it.
     /// ]]>
     /// </remarks>
-    
     public class SmithvBradyTests
     {
+        private readonly ITestOutputHelper output;
+
+        public SmithvBradyTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void SmithvBrady()
         {
@@ -72,7 +79,7 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
             };
 
             testResult = testSubject.IsValid(new Smith(), new Brady());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
         }
     }

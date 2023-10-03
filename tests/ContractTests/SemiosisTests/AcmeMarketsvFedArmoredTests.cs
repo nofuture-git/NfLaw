@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     /// doctrine issue, part of knowing if conditional precedent has or has not been met, it must first be known as a conditional precedent
     /// ]]>
     /// </remarks>
-    
     public class AcmeMarketsvFedArmoredTests
     {
+        private readonly ITestOutputHelper output;
+
+        public AcmeMarketsvFedArmoredTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void AcmeMarketsvFedArmored()
         {
@@ -59,7 +66,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
             };
 
             var testResult = testSubject.IsValid(new AcmeMarket(), new FedArmored());
-            Console.WriteLine(testSubject);
+            this.output.WriteLine(testSubject.ToString());
             Assert.False(testResult);
         }
     }

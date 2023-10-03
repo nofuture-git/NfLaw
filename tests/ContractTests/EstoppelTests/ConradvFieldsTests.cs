@@ -4,6 +4,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.EstoppelTests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Contract.Tests.EstoppelTests
     /// back into pre-contractual state
     /// ]]>
     /// </remarks>
-    
     public class ConradvFieldsTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ConradvFieldsTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ConradvFields()
         {
@@ -33,7 +40,7 @@ namespace NoFuture.Law.Contract.Tests.EstoppelTests
             };
             var testResult = testSubject.IsValid(new Fields(), new Conrad());
             Assert.True(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

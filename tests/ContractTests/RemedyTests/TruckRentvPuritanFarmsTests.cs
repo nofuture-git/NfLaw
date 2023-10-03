@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// doctrine issue, liquidated damages are fine so long as they are reasonable and not punitive
     /// ]]>
     /// </remarks>
-    
     public class TruckRentvPuritanFarmsTests
     {
+        private readonly ITestOutputHelper output;
+
+        public TruckRentvPuritanFarmsTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TruckRentvPuritanFarms()
         {
@@ -62,7 +69,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             };
 
             testResult = testSubject.IsValid(new TruckRent(), new PuritanFarms());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
         }
     }

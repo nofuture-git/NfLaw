@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -19,9 +20,15 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// cost much, much more than the value such a performance will add.
     /// ]]>
     /// </remarks>
-    
     public class PeevyhousevGarlandCoalTests
     {
+        private readonly ITestOutputHelper output;
+
+        public PeevyhousevGarlandCoalTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void PeevyhousevGarlandCoal()
         {
@@ -62,7 +69,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
                 CalcPerformanceCost = lp => (lp as Peevyhouse)?.CostOfPerformance ?? 0m
             };
             testResult = testSubject.IsValid(new Peevyhouse(), new GarlandCoal());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
         }
     }

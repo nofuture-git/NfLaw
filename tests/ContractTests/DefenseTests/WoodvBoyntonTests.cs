@@ -6,6 +6,7 @@ using NoFuture.Law.Contract.US.Defense.ToAssent;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, fraud requires misrepresentation
     /// ]]>
     /// </remarks>
-    
     public class WoodvBoyntonTests
     {
+        private readonly ITestOutputHelper output;
+
+        public WoodvBoyntonTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void WoodvBoynton()
         {
@@ -45,7 +52,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
 
             var testResult = testSubject.IsValid(new Boynton(), new Wood());
             Assert.False(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
         public static ISet<Term<object>> GetTerms()
         {

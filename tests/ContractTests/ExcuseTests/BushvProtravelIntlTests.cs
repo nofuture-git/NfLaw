@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.ExcuseTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.ExcuseTests
     /// doctrine issue, the nature of "occurrence of an event" is the kind which no body would expect
     /// ]]>
     /// </remarks>
-    
     public class BushvProtravelIntlTests
     {
+        private readonly ITestOutputHelper output;
+
+        public BushvProtravelIntlTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void BushvProtravelIntl()
         {
@@ -64,7 +71,7 @@ namespace NoFuture.Law.Contract.Tests.ExcuseTests
             };
 
             testResult = testSubject.IsValid(new Bush(), new ProtravelIntl());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
         }
     }

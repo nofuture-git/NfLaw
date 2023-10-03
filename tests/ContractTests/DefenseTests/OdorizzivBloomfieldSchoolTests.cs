@@ -6,6 +6,7 @@ using NoFuture.Law.Contract.US.Defense.ToAssent;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, objective test for undue influence
     /// ]]>
     /// </remarks>
-    
     public class OdorizzivBloomfieldSchoolTests
     {
+        private readonly ITestOutputHelper output;
+
+        public OdorizzivBloomfieldSchoolTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void OrdorizzivBloomfieldSchool()
         {
@@ -52,7 +59,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
 
             var testResult = testSubject.IsValid(new BloomfieldSchool(), new Odorizzi());
             Assert.True(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
 
         }
         public static ISet<Term<object>> GetTerms()

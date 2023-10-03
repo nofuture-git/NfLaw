@@ -8,6 +8,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
@@ -19,9 +20,15 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     /// doctrine issue, what does the court do when a common use word has two possible meanings
     /// ]]>
     /// </remarks>
-    
     public class InReEstateOfSoperTests
     {
+        private readonly ITestOutputHelper output;
+
+        public InReEstateOfSoperTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void InReEstateOfSoper()
         {
@@ -64,7 +71,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
             var testResult = testSubject.IsValid(new IraSoper(), new GertrudeWhitby());
             Assert.True(testResult);
             testResult = testSubject.IsValid(new IraSoper(), new AdelineWestphal());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.False(testResult);
         }
     }

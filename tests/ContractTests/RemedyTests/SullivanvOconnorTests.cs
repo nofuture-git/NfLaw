@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// 
     /// ]]>
     /// </remarks>
-    
     public class SullivanvOconnorTests
     {
+        private readonly ITestOutputHelper output;
+
+        public SullivanvOconnorTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void SullivanvOconnor()
         {
@@ -60,7 +67,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
                 CalcLossAvoided = lp => lp is Sullivan ? 1m : 0m,
             };
             testResult = testSubject.IsValid(new Sullivan(), new Oconnor());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
         }
     }

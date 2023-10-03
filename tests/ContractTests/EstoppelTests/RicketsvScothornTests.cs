@@ -3,6 +3,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.EstoppelTests
 {
@@ -23,9 +24,15 @@ namespace NoFuture.Law.Contract.Tests.EstoppelTests
     /// (6) estoppel is used ignore X lacking consideration
     /// ]]>
     /// </remarks>
-    
     public class RicketsvScothornTests
     {
+        private readonly ITestOutputHelper output;
+
+        public RicketsvScothornTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void RicketvScothron()
         {
@@ -37,7 +44,7 @@ namespace NoFuture.Law.Contract.Tests.EstoppelTests
 
             var testResult = testSubject.IsValid(new Rickets(), new Scothorn());
             Assert.True(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     /// doctrine issue, implied terms are read in especially timely notice
     /// ]]>
     /// </remarks>
-    
     public class TownFairfieldvDaddarioTests
     {
+        private readonly ITestOutputHelper output;
+
+        public TownFairfieldvDaddarioTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TownFairfieldvDaddario()
         {
@@ -64,7 +71,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
             };
 
             var testResult = testSubject.IsValid(new TownFairfield(), new Daddario());
-            Console.WriteLine(testResult.ToString());
+            this.output.WriteLine(testResult.ToString());
             Assert.False(testResult);
         }
     }

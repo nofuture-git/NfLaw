@@ -5,6 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.AcceptanceTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Contract.Tests.AcceptanceTests
     /// bilateral or unilateral contract.
     /// ]]>
     /// </remarks>
-    
     public class DavisvJacobyTests
     {
+        private readonly ITestOutputHelper output;
+
+        public DavisvJacobyTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void DavisvJacoby()
         {
@@ -45,7 +52,7 @@ namespace NoFuture.Law.Contract.Tests.AcceptanceTests
 
             var testResult = testSubject.IsValid(new RupertWhitehead(), new FrankAndCaroDavis());
             Assert.True(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
 
             var testSubjectAsPerformance = new ComLawContract<Performance>
             {
@@ -60,7 +67,7 @@ namespace NoFuture.Law.Contract.Tests.AcceptanceTests
 
             testResult = testSubjectAsPerformance.IsValid(new RupertWhitehead(), new FrankAndCaroDavis());
             Assert.False(testResult);
-            Console.WriteLine(testSubjectAsPerformance.ToString());
+            this.output.WriteLine(testSubjectAsPerformance.ToString());
 
         }
     }

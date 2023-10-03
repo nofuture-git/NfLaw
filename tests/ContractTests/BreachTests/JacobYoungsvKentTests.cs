@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.BreachTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
     /// doctrine issue, substantial performance is divides essential from trivial and innocent
     /// ]]>
     /// </remarks>
-    
     public class JacobYoungsvKentTests
     {
+        private readonly ITestOutputHelper output;
+
+        public JacobYoungsvKentTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void JacobYoungvKent()
         {
@@ -71,7 +78,7 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
             };
 
             testResult = testSubject.IsValid(new JacobYoung(), new Kent());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
         }
     }

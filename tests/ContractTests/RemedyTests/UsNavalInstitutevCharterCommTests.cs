@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// doctrine issue, manner of calc of loss in expectation
     /// ]]>
     /// </remarks>
-    
     public class UsNavalInstitutevCharterCommTests
     {
+        private readonly ITestOutputHelper output;
+
+        public UsNavalInstitutevCharterCommTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void UsNavalInstitutevCharterComm()
         {
@@ -60,7 +67,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             };
 
             testResult = testSubject.IsValid(new UsNavalInstitute(), new CharterComm());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
         }
     }

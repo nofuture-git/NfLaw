@@ -6,6 +6,7 @@ using NoFuture.Law.Property.US.FormsOf.InTerra;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Constitutional.Tests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Constitutional.Tests
     /// who has title
     /// ]]>
     /// </remarks>
-    
     public class MarshvAlabamaTests
     {
+        private readonly ITestOutputHelper output;
+
+        public MarshvAlabamaTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void MarshvAlabama()
         {
@@ -37,7 +44,7 @@ namespace NoFuture.Law.Constitutional.Tests
             };
 
             var testResult2 = testSubject2.IsValid(new Marsh(), new Alabama());
-            Console.WriteLine(testSubject2.ToString());
+            this.output.WriteLine(testSubject2.ToString());
             Assert.True(testResult2);
         }
     }

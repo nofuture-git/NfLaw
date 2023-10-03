@@ -4,6 +4,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.OffersTests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
     /// infact a counter-offer followed by no acceptance (rejection).
     /// ]]>
     /// </remarks>
-    
     public class PoelvBrunswickTests
     {
+        private readonly ITestOutputHelper output;
+
+        public PoelvBrunswickTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void PoelvBrunswick()
         {
@@ -28,8 +35,8 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
                 Acceptance = o => o is Apr6Bruns2Poel ? new Jan7Bruns2Poel() : null
             };
             var testResult = testSubject.IsValid(new Brunswick(), new Poel());
-            Console.WriteLine(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testResult.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

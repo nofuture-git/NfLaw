@@ -6,6 +6,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     /// doctrine issue, default implied terms of good faith and fair dealings 
     /// ]]>
     /// </remarks>
-    
     public class MendenhallvHanesbrandsTests
     {
+        private readonly ITestOutputHelper output;
+
+        public MendenhallvHanesbrandsTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void MendenhallvHanesBrands()
         {
@@ -52,7 +59,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
             };
 
             var testResult = testContract.IsValid(new Mendenhall(), new HanesBrands());
-            Console.WriteLine(testContract.ToString());
+            this.output.WriteLine(testContract.ToString());
             Assert.True(testResult);
         }
     }

@@ -6,6 +6,7 @@ using NoFuture.Law.Contract.US.Defense.ToAssent;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, econ. duress using existing duty (lack of consideration) as leverage for duress in further contrax
     /// ]]>
     /// </remarks>
-    
     public class AustinInstrumentvLoralCorpTests
     {
+        private readonly ITestOutputHelper output;
+
+        public AustinInstrumentvLoralCorpTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void AustinInstrumentvLoralCorp()
         {
@@ -54,7 +61,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
 
             var testResult = testSubject.IsValid(new LoralCorp(), new AustinInstruments());
             Assert.True(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
         public static ISet<Term<object>> GetTerms()
         {

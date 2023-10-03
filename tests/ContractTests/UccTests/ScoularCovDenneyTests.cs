@@ -4,6 +4,7 @@ using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.UccTests
 {
@@ -19,9 +20,15 @@ namespace NoFuture.Law.Contract.Tests.UccTests
     /// even when there is no consideration
     /// ]]>
     /// </remarks>
-    
     public class ScoularCovDenneyTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ScoularCovDenneyTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ScoularCovDenney()
         {
@@ -33,7 +40,7 @@ namespace NoFuture.Law.Contract.Tests.UccTests
             };
             var testResult = testSubject.IsValid(new Denney(), new ScoularCo());
             Assert.False(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

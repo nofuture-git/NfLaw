@@ -5,6 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.OffersTests
 {
@@ -22,9 +23,15 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
     /// and so dies if the body dies.
     /// ]]>
     /// </remarks>
-    
     public class InReEstateOfServertsonTests
     {
+        private readonly ITestOutputHelper output;
+
+        public InReEstateOfServertsonTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void InReEstateOfServertson()
         {
@@ -49,7 +56,7 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
             helen.HasDied = true;
             testResult = testSubject.IsValid(helen, markAndKelly);
             Assert.False(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     /// doctrine issue, implied terms as UCC 2-315 implied warrenty
     /// ]]>
     /// </remarks>
-    
     public class AmericanFertilizervWoodTests
     {
+        private readonly ITestOutputHelper output;
+
+        public AmericanFertilizervWoodTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void AmericanFertilizervWood()
         {
@@ -47,7 +54,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
             };
 
             var testResult = testContract.IsValid(new AmericanFertilizer(), new Wood2());
-            Console.WriteLine(testContract.ToString());
+            this.output.WriteLine(testContract.ToString());
             Assert.False(testResult);
         }
     }

@@ -8,12 +8,19 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
-    
     public class PpgIndustriesvShellOilTests
     {
+        private readonly ITestOutputHelper output;
+
+        public PpgIndustriesvShellOilTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void PpgIndustriesvShellOil()
         {
@@ -51,7 +58,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
             };
 
             var testResult = testSubject.IsValid(new PpgIndustries(), new ShellOil());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
         }
     }

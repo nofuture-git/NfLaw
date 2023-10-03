@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// doctrine issue, what is reasonable in being certian, past performance is admissible
     /// ]]>
     /// </remarks>
-    
     public class KayAndersonvAmeritechTests
     {
+        private readonly ITestOutputHelper output;
+
+        public KayAndersonvAmeritechTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void KayAndersonvAmeritech()
         {
@@ -64,7 +71,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             testSubject.Limits.CalcUncertainty = lp => lp is KayAnderson ? 165000 : 0m;
 
             testResult = testSubject.IsValid(new KayAnderson(), new Ameritech());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
         }
     }

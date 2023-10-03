@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
@@ -19,9 +20,15 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     /// new use: licensees may exploit licensed works through new marketing channels made possible by technologies developed after the licensing contract
     /// ]]>
     /// </remarks>
-    
     public class RandomHousevRosettaBooksTests
     {
+        private readonly ITestOutputHelper output;
+
+        public RandomHousevRosettaBooksTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void RandomHousvRosettaBooks()
         {
@@ -66,7 +73,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
             };
 
             testResult = testSubject.IsValid(new AnyAuthorOfBook(), new RandomHouse());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
         }
 
@@ -74,9 +81,9 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
         public void TestIntentPredicate()
         {
             var testResult = IsIntendedMeaning(new ContractTerm<object>("in book form", new RandomHouseIdeaOfBook()));
-            Console.WriteLine(testResult);
+            this.output.WriteLine(testResult.ToString());
             testResult = IsIntendedMeaning(new ContractTerm<object>("in book form", new PrintedBook()));
-            Console.WriteLine(testResult);
+            this.output.WriteLine(testResult.ToString());
         }
 
         public static bool IsIntendedMeaning(Term<object> t)

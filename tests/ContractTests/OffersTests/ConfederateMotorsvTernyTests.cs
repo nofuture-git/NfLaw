@@ -5,6 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.OffersTests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
     /// Doctrine on this one is about an offer expiring.
     /// ]]>
     /// </remarks>
-    
     public class ConfederateMotorsvTernyTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ConfederateMotorsvTernyTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ConferateMotorsvTerny()
         {
@@ -31,7 +38,7 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
 
             var testResult = testSubject.IsValid(new ConfedMotorsInc(), new Terny());
             Assert.False(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
 
         private static object _term00 = new object();

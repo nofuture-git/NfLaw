@@ -4,6 +4,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.AcceptanceTests
 {
@@ -27,9 +28,15 @@ namespace NoFuture.Law.Contract.Tests.AcceptanceTests
     /// principal, and the agent’s knowledge is binding on the principal.]
     /// ]]>
     /// </remarks>
-    
     public class HendricksvBeheeTests
     {
+        private readonly ITestOutputHelper output;
+
+        public HendricksvBeheeTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void HendricksvBehee()
         {
@@ -42,7 +49,7 @@ namespace NoFuture.Law.Contract.Tests.AcceptanceTests
 
             var testResult = testSubject.IsValid(new Behee(), new Smiths());
             Assert.False(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
 
         public class OfferFromBehee2Smiths : Promise

@@ -5,6 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.AcceptanceTests
 {
@@ -26,9 +27,15 @@ namespace NoFuture.Law.Contract.Tests.AcceptanceTests
     ///  - coupled with a retention [...] for an unreasonable time [...] 
     /// ]]>
     /// </remarks>
-    
     public class HobbsvMassasoitWhipCoTests
     {
+        private readonly ITestOutputHelper output;
+
+        public HobbsvMassasoitWhipCoTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void HobbsvMassasoitWhipCo()
         {
@@ -59,7 +66,7 @@ namespace NoFuture.Law.Contract.Tests.AcceptanceTests
 
             var testResult = testSubject.IsValid(new Hobbs(), new MassasoitWhipCo());
             Assert.True(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

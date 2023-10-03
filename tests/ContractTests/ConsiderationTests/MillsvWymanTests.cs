@@ -4,6 +4,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.ConsiderationTests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
     /// Doctrine issue, still can't enforce a donative promise even when morally ought to.
     /// ]]>
     /// </remarks>
-    
     public class MillsvWymanTests
     {
+        private readonly ITestOutputHelper output;
+
+        public MillsvWymanTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void MillsvWyman()
         {
@@ -39,7 +46,7 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
             };
             var testResult = testSubject.IsValid(new Mills(), new Wyman());
             Assert.False(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

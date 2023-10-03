@@ -6,6 +6,7 @@ using NoFuture.Law.Contract.US.Defense.ToAssent;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, the specific objective rules of physical and improper threat
     /// ]]>
     /// </remarks>
-    
     public class StandardFinancevEllisTests
     {
+        private readonly ITestOutputHelper output;
+
+        public StandardFinancevEllisTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void StandardFinancevEllis()
         {
@@ -45,7 +52,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
             //court found that there was not threat made
             var testResult = testSubject.IsValid(new Ellis(), new StandardFinance());
             Assert.False(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
 
         }
         public static ISet<Term<object>> GetTerms()

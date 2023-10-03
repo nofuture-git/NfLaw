@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// doctrine issue, calc of some performance value when it was the consideration of a contract
     /// ]]>
     /// </remarks>
-    
     public class LeevFooteTests
     {
+        private readonly ITestOutputHelper output;
+
+        public LeevFooteTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void LeevFoote()
         {
@@ -61,7 +68,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             };
 
             testResult = testSubject.IsValid(new Lee(), new Foote());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
         }
     }

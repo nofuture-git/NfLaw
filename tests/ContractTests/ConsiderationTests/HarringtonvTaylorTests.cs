@@ -3,6 +3,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.ConsiderationTests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
     /// promise - even when promisor has their very life saved.
     /// ]]>
     /// </remarks>
-    
     public class HarringtonvTaylorTests
     {
+        private readonly ITestOutputHelper output;
+
+        public HarringtonvTaylorTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void HarringtonvTaylor()
         {
@@ -33,7 +40,7 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
             };
             var testResult = testSubject.IsValid(new Harrington(), new Taylor());
             Assert.False(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

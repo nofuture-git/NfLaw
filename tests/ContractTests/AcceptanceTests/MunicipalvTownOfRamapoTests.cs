@@ -5,6 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.AcceptanceTests
 {
@@ -22,9 +23,15 @@ namespace NoFuture.Law.Contract.Tests.AcceptanceTests
     ///  * there is no understanding that a signature is required
     /// ]]>
     /// </remarks>
-    
     public class MunicipalvTownOfRamapoTests
     {
+        private readonly ITestOutputHelper output;
+
+        public MunicipalvTownOfRamapoTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void MunicipalvTownOfRamapo()
         {
@@ -55,7 +62,7 @@ namespace NoFuture.Law.Contract.Tests.AcceptanceTests
             };
 
             var testResult = testSubject.IsValid(new Municipal(), new TownOfRamapo());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
 
         }

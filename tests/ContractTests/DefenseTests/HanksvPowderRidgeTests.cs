@@ -6,6 +6,7 @@ using NoFuture.Law.Contract.US.Defense.ToPublicPolicy;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -19,9 +20,15 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// tort system - with the public bearing the cost of the resulting injuries
     /// ]]>
     /// </remarks>
-    
     public class HanksvPowderRidgeTests
     {
+        private readonly ITestOutputHelper output;
+
+        public HanksvPowderRidgeTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void HanksvPowderRidge()
         {
@@ -52,7 +59,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
             };
 
             var testResult = testSubject.IsValid(new PowderRidge(), new Hanks());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
         }
         public static ISet<Term<object>> GetTerms()

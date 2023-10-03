@@ -4,15 +4,22 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.MutualAssentTests
 {
     /// <summary>
     /// Dr. Werner OSWALD, Plaintiff-Appellant, v. Jane B. ALLEN, Defendant-Appellee 417 F.2d 43; 1969 U.S. App.
     /// </summary>
-    
     public class OswaldvAllenTests
     {
+        private readonly ITestOutputHelper output;
+
+        public OswaldvAllenTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestIsTermsOfAgreementValid()
         {
@@ -38,7 +45,7 @@ namespace NoFuture.Law.Contract.Tests.MutualAssentTests
 
             var testResult = testSubject.IsValid(new MrsAllen(), new DrOswald());
             Assert.False(testResult);
-            Console.WriteLine("--" + string.Join(",", testSubject.GetReasonEntries()));
+            this.output.WriteLine("--" + string.Join(",", testSubject.GetReasonEntries()));
         }
     }
 

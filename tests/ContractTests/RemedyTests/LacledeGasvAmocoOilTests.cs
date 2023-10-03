@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// doctrine issue, specific performance can be applied when substitution is not available
     /// ]]>
     /// </remarks>
-    
     public class LacledeGasvAmocoOilTests
     {
+        private readonly ITestOutputHelper output;
+
+        public LacledeGasvAmocoOilTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void LacledeGasvAmocoOil()
         {
@@ -61,7 +68,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             };
 
             testResult = testSubject.IsValid(new LacledeGas(), new AmocoOil());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
         }
     }

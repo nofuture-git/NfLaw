@@ -6,6 +6,7 @@ using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.UccTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Contract.Tests.UccTests
     /// Doctrine issue, demo of the Knockout rule where terms of the same name but different meanings also get excluded
     /// ]]>
     /// </remarks>
-    
     public class FlenderCorpvTippinsTests
     {
+        private readonly ITestOutputHelper output;
+
+        public FlenderCorpvTippinsTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void FlenderCorpvTippins()
         {
@@ -41,7 +48,7 @@ namespace NoFuture.Law.Contract.Tests.UccTests
             Assert.NotNull(testResult);
             //knockout rule where two terms with different meanings are not included in set-union
             Assert.True(testResult.All(t => t.Name != "arbitration provision"));
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

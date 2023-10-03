@@ -3,6 +3,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.ConsiderationTests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
     /// was promised where here there is some explicit rate and duration.
     /// ]]>
     /// </remarks>
-    
     public class WebbvMcGowinTests
     {
+        private readonly ITestOutputHelper output;
+
+        public WebbvMcGowinTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void WebbvMcGowin()
         {
@@ -33,7 +40,7 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
             };
 
             var testResult = testSubject.IsValid(new Webb(), new McGowin());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
         }
     }

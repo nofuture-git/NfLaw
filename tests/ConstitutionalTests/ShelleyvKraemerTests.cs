@@ -4,6 +4,7 @@ using NoFuture.Law.Constitutional.US;
 using NoFuture.Law.Property.US.FormsOf.InTerra;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Constitutional.Tests
 {
@@ -16,9 +17,14 @@ namespace NoFuture.Law.Constitutional.Tests
     /// private agreements brings the constitutional protections into scope
     /// ]]>
     /// </remarks>
-    
     public class ShelleyvKraemerTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ShelleyvKraemerTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
 
         [Fact]
         public void ShelleyvKraemer()
@@ -37,7 +43,7 @@ namespace NoFuture.Law.Constitutional.Tests
             };
 
             var testResult2 = testSubject2.IsValid(new Shelley(), new Kraemer());
-            Console.WriteLine(testSubject2.ToString());
+            this.output.WriteLine(testSubject2.ToString());
             Assert.True(testResult2);
         }
     }

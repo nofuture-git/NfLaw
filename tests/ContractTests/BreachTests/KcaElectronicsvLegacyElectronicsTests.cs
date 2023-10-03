@@ -8,6 +8,7 @@ using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.BreachTests
 {
@@ -19,9 +20,15 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
     /// 
     /// ]]>
     /// </remarks>
-    
     public class KcaElectronicsvLegacyElectronicsTests
     {
+        private readonly ITestOutputHelper output;
+
+        public KcaElectronicsvLegacyElectronicsTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void KcaElectronicsvLegacyElectronics()
         {
@@ -73,7 +80,7 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
             };
 
             testResult = testSubject.IsValid(new KcaElectronics(), new LegacyElectronics());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.False(testResult);
         }
     }

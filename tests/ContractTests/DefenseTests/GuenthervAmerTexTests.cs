@@ -6,6 +6,7 @@ using NoFuture.Law.Contract.US.Defense;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, the writing was not sufficient, despite there being everything else being obvious
     /// ]]>
     /// </remarks>
-    
     public class GuenthervAmerTexTests
     {
+        private readonly ITestOutputHelper output;
+
+        public GuenthervAmerTexTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void GuenthervAmerTex()
         {
@@ -55,7 +62,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
             var testResult = testSubject.IsValid(new Guenther(), new AmerTex());
             //the court concludes the map is too vague to be used to plot the ground
             Assert.True(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
 
         public static ISet<Term<object>> GetTerms()

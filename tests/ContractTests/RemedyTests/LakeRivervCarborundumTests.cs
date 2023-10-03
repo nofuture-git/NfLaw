@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// doctrine issue, liquidated damages which give the full price of the contract are not enforceable since the are just pure profit
     /// ]]>
     /// </remarks>
-    
     public class LakeRivervCarborundumTests
     {
+        private readonly ITestOutputHelper output;
+
+        public LakeRivervCarborundumTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void LakeRivervCarborundum()
         {
@@ -61,7 +68,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             };
 
             testResult = testSubject.IsValid(new LakeRiver(), new Carborundum());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.False(testResult);
 
         }

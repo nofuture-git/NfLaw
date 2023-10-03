@@ -4,6 +4,7 @@ using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.UccTests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Contract.Tests.UccTests
     /// Doctrine issue, the concept of Mutual Assent gets applied here for a UCC contract on goods.
     /// ]]>
     /// </remarks>
-    
     public class ComNetworkvPurcellTireTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ComNetworkvPurcellTireTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ComNetworkvPurcellTire()
         {
@@ -29,7 +36,7 @@ namespace NoFuture.Law.Contract.Tests.UccTests
             };
             var testResult = testSubject.IsValid(new ComNetwork(), new PurcellTire());
             Assert.True(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.UccTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.UccTests
     /// Doctrine issue, detailed break-down of UCC 2-207 contract formation
     /// ]]>
     /// </remarks>
-    
     public class CommerceInsvBayerCorpTests
     {
+        private readonly ITestOutputHelper output;
+
+        public CommerceInsvBayerCorpTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void CommerceInsvBayerCorp()
         {

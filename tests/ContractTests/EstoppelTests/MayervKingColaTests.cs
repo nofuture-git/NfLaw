@@ -4,6 +4,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.EstoppelTests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Contract.Tests.EstoppelTests
     /// Doctrine issue, need both predicates to test as true for consideration substitute to be valid
     /// ]]>
     /// </remarks>
-    
     public class MayervKingColaTests
     {
+        private readonly ITestOutputHelper output;
+
+        public MayervKingColaTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void MayervKingCola()
         {
@@ -32,7 +39,7 @@ namespace NoFuture.Law.Contract.Tests.EstoppelTests
 
             var testResult = testSubject.IsValid(new KingCola(), new Mayer());
             Assert.False(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

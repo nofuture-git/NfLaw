@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     /// doctrine issue, the application of parol evidence rule various alot
     /// ]]>
     /// </remarks>
-    
     public class MastersonvSineTests
     {
+        private readonly ITestOutputHelper output;
+
+        public MastersonvSineTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void MastersonvSine()
         {
@@ -60,7 +67,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
             };
 
             var testResult = testSubject.IsValid(new Masterson(), new Sine());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
         }
     }

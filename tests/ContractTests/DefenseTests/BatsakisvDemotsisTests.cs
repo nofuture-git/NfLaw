@@ -6,6 +6,7 @@ using NoFuture.Law.Contract.US.Defense.ToPublicPolicy;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, unconscionable contract will have everything needed to enforce it except for it being just wrong
     /// ]]>
     /// </remarks>
-    
     public class BatsakisvDemotsisTests
     {
+        private readonly ITestOutputHelper output;
+
+        public BatsakisvDemotsisTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void BatsakisvDemotsis()
         {
@@ -46,7 +53,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
             //this case is present to present an unconscionable contract
             Assert.False(testResult);
 
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             
         }
         public static ISet<Term<object>> GetTerms()

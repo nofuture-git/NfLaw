@@ -6,6 +6,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     /// doctrine issue, the balancing part of consideration may itself be implied
     /// ]]>
     /// </remarks>
-    
     public class WoodvLucyLadyTests
     {
+        private readonly ITestOutputHelper output;
+
+        public WoodvLucyLadyTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void WoodvLucyLady()
         {
@@ -52,7 +59,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
             };
 
             var testResult = testContract.IsValid(new Wood(), new LucyLady());
-            Console.WriteLine(testContract.ToString());
+            this.output.WriteLine(testContract.ToString());
             Assert.True(testResult);
         }
     }

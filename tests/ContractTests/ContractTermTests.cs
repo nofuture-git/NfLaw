@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using NoFuture.Law.Contract.US.Terms;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests
 {
-    
     public class ContractTermTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ContractTermTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestCompareTo()
         {
@@ -74,7 +81,7 @@ namespace NoFuture.Law.Contract.Tests
             testSubject.As(new OralTerm()).As(new TechnicalTerm());
 
             var testResultName = testSubject.GetCategory();
-            Console.WriteLine(testResultName);
+            this.output.WriteLine(testResultName);
 
             var testResult = testSubject.IsCategory(new OralTerm());
             Assert.True(testResult);

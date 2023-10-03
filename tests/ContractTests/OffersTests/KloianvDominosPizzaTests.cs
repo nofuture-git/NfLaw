@@ -5,6 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.OffersTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
     /// contract - the only way out now is if both parties want out.
     /// ]]>
     /// </remarks>
-    
     public class KloianvDominosPizzaTests
     {
+        private readonly ITestOutputHelper output;
+
+        public KloianvDominosPizzaTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TestAgreedPaySettlement()
         {
@@ -58,7 +65,7 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
             var testResult = testSubject.IsValid(new EdwardKloianAttorney(), new DominosPizzaLlcAttorney());
             
             Assert.True(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
 
         private static object _termMeaning = new object();

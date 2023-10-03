@@ -5,6 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.OffersTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
     /// as Ever-Tite started the job.
     /// ]]>
     /// </remarks>
-    
     public class EverTiteRoofingCorpvGreenTests
     {
+        private readonly ITestOutputHelper output;
+
+        public EverTiteRoofingCorpvGreenTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void EverTiteRoofingCorpvGreen()
         {
@@ -55,7 +62,7 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
 
             var testResult = testSubject.IsValid(new EverTiteRoofingCorp(), new Green());
             Assert.True(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
 
         private static object _term00 = new object();

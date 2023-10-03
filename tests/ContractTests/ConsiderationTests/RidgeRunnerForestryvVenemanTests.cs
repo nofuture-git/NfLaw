@@ -3,6 +3,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.ConsiderationTests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
     /// a choice of alternative performances" is not consideration.
     /// ]]>
     /// </remarks>
-    
     public class RidgeRunnerForestryvVenemanTests
     {
+        private readonly ITestOutputHelper output;
+
+        public RidgeRunnerForestryvVenemanTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void RidgeRunnerForestryvVeneman()
         {
@@ -32,8 +39,8 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
                 IsGivenByOfferee = (lp, p) => lp is Veneman && p is OfferRequestForQuotations
             };
             var testResult = testSubject.IsValid(new RidgeRunnerForestry(), new Veneman());
-            Console.WriteLine(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testResult.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

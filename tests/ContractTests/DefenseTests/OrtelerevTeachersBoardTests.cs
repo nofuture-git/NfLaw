@@ -5,6 +5,7 @@ using NoFuture.Law.Contract.US.Defense.ToFormation;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, being considered mentally incompetent makes a contract voidable
     /// ]]>
     /// </remarks>
-    
     public class OrtelerevTeachersBoardTests
     {
+        private readonly ITestOutputHelper output;
+
+        public OrtelerevTeachersBoardTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void OrtelerevTeachersBoard()
         {
@@ -40,7 +47,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
             var testSubject = new ByMentalIncompetent<Promise>(testContract) {IsMentallyIncompetent = lp => lp is Ortelere};
             var testResult = testSubject.IsValid(new Ortelere(), new TeachersBoard());
             Assert.True(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

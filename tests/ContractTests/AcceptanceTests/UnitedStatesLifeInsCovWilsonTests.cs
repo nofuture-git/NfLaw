@@ -5,6 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.AcceptanceTests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Contract.Tests.AcceptanceTests
     /// Doctrine issue here looks to be the "mailbox rule"
     /// ]]>
     /// </remarks>
-    
     public class UnitedStatesLifeInsCovWilsonTests
     {
+        private readonly ITestOutputHelper output;
+
+        public UnitedStatesLifeInsCovWilsonTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void UnitedStatesLifeInsCovWilson()
         {
@@ -34,7 +41,7 @@ namespace NoFuture.Law.Contract.Tests.AcceptanceTests
             };
 
             var testResult = testSubject.IsValid(new UnitedStatesLifeInsCo(), new Wilson());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
         }
     }

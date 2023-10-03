@@ -5,6 +5,7 @@ using NoFuture.Law.Constitutional.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Constitutional.Tests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Constitutional.Tests
     /// example of when one is clearly not protected by constitutional rights
     /// ]]>
     /// </remarks>
-    
     public class ManhattanCommunityAccessCorporationvHalleckTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ManhattanCommunityAccessCorporationvHalleckTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ManhattanCommunityAccessCorporationvHalleck()
         {
@@ -37,7 +44,7 @@ namespace NoFuture.Law.Constitutional.Tests
             };
 
             var testResult = testSubject.IsValid(new ManhattanCommunityAccessCorporation(), new Halleck());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.False(testResult);
         }
     }

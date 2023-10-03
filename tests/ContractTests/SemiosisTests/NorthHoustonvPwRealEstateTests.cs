@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
@@ -19,9 +20,15 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     /// doctrine issue, when terms are explicit they are explicit and must be met exactly as stated
     /// ]]>
     /// </remarks>
-    
     public class NorthHoustonvPwRealEstateTests
     {
+        private readonly ITestOutputHelper output;
+
+        public NorthHoustonvPwRealEstateTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void NorthHoustonvPwRealEstate()
         {
@@ -73,7 +80,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
             };
 
             var testResult = testSubject.IsValid(new NorthHouston(), new PwRealEstate());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.False(testResult);
         }
     }

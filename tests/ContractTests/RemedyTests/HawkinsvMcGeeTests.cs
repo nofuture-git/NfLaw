@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -20,9 +21,15 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// difficult when it was something like, "the value of a perfect hand..."
     /// ]]>
     /// </remarks>
-    
     public class HawkinsvMcGeeTests
     {
+        private readonly ITestOutputHelper output;
+
+        public HawkinsvMcGeeTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void HawkinsvMcGee()
         {
@@ -62,7 +69,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
                 CalcLossToInjured = lp => lp is Hawkins ? 500m : 0m,
             };
             testResult = testSubject.IsValid(new Hawkins(), new McGee());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
         }
     }

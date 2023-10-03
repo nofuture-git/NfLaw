@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.BreachTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
     /// doctrine issue, substantial performance may include taste & preferences in addition to pure function & purpose
     /// ]]>
     /// </remarks>
-    
     public class OwGrunRoofingvCopeTests
     {
+        private readonly ITestOutputHelper output;
+
+        public OwGrunRoofingvCopeTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void OwGrunRoofingvCope()
         {
@@ -68,7 +75,7 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
             };
 
             testResult = testSubject.IsValid(new OwGrunRoofing(), new Cope());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.False(testResult);
         }
     }

@@ -5,6 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.ConsiderationTests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
     /// The doctrine issue here is that you can't bargin for what you are already obligated to do
     /// ]]>
     /// </remarks>
-    
     public class JankowskivJedzTests
     {
+        private readonly ITestOutputHelper output;
+
+        public JankowskivJedzTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void JankowskivJedz()
         {
@@ -39,7 +46,7 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
             };
             var testResult = testSubject.IsValid(new Jankowski(), new Jedz());
             Assert.False(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

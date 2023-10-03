@@ -6,6 +6,7 @@ using NoFuture.Law.Contract.US.Defense.ToAssent;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, there is no defense since there is no contract;
     /// ]]>
     /// </remarks>
-    
     public class SherwoodvWalkerTests
     {
+        private readonly ITestOutputHelper output;
+
+        public SherwoodvWalkerTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void SherwoodvWalker()
         {
@@ -43,7 +50,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
             var testSubject = new ByFraud<Promise>(testContract);
             var testResult = testSubject.IsValid(new Sherwood(), new Walker());
             Assert.False(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

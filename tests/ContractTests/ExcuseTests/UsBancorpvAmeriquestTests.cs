@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.ExcuseTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.ExcuseTests
     /// doctrine issue, impracticability is not just economic hardship, even when the same event was used in another case - its not the same thing
     /// ]]>
     /// </remarks>
-    
     public class UsBancorpvAmeriquestTests
     {
+        private readonly ITestOutputHelper output;
+
+        public UsBancorpvAmeriquestTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void UsBancorpvAmeriquest()
         {
@@ -63,7 +70,7 @@ namespace NoFuture.Law.Contract.Tests.ExcuseTests
             };
 
             testResult = testSubject.IsValid(new UsBancorp(), new Ameriquest());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.False(testResult);
         }
     }

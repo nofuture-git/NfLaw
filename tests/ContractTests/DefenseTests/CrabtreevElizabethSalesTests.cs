@@ -6,6 +6,7 @@ using NoFuture.Law.Contract.US.Defense;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, when agreement is written, but across multiple dox some signed, some not
     /// ]]>
     /// </remarks>
-    
     public class CrabtreevElizabethSalesTests
     {
+        private readonly ITestOutputHelper output;
+
+        public CrabtreevElizabethSalesTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void CrabtreevElizabethSales()
         {
@@ -53,7 +60,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
             //the defendant was attempting to avoid contract enforcement by 
             // saying it lacked signature part required by statute of frauds
             Assert.False(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
         public static ISet<Term<object>> GetTerms()
         {

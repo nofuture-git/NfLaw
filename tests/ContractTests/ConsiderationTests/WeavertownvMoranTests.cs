@@ -5,6 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.ConsiderationTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
     /// tricky.  Appeal court found the arrangement as "gratuitous" so its without consideration.
     /// ]]>
     /// </remarks>
-    
     public class WeavertownvMoranTests
     {
+        private readonly ITestOutputHelper output;
+
+        public WeavertownvMoranTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void WeavertownvMoran()
         {
@@ -42,7 +49,7 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
 
             var testResult = testSubject.IsValid(new Weavertown(), new Moran());
             Assert.False(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

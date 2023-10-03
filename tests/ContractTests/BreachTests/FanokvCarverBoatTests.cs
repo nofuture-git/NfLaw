@@ -8,6 +8,7 @@ using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.BreachTests
 {
@@ -19,9 +20,15 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
     /// doctrine issue, limits to the UCC perfect tender rule, Assent to contract is not the same as acceptance of goods
     /// ]]>
     /// </remarks>
-    
     public class FanokvCarverBoatTests
     {
+        private readonly ITestOutputHelper output;
+
+        public FanokvCarverBoatTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void FanokvCarverBoat()
         {
@@ -53,7 +60,7 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
             };
 
             var testResult = testContract.IsValid(new CarverBoat(), new Fanok());
-            Console.WriteLine(testContract.ToString());
+            this.output.WriteLine(testContract.ToString());
             Assert.True(testResult);
             var testSubject = new PerfectTender<Goods>(testContract)
             {
@@ -67,7 +74,7 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
                 }
             };
             testResult = testSubject.IsValid(new CarverBoat(), new Fanok());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
         }
     }

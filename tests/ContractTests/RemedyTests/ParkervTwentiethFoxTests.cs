@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// doctrine issue, the nature of what is uncertian, unavoidable and the like is per-case kinda specific
     /// ]]>
     /// </remarks>
-    
     public class ParkervTwentiethFoxTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ParkervTwentiethFoxTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ParkervTwentiethFox()
         {
@@ -65,7 +72,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             testSubject.Limits.CalcUncertainty = lp => lp is Parker ? 749999m : 0;
 
             testResult = testSubject.IsValid(new Parker(), new TwentiethFox());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
 
         }

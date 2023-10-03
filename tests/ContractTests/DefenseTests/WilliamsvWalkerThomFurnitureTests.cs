@@ -6,6 +6,7 @@ using NoFuture.Law.Contract.US.Defense.ToPublicPolicy;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, unconsionable can be on unreasonably favorable terms alone
     /// ]]>
     /// </remarks>
-    
     public class WilliamsvWalkerThomFurnitureTests
     {
+        private readonly ITestOutputHelper output;
+
+        public WilliamsvWalkerThomFurnitureTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void WilliamsvWalkerThom()
         {
@@ -46,7 +53,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
             };
 
             var testResult = testSubject.IsValid(new WalkerThom(), new Williams());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
         }
 

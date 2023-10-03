@@ -6,6 +6,7 @@ using NoFuture.Law.Contract.US.Defense.ToFormation;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, capacity to contract limited when still a minor
     /// ]]>
     /// </remarks>
-    
     public class ExParteOdemTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ExParteOdemTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ExParteOdem()
         {
@@ -45,7 +52,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
 
             var testResult = testSubject.IsValid(new ChildrensHospital(), new IrisOdem());
             Assert.True(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
         public static ISet<Term<object>> GetTerms()
         {

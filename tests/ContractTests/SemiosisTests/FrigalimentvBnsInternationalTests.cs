@@ -8,6 +8,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
@@ -20,9 +21,15 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     /// expressly in contract, course of preformance, course of dealing and usage of trade
     /// ]]>
     /// </remarks>
-    
     public class FrigalimentvBnsInternationalTests
     {
+        private readonly ITestOutputHelper output;
+
+        public FrigalimentvBnsInternationalTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void FigalimentvInternational()
         {
@@ -55,7 +62,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
             };
             var testResult = testContract.IsValid(new Frigaliment(), new BnsInternational());
             //this is true any kind of chicken is the "Chicken" type
-            Console.WriteLine(testContract.ToString());
+            this.output.WriteLine(testContract.ToString());
             Assert.True(testResult);
 
             var testSubject = new SemanticDilemma<Promise>(testContract)
@@ -63,7 +70,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
                 IsIntendedMeaningAtTheTime = t => t.Name == "chicken" && t.RefersTo is StewingChicken,
             };
             testResult = testSubject.IsValid(new Frigaliment(), new BnsInternational());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

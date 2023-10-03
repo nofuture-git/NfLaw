@@ -8,6 +8,7 @@ using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -19,9 +20,15 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// doctrine issue, more parts to Calc of Loss to injured with UCC
     /// ]]>
     /// </remarks>
-    
     public class BrandeisvCapitolCraneTests
     {
+        private readonly ITestOutputHelper output;
+
+        public BrandeisvCapitolCraneTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void BrandeisvCapitolCrane()
         {
@@ -74,7 +81,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
                 }
             };
             testResult = testSubject.IsValid(new Brandeis(), new CapitolCrane());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
         }
     }

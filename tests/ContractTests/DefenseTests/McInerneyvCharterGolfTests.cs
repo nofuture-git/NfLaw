@@ -6,6 +6,7 @@ using NoFuture.Law.Contract.US.Defense;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// and signed agreement is needed otherwise its a valid defense against enforcement
     /// ]]>
     /// </remarks>
-    
     public class McInerneyvCharterGolfTests
     {
+        private readonly ITestOutputHelper output;
+
+        public McInerneyvCharterGolfTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void McInerneyvCharterGolf()
         {
@@ -48,7 +55,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
             var testResult = testSubject.IsValid(new CharterGolf(), new McInerney());
             //so it is a valid defense because it lacks sufficient writing (was oral agreement)
             Assert.True(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
 
         public static ISet<Term<object>> GetTerms()

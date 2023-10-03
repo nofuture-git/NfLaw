@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// doctrine issue, reliance cannot be used as excuse for recovering from a bad deal
     /// ]]>
     /// </remarks>
-    
     public class DoeringvJohnDeereTests
     {
+        private readonly ITestOutputHelper output;
+
+        public DoeringvJohnDeereTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void DoeringvJohnDeere()
         {
@@ -60,7 +67,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
 
             };
             testResult = testSubject.IsValid(new Doering(), new JohnDeere());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.False(testResult);
         }
     }

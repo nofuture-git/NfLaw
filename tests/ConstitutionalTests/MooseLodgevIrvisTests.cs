@@ -5,6 +5,7 @@ using NoFuture.Law.Property.US.FormsOf.InTerra;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Constitutional.Tests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Constitutional.Tests
     /// Purely private party in private setting and discrimation being had is trival doesn't count
     /// ]]>
     /// </remarks>
-    
     public class MooseLodgevIrvisTests
     {
+        private readonly ITestOutputHelper output;
+
+        public MooseLodgevIrvisTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void MooseLodgevIrvis()
         {
@@ -35,7 +42,7 @@ namespace NoFuture.Law.Constitutional.Tests
             };
 
             var testResult2 = testSubject2.IsValid(new Irvis(), new MooseLodge());
-            Console.WriteLine(testSubject2.ToString());
+            this.output.WriteLine(testSubject2.ToString());
             Assert.False(testResult2);
         }
     }

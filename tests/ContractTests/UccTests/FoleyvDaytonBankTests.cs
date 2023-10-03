@@ -5,6 +5,7 @@ using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.UccTests
 {
@@ -16,9 +17,15 @@ namespace NoFuture.Law.Contract.Tests.UccTests
     /// Doctrine issue, merchant in UCC doesn't just mean any commerical enterprise
     /// ]]>
     /// </remarks>
-    
     public class FoleyvDaytonBankTests
     {
+        private readonly ITestOutputHelper output;
+
+        public FoleyvDaytonBankTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void FoleyvDaytonBank()
         {
@@ -29,7 +36,7 @@ namespace NoFuture.Law.Contract.Tests.UccTests
             testSubject.AddReasonEntryRange(testGoods.GetReasonEntries());
             Assert.False(testResult);
             Assert.True(testSubject.GetReasonEntries().Any());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

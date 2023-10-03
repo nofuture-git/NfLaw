@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// doctrine issue, what is foreseeable is true even when neither party actually does so
     /// ]]>
     /// </remarks>
-    
     public class HarrahsvHnedakBoboTests
     {
+        private readonly ITestOutputHelper output;
+
+        public HarrahsvHnedakBoboTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void HarrahsvHnedakBobo()
         {
@@ -64,7 +71,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             testSubject.Limits.CalcUnforeseeable = lp => 100m;
 
             testResult = testSubject.IsValid(new Harrahs(), new HnedakBobo());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.False(testResult);
 
         }

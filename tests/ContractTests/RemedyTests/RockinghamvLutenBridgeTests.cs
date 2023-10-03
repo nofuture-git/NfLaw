@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// doctrine issue, a plaintiff cannot hold a defendant liable for damages which need not have been incurred
     /// ]]>
     /// </remarks>
-    
     public class RockinghamvLutenBridgeTests
     {
+        private readonly ITestOutputHelper output;
+
+        public RockinghamvLutenBridgeTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void RockinghamvLutenBridge()
         {
@@ -64,7 +71,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             testSubject.Limits.CalcAvoidable = lp => 50m;
             testResult = testSubject.IsValid(new Rockingham(), new LutenBridge());
             Assert.True(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

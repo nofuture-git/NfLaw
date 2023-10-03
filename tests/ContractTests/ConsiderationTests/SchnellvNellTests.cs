@@ -5,6 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.ConsiderationTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
     /// a legal contract when its really just a social one.
     /// ]]>
     /// </remarks>
-    
     public class SchnellvNellTests
     {
+        private readonly ITestOutputHelper output;
+
+        public SchnellvNellTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void SchnellvNell()
         {
@@ -43,7 +50,7 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
 
             var testResult = testSubject.IsValid(new Schnell(), new Nell());
             Assert.False(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

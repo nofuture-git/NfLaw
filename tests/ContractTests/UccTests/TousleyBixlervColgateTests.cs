@@ -4,6 +4,7 @@ using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.UccTests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Contract.Tests.UccTests
     /// Doctrine, subtle concept of what is and is not goods according to UCC
     /// ]]>
     /// </remarks>
-    
     public class TousleyBixlervColgateTests
     {
+        private readonly ITestOutputHelper output;
+
+        public TousleyBixlervColgateTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void TousleyBixlervColgate()
         {
@@ -33,7 +40,7 @@ namespace NoFuture.Law.Contract.Tests.UccTests
                 };
             var testResult = testSubject.IsValid(new Colgate(), new TousleyBixler());
             Assert.False(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

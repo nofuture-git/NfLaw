@@ -6,6 +6,7 @@ using NoFuture.Law.Contract.US.Defense.ToAssent;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, objective tests to fraud defense against contract enforcement
     /// ]]>
     /// </remarks>
-    
     public class AlabivDhlAirwaysTests
     {
+        private readonly ITestOutputHelper output;
+
+        public AlabivDhlAirwaysTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void AlabivDhlAirways()
         {
@@ -59,7 +66,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
 
             var testResult = testSubject.IsValid(new Alabi(), new DhlAirways());
             Assert.True(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
 
         }
         public static ISet<Term<object>> GetTerms()

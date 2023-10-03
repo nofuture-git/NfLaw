@@ -6,6 +6,7 @@ using NoFuture.Law.Contract.US.Defense.ToPublicPolicy;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, objective crit. concerning restrictive competition
     /// ]]>
     /// </remarks>
-    
     public class ValleyMedvFarberTests
     {
+        private readonly ITestOutputHelper output;
+
+        public ValleyMedvFarberTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ValleyMedvFarber()
         {
@@ -47,7 +54,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
             };
 
             var testResult = testSubject.IsValid(new ValleyMed(), new Farber());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
 
         }

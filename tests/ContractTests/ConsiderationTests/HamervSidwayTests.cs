@@ -5,6 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.ConsiderationTests
 {
@@ -19,9 +20,15 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
     /// Here, both sides of the bargin are considered to have value.
     /// ]]>
     /// </remarks>
-    
     public class HamervSidwayTests
     {
+        private readonly ITestOutputHelper output;
+
+        public HamervSidwayTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void HamervSidway()
         {
@@ -43,8 +50,8 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
             };
 
             var testResult = testSubject.IsValid(new Hamer(), new Sidway());
-            Console.WriteLine(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testResult.ToString());
+            this.output.WriteLine(testSubject.ToString());
 
         }
     }

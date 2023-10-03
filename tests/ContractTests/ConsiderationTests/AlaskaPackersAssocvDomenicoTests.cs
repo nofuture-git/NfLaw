@@ -5,6 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.ConsiderationTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
     /// either the promise or return-promise is an existing duty
     /// ]]>
     /// </remarks>
-    
     public class AlaskaPackersAssocvDomenicoTests
     {
+        private readonly ITestOutputHelper output;
+
+        public AlaskaPackersAssocvDomenicoTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void AlaskaPackersAssocvDomenico()
         {
@@ -42,8 +49,8 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
             };
 
             var testResult = testSubject.IsValid(new AlaskaPackersAssoc(), new Domenico());
-            Console.WriteLine(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testResult.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

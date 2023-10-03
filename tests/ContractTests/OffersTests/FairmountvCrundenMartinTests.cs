@@ -5,6 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.OffersTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
     /// not good enough.
     /// ]]>
     /// </remarks>
-    
     public class FairmountvCrundenMartinTests
     {
+        private readonly ITestOutputHelper output;
+
+        public FairmountvCrundenMartinTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void FairmountvCrundenMartin()
         {
@@ -68,7 +75,7 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
 
             var testResult = testSubject.IsValid(new CrundenMartin(), new Fairmount());
             Assert.True(testResult);
-            System.Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 

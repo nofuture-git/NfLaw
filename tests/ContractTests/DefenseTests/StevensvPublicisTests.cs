@@ -6,6 +6,7 @@ using NoFuture.Law.Contract.US.Defense;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, with telecom tech, it is very easy to satisfy the two requirements of the statute of frauds
     /// ]]>
     /// </remarks>
-    
     public class StevensvPublicisTests
     {
+        private readonly ITestOutputHelper output;
+
+        public StevensvPublicisTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void StevensvPublicis()
         {
@@ -49,7 +56,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
 
             //the statute of frauds written\signed bits are very easy with electronic emails and such
             Assert.False(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
 
         }
         public static ISet<Term<object>> GetTerms()

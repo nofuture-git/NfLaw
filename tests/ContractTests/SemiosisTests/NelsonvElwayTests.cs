@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     ///  doctrine issue, a term which states that no oral terms are allowed means just that
     /// ]]>
     /// </remarks>
-    
     public class NelsonvElwayTests
     {
+        private readonly ITestOutputHelper output;
+
+        public NelsonvElwayTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void NelsonvElway()
         {
@@ -60,7 +67,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
             };
 
             var testResult = testSubject.IsValid(new Nelson(), new Elway());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             //is still false since the terms include the Expressly Conditional term
             Assert.False(testResult);
         }

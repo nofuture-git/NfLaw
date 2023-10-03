@@ -3,15 +3,22 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.MutualAssentTests
 {
     /// <summary>
     /// AUGSTEIN v. LESLIE United States District Court for the Southern District of New York 11 Civ. 7512 (HB), 2012 U.S.Dist.LEXIS 149517 (S.D.N.Y.Oct. 17, 2012)
     /// </summary>
-    
     public class AugsteinvLeslieTests
     {
+        private readonly ITestOutputHelper output;
+
+        public AugsteinvLeslieTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void AugsteinvLeslie()
         {

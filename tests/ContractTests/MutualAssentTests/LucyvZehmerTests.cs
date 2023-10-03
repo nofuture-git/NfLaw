@@ -4,15 +4,22 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.MutualAssentTests
 {
     /// <summary>
     /// LUCY v. ZEHMER Supreme Court of Virginia 196 Va. 493; 84 S.E.2d 516 (1954)
     /// </summary>
-    
     public class LucyvZehmerTests
     {
+        private readonly ITestOutputHelper output;
+
+        public LucyvZehmerTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void LucyvZehmer()
         {
@@ -31,8 +38,8 @@ namespace NoFuture.Law.Contract.Tests.MutualAssentTests
             };
 
             var testResult = testSubject.IsValid(new WOLucy(), new AHZehmer());
-            Console.WriteLine(string.Join(", ", testSubject.GetReasonEntries()));
-            Console.WriteLine(string.Join(", ", testSubject.Assent.GetReasonEntries()));
+            this.output.WriteLine(string.Join(", ", testSubject.GetReasonEntries()));
+            this.output.WriteLine(string.Join(", ", testSubject.Assent.GetReasonEntries()));
             Assert.True(testResult);
         }
     }

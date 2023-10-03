@@ -7,6 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -17,9 +18,15 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// doctrine issue, restitution as re-payment for work done
     /// ]]>
     /// </remarks>
-    
     public class CoastalSteelvAlgernonTests
     {
+        private readonly ITestOutputHelper output;
+
+        public CoastalSteelvAlgernonTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void CoastalSteelvAlgernon()
         {
@@ -60,7 +67,7 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
             };
 
             testResult = testSubject.IsValid(new CoastalSteel(), new Algernon());
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
             Assert.True(testResult);
         }
     }

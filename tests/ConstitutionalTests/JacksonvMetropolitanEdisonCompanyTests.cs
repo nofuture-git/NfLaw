@@ -5,6 +5,7 @@ using NoFuture.Law.Property.US.FormsOf.InTerra;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Constitutional.Tests
 {
@@ -18,9 +19,15 @@ namespace NoFuture.Law.Constitutional.Tests
     /// be fairly treated as that of the State itself
     /// ]]>
     /// </remarks>
-    
     public class JacksonvMetropolitanEdisonCompanyTests
     {
+        private readonly ITestOutputHelper output;
+
+        public JacksonvMetropolitanEdisonCompanyTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void JacksonvMetropolitanEdisonCompany()
         {
@@ -41,7 +48,7 @@ namespace NoFuture.Law.Constitutional.Tests
             };
 
             var testResult2 = testSubject2.IsValid(new Jackson(), new MetropolitanEdisonCompany());
-            Console.WriteLine(testResult2.ToString());
+            this.output.WriteLine(testResult2.ToString());
             Assert.False(testResult2);
         }
     }

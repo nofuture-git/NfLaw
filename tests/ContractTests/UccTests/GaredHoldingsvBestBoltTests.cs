@@ -4,6 +4,7 @@ using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.UccTests
 {
@@ -15,9 +16,15 @@ namespace NoFuture.Law.Contract.Tests.UccTests
     /// Doctrine issue, what makes one a merchant can be subtle 
     /// ]]>
     /// </remarks>
-    
     public class GaredHoldingsvBestBoltTests
     {
+        private readonly ITestOutputHelper output;
+
+        public GaredHoldingsvBestBoltTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void GaredHoldingsvBestBolt()
         {

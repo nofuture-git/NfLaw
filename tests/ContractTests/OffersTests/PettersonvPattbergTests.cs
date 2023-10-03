@@ -3,6 +3,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NoFuture.Law.Contract.Tests.OffersTests
 {
@@ -14,9 +15,15 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
     /// The doctrine point of this one is that there was no offer since it was revoked.
     /// ]]>
     /// </remarks>
-    
     public class PettersonvPattbergTests
     {
+        private readonly ITestOutputHelper output;
+
+        public PettersonvPattbergTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void PettersonvPattberg()
         {
@@ -35,7 +42,7 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
 
             var testResult = testSubject.IsValid(new Petterson(), new Pattberg());
             Assert.False(testResult);
-            Console.WriteLine(testSubject.ToString());
+            this.output.WriteLine(testSubject.ToString());
         }
     }
 
