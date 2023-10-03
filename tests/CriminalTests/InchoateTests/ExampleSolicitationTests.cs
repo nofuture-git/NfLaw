@@ -3,14 +3,14 @@ using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.Inchoate;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.InchoateTests
 {
     [TestFixture()]
     public class ExampleSolicitationTests
     {
-        [Test]
+        [Fact]
         public void ExampleSolicitation()
         {
             var testCrime = new Felony

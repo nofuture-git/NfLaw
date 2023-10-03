@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Excuse;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.ExcuseTests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Contract.Tests.ExcuseTests
     /// doctrine issue, impracticability is not just economic hardship, even when the same event was used in another case - its not the same thing
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class UsBancorpvAmeriquestTests
     {
-        [Test]
+        [Fact]
         public void UsBancorpvAmeriquest()
         {
             var testContract = new ComLawContract<Promise>

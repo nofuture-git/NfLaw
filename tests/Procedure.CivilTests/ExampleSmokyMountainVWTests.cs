@@ -4,7 +4,7 @@ using NoFuture.Law.Procedure.Civil.US.Jurisdiction;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Courts;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Civil.Tests
 {
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Procedure.Civil.Tests
     /// 
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class ExampleSmokyMountainVWTests
     {
-        [Test]
+        [Fact]
         public void HudsonvSmokyMountainVW()
         {
             var testSubject = new PersonalJurisdiction(new StateCourt("Ohio"))
@@ -44,7 +44,7 @@ namespace NoFuture.Law.Procedure.Civil.Tests
             Assert.IsFalse(testResult);
         }
 
-        [Test]
+        [Fact]
         public void FordvSmokyMountainVW()
         {
             const string FL = "Florida";
@@ -70,7 +70,7 @@ namespace NoFuture.Law.Procedure.Civil.Tests
             Console.WriteLine(testSubject.ToString());
         }
 
-        [Test]
+        [Fact]
         public void PackardvSmokyMountainVW()
         {
             const string PA = "Pennsylvania";

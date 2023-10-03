@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Remedy.MoneyDmg;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// doctrine issue, calc of damages may require an understanding of accounting, econ, finance, etc.
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class LeingangvCityOfMandanTests
     {
-        [Test]
+        [Fact]
         public void LeingangvCityOfMandan()
         {
             var testContract = new ComLawContract<Promise>

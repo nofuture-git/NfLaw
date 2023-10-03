@@ -4,7 +4,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.UccTests
 {
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Contract.Tests.UccTests
     /// Doctrine issue, merchant in UCC doesn't just mean any commerical enterprise
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class FoleyvDaytonBankTests
     {
-        [Test]
+        [Fact]
         public void FoleyvDaytonBank()
         {
             var testSubject = new DaytonBank();

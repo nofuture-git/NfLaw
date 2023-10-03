@@ -4,7 +4,7 @@ using NoFuture.Law.Criminal.US.Defense.Excuse;
 using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.Criminal.US.Elements.Intent;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests
 {
@@ -19,7 +19,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests
     [TestFixture()]
     public class GarnettvStateTests
     {
-        [Test]
+        [Fact]
         public void GarnettvState()
         {
             var testCrime = new Felony

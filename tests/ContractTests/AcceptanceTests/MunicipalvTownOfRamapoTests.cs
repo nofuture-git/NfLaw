@@ -4,7 +4,7 @@ using System.Linq;
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.AcceptanceTests
 {
@@ -22,10 +22,10 @@ namespace NoFuture.Law.Contract.Tests.AcceptanceTests
     ///  * there is no understanding that a signature is required
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class MunicipalvTownOfRamapoTests
     {
-        [Test]
+        [Fact]
         public void MunicipalvTownOfRamapo()
         {
             var testSubject = new ComLawContract<Promise>

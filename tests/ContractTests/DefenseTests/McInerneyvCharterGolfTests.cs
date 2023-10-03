@@ -5,7 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.Contract.US.Defense;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// and signed agreement is needed otherwise its a valid defense against enforcement
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class McInerneyvCharterGolfTests
     {
-        [Test]
+        [Fact]
         public void McInerneyvCharterGolf()
         {
             var testContract = new ComLawContract<Promise>

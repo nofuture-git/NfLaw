@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.UccTests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Contract.Tests.UccTests
     /// Doctrine issue, detailed break-down of UCC 2-207 contract formation
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class CommerceInsvBayerCorpTests
     {
-        [Test]
+        [Fact]
         public void CommerceInsvBayerCorp()
         {
             var testSubject = new Agreement

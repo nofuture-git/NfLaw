@@ -4,7 +4,7 @@ using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.MensReaTests
 {
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Criminal.Tests.MensReaTests
     /// 
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class KarlaCrosbyvOregonTests
     {
-        [Test]
+        [Fact]
         public void KarlaCrosbyvOregon()
         {
             var recklessly = new Recklessly

@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.US;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, proving defect based on circumstantial evidence is enough for product strict liability
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class SpellervSearsRoebuckandCoTests
     {
-        [Test]
+        [Fact]
         public void SpellervSearsRoebuckandCo()
         {
             var test = new ProductStrictLiability(ExtensionMethods.Tortfeasor)

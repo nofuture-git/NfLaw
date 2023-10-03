@@ -9,7 +9,7 @@ using NoFuture.Law.Criminal.US.Terms;
 using NoFuture.Law.Criminal.US.Terms.Violence;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
 {
@@ -24,7 +24,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
     [TestFixture()]
     public class PeoplevLovercampTests
     {
-        [Test]
+        [Fact]
         public void PeoplevLovercamp()
         {
             var testCrime = new Felony

@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.UnintentionalTort;
 using NoFuture.Law.US;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, defendent cannot have mutually exclusive duty
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class CooleyvPublicServiceCoTests
     {
-        [Test]
+        [Fact]
         public void CooleyvPublicServiceCo()
         {
             var test = new CritiqueLearnedHandsFormula(ExtensionMethods.Tortfeasor)

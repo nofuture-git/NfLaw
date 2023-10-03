@@ -4,7 +4,7 @@ using System.Linq;
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.ConsiderationTests
 {
@@ -17,10 +17,10 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
     /// either the promise or return-promise is an existing duty
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class AlaskaPackersAssocvDomenicoTests
     {
-        [Test]
+        [Fact]
         public void AlaskaPackersAssocvDomenico()
         {
             var testSubject = new ComLawContract<Promise>

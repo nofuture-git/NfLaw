@@ -4,7 +4,7 @@ using NoFuture.Law.Constitutional.US;
 using NoFuture.Law.Property.US.FormsOf.InTerra;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Constitutional.Tests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Constitutional.Tests
     /// be fairly treated as that of the State itself
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class JacksonvMetropolitanEdisonCompanyTests
     {
-        [Test]
+        [Fact]
         public void JacksonvMetropolitanEdisonCompany()
         {
 

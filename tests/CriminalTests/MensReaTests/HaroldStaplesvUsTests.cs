@@ -4,7 +4,7 @@ using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.MensReaTests
 {
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Criminal.Tests.MensReaTests
     /// doctrine issue, not requiring mens rea is mostly for regulations with fines, not felonies
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class HaroldStaplesvUsTests
     {
-        [Test]
+        [Fact]
         public void HaroldStaplesvUs()
         {
             var testSubject = new Felony

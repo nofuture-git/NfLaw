@@ -3,14 +3,14 @@ using System.Linq;
 using NoFuture.Law.Procedure.Criminal.US;
 using NoFuture.Law.Procedure.Criminal.US.SearchReasons;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    [TestFixture]
+    
     public class ExampleProbableCauseTests
     {
-        [Test]
+        [Fact]
         public void TestProbableCauseIsValid00()
         {
             var testSubject = new ProbableCause
@@ -23,7 +23,7 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             Console.WriteLine(testSubject.ToString());
         }
 
-        [Test]
+        [Fact]
         public void TestProbableCauseIsValid01()
         {
             var testSubject = new ProbableCause
@@ -40,7 +40,7 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestProbableCauseIsValid02()
         {
             var testSubject = new ProbableCause

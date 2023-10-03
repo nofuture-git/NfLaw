@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.UnintentionalTort;
 using NoFuture.Law.US;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, multiple tortfeasers for one plainfiff where some are thought as third parties
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class SindellvAbbottLaboratoriesTests
     {
-        [Test]
+        [Fact]
         public void SindellvAbbottLaboratories()
         {
             var test = new ConcertOfAction(ExtensionMethods.Tortfeasor)

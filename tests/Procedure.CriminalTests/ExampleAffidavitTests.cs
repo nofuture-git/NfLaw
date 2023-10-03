@@ -4,14 +4,14 @@ using System.Linq;
 using NoFuture.Law;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    [TestFixture]
+    
     public class ExampleAffidavitTests
     {
-        [Test]
+        [Fact]
         public void TestAffidavitIsValid()
         {
             var testSubject = new Affidavit<object>

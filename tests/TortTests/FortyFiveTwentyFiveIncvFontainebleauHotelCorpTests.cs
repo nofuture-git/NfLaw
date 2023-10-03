@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.Tort.US.IntentionalTort;
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, private nuisance may be intentional but needs to invade a protected interest of which air and sun are not
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class FortyFiveTwentyFiveIncvFontainebleauHotelCorpTests
     {
-        [Test]
+        [Fact]
         public void FortyFiveTwentyFiveIncvFontainebleauHotelCorp()
         {
             var rocHotel = new LegalProperty("Roc Hotel")

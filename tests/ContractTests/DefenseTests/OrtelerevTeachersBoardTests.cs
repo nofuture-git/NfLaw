@@ -4,7 +4,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.Contract.US.Defense.ToFormation;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, being considered mentally incompetent makes a contract voidable
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class OrtelerevTeachersBoardTests
     {
-        [Test]
+        [Fact]
         public void OrtelerevTeachersBoard()
         {
             var testContract = new ComLawContract<Promise>

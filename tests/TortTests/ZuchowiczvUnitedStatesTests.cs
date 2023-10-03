@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.Tort.US.UnintentionalTort;
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, some act increased probability such-and-such and, indeed, such-and-such happened.
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class ZuchowiczvUnitedStatesTests
     {
-        [Test]
+        [Fact]
         public void ZuchowiczvUnitedStates()
         {
             var test = new Negligence(ExtensionMethods.Tortfeasor)

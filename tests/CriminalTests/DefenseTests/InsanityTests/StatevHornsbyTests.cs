@@ -5,7 +5,7 @@ using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.InsanityTests
 {
@@ -21,7 +21,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.InsanityTests
     [TestFixture()]
     public class StatevHornsbyTests
     {
-        [Test]
+        [Fact]
         public void StatevHornsby()
         {
             var testCrime = new Felony

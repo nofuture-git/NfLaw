@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US;
 using NoFuture.Law.Property.US.Acquisition;
 using NoFuture.Law.US.Persons;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, spins around on the open and notorious part when the property is some underground cave
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class MarengoCaveCovRossTests
     {
-        [Test]
+        [Fact]
         public void MarengoCaveCovRoss()
         {
             var test = new AdversePossession()

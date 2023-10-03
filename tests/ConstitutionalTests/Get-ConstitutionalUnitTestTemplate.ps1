@@ -31,7 +31,7 @@ using System.Collections.Generic;
 using System.Linq;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Constitutional.Tests
 {
@@ -43,10 +43,10 @@ namespace NoFuture.Law.Constitutional.Tests
     /// 
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class ${FileNamePrefix}${safeNamePlaintiff}v${safeNameDefendant}Tests
     {
-        [Test]
+        [Fact]
         public void ${safeNamePlaintiff}v${safeNameDefendant}()
         {
 

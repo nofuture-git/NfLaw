@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Semiosis;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
@@ -22,7 +22,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     [TestFixture()]
     public class RandomHousevRosettaBooksTests
     {
-        [Test]
+        [Fact]
         public void RandomHousvRosettaBooks()
         {
             var testContract = new ComLawContract<Promise>
@@ -70,7 +70,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestIntentPredicate()
         {
             var testResult = IsIntendedMeaning(new ContractTerm<object>("in book form", new RandomHouseIdeaOfBook()));

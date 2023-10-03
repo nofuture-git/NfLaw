@@ -3,7 +3,7 @@ using System.Linq;
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.AcceptanceTests
 {
@@ -27,10 +27,10 @@ namespace NoFuture.Law.Contract.Tests.AcceptanceTests
     /// principal, and the agent’s knowledge is binding on the principal.]
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class HendricksvBeheeTests
     {
-        [Test]
+        [Fact]
         public void HendricksvBehee()
         {
             var testSubject = new ComLawContract<Promise>

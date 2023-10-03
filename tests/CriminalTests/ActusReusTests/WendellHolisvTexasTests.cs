@@ -4,7 +4,7 @@ using NoFuture.Law.Criminal.US.Elements;
 using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.ActusReusTests
 {
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Criminal.Tests.ActusReusTests
     /// doctrine issue, possession is another kind of actus reus 
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class WendellHolisvTexasTests
     {
-        [Test]
+        [Fact]
         public void WendllHolisvTexas()
         {
             var testSubject = new Felony();

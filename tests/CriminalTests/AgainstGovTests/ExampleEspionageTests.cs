@@ -3,14 +3,14 @@ using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.AgainstGov;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.AgainstGovTests
 {
-    [TestFixture]
+    
     public class ExampleEspionageTests
     {
-        [Test]
+        [Fact]
         public void TestEspionage()
         {
             var testCrime = new Felony

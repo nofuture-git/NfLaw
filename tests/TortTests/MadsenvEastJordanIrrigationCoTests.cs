@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, when the loose requirements of cause in abnormal danger acts is just too loose
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class MadsenvEastJordanIrrigationCoTests
     {
-        [Test]
+        [Fact]
         public void MadsenvEastJordanIrrigationCo()
         {
             var property = new LegalProperty("cannibal minks");

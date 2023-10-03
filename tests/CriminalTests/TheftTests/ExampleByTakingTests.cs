@@ -6,14 +6,14 @@ using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.Property.US.FormsOf;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.TheftTests
 {
-    [TestFixture]
+    
     public class ExampleByTakingTests
     {
-        [Test]
+        [Fact]
         public void ExampleFiveFingerTheft()
         {
             var testCrime = new Misdemeanor
@@ -34,7 +34,7 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExampleEmbezzlementTheft()
         {
             var testCrime = new Misdemeanor
@@ -55,7 +55,7 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExampleInvalidTheftWhenOwner()
         {
             var jermey = new JeremyTheifEg();
@@ -78,7 +78,7 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
             Assert.IsFalse(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExampleVictimConsentGiven()
         {
             var cody = new CodyFriendEg();
@@ -108,7 +108,7 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
             Assert.IsFalse(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExampleTreacheryTest()
         {
             var testAttendantCircumstance = new FiduciaryRelationship

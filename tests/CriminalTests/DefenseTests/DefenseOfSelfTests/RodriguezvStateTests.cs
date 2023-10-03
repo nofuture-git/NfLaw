@@ -9,7 +9,7 @@ using NoFuture.Law.Criminal.US.Terms;
 using NoFuture.Law.Criminal.US.Terms.Violence;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
 {
@@ -21,10 +21,10 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
     /// doctrine issue, self-defense is invalid when defendant is the insigator
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class RodriguezvStateTests
     {
-        [Test]
+        [Fact]
         public void RodriguezvState()
         {
             var testCrime = new Felony

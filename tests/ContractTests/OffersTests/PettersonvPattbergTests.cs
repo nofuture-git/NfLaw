@@ -2,7 +2,7 @@
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.OffersTests
 {
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
     /// The doctrine point of this one is that there was no offer since it was revoked.
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class PettersonvPattbergTests
     {
-        [Test]
+        [Fact]
         public void PettersonvPattberg()
         {
             var testSubject = new ComLawContract<Performance>

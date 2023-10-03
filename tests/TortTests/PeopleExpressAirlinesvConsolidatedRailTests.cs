@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.UnintentionalTort;
 using NoFuture.Law.US;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, the predicates for econ loss negligence
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class PeopleExpressAirlinesvConsolidatedRailTests
     {
-        [Test]
+        [Fact]
         public void PeopleExpressAirlinesvConsolidatedRail()
         {
             var test = new EconomicLoss(ExtensionMethods.Tortfeasor)

@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.US;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, product liability requires defect is not a later mod
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class TemplevWeanUnitedIncTests
     {
-        [Test]
+        [Fact]
         public void TemplevWeanUnitedInc()
         {
             var test = new ProductStrictLiability(ExtensionMethods.Tortfeasor)

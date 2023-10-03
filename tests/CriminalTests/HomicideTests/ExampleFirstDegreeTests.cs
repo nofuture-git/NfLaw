@@ -3,14 +3,14 @@ using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.Homicide;
 using NoFuture.Law.Criminal.US.Elements.Intent;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.HomicideTests
 {
-    [TestFixture]
+    
     public class ExampleFirstDegreeTests
     {
-        [Test]
+        [Fact]
         public void ExampleFirstDegree()
         {
             var testCrime = new Felony

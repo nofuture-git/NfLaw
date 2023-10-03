@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Linq;
 using NoFuture.Law.Procedure.Civil.US;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Civil.Tests
 {
-    [TestFixture]
+    
     public class ExampleTestDomicileLocation
     {
-        [Test]
+        [Fact]
         public void TestDomicileLocationIsValid()
         {
             var testSubject = new DomicileLocation("Ohio")

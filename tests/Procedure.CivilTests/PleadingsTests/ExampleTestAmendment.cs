@@ -4,14 +4,14 @@ using NoFuture.Law.Procedure.Civil.US.ServiceOfProcess;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Courts;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Civil.Tests.PleadingsTests
 {
-    [TestFixture]
+    
     public class ExampleTestAmendment
     {
-        [Test]
+        [Fact]
         public void TestAmendmentIsValid()
         {
             var testSubject = new Amendment()
@@ -38,7 +38,7 @@ namespace NoFuture.Law.Procedure.Civil.Tests.PleadingsTests
             Assert.IsFalse(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestAmendmentIsValidWithLeave()
         {
             var testSubject = new Amendment()

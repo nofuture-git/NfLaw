@@ -1,7 +1,7 @@
 ﻿using System;
 using NoFuture.Law.Property.US.FormsOf.Intellectus;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -13,10 +13,10 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, trademark is to distinguish product source
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class QualitexCovJacobsonProductsCoTests
     {
-        [Test]
+        [Fact]
         public void QualitexCovJacobsonProductsCo()
         {
             var test = new GreenGoldColoredCleaningPads();

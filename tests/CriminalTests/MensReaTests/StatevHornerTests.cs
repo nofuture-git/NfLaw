@@ -3,7 +3,7 @@ using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.MensReaTests
 {
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Criminal.Tests.MensReaTests
     /// doctrine issue, failure to object to defect (mens rea not said specifically) in indictment constitutes waiver of all but plain error.
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class StatevHornerTests
     {
-        [Test]
+        [Fact]
         public void StatevHorner()
         {
             var testSubject = new Felony

@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Excuse;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.ExcuseTests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Contract.Tests.ExcuseTests
     /// doctrine issue, impracticability and frustration mean more then just losing money
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class KarlWendtvIntlHarvesterTests
     {
-        [Test]
+        [Fact]
         public void KarlWendtvIntlHarvester()
         {
             var testContract = new ComLawContract<Promise>

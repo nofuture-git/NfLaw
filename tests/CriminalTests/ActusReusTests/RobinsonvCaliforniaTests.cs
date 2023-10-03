@@ -3,7 +3,7 @@ using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.ActusReusTests
 {
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Criminal.Tests.ActusReusTests
     /// doctrine issue, the status of a person does not work as actus rea
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class RobinsonvCaliforniaTests
     {
-        [Test]
+        [Fact]
         public void RobinsonvCalifornia()
         {
             var testSubject = new ActusReus();

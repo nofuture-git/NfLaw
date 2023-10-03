@@ -5,7 +5,7 @@ using NoFuture.Law.Property.US.Acquisition.Found;
 using NoFuture.Law.Property.US.FormsOf;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -17,10 +17,10 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, illustrate concept of taking possession, and resolution by way of equitable division
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class PopovvHayashiTests
     {
-        [Test]
+        [Fact]
         public void PopovvHayashi()
         {
             var baseball = new HistoricBaseball();

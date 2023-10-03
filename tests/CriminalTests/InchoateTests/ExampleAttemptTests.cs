@@ -5,11 +5,11 @@ using NoFuture.Law.Criminal.US.Elements.Inchoate;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.InchoateTests
 {
-    [TestFixture]
+    
     public class ExampleAttemptTests
     {
         [Test(Description = "test that having reckless intent is valid for an attempt")]
@@ -53,7 +53,7 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
         /// <summary>
         /// Example person poisons bait and throws over fence to kill dog, dog not present, takes back poison bait
         /// </summary>
-        [Test]
+        [Fact]
         public void ExampleProximityTest()
         {
             var testCrime = new Misdemeanor()
@@ -74,7 +74,7 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExampleResIpsaLoquiturTest()
         {
             var testCrime = new Felony
@@ -96,7 +96,7 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExampleProbableDesistanceTest()
         {
             var testCrime = new Felony
@@ -117,7 +117,7 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExampleSubstantialStepsTest()
         {
             var testCrime = new Felony

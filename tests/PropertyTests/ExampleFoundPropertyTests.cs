@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using NoFuture.Law.Property.US.Acquisition.Found;
 using NoFuture.Law.US;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Property.Tests
 {
-    [TestFixture]
+    
     public class ExampleFoundPropertyTests
     {
         private ILegalPerson _propertyOwner = new LegalPerson("Jim Owner");
@@ -19,7 +19,7 @@ namespace NoFuture.Law.Property.Tests
             return persons.FirstOrDefault(p => p.IsSamePerson(_propertyOwner));
         }
 
-        [Test]
+        [Fact]
         public void TestAbandonedProperty()
         {
             var test = new AbandonedProperty(PropertyOwner)
@@ -38,7 +38,7 @@ namespace NoFuture.Law.Property.Tests
             Console.Write(test.ToString());
         }
 
-        [Test]
+        [Fact]
         public void TestLostProperty()
         {
             var test = new LostProperty(PropertyOwner)
@@ -56,7 +56,7 @@ namespace NoFuture.Law.Property.Tests
             Console.Write(test.ToString());
         }
 
-        [Test]
+        [Fact]
         public void TestMislaidProperty()
         {
             var test = new MislaidProperty(PropertyOwner)
@@ -75,7 +75,7 @@ namespace NoFuture.Law.Property.Tests
             Console.WriteLine(test.ToString());
         }
 
-        [Test]
+        [Fact]
         public void TestTreasureTrove()
         {
             var test = new TreasureTrove(PropertyOwner)

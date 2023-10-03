@@ -1,6 +1,6 @@
 ﻿using System;
 using NoFuture.Law.Criminal.US.Defense.Justification;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.US;
 using NoFuture.Law.Criminal.US.Terms;
@@ -17,10 +17,10 @@ namespace NoFuture.Law.Tort.Tests
     /// deadly force in defense of property.
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class KatkovBrineyTests
     {
-        [Test]
+        [Fact]
         public void KatkovBriney()
         {
             var test = new DefenseOfProperty(ExtensionMethods.Tortfeasor)

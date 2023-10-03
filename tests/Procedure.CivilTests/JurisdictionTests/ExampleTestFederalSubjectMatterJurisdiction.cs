@@ -1,14 +1,14 @@
 ﻿using System;
 using NoFuture.Law;
 using NoFuture.Law.Procedure.Civil.US.Jurisdiction;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Civil.Tests
 {
-    [TestFixture]
+    
     public class ExampleTestFederalSubjectMatterJurisdiction
     {
-        [Test]
+        [Fact]
         public void TestSubjectMatterJurisdictionIsValid()
         {
             var testSubject = new FederalSubjectMatterJurisdiction(new SomeOtherKindOfCourt("kangaroo"))

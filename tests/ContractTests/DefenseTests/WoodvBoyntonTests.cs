@@ -5,7 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.Contract.US.Defense.ToAssent;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -20,7 +20,7 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     [TestFixture()]
     public class WoodvBoyntonTests
     {
-        [Test]
+        [Fact]
         public void WoodvBoynton()
         {
             var testContract = new ComLawContract<Promise>

@@ -2,15 +2,15 @@
 using System.Linq;
 using NoFuture.Law;
 using NoFuture.Law.Criminal.US;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests
 {
-    [TestFixture]
+    
     public class CrimeTests
     {
 
-        [Test]
+        [Fact]
         public void TestCompareTo()
         {
             ICrime[] testSubjects =

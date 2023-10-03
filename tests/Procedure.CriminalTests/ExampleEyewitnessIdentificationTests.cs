@@ -1,13 +1,13 @@
 ﻿using System;
 using NoFuture.Law.Procedure.Criminal.US.Witness;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    [TestFixture]
+    
     public class ExampleEyewitnessIdentificationTests
     {
-        [Test]
+        [Fact]
         public void TestEyewitnessIdentificationIsValid00()
         {
             var testSubject = new EyewitnessIdentification

@@ -5,14 +5,14 @@ using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.InsanityTests
 {
     [TestFixture()]
     public class ExampleMNaghtenTests
     {
-        [Test]
+        [Fact]
         public void ExampleMNaghtenFake()
         {
             var testCrime = new Felony
@@ -44,7 +44,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.InsanityTests
 
         }
 
-        [Test]
+        [Fact]
         public void ExampleMNaghtenReal()
         {
             var testCrime = new Felony

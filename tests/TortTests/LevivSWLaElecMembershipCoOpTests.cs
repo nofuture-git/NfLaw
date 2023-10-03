@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.ReasonableCare;
 using NoFuture.Law.US;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, being an expert alone does not raise the level of reasonable care, it must be distinct\dangerous or relied upon
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class LevivSWLaElecMembershipCoOpTests
     {
-        [Test]
+        [Fact]
         public void LevivSWLaElecMembershipCoOp()
         {
             var test = new OfExpert<PowerLines>(ExtensionMethods.Tortfeasor)

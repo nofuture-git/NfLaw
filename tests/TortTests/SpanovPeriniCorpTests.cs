@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, illustrate concept of abnormally dangerous activity
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class SpanovPeriniCorpTests
     {
-        [Test]
+        [Fact]
         public void SpanovPeriniCorp()
         {
             var property = new LegalProperty("garage in Brooklyn");

@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.ReasonableCare;
 using NoFuture.Law.US;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, liability for children is typically not applicable unless they are performing some adult activity
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class DellwovPearsonTests
     {
-        [Test]
+        [Fact]
         public void DellwovPearson()
         {
             var test = new OfChildren(ExtensionMethods.Tortfeasor)

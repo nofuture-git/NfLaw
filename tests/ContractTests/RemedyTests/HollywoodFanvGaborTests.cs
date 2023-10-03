@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Remedy.MoneyDmg;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// doctrine issue, Testimony about lost profits must at least be based upon some factual data
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class HollywoodFanvGaborTests
     {
-        [Test]
+        [Fact]
         public void HollywoodFanvGabor()
         {
             var testContract = new ComLawContract<Promise>

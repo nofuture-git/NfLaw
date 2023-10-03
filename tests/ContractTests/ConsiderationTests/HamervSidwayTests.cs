@@ -4,7 +4,7 @@ using System.Linq;
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.ConsiderationTests
 {
@@ -19,10 +19,10 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
     /// Here, both sides of the bargin are considered to have value.
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class HamervSidwayTests
     {
-        [Test]
+        [Fact]
         public void HamervSidway()
         {
             var testSubject = new ComLawContract<Promise>

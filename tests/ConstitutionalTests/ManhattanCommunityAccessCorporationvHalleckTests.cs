@@ -4,7 +4,7 @@ using System.Linq;
 using NoFuture.Law.Constitutional.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Constitutional.Tests
 {
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Constitutional.Tests
     /// example of when one is clearly not protected by constitutional rights
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class ManhattanCommunityAccessCorporationvHalleckTests
     {
-        [Test]
+        [Fact]
         public void ManhattanCommunityAccessCorporationvHalleck()
         {
             Func<ILegalPerson[], ILegalPerson> chargedWithDeprivation =

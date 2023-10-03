@@ -4,7 +4,7 @@ using NoFuture.Law.Property.US.FormsOf.InTerra;
 using NoFuture.Law.Property.US.FormsOf.InTerra.Sequential;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, ambiguous words looking like life estate, ruled as not
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class WhitevBrownTests
     {
-        [Test]
+        [Fact]
         public void WhitevBrown()
         {
             var property = new JessieLideHome();

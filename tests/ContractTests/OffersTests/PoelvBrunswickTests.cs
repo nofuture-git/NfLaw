@@ -3,7 +3,7 @@ using System.Linq;
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.OffersTests
 {
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
     /// infact a counter-offer followed by no acceptance (rejection).
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class PoelvBrunswickTests
     {
-        [Test]
+        [Fact]
         public void PoelvBrunswick()
         {
             var testSubject = new ComLawContract<Promise>

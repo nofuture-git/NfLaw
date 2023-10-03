@@ -5,14 +5,14 @@ using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.InsanityTests
 {
     [TestFixture()]
     public class ExampleSubstanCapacityTests
     {
-        [Test]
+        [Fact]
         public void ExampleSubstantialCapacity()
         {
             var testCrime = new Felony

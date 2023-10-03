@@ -2,14 +2,14 @@
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Tort.Tests
 {
-    [TestFixture]
+    
     public class ExampleContributoryLiabilityTests
     {
-        [Test]
+        [Fact]
         public void TestContributoryLiabilityIsValid()
         {
             var test = new ContributoryLiability(ExtensionMethods.Defendant)

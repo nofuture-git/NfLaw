@@ -1,14 +1,14 @@
 ﻿using System;
 using NoFuture.Law.Procedure.Criminal.US;
 using NoFuture.Law.Procedure.Criminal.US.Intrusions;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    [TestFixture]
+    
     public class ExampleFriskTests
     {
-        [Test]
+        [Fact]
         public void TestFriskIsValid00()
         {
             var testSubject = new Frisk
@@ -24,7 +24,7 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
 
         }
 
-        [Test]
+        [Fact]
         public void TestFriskIsValid01()
         {
             var testSubject = new Frisk

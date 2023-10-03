@@ -1,14 +1,14 @@
 ﻿using System;
 using NoFuture.Law;
 using NoFuture.Law.Procedure.Criminal.US.Intrusions;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    [TestFixture]
+    
     public class ExamplePlainViewSeizureTests
     {
-        [Test]
+        [Fact]
         public void TestPlainViewSeizureIsValid00()
         {
             var testSubject = new PlainViewSeizure

@@ -4,14 +4,14 @@ using NoFuture.Law.Criminal.US.Elements.AgainstGov;
 using NoFuture.Law.Criminal.US.Elements.AttendantCircumstances;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.AgainstGovTests
 {
-    [TestFixture]
+    
     public class ExampleSabotageTests
     {
-        [Test]
+        [Fact]
         public void TestSabotage()
         {
             var testCrime = new Felony

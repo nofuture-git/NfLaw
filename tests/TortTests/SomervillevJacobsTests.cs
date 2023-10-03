@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.US.Persons;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, when both parties have acted in good faith court of equity will just make one pay the other to bring balance
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class SomervillevJacobsTests
     {
-        [Test]
+        [Fact]
         public void SomervillevJacobs()
         {
             var test = new ImprovingTrespassers

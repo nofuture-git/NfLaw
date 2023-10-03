@@ -1,7 +1,7 @@
 ﻿using System;
 using NoFuture.Law.Property.US.FormsOf.Intellectus;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -13,10 +13,10 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, being a alive does not preclude it from being patented
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class DiamondvChakrabartyTests
     {
-        [Test]
+        [Fact]
         public void DiamondvChakrabarty()
         {
             var test = new PseudomonasBacterium()

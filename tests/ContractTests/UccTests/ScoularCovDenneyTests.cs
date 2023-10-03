@@ -3,7 +3,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.UccTests
 {
@@ -19,10 +19,10 @@ namespace NoFuture.Law.Contract.Tests.UccTests
     /// even when there is no consideration
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class ScoularCovDenneyTests
     {
-        [Test]
+        [Fact]
         public void ScoularCovDenney()
         {
             var testSubject = new UccContract<Goods>

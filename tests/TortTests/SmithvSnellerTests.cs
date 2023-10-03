@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.ReasonableCare;
 using NoFuture.Law.US;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, its not a greater duty of physical disability to meet the rational care standard
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class SmithvSnellerTests
     {
-        [Test]
+        [Fact]
         public void SmithvSneller()
         {
             var test = new OfPhysicalDeficiency(ExtensionMethods.Plaintiff)

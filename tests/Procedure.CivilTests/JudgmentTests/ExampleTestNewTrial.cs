@@ -3,14 +3,14 @@ using NoFuture.Law.Procedure.Civil.US.Judgment;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Courts;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Civil.Tests.JudgmentTests
 {
-    [TestFixture]
+    
     public class ExampleTestNewTrial
     {
-        [Test]
+        [Fact]
         public void TestNewTrialIsValid00()
         {
             var testSubject = new NewTrial
@@ -27,7 +27,7 @@ namespace NoFuture.Law.Procedure.Civil.Tests.JudgmentTests
 
         }
 
-        [Test]
+        [Fact]
         public void TestNewTrialIsValid01()
         {
             var testSubject = new NewTrial
@@ -44,7 +44,7 @@ namespace NoFuture.Law.Procedure.Civil.Tests.JudgmentTests
 
         }
 
-        [Test]
+        [Fact]
         public void TestNewTrialIsValid02()
         {
             var testSubject = new NewTrial

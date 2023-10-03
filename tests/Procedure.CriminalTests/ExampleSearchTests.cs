@@ -4,14 +4,14 @@ using NoFuture.Law.Procedure.Criminal.US;
 using NoFuture.Law.Procedure.Criminal.US.Searches;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    [TestFixture]
+    
     public class ExampleSearchTests
     {
-        [Test]
+        [Fact]
         public void TestSearchIsValid00()
         {
             var testSubject = new Search
@@ -30,7 +30,7 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestSearchIsValid01()
         {
             var testSubject = new Search

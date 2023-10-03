@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.Tort.US.ReasonableCare;
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, children are considered invitees when something is attractive on private property
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class BankervMcLaughlinTests
     {
-        [Test]
+        [Fact]
         public void BankervMcLaughlin()
         {
             var property = new LegalProperty("some hole")

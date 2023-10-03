@@ -4,14 +4,14 @@ using NoFuture.Law.Property.US.FormsOf.InTerra;
 using NoFuture.Law.Property.US.FormsOf.InTerra.Sequential;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Property.Tests
 {
-    [TestFixture]
+    
     public class PropertyInterestFactoryTests
     {
-        [Test]
+        [Fact]
         public void TestApiLookAndStyle()
         {
             var test00 =
@@ -40,7 +40,7 @@ namespace NoFuture.Law.Property.Tests
 
         }
 
-        [Test]
+        [Fact]
         public void TestAllPaths()
         {
             IPropertyInterestFactory test =

@@ -3,7 +3,7 @@ using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.Inchoate;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.InchoateTests
 {
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
     /// particular name, the charge of solicitation must match the defendant's role in the crime
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class StatevPinsonTests
     {
-        [Test]
+        [Fact]
         public void StatevPinson()
         {
             var testCrime = new Felony

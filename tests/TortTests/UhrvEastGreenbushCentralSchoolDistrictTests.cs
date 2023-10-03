@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.UnintentionalTort;
 using NoFuture.Law.US;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// 
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class UhrvEastGreenbushCentralSchoolDistrictTests
     {
-        [Test]
+        [Fact]
         public void UhrvEastGreenbushCentralSchoolDistrict()
         {
             var test = new NegligenceByStatute(ExtensionMethods.Tortfeasor)

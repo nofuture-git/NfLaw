@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.Tort.US.IntentionalTort;
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, consent may depend on specific directions and not the general intent
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class MohrvWilliamsTests
     {
-        [Test]
+        [Fact]
         public void MohrvWilliams()
         {
             var test = new TrespassToChattels

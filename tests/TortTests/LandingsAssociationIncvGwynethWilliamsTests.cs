@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.UnintentionalTort;
 using NoFuture.Law.US;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, secondary assumed risk is just another form of contributory 
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class LandingsAssociationIncvGwynethWilliamsTests
     {
-        [Test]
+        [Fact]
         public void LandingsAssociationIncvGwynethWilliams()
         {
             var test = new ContributoryNegligence<Walking>(ExtensionMethods.Tortfeasor)

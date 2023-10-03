@@ -5,14 +5,14 @@ using NoFuture.Law.Criminal.US.Elements.AttendantCircumstances;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
 {
-    [TestFixture]
+    
     public class ExampleKidnappingTests
     {
-        [Test]
+        [Fact]
         public void ExampleNotKidnapping()
         {
             var testCrime = new Felony
@@ -32,7 +32,7 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             Assert.IsFalse(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExampleKidnappingWrongIntent()
         {
             var testCrime = new Felony
@@ -53,7 +53,7 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             Assert.IsFalse(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExampleIsKidnapping()
         {
             var testCrime = new Felony
@@ -74,7 +74,7 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExampleKidnappingWithConsent()
         {
             var testCrime = new Felony

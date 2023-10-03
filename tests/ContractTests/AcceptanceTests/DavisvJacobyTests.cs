@@ -4,7 +4,7 @@ using System.Linq;
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.AcceptanceTests
 {
@@ -17,10 +17,10 @@ namespace NoFuture.Law.Contract.Tests.AcceptanceTests
     /// bilateral or unilateral contract.
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class DavisvJacobyTests
     {
-        [Test]
+        [Fact]
         public void DavisvJacoby()
         {
             var testSubject = new ComLawContract<Promise>

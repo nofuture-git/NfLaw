@@ -5,14 +5,14 @@ using NoFuture.Law.Criminal.US.Elements.AttendantCircumstances;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.Property.US.FormsOf;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.TheftTests
 {
-    [TestFixture]
+    
     public class ExampleByDeceptionTest
     {
-        [Test]
+        [Fact]
         public void ExampleByFalseImpression()
         {
             var testCrime = new Misdemeanor
@@ -35,7 +35,7 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExampleNotRelianceTest()
         {
             var testCrime = new Misdemeanor
@@ -65,7 +65,7 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
             Assert.IsFalse(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExampleRelianceTest()
         {
             var testCrime = new Misdemeanor

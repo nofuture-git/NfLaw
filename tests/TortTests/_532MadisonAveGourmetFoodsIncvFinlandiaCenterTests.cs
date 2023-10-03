@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, not public nuisance since everyone in the area lost money from having closed roads
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class _532MadisonAveGourmetFoodsIncvFinlandiaCenterTests
     {
-        [Test]
+        [Fact]
         public void _532MadisonAveGourmetFoodsIncvFinlandiaCenter()
         {
             var test = new PublicNuisance(ExtensionMethods.Tortfeasor)

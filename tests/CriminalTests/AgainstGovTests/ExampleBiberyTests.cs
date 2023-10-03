@@ -3,14 +3,14 @@ using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.AgainstGov;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.AgainstGovTests
 {
-    [TestFixture]
+    
     public class ExampleBiberyTests
     {
-        [Test]
+        [Fact]
         public void TestBibery()
         {
             var testCrime = new Felony

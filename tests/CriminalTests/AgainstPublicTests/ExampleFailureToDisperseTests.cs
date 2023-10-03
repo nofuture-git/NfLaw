@@ -3,14 +3,14 @@ using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.AgainstPublic;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
 {
-    [TestFixture]
+    
     public class ExampleFailureToDisperseTests
     {
-        [Test]
+        [Fact]
         public void ExampleUnlawfullAssembly()
         {
             var testCrime = new Misdemeanor
@@ -32,7 +32,7 @@ namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExampleOrderToDisperse()
         {
             var testCrime = new Misdemeanor
@@ -55,7 +55,7 @@ namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExampleRiotTest()
         {
             var testCrime = new Felony

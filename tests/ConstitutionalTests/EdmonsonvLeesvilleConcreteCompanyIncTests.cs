@@ -2,7 +2,7 @@
 using System.Linq;
 using NoFuture.Law.Constitutional.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Constitutional.Tests
 {
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Constitutional.Tests
     /// Describes the formal predicate logic of State Action in a more abstract way, separate from property
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class EdmonsonvLeesvilleConcreteCompanyIncTests
     {
-        [Test]
+        [Fact]
         public void EdmonsonvLeesvilleConcreteCompanyInc()
         {
             Func<ILegalPerson[], ILegalPerson> chargedWithDeprivation =
@@ -38,7 +38,7 @@ namespace NoFuture.Law.Constitutional.Tests
 
             var testResult = testSubject.IsValid(new Edmonson(), new LeesvilleConcreteCompanyInc());
             Console.WriteLine(testSubject.ToString());
-            Assert.IsTrue(testResult);
+            Assert.True(testResult);
 
         }
     }

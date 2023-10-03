@@ -1,14 +1,14 @@
 ﻿using System;
 using NoFuture.Law.Criminal.US.Elements.AgainstProperty.Theft;
 using NoFuture.Law.Criminal.US.Elements.AttendantCircumstances;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.TheftTests
 {
     [TestFixture()]
     public class ExampleRobberyTests
     {
-        [Test]
+        [Fact]
         public void ExampleRobberyActTest()
         {
             var testAct = new Robbery

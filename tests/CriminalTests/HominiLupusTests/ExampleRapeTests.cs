@@ -5,14 +5,14 @@ using NoFuture.Law.Criminal.US.Elements.AttendantCircumstances;
 using NoFuture.Law.Criminal.US.Elements.Intent;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
 {
-    [TestFixture]
+    
     public class ExampleRapeTests
     {
-        [Test]
+        [Fact]
         public void ExampleRape()
         {
             var testCrime = new Felony
@@ -34,7 +34,7 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestLackOfConsent()
         {
             var testCrime = new Felony
@@ -59,7 +59,7 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestStatutoryRape()
         {
             var testCrime = new Felony
@@ -81,7 +81,7 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestConsentDefense()
         {
             var testCrime = new Felony

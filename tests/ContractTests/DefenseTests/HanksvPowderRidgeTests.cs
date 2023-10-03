@@ -5,7 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.Contract.US.Defense.ToPublicPolicy;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -19,10 +19,10 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// tort system - with the public bearing the cost of the resulting injuries
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class HanksvPowderRidgeTests
     {
-        [Test]
+        [Fact]
         public void HanksvPowderRidge()
         {
             var testContract = new ComLawContract<Promise>

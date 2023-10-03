@@ -4,7 +4,7 @@ using NoFuture.Law.Criminal.US.Defense;
 using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.Criminal.US.Elements.Intent;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
 {
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
     /// doctrine issue, the use of police power must be reasonable
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class DuttonvHayesPupkoTests
     {
-        [Test]
+        [Fact]
         public void DuttonvHayesPupko()
         {
             var testSue = new Misdemeanor

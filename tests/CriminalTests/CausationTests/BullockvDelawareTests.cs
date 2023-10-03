@@ -4,7 +4,7 @@ using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.CausationTests
 {
@@ -19,7 +19,7 @@ namespace NoFuture.Law.Criminal.Tests.CausationTests
     [TestFixture()]
     public class BullockvDelawareTests
     {
-        [Test]
+        [Fact]
         public void BullockvDelaware()
         {
             var testSubject = new Felony

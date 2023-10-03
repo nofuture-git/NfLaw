@@ -1,7 +1,7 @@
 ﻿using System;
 using NoFuture.Law.Property.US.FormsOf.Intellectus;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -13,10 +13,10 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, copyright requires creativity and originality, not a reward for artistic labour
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class FeistPublicationsIncvRuralTelephoneServiceCoTests
     {
-        [Test]
+        [Fact]
         public void FeistPublicationsIncvRuralTelephoneServiceCo()
         {
             var test = new TelephoneDirectory()

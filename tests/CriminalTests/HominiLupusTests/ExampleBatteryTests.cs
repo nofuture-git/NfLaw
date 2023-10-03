@@ -4,14 +4,14 @@ using NoFuture.Law.Criminal.US.Elements.AgainstPersons;
 using NoFuture.Law.Criminal.US.Elements.AttendantCircumstances;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
 {
-    [TestFixture]
+    
     public class ExampleBatteryTests
     {
-        [Test]
+        [Fact]
         public void ExampleBattery()
         {
             var testCrime = new Misdemeanor
@@ -31,7 +31,7 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExampleMutualCombat()
         {
             var testCrime = new Misdemeanor

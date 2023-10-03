@@ -3,7 +3,7 @@ using System.Linq;
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.EstoppelTests
 {
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Contract.Tests.EstoppelTests
     /// back into pre-contractual state
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class ConradvFieldsTests
     {
-        [Test]
+        [Fact]
         public void ConradvFields()
         {
             var testSubject = new ComLawContract<Promise>()

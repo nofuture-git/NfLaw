@@ -2,14 +2,14 @@
 using NoFuture.Law;
 using NoFuture.Law.Procedure.Civil.US.Jurisdiction;
 using NoFuture.Law.US.Courts;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Civil.Tests
 {
-    [TestFixture]
+    
     public class ExampleTestMinContact
     {
-        [Test]
+        [Fact]
         public void TestMinimumContactIsValid00()
         {
             var testSubject = new MinimumContact(new StateCourt("NV"))
@@ -24,7 +24,7 @@ namespace NoFuture.Law.Procedure.Civil.Tests
             Console.WriteLine(testSubject.ToString());
         }
 
-        [Test]
+        [Fact]
         public void TestMinimumContactIsValid01()
         {
 

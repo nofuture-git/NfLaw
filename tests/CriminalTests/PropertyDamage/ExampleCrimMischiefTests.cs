@@ -2,14 +2,14 @@
 using NoFuture.Law.Criminal.US.Elements.AgainstProperty.Damage;
 using NoFuture.Law.Criminal.US.Elements.AttendantCircumstances;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.PropertyDestruction
 {
-    [TestFixture]
+    
     public class ExampleCrimMischiefTests
     {
-        [Test]
+        [Fact]
         public void TestCriminalMischiefAct()
         {
             var testAct = new CriminalMischief

@@ -3,14 +3,14 @@ using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.AgainstPersons;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
 {
-    [TestFixture]
+    
     public class ExampleIncestTests
     {
-        [Test]
+        [Fact]
         public void ExampleIncest()
         {
             var testCrime = new Felony
@@ -33,7 +33,7 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestIntentIsNull()
         {
             var testCrime = new Felony

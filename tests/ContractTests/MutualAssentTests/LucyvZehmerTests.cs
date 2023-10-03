@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.MutualAssentTests
 {
     /// <summary>
     /// LUCY v. ZEHMER Supreme Court of Virginia 196 Va. 493; 84 S.E.2d 516 (1954)
     /// </summary>
-    [TestFixture]
+    
     public class LucyvZehmerTests
     {
-        [Test]
+        [Fact]
         public void LucyvZehmer()
         {
             var testSubject = new ComLawContract<Promise>

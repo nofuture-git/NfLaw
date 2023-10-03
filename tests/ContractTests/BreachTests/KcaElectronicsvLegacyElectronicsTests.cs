@@ -7,7 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.BreachTests
 {
@@ -19,10 +19,10 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
     /// 
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class KcaElectronicsvLegacyElectronicsTests
     {
-        [Test]
+        [Fact]
         public void KcaElectronicsvLegacyElectronics()
         {
             var testContract = new UccContract<Goods>

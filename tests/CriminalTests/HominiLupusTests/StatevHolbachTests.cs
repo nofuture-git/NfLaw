@@ -4,7 +4,7 @@ using NoFuture.Law.Criminal.US.Elements.AgainstPersons;
 using NoFuture.Law.Criminal.US.Elements.AgainstPersons.Credible;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
 {
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
     /// doctrine issue, the agitation must induce a real fear
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class StatevHolbachTests
     {
-        [Test]
+        [Fact]
         public void StatevHolbach()
         {
             var testCrime = new Felony

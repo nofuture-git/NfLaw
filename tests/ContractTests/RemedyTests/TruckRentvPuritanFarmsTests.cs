@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Remedy;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// doctrine issue, liquidated damages are fine so long as they are reasonable and not punitive
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class TruckRentvPuritanFarmsTests
     {
-        [Test]
+        [Fact]
         public void TruckRentvPuritanFarms()
         {
             var testContract = new ComLawContract<Promise>

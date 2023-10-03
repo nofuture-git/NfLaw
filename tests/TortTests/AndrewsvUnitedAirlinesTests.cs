@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.UnintentionalTort;
 using NoFuture.Law.US;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, enhanced duty for legal person type of "Common Carriers"
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class AndrewsvUnitedAirlinesTests
     {
-        [Test]
+        [Fact]
         public void AndrewsvUnitedAirlines()
         {
             var test = new LearnedHandsFormula(ExtensionMethods.Tortfeasor)

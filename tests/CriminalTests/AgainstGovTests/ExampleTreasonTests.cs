@@ -4,14 +4,14 @@ using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.AgainstGov;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.AgainstGovTests
 {
-    [TestFixture]
+    
     public class ExampleTreasonTests
     {
-        [Test]
+        [Fact]
         public void TreasonTest()
         {
             var testCrime = new Felony
@@ -34,7 +34,7 @@ namespace NoFuture.Law.Criminal.Tests.AgainstGovTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestTreasonLevyGeneralIntent()
         {
             var testCrime = new Felony

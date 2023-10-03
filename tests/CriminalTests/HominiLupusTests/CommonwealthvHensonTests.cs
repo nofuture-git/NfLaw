@@ -4,7 +4,7 @@ using NoFuture.Law.Criminal.US.Elements.AgainstPersons;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
 {
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
     /// doctrine issue, an threatened battery is valid when it very much appears the threat it real
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class CommonwealthvHensonTests
     {
-        [Test]
+        [Fact]
         public void CommonwealthvHenson()
         {
             var testCrime = new Felony

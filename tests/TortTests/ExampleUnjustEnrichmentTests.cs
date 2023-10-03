@@ -2,14 +2,14 @@
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Tort.Tests
 {
-    [TestFixture]
+    
     public class ExampleUnjustEnrichmentTests
     {
-        [Test]
+        [Fact]
         public void TestUnjustEnrichmentIsValid()
         {
             var test = new UnjustEnrichment(ExtensionMethods.Tortfeasor)

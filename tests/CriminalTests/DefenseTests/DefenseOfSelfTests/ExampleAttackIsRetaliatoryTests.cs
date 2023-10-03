@@ -9,14 +9,14 @@ using NoFuture.Law.Criminal.US.Terms;
 using NoFuture.Law.Criminal.US.Terms.Violence;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
 {
-    [TestFixture]
+    
     public class ExampleAttackIsRetaliatoryTests
     {
-        [Test]
+        [Fact]
         public void ExampleAttackIsRetaliatory()
         {
             var testCrime = new Felony

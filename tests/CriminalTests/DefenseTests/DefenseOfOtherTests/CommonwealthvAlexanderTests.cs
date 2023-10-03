@@ -9,7 +9,7 @@ using NoFuture.Law.Criminal.US.Terms;
 using NoFuture.Law.Criminal.US.Terms.Violence;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
 {
@@ -21,10 +21,10 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfOtherTests
     /// doctrine issue, defense of property with deadly force is not lawful
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class CommonwealthvAlexanderTests
     {
-        [Test]
+        [Fact]
         public void CommonwealthvAlexander()
         {
             var testCrime = new Infraction

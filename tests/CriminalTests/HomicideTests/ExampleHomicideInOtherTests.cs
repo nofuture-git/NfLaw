@@ -4,14 +4,14 @@ using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.Criminal.US.Elements.Homicide;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.HomicideTests
 {
     [TestFixture()]
     public class ExampleHomicideInOtherTests
     {
-        [Test]
+        [Fact]
         public void ExampleFelonyMurder()
         {
             var testFirstCrime = new Felony
@@ -46,7 +46,7 @@ namespace NoFuture.Law.Criminal.Tests.HomicideTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExampleDeathOccursBefore()
         {
             var testFirstCrime = new Felony
@@ -85,7 +85,7 @@ namespace NoFuture.Law.Criminal.Tests.HomicideTests
             Assert.IsFalse(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExampeMidemeanorManslaughter()
         {
             var testInputCrime = new Misdemeanor

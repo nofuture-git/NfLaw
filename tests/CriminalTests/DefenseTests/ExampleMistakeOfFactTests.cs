@@ -5,14 +5,14 @@ using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.Criminal.US.Elements.Intent;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests
 {
-    [TestFixture]
+    
     public class ExampleMistakeOfFactTests
     {
-        [Test]
+        [Fact]
         public void ExampleMistakeOfFactCorrect()
         {
             var testCrime = new Misdemeanor
@@ -43,7 +43,7 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExampleMistakeOfFactIncorrect()
         {
             var testCrime = new Misdemeanor

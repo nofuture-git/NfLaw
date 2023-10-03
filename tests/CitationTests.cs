@@ -4,15 +4,15 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using NoFuture.Law.US.CaseReading;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Tests
 {
-    [TestFixture]
+    
     public class CitationTests
     {
 
-        [Test]
+        [Fact]
         public void TestTryFindCaseName()
         {
             var testInput = GetCaseExample00();
@@ -71,7 +71,7 @@ namespace NoFuture.Law.Tests
                 Assert.IsTrue(testResults.Any(v => string.Equals(v, expect)));
         }
 
-        [Test]
+        [Fact]
         public void TestIsNumberEsque()
         {
             var tests = new[]
@@ -98,14 +98,14 @@ namespace NoFuture.Law.Tests
             }
         }
 
-        [Test]
+        [Fact]
         public void TestTrimStopWords()
         {
             var testResult = Citation.TrimStopWords("in in of and, to N.J.S.A. 9:2 -17,".Split(' ').ToList());
             Assert.AreEqual("N.J.S.A. 9:2 -17,", string.Join(" ", testResult));
         }
 
-        [Test]
+        [Fact]
         public void TestTryFindStatute()
         {
             var testInput = GetCaseExample00();

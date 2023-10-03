@@ -4,7 +4,7 @@ using System.Linq;
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.OffersTests
 {
@@ -17,10 +17,10 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
     /// as Ever-Tite started the job.
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class EverTiteRoofingCorpvGreenTests
     {
-        [Test]
+        [Fact]
         public void EverTiteRoofingCorpvGreen()
         {
             var testSubject = new ComLawContract<Promise>

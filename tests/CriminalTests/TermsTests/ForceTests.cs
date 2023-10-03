@@ -1,13 +1,13 @@
 ﻿using NoFuture.Law.Criminal.US.Terms;
 using NoFuture.Law.Criminal.US.Terms.Violence;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.TermsTests
 {
-    [TestFixture]
+    
     public class ForceTests
     {
-        [Test]
+        [Fact]
         public void TestGetCategoryRank()
         {
             var testSubject00 = new DeadlyForce();

@@ -4,7 +4,7 @@ using NoFuture.Law.Criminal.US.Defense;
 using NoFuture.Law.Criminal.US.Elements.AgainstProperty.Damage;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.TrespassTests
 {
@@ -19,7 +19,7 @@ namespace NoFuture.Law.Criminal.Tests.TrespassTests
     [TestFixture()]
     public class InTheMatterOfVvcTests
     {
-        [Test]
+        [Fact]
         public void InTheMatterOfVcc()
         {
             var testCrime = new Felony

@@ -2,7 +2,7 @@
 using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.MensReaTests
 {
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Criminal.Tests.MensReaTests
     /// occured because Dean was already involved in an unlawful act.
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class DeanvUsTests
     {
-        [Test]
+        [Fact]
         public void DeanvUs()
         {
             var testSubject = new Felony

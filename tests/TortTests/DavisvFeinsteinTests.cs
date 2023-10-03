@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.ReasonableCare;
 using NoFuture.Law.US;
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Tort.Tests
     /// actually meet the same nimble results of the unafflicted - only to try.
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class DavisvFeinsteinTests
     {
-        [Test]
+        [Fact]
         public void DavisvFeinstein()
         {
             var test = new OfPhysicalDeficiency(ExtensionMethods.Plaintiff)

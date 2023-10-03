@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Semiosis;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
@@ -19,10 +19,10 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     /// doctrine issue, when terms are explicit they are explicit and must be met exactly as stated
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class NorthHoustonvPwRealEstateTests
     {
-        [Test]
+        [Fact]
         public void NorthHoustonvPwRealEstate()
         {
             var testContract = new ComLawContract<Promise>

@@ -5,7 +5,7 @@ using NoFuture.Law.Criminal.US.Elements.AttendantCircumstances;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.Property.US.FormsOf;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.TheftTests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
     /// both possession and title
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class PeoplevTrasterTests
     {
-        [Test]
+        [Fact]
         public void PeoplevTraster()
         {
             //sneaky bastard, a consultant, tricked companies into thinking

@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     /// doctrine issue, implied terms as UCC 2-315 implied warrenty
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class AmericanFertilizervWoodTests
     {
-        [Test]
+        [Fact]
         public void AmericanFertilizervWood()
         {
             var testContract = new UccContract<Goods>

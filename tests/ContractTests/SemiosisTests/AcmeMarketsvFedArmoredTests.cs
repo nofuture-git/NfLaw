@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Semiosis;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     /// doctrine issue, part of knowing if conditional precedent has or has not been met, it must first be known as a conditional precedent
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class AcmeMarketsvFedArmoredTests
     {
-        [Test]
+        [Fact]
         public void AcmeMarketsvFedArmored()
         {
             var testContract = new ComLawContract<Promise>

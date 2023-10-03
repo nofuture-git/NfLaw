@@ -10,7 +10,7 @@ using NoFuture.Law.Criminal.US.Terms;
 using NoFuture.Law.Criminal.US.Terms.Violence;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
 {
@@ -23,10 +23,10 @@ namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
     /// doctrine issue, self-defense concerning a wild animal attack
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class ShulervBabbittTests
     {
-        [Test]
+        [Fact]
         public void ShulervBabbitt()
         {
             var testCrime = new Infraction

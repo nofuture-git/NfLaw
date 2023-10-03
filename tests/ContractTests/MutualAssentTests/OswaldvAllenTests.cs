@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.MutualAssentTests
 {
     /// <summary>
     /// Dr. Werner OSWALD, Plaintiff-Appellant, v. Jane B. ALLEN, Defendant-Appellee 417 F.2d 43; 1969 U.S. App.
     /// </summary>
-    [TestFixture]
+    
     public class OswaldvAllenTests
     {
-        [Test]
+        [Fact]
         public void TestIsTermsOfAgreementValid()
         {
             var testSubject = new MutualAssent();

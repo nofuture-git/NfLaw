@@ -2,14 +2,14 @@
 using NoFuture.Law.Procedure.Civil.US.ServiceOfProcess;
 using NoFuture.Law.US.Courts;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Civil.Tests.ServiceOfProcessTests
 {
-    [TestFixture]
+    
     public class ExampleTestInPersonDelivery
     {
-        [Test]
+        [Fact]
         public void TestInPersonDeliveryIsValid()
         {
             var testSubject = new InPersonDelivery

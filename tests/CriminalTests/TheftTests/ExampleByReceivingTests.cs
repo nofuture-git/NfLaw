@@ -1,14 +1,14 @@
 ﻿using System;
 using NoFuture.Law.Criminal.US.Elements.AgainstProperty.Theft;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.TheftTests
 {
-    [TestFixture]
+    
     public class ExampleByReceivingTests
     {
-        [Test]
+        [Fact]
         public void ExampleByReceivingActTest()
         {
             var testAct = new ByReceiving

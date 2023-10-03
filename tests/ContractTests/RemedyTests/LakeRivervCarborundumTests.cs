@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Remedy;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// doctrine issue, liquidated damages which give the full price of the contract are not enforceable since the are just pure profit
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class LakeRivervCarborundumTests
     {
-        [Test]
+        [Fact]
         public void LakeRivervCarborundum()
         {
             var testContract = new ComLawContract<Promise>

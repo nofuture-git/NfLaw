@@ -1,14 +1,14 @@
 ﻿using System;
 using NoFuture.Law.Procedure.Criminal.US;
 using NoFuture.Law.Procedure.Criminal.US.SearchReasons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    [TestFixture]
+    
     public class ExampleAdministrativeCauseTests
     {
-        [Test]
+        [Fact]
         public void TestAdministrativeCauseIsValid00()
         {
             var testSubject = new AdministrativeCause<ExampleAdminSearchPolicy>

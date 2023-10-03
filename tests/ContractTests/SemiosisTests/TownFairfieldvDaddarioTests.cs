@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Semiosis;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     /// doctrine issue, implied terms are read in especially timely notice
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class TownFairfieldvDaddarioTests
     {
-        [Test]
+        [Fact]
         public void TownFairfieldvDaddario()
         {
             var testContract = new ComLawContract<Promise>

@@ -6,14 +6,14 @@ using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
 {
-    [TestFixture]
+    
     public class ExampleAssaultTests
     {
-        [Test]
+        [Fact]
         public void ExampleAttemptedBatteryAssault()
         {
             var testCrime = new Felony
@@ -32,7 +32,7 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestNegligentAttemptBattery()
         {
             var testCrime = new Felony
@@ -51,7 +51,7 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             Assert.IsFalse(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestThreatenedBatteryAssault()
         {
             var testCrime = new Felony
@@ -71,7 +71,7 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestThreatenedBatteryAssault_GeneralIntent()
         {
             var testCrime = new Felony

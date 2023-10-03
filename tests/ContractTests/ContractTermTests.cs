@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using NoFuture.Law.Contract.US.Terms;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests
 {
-    [TestFixture]
+    
     public class ContractTermTests
     {
-        [Test]
+        [Fact]
         public void TestCompareTo()
         {
             var testSubject00 = new ContractTerm<object>("car parts", "car parts");
@@ -29,7 +29,7 @@ namespace NoFuture.Law.Contract.Tests
             Assert.AreEqual(1, testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestCompareTo_StdPrefInter()
         {
             var testSubject00 = new ContractTerm<object>("car parts", "car parts", new ExpressTerm());
@@ -67,7 +67,7 @@ namespace NoFuture.Law.Contract.Tests
             Assert.IsTrue(testResult > 0);
         }
 
-        [Test]
+        [Fact]
         public void TestDecorator()
         {
             var testSubject = new Term<object>("test term", DBNull.Value);
@@ -86,7 +86,7 @@ namespace NoFuture.Law.Contract.Tests
             Assert.IsFalse(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestGetAdditionalTerms()
         {
             var terms00 = new HashSet<Term<object>>
@@ -106,7 +106,7 @@ namespace NoFuture.Law.Contract.Tests
 
         }
 
-        [Test]
+        [Fact]
         public void TestGetInNameAgreedTerms()
         {
             var terms00 = new HashSet<Term<object>>
@@ -127,7 +127,7 @@ namespace NoFuture.Law.Contract.Tests
             Assert.AreEqual("sell ranch", testResult.First().Name);
         }
 
-        [Test]
+        [Fact]
         public void TestGetAgreedTerms()
         {
             var terms00 = new HashSet<Term<object>>
@@ -151,7 +151,7 @@ namespace NoFuture.Law.Contract.Tests
             Assert.AreEqual("sell ranch", testResult.First().Name);
         }
 
-        [Test]
+        [Fact]
         public void TestThrowOnDupRefersTo()
         {
             var terms01 = new HashSet<Term<object>>

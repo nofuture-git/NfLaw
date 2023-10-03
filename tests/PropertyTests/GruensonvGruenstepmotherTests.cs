@@ -5,7 +5,7 @@ using NoFuture.Law.Property.US.Acquisition.Donative;
 using NoFuture.Law.Property.US.FormsOf;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -17,10 +17,10 @@ namespace NoFuture.Law.Property.Tests
     /// 
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class GruensonvGruenstepmotherTests
     {
-        [Test]
+        [Fact]
         public void GruensonvGruenstepmother()
         {
             var painting = new SchlossKammerAmAtterseeII()

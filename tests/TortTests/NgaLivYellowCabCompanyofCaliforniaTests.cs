@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.Tort.US.UnintentionalTort;
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, detailed explaination of comparative negligence
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class NgaLivYellowCabCompanyofCaliforniaTests
     {
-        [Test]
+        [Fact]
         public void NgaLivYellowCabCompanyofCalifornia()
         {
             var test = new ComparativeNegligence<DrivingCar>(ExtensionMethods.Tortfeasor)

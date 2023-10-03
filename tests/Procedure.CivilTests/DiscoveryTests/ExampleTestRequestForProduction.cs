@@ -3,14 +3,14 @@ using NoFuture.Law.Procedure.Civil.US.Discovery;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Courts;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Civil.Tests.DiscoveryTests
 {
-    [TestFixture]
+    
     public class ExampleTestRequestForProduction
     {
-        [Test]
+        [Fact]
         public void TestRequestForProductionIsValid00()
         {
             var testSubject = new RequestForProduction
@@ -27,7 +27,7 @@ namespace NoFuture.Law.Procedure.Civil.Tests.DiscoveryTests
 
         }
 
-        [Test]
+        [Fact]
         public void TestRequestForProductionIsValid01()
         {
             var testSubject = new RequestForProduction
@@ -44,7 +44,7 @@ namespace NoFuture.Law.Procedure.Civil.Tests.DiscoveryTests
 
         }
 
-        [Test]
+        [Fact]
         public void TestRequestForProductionIsValid02()
         {
             var testSubject = new RequestForProduction
@@ -61,7 +61,7 @@ namespace NoFuture.Law.Procedure.Civil.Tests.DiscoveryTests
 
         }
 
-        [Test]
+        [Fact]
         public void TestRequestForProductionIsValid03()
         {
             var testSubject = new RequestForProduction
@@ -78,7 +78,7 @@ namespace NoFuture.Law.Procedure.Civil.Tests.DiscoveryTests
 
         }
 
-        [Test]
+        [Fact]
         public void TestRequestForProductionIsValid04()
         {
             var testSubject = new RequestForProduction

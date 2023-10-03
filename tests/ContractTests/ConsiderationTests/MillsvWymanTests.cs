@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.ConsiderationTests
 {
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
     /// Doctrine issue, still can't enforce a donative promise even when morally ought to.
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class MillsvWymanTests
     {
-        [Test]
+        [Fact]
         public void MillsvWyman()
         {
             var testSubject = new ComLawContract<Promise>

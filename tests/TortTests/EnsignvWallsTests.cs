@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Tort.Tests
     /// (aka priority in time)
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class EnsignvWallsTests
     {
-        [Test]
+        [Fact]
         public void EnsignvWalls()
         {
             var property = new LegalProperty("13949 Dacosta Street")

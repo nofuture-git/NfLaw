@@ -2,14 +2,14 @@
 using NoFuture.Law.Procedure.Civil.US.Judgment;
 using NoFuture.Law.US.Courts;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Civil.Tests.JudgmentTests
 {
-    [TestFixture]
+    
     public class ExampleTestConsentJudgment
     {
-        [Test]
+        [Fact]
         public void TestConsentJudgmentIsValid()
         {
             var testSubject = new ConsentJudgment

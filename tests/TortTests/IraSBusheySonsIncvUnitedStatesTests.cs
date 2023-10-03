@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.US;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, illustrate vicarious Liability
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class IraSBusheySonsIncvUnitedStatesTests
     {
-        [Test]
+        [Fact]
         public void IraSBusheySonsIncvUnitedStates()
         {
             var test = new EmployeeVicariousLiability(ExtensionMethods.Tortfeasor)

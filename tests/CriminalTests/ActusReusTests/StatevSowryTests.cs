@@ -4,7 +4,7 @@ using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.ActusReusTests
 {
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Criminal.Tests.ActusReusTests
     /// doctrine issue, one cannot act voluntarily while under the direct control of arresting officer
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class StatevSowryTests
     {
-        [Test]
+        [Fact]
         public void StatevSowry()
         {
             var testSubject = new Felony

@@ -3,7 +3,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.UccTests
 {
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Contract.Tests.UccTests
     /// Doctrine, subtle concept of what is and is not goods according to UCC
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class TousleyBixlervColgateTests
     {
-        [Test]
+        [Fact]
         public void TousleyBixlervColgate()
         {
             var testSubject =

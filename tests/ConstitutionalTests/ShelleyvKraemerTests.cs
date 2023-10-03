@@ -3,7 +3,7 @@ using System.Linq;
 using NoFuture.Law.Constitutional.US;
 using NoFuture.Law.Property.US.FormsOf.InTerra;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Constitutional.Tests
 {
@@ -16,11 +16,11 @@ namespace NoFuture.Law.Constitutional.Tests
     /// private agreements brings the constitutional protections into scope
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class ShelleyvKraemerTests
     {
 
-        [Test]
+        [Fact]
         public void ShelleyvKraemer()
         {
             Func<ILegalPerson[], ILegalPerson> chargedWithDeprivation =

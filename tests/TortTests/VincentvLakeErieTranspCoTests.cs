@@ -2,7 +2,7 @@
 using NoFuture.Law.Property.US.FormsOf;
 using NoFuture.Law.Property.US.FormsOf.InTerra;
 using NoFuture.Law.Tort.US.Defense;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
@@ -17,10 +17,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, necessity defense is a incomplete privilege since you are responsible for damage caused during trespass
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class VincentvLakeErieTranspCoTests
     {
-        [Test]
+        [Fact]
         public void VincentvLakeErieTranspCo()
         {
             var theBoat = new TheSteamshipReynolds();

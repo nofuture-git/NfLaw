@@ -5,14 +5,14 @@ using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.Criminal.US.Terms;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
 {
-    [TestFixture]
+    
     public class ExampleDrugCrimeTests
     {
-        [Test]
+        [Fact]
         public void TestDrugManfacture()
         {
             var testCrime = new Felony
@@ -33,7 +33,7 @@ namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestDrugPossession()
         {
             var testCrime = new Misdemeanor
@@ -53,7 +53,7 @@ namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestDrugSale()
         {
             var testCrime = new Misdemeanor
@@ -77,7 +77,7 @@ namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestDrugUse()
         {
             var testCrime = new Misdemeanor

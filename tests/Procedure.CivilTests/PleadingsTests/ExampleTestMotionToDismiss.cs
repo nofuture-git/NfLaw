@@ -2,14 +2,14 @@
 using NoFuture.Law.Procedure.Civil.US.Jurisdiction;
 using NoFuture.Law.Procedure.Civil.US.Pleadings;
 using NoFuture.Law.US.Courts;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Civil.Tests.PleadingsTests
 {
-    [TestFixture]
+    
     public class ExampleTestMotionToDismiss
     {
-        [Test]
+        [Fact]
         public void TestMotionToDismissIsValid()
         {
             var testSubject = new PreAnswerMotion

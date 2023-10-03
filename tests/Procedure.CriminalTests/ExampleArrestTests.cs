@@ -3,14 +3,14 @@ using System.Linq;
 using NoFuture.Law.Procedure.Criminal.US.Intrusions;
 using NoFuture.Law.Procedure.Criminal.US.Warrants;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    [TestFixture]
+    
     public class ExampleArrestTests
     {
-        [Test]
+        [Fact]
         public void TestArrestIsValid00()
         {
             var testSubject = new Arrest
@@ -25,7 +25,7 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestArrestIsValid01()
         {
             var testSubject = new Arrest

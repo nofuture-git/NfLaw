@@ -3,14 +3,14 @@ using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.Inchoate;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.InchoateTests
 {
-    [TestFixture]
+    
     public class ExampleConspiracyTests
     {
-        [Test]
+        [Fact]
         public void ExampleConspiracyActNoOvert()
         {
             var testSubject = new Conspiracy
@@ -24,7 +24,7 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExampleConspiracyActOvert()
         {
             var testSubject = new Conspiracy
@@ -38,7 +38,7 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExampleRequiresSpecificIntent()
         {
             var testCrime = new Felony
@@ -59,7 +59,7 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
             Assert.IsFalse(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExamplePinkertonRuleTest()
         {
             var testCrime = new Felony
@@ -79,7 +79,7 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestWhartonRule()
         {
             var testCrime = new Felony

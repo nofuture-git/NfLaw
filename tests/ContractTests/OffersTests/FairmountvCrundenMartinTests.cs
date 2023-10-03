@@ -4,7 +4,7 @@ using NoFuture.Law.Attributes;
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.OffersTests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
     /// not good enough.
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class FairmountvCrundenMartinTests
     {
-        [Test]
+        [Fact]
         public void FairmountvCrundenMartin()
         {
             var buyer = new CrundenMartin();

@@ -1,7 +1,7 @@
 ﻿using System;
 using NoFuture.Law.Property.US.FormsOf;
 using NoFuture.Law.Property.US.FormsOf.InTerra;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Tort.Tests
     /// Damage is NOT required for trespass to land
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class DoughertyvSteppTests
     {
-        [Test]
+        [Fact]
         public void DoughertyvStepp()
         {
             var testSubject = new TrespassToLand
@@ -43,7 +43,7 @@ namespace NoFuture.Law.Tort.Tests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestIntangibleEntry()
         {
             var testSubject = new TrespassToLand

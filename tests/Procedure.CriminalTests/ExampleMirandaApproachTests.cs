@@ -1,12 +1,12 @@
 ﻿using System;
 using NoFuture.Law.Procedure.Criminal.US.Interrogations;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
     public class ExampleMirandaApproachTests
     {
-        [Test]
+        [Fact]
         public void TestMirandaApproachIsValid00()
         {
             var testSubject = new MirandaApproach
@@ -22,7 +22,7 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestMirandaApproachIsValid01()
         {
             var testSubject = new MirandaApproach

@@ -4,14 +4,14 @@ using NoFuture.Law.Procedure.Criminal.US;
 using NoFuture.Law.Procedure.Criminal.US.Intrusions;
 using NoFuture.Law.Procedure.Criminal.US.SearchReasons;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    [TestFixture]
+    
     public class ExampleReasonableSuspicionTests
     {
-        [Test]
+        [Fact]
         public void TestReasonableSuspicionIsValid00()
         {
             var testSubject = new ReasonableSuspicion
@@ -31,7 +31,7 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             Console.WriteLine(testSubject.ToString());
         }
 
-        [Test]
+        [Fact]
         public void TestReasonableSuspicionIsValid01()
         {
             var testSubject = new ReasonableSuspicion
@@ -53,7 +53,7 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestReasonableSuspicionIsValid02()
         {
             var testSubject = new ReasonableSuspicion

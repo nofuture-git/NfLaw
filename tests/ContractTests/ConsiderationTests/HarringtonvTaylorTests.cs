@@ -2,7 +2,7 @@
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.ConsiderationTests
 {
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
     /// promise - even when promisor has their very life saved.
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class HarringtonvTaylorTests
     {
-        [Test]
+        [Fact]
         public void HarringtonvTaylor()
         {
             var testSubject = new ComLawContract<LegalConcept>

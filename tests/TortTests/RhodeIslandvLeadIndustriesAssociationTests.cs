@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, limits the fuzzy meaning of safety, health, peace, etc. to the actual shared things of air, water and rights of way
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class RhodeIslandvLeadIndustriesAssociationTests
     {
-        [Test]
+        [Fact]
         public void RhodeIslandvLeadIndustriesAssociation()
         {
             var test = new PublicNuisance(ExtensionMethods.Tortfeasor)

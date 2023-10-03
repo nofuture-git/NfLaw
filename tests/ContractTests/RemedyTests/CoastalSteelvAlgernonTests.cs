@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Remedy.MoneyDmg;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -17,10 +17,10 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// doctrine issue, restitution as re-payment for work done
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class CoastalSteelvAlgernonTests
     {
-        [Test]
+        [Fact]
         public void CoastalSteelvAlgernon()
         {
             var testContract = new ComLawContract<Promise>

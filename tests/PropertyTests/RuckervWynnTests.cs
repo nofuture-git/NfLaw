@@ -2,7 +2,7 @@
 using NoFuture.Law.Property.US.FormsOf.InTerra;
 using NoFuture.Law.Property.US.FormsOf.InTerra.Sequential;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, commerical lease are in favor of landlord
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class RuckervWynnTests
     {
-        [Test]
+        [Fact]
         public void RuckervWynn()
         {
             var lease = new Leasehold

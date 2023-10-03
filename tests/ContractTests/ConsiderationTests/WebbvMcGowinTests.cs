@@ -2,7 +2,7 @@
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.ConsiderationTests
 {
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
     /// was promised where here there is some explicit rate and duration.
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class WebbvMcGowinTests
     {
-        [Test]
+        [Fact]
         public void WebbvMcGowin()
         {
             var testSubject = new ComLawContract<Promise>()

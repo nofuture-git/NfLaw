@@ -2,14 +2,14 @@
 using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.AgainstPersons;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
 {
-    [TestFixture]
+    
     public class ExampleFalseImprisonmentTests
     {
-        [Test]
+        [Fact]
         public void ExampleIsFalseImprisonment()
         {
             var testCrime = new Felony

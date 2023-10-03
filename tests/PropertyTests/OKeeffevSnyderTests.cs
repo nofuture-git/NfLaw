@@ -2,7 +2,7 @@
 using NoFuture.Law.Property.US.Acquisition;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, adverse possession for chattel is strange since its moveable and concealable
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class OKeeffevSnyderTests
     {
-        [Test]
+        [Fact]
         public void OKeeffevSnyder()
         {
             var test = new AdversePossession(ExtensionMethods.Disseisor)

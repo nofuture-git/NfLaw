@@ -6,7 +6,7 @@ using NoFuture.Law.Procedure.Civil.US.Jurisdiction;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Courts;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Civil.Tests
 {
@@ -18,13 +18,13 @@ namespace NoFuture.Law.Procedure.Civil.Tests
     /// 
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class ExampleAustinvHealyTests
     {
         /// <summary>
         /// Defendant has nothing to do with North Dakota, that&apos;s the plaintiff&apos;s home state...
         /// </summary>
-        [Test]
+        [Fact]
         public void AustinvHealy01()
         {
             var testSubject = new PersonalJurisdiction(new StateCourt("North Dakota"))
@@ -51,7 +51,7 @@ namespace NoFuture.Law.Procedure.Civil.Tests
         /// <summary>
         /// doing business is not enough - needs to be connected to the plaintiff's claim in some way
         /// </summary>
-        [Test]
+        [Fact]
         public void AustinvHealy02()
         {
             var testSubject = new PersonalJurisdiction(new StateCourt("South Dakota"))
@@ -78,7 +78,7 @@ namespace NoFuture.Law.Procedure.Civil.Tests
         /// <summary>
         /// Valid because plaintiff is in Minnesota on biz and that is the location of the injury
         /// </summary>
-        [Test]
+        [Fact]
         public void AustinvHealy03()
         {
             var testSubject = new PersonalJurisdiction(new StateCourt("Minnesota"))

@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.Tort.US.UnintentionalTort;
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, demo of non-negligence when attempting to use a statute's disobedience completely out of context
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class GorrisvScottTests
     {
-        [Test]
+        [Fact]
         public void GorrisvScott()
         {
             var test = new NegligenceByStatute(ExtensionMethods.Tortfeasor)

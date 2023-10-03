@@ -5,7 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.Contract.US.Defense.ToAssent;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -17,10 +17,10 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, objective tests to fraud defense against contract enforcement
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class AlabivDhlAirwaysTests
     {
-        [Test]
+        [Fact]
         public void AlabivDhlAirways()
         {
             var testContract = new ComLawContract<Promise>

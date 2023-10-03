@@ -3,14 +3,14 @@ using System.Linq;
 using NoFuture.Law.Procedure.Criminal.US;
 using NoFuture.Law.Procedure.Criminal.US.Searches;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    [TestFixture]
+    
     public class ExampleInstrumentOfTheStateTests
     {
-        [Test]
+        [Fact]
         public void TestInstrumentOfTheStateIsValid00()
         {
             var testSubject = new InstrumentOfTheState
@@ -24,7 +24,7 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             Console.WriteLine(testSubject.ToString());
         }
 
-        [Test]
+        [Fact]
         public void TestInstrumentOfTheStateIsValid01()
         {
             var testSubject = new InstrumentOfTheState

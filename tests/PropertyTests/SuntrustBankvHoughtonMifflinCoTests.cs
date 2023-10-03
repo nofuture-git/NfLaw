@@ -3,7 +3,7 @@ using NoFuture.Law.Property.US.Acquisition;
 using NoFuture.Law.Property.US.FormsOf.Intellectus;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, parody is a form of fair use
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class SuntrustBankvHoughtonMifflinCoTests
     {
-        [Test]
+        [Fact]
         public void SuntrustBankvHoughtonMifflinCo()
         {
             var test = new FairUse(ExtensionMethods.Defendant)

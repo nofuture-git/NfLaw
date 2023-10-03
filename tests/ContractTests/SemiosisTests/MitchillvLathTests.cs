@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Semiosis;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     /// doctrine issue, the objective test of Parol Evidence Rule
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class MitchillvLathTests
     {
-        [Test]
+        [Fact]
         public void MitchillvLath()
         {
             var testContract = new ComLawContract<Promise>

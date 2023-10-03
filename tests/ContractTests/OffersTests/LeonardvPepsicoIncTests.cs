@@ -4,17 +4,17 @@ using System.Linq;
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.OffersTests
 {
     /// <summary>
     /// LEONARD v. PEPSICO, INC. United States District Court for the Southern District of New York 88 F.Supp. 2d 116 (S.D.N.Y. 1999)
     /// </summary>
-    [TestFixture]
+    
     public class LeonardvPepsicoIncTests
     {
-        [Test]
+        [Fact]
         public void LeonardvPepsicoInc()
         {
             var testSubject = new ComLawContract<Promise>

@@ -3,7 +3,7 @@ using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.ActusReusTests
 {
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Criminal.Tests.ActusReusTests
     /// doctrine issue, criminal intent as general intent with malice
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class RegaladovUsTests
     {
-        [Test]
+        [Fact]
         public void RegaladovUs()
         {
             var testSubject = new Felony

@@ -4,14 +4,14 @@ using NoFuture.Law.Procedure.Criminal.US.Challenges;
 using NoFuture.Law.Procedure.Criminal.US.SearchReasons;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    [TestFixture]
+    
     public class ExampleChallengeToProbableCauseTests
     {
-        [Test]
+        [Fact]
         public void TestChallengeToProbableCauseIsValid00()
         {
             var testSubject = new ChallengeToProbableCause<string>

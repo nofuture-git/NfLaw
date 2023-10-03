@@ -1,14 +1,14 @@
 ﻿using System;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.US;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Tort.Tests
 {
-    [TestFixture]
+    
     public class ExampleVicariousLiabilityTests
     {
-        [Test]
+        [Fact]
         public void TestVicariousLiabilityIsValid()
         {
             var test = new VicariousLiability(ExtensionMethods.Defendant)

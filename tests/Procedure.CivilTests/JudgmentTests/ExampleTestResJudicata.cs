@@ -1,14 +1,14 @@
 ﻿using System;
 using NoFuture.Law.Procedure.Civil.US.Judgment;
 using NoFuture.Law.US.Courts;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Civil.Tests.JudgmentTests
 {
-    [TestFixture]
+    
     public class ExampleTestResJudicata
     {
-        [Test]
+        [Fact]
         public void TestResJudicataIsValid()
         {
             var testSubject = new ResJudicata

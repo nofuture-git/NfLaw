@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.Terms;
 using NoFuture.Law.Tort.US.UnintentionalTort;
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, sorting that a thing is a custom and that it is, indeed, breached
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class TrimarcovKleinTests
     {
-        [Test]
+        [Fact]
         public void TrimarcovKlein()
         {
             var test = new Negligence(ExtensionMethods.Tortfeasor)

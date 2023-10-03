@@ -7,7 +7,7 @@ using NoFuture.Law.Contract.US.Semiosis;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
@@ -23,7 +23,7 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     [TestFixture()]
     public class FrigalimentvBnsInternationalTests
     {
-        [Test]
+        [Fact]
         public void FigalimentvInternational()
         {
             var testContract = new ComLawContract<Promise>

@@ -5,7 +5,7 @@ using NoFuture.Law.Criminal.US.Elements.Intent;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.MensReaTests
 {
@@ -17,10 +17,10 @@ namespace NoFuture.Law.Criminal.Tests.MensReaTests
     /// doctrine issue, transferred intent is anyone else hurt by the intent and suffices as the intent element of the crime charged
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class StatevAndrewsTests
     {
-        [Test]
+        [Fact]
         public void StatevAndrews()
         {
             var testIntent = new Knowingly

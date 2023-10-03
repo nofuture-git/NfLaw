@@ -3,14 +3,14 @@ using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.AgainstProperty.Damage;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.PropertyDestruction
 {
-    [TestFixture]
+    
     public class ExampleArsonTests
     {
-        [Test]
+        [Fact]
         public void TestArsonAct()
         {
             var testAct = new Arson
@@ -24,7 +24,7 @@ namespace NoFuture.Law.Criminal.Tests.PropertyDestruction
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestArsonAsOwner()
         {
             var testCrime = new Felony

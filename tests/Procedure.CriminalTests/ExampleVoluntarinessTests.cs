@@ -1,13 +1,13 @@
 ﻿using System;
 using NoFuture.Law.Procedure.Criminal.US.Interrogations;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    [TestFixture]
+    
     public class ExampleVoluntarinessTests
     {
-        [Test]
+        [Fact]
         public void TestVoluntarinessIsValid00()
         {
             var testSubject = new Voluntariness

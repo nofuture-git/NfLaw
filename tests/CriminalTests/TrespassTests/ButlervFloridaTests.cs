@@ -5,7 +5,7 @@ using NoFuture.Law.Criminal.US.Elements.AgainstProperty.Trespass;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.TrespassTests
 {
@@ -20,7 +20,7 @@ namespace NoFuture.Law.Criminal.Tests.TrespassTests
     [TestFixture()]
     public class ButlervFloridaTests
     {
-        [Test]
+        [Fact]
         public void ButlervFlorida()
         {
             var testCrime = new Felony

@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, demo's the idea of private peculiar injury since it was a loss suffered only by commercial fishermen on public waters
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class LeovGeneralElectricCoTests
     {
-        [Test]
+        [Fact]
         public void LeovGeneralElectricCo()
         {
             Predicate<IPlaintiff> isMoneyInjury = lp => lp is Leo;

@@ -5,7 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.Contract.US.Defense.ToAssent;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -17,10 +17,10 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, econ. duress using existing duty (lack of consideration) as leverage for duress in further contrax
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class AustinInstrumentvLoralCorpTests
     {
-        [Test]
+        [Fact]
         public void AustinInstrumentvLoralCorp()
         {
             var testContract = new ComLawContract<Promise>

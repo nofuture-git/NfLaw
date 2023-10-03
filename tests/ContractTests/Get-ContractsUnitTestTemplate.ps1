@@ -27,7 +27,7 @@ using System.Collections.Generic;
 using NoFuture.Law;
 using NoFuture.Law.US.Contracts;
 using NoFuture.Law.US.Contracts.Terms;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Tests.ContractTests.BreachTests
 {
@@ -39,10 +39,10 @@ namespace NoFuture.Law.Tests.ContractTests.BreachTests
     /// 
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class ${safeNamePlaintiff}v${safeNameDefendant}Tests
     {
-        [Test]
+        [Fact]
         public void ${safeNamePlaintiff}v${safeNameDefendant}()
         {
             var testContract = new ComLawContract<Promise>

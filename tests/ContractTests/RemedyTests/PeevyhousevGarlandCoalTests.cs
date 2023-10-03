@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Remedy.MoneyDmg;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -19,10 +19,10 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// cost much, much more than the value such a performance will add.
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class PeevyhousevGarlandCoalTests
     {
-        [Test]
+        [Fact]
         public void PeevyhousevGarlandCoal()
         {
             var testContract = new ComLawContract<Promise>

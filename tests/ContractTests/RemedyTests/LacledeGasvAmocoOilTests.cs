@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Remedy;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// doctrine issue, specific performance can be applied when substitution is not available
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class LacledeGasvAmocoOilTests
     {
-        [Test]
+        [Fact]
         public void LacledeGasvAmocoOil()
         {
             var testContract = new ComLawContract<Promise>

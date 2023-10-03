@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Remedy.MoneyDmg;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// doctrine issue, the nature of what is uncertian, unavoidable and the like is per-case kinda specific
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class ParkervTwentiethFoxTests
     {
-        [Test]
+        [Fact]
         public void ParkervTwentiethFox()
         {
             var testContract = new ComLawContract<Promise>

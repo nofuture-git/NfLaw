@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Linq;
 using NoFuture.Law.Procedure.Criminal.US.Interrogations;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    [TestFixture]
+    
     public class ExampleRightToCounselApproachTests
     {
-        [Test]
+        [Fact]
         public void TestRightToCounselApproachIsValid00()
         {
             var testSubject = new RightToCounselApproach

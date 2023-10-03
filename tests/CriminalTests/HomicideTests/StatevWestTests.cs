@@ -3,7 +3,7 @@ using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.Homicide;
 using NoFuture.Law.Criminal.US.Elements.Intent;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.HomicideTests
 {
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Criminal.Tests.HomicideTests
     /// doctrine issue, the prosecution must prove premeditation 
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class StatevWestTests
     {
-        [Test]
+        [Fact]
         public void StatevWest()
         {
             var testCrime = new Felony

@@ -8,14 +8,14 @@ using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.Criminal.US.Terms;
 using NoFuture.Law.Criminal.US.Terms.Violence;
 using NoFuture.Law.US;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.DefenseTests.DefenseOfSelfTests
 {
-    [TestFixture]
+    
     public class ExampleWithdrawalExceptionTests
     {
-        [Test]
+        [Fact]
         public void ExampleWithdrawalException()
         {
             var testCrime = new Felony

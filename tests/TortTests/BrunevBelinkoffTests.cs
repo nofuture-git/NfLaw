@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.Terms;
 using NoFuture.Law.Tort.US.UnintentionalTort;
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, claiming due care of custom when its not actually a custom
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class BrunevBelinkoffTests
     {
-        [Test]
+        [Fact]
         public void BrunevBelinkoff()
         {
             var test = new Negligence(ExtensionMethods.Tortfeasor)

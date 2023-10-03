@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.Tort.US.IntentionalTort;
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, trespass requires some protectable interest
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class DesnickvAmericanBroadcastingCompaniesIncTests
     {
-        [Test]
+        [Fact]
         public void DesnickvAmericanBroadcastingCompaniesInc()
         {
             var test = new TrespassToPerson(ExtensionMethods.Tortfeasor)

@@ -6,7 +6,7 @@ using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.Property.US.FormsOf;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.TheftTests
 {
@@ -21,7 +21,7 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
     [TestFixture()]
     public class StatevLarsonTests
     {
-        [Test]
+        [Fact]
         public void StatevLarson()
         {
             var securityDeposit = new SecurityDeposit();

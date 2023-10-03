@@ -5,7 +5,7 @@ using NoFuture.Law.Property.US.FormsOf;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -17,10 +17,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, misappropriation requires somekind of loss in competitive edge 
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class NationalBasketballAssociationvMotorolaIncTests
     {
-        [Test]
+        [Fact]
         public void NationalBasketballAssociationvMotorolaInc()
         {
             var test = new InfoMisappropriation(ExtensionMethods.Tortfeasor)

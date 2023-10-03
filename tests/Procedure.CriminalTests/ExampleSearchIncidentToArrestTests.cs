@@ -3,14 +3,14 @@ using System.Linq;
 using NoFuture.Law.Procedure.Criminal.US;
 using NoFuture.Law.Procedure.Criminal.US.Intrusions;
 using NoFuture.Law.Procedure.Criminal.US.Searches;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    [TestFixture]
+    
     public class ExampleSearchIncidentToArrestTests
     {
-        [Test]
+        [Fact]
         public void TestSearchIncidentToArrestIsValid00()
         {
             var testSubject = new Search
@@ -40,7 +40,7 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestSearchIncidentToArrestIsValid01()
         {
             var testSubject = new Search
@@ -71,7 +71,7 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestSearchIncidentToArrestIsValid02()
         {
             var testSubject = new Search

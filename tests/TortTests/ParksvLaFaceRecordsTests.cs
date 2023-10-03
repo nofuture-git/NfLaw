@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US.Persons;
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Tort.Tests
     /// protected even when such expression is promoted for commercial reasons
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class ParksvLaFaceRecordsTests
     {
-        [Test]
+        [Fact]
         public void ParksvLaFaceRecords()
         {
             var test = new FalseEndorsement(ExtensionMethods.Defendant)

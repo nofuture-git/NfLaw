@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US.Persons;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// 
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class WhitevSamsungElectronicsAmericaIncTests
     {
-        [Test]
+        [Fact]
         public void WhitevSamsungElectronicsAmericaInc()
         {
             var test = new FalseEndorsement(ExtensionMethods.Defendant)

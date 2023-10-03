@@ -5,7 +5,7 @@ using NoFuture.Law.Criminal.US.Elements.Intent;
 using NoFuture.Law.Criminal.US.Elements.Intent.PenalCode;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.MensReaTests
 {
@@ -17,10 +17,10 @@ namespace NoFuture.Law.Criminal.Tests.MensReaTests
     /// doctrine issue, strict liability 
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class StatevSlaytonTests
     {
-        [Test]
+        [Fact]
         public void StatevSlayton()
         {
             var testSubject = new Misdemeanor

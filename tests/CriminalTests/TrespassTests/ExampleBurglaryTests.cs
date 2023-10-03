@@ -5,14 +5,14 @@ using NoFuture.Law.Criminal.US.Elements.AttendantCircumstances;
 using NoFuture.Law.Criminal.US.Elements.Intent;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.TrespassTests
 {
-    [TestFixture]
+    
     public class ExampleBurglaryTests
     {
-        [Test]
+        [Fact]
         public void ExampleBurglaryActTest()
         {
             var testAct = new Burglary
@@ -58,7 +58,7 @@ namespace NoFuture.Law.Criminal.Tests.TrespassTests
 
         }
 
-        [Test]
+        [Fact]
         public void TestBurglaryIntent()
         {
             var testCrime = new Misdemeanor

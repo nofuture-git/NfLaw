@@ -3,14 +3,14 @@ using NoFuture.Law.Criminal.US.Elements.AgainstProperty.Theft;
 using NoFuture.Law.Criminal.US.Elements.AttendantCircumstances;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.TheftTests
 {
-    [TestFixture]
+    
     public class ExampleExtortionTests
     {
-        [Test]
+        [Fact]
         public void ExampleExtortionAct()
         {
             var testAct = new ByExtortion
@@ -28,7 +28,7 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExampleThreatenHonestlyDue()
         {
             var trent = new TrentThreatenEg();
@@ -49,7 +49,7 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
             Assert.IsFalse(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExampleCaveBasedOnThreat()
         {
             var testAct = new ByExtortion

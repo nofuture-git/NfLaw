@@ -5,7 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
@@ -17,10 +17,10 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     /// doctrine issue, the balancing part of consideration may itself be implied
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class WoodvLucyLadyTests
     {
-        [Test]
+        [Fact]
         public void WoodvLucyLady()
         {
             var testContract = new ComLawContract<Promise>

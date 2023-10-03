@@ -2,7 +2,7 @@
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.ConsiderationTests
 {
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
     /// a choice of alternative performances" is not consideration.
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class RidgeRunnerForestryvVenemanTests
     {
-        [Test]
+        [Fact]
         public void RidgeRunnerForestryvVeneman()
         {
             var testSubject = new ComLawContract<DonativePromise>()

@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using NoFuture.Law;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Tests
 {
-    [TestFixture]
+    
     public class TermTests
     {
         private static object something = new object();
 
-        [Test]
+        [Fact]
         public void TestExample()
         {
             var myTerm = new Term<object>("something's name", DBNull.Value);
@@ -31,7 +31,7 @@ namespace NoFuture.Law.Tests
 
         }
 
-        [Test]
+        [Fact]
         public void TestEquals()
         {
             var testSubj00 = new Term<object>("Swiss Coin Collection", new object());
@@ -47,7 +47,7 @@ namespace NoFuture.Law.Tests
 
         }
 
-        [Test]
+        [Fact]
         public void TestSetOps()
         {
             var set00 = new SortedSet<Term<object>>

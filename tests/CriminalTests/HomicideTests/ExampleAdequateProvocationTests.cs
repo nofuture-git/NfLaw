@@ -3,14 +3,14 @@ using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.Homicide;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.HomicideTests
 {
-    [TestFixture]
+    
     public class ExampleAdequateProvocationTests
     {
-        [Test]
+        [Fact]
         public void ExampleIndequateProvocation()
         {
             var testCrime = new Felony
@@ -33,7 +33,7 @@ namespace NoFuture.Law.Criminal.Tests.HomicideTests
             Assert.IsFalse(testResult);
         }
 
-        [Test]
+        [Fact]
         public void ExampleAdequateProvation()
         {
             var testCrime = new Felony
@@ -55,7 +55,7 @@ namespace NoFuture.Law.Criminal.Tests.HomicideTests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void DoesntWorkWithOtherIntent()
         {
             var testCrime = new Felony
@@ -75,7 +75,7 @@ namespace NoFuture.Law.Criminal.Tests.HomicideTests
             Assert.IsFalse(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestBadTiming()
         {
             var yyyy = DateTime.Today.Year;

@@ -1,6 +1,6 @@
 ﻿using System;
 using NoFuture.Law.Criminal.US.Defense.Justification;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.US;
 
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctine issue: reasonable error in self-defense
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class CourvoisiervRaymondTests
     {
-        [Test]
+        [Fact]
         public void CourvoisiervRaymond()
         {
             var test = new DefenseOfSelf(ExtensionMethods.Tortfeasor)

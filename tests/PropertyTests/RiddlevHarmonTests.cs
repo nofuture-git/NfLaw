@@ -4,7 +4,7 @@ using System.Linq;
 using NoFuture.Law.Property.US.FormsOf.InTerra.Shared;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Property.Tests
     /// 
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class RiddlevHarmonTests
     {
-        [Test]
+        [Fact]
         public void RiddlevHarmon()
         {
             var testSubject = new JointTenancy()

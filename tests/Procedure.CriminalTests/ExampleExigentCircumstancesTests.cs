@@ -1,14 +1,14 @@
 ﻿using System;
 using NoFuture.Law.Procedure.Criminal.US.Intrusions;
 using NoFuture.Law.Procedure.Criminal.US.SearchReasons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    [TestFixture]
+    
     public class ExampleExigentCircumstancesTests
     {
-        [Test]
+        [Fact]
         public void TestExigentCircumstancesIsValid00()
         {
             var testSubject = new Arrest

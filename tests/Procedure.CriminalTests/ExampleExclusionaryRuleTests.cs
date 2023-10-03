@@ -1,14 +1,14 @@
 ﻿using System;
 using NoFuture.Law;
 using NoFuture.Law.Procedure.Criminal.US.Challenges;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    [TestFixture]
+    
     public class ExampleExclusionaryRuleTests
     {
-        [Test]
+        [Fact]
         public void TestExclusionaryRuleIsValid00()
         {
             var testSubject = new ExclusionaryRule<IVoca>

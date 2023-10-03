@@ -2,15 +2,15 @@
 using NoFuture.Law.Procedure.Civil.US.Pleadings;
 using NoFuture.Law.US.Courts;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 
 namespace NoFuture.Law.Procedure.Civil.Tests
 {
-    [TestFixture]
+    
     class ExampleTestSummons
     {
-        [Test]
+        [Fact]
         public void TestSummonsIsValid()
         {
             var testSubject = new Summons

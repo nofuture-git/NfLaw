@@ -4,7 +4,7 @@ using System.Linq;
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.OffersTests
 {
@@ -17,10 +17,10 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
     /// contract - the only way out now is if both parties want out.
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class KloianvDominosPizzaTests
     {
-        [Test]
+        [Fact]
         public void TestAgreedPaySettlement()
         {
             var ekLawyer = new EdwardKloianAttorney();
@@ -30,7 +30,7 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
             Assert.IsTrue(testSubject.IsValid(ekLawyer, dpLawyer));
         }
 
-        [Test]
+        [Fact]
         public void KloianvDominosPizza()
         {
             var testSubject = new ComLawContract<Promise>

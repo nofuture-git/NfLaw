@@ -11,8 +11,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Law.csproj" />
-	<ProjectReference Include="..\Criminal\Law.Criminal.csproj" />
-	<ProjectReference Include="..\Property\Law.Property.csproj" />
+    <ProjectReference Include="..\Criminal\Law.Criminal.csproj" />
+    <ProjectReference Include="..\Property\Law.Property.csproj" />
   </ItemGroup>
 
 </Project>

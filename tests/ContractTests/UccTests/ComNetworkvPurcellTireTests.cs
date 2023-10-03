@@ -3,7 +3,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.UccTests
 {
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Contract.Tests.UccTests
     /// Doctrine issue, the concept of Mutual Assent gets applied here for a UCC contract on goods.
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class ComNetworkvPurcellTireTests
     {
-        [Test]
+        [Fact]
         public void ComNetworkvPurcellTire()
         {
             var testSubject = new UccContract<Goods>

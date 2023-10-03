@@ -3,14 +3,14 @@ using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Defense.Excuse;
 using NoFuture.Law.Criminal.US.Elements.Inchoate;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.InchoateTests
 {
-    [TestFixture]
+    
     public class ExampleRenunciationTests
     {
-        [Test]
+        [Fact]
         public void ExampleRenunciation()
         {
             var testCrime = new Felony

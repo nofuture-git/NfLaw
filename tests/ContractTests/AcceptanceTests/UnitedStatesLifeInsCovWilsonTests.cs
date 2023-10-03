@@ -4,7 +4,7 @@ using System.Linq;
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.AcceptanceTests
 {
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Contract.Tests.AcceptanceTests
     /// Doctrine issue here looks to be the "mailbox rule"
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class UnitedStatesLifeInsCovWilsonTests
     {
-        [Test]
+        [Fact]
         public void UnitedStatesLifeInsCovWilson()
         {
             var testSubject = new ComLawContract<Performance>

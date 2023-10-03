@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Breach;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.BreachTests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
     /// doctrine issue, substantial performance may include taste & preferences in addition to pure function & purpose
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class OwGrunRoofingvCopeTests
     {
-        [Test]
+        [Fact]
         public void OwGrunRoofingvCope()
         {
             var testContract = new ComLawContract<Promise>

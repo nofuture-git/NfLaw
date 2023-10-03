@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.Tort.US.UnintentionalTort;
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, failure to follow command of statue means negligence by its standard
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class MartinvHerzogTests
     {
-        [Test]
+        [Fact]
         public void MartinvHerzog()
         {
             var test = new NegligenceByStatute(ExtensionMethods.Tortfeasor)

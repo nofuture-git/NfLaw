@@ -6,7 +6,7 @@ using NoFuture.Law.Property.US.FormsOf.InTerra;
 using NoFuture.Law.Property.US.FormsOf.InTerra.Sequential;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, illustrates fee simple subject to conditional subsequent and fee simple determinable
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class WoodvFremontCountyTests
     {
-        [Test]
+        [Fact]
         public void WoodvFremontCounty()
         {
             var test00 = new FeeSimpleDeterminable(ExtensionMethods.Defendant)

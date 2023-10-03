@@ -7,7 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
@@ -19,10 +19,10 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     /// doctrine issue, with UCC inclusion of implied terms from trade usage, it may produce some exotic and very complex definitions
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class NanakulivShellOilTests
     {
-        [Test]
+        [Fact]
         public void NanakulivShellOil()
         {
             var testContract = new UccContract<Goods>

@@ -2,14 +2,14 @@
 using System.Linq;
 using NoFuture.Law.Procedure.Criminal.US.Intrusions;
 using NoFuture.Law.Procedure.Criminal.US.Warrants;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    [TestFixture]
+    
     public class ExampleBodilyIntrusionTests
     {
-        [Test]
+        [Fact]
         public void TestBodilyIntrusionIsValid00()
         {
             var testSubject = new BodilyIntrusion
@@ -22,7 +22,7 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestBodilyIntrusionIsValid01()
         {
             var testSubject = new BodilyIntrusion
@@ -43,7 +43,7 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             Assert.IsTrue(testResult);
         }
 
-        [Test]
+        [Fact]
         public void TestBodilyIntrusionIsValid02()
         {
             var testSubject = new BodilyIntrusion

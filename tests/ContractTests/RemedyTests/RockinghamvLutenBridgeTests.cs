@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Remedy.MoneyDmg;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// doctrine issue, a plaintiff cannot hold a defendant liable for damages which need not have been incurred
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class RockinghamvLutenBridgeTests
     {
-        [Test]
+        [Fact]
         public void RockinghamvLutenBridge()
         {
             var testContract = new ComLawContract<Promise>

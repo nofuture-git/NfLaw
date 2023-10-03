@@ -24,7 +24,7 @@
 
 $someCode = @"
 using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US;
 using NoFuture.Law.Property.US;
 using NoFuture.Law.US.Persons;
@@ -39,10 +39,10 @@ namespace NoFuture.Law.Tort.Tests
     /// 
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class ${safeNamePlaintiff}v${safeNameDefendant}Tests
     {
-        [Test]
+        [Fact]
         public void ${safeNamePlaintiff}v${safeNameDefendant}()
         {
 

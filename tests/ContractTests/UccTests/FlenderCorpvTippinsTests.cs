@@ -5,7 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.UccTests
 {
@@ -17,10 +17,10 @@ namespace NoFuture.Law.Contract.Tests.UccTests
     /// Doctrine issue, demo of the Knockout rule where terms of the same name but different meanings also get excluded
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class FlenderCorpvTippinsTests
     {
-        [Test]
+        [Fact]
         public void FlenderCorpvTippins()
         {
             var testSubject = new Agreement

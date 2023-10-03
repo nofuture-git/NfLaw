@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.ReasonableCare;
 using NoFuture.Law.US;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// 
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class BreunigvAmericanFamilyInsCoTests
     {
-        [Test]
+        [Fact]
         public void BreunigvAmericanFamilyInsCo()
         {
             var test = new OfMentalCapacity(ExtensionMethods.Tortfeasor)

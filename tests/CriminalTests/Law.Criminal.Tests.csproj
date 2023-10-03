@@ -26,9 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\source\Law.csproj" />
-	<ProjectReference Include="..\source\Criminal\Law.Criminal.csproj" />
-	<ProjectReference Include="..\source\Property\Law.Property.csproj" />
+    <ProjectReference Include="..\..\source\Law.csproj" />
+    <ProjectReference Include="..\..\source\Criminal\Law.Criminal.csproj" />
+    <ProjectReference Include="..\..\source\Property\Law.Property.csproj" />
   </ItemGroup>
 
 </Project>

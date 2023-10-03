@@ -3,7 +3,7 @@ using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.AgainstPersons;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
 {
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Criminal.Tests.HominiLupusTests
     /// doctrine issue, body harm is physical pain or injury, illness, or any impairment of physical condition
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class StatevHiggsTests
     {
-        [Test]
+        [Fact]
         public void StatevHiggs()
         {
             var testCrime = new Misdemeanor

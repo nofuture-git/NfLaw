@@ -5,7 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.Contract.US.Defense.ToAssent;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -17,10 +17,10 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, objective test for undue influence
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class OdorizzivBloomfieldSchoolTests
     {
-        [Test]
+        [Fact]
         public void OrdorizzivBloomfieldSchool()
         {
             var testContract = new ComLawContract<Promise>

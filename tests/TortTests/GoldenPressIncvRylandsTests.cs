@@ -2,7 +2,7 @@
 using NoFuture.Law.Tort.US.Elements;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Tort.Tests
 {
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, encroachment can be ignored is some slight circumstances
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class GoldenPressIncvRylandsTests
     {
-        [Test]
+        [Fact]
         public void GoldenPressIncvRylands()
         {
             var test = new Encroachment

@@ -5,7 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.Contract.US.Defense.ToAssent;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -17,10 +17,10 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, there is no defense since there is no contract;
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class SherwoodvWalkerTests
     {
-        [Test]
+        [Fact]
         public void SherwoodvWalker()
         {
             var testContract = new ComLawContract<Promise>

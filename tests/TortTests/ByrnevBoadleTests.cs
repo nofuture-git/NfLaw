@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.UnintentionalTort;
 using NoFuture.Law.US;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, negligence being the very fact that such-and-such happened at all
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class ByrnevBoadleTests
     {
-        [Test]
+        [Fact]
         public void ByrnevBoadle()
         {
             var test = new Negligence(ExtensionMethods.Tortfeasor)

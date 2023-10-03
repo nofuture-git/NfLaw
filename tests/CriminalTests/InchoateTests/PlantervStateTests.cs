@@ -3,7 +3,7 @@ using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.Inchoate;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.InchoateTests
 {
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Criminal.Tests.InchoateTests
     /// doctrine issue, with solicitation, which is mostly what is said, understanding the lang is critical
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class PlantervStateTests
     {
-        [Test]
+        [Fact]
         public void PlantervState()
         {
             var testCrime = new Felony

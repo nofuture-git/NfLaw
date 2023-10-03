@@ -7,7 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -19,10 +19,10 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// doctrine issue, more parts to Calc of Loss to injured with UCC
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class BrandeisvCapitolCraneTests
     {
-        [Test]
+        [Fact]
         public void BrandeisvCapitolCrane()
         {
             var testContract = new UccContract<Goods>

@@ -4,7 +4,7 @@ using System.Linq;
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.OffersTests
 {
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Contract.Tests.OffersTests
     /// Doctrine on this one is about an offer expiring.
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class ConfederateMotorsvTernyTests
     {
-        [Test]
+        [Fact]
         public void ConferateMotorsvTerny()
         {
             var testSubject = new ComLawContract<Promise>

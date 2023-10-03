@@ -3,14 +3,14 @@ using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.Criminal.US.Terms;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
 {
-    [TestFixture]
+    
     public class ExampleCriminalGangTests
     {
-        [Test]
+        [Fact]
         public void TestIsCriminalGang()
         {
             var testGang = new CriminalGang("North Side Boys");
@@ -29,7 +29,7 @@ namespace NoFuture.Law.Criminal.Tests.AgainstPublicTests
 
         }
 
-        [Test]
+        [Fact]
         public void TestIsGangMember()
         {
             var testGang = new CriminalGang("North Side Boys");

@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Breach;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.BreachTests
 {
@@ -20,10 +20,10 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
     /// "innocent" in the sense the court is using it.
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class SmithvBradyTests
     {
-        [Test]
+        [Fact]
         public void SmithvBrady()
         {
             var testContract = new ComLawContract<Promise>

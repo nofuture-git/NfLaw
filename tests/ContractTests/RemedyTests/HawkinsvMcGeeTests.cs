@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Remedy.MoneyDmg;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -20,10 +20,10 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// difficult when it was something like, "the value of a perfect hand..."
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class HawkinsvMcGeeTests
     {
-        [Test]
+        [Fact]
         public void HawkinsvMcGee()
         {
             var testContract = new ComLawContract<Promise>

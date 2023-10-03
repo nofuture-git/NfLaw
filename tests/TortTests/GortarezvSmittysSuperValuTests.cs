@@ -1,7 +1,7 @@
 ﻿using System;
 using NoFuture.Law.Property.US.FormsOf;
 using NoFuture.Law.Tort.US.Defense;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.US;
 
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue: shopkeeper's privilege
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class GortarezvSmittysSuperValuTests
     {
-        [Test]
+        [Fact]
         public void GortarezvSmittysSuperValu()
         {
             var test = new ShopkeeperPrivilege

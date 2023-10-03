@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Excuse;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.ExcuseTests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Contract.Tests.ExcuseTests
     /// doctrine issue, the nature of "occurrence of an event" is the kind which no body would expect
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class BushvProtravelIntlTests
     {
-        [Test]
+        [Fact]
         public void BushvProtravelIntl()
         {
             var testContract = new ComLawContract<Promise>

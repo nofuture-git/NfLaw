@@ -2,7 +2,7 @@
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.EstoppelTests
 {
@@ -26,7 +26,7 @@ namespace NoFuture.Law.Contract.Tests.EstoppelTests
     [TestFixture()]
     public class RicketsvScothornTests
     {
-        [Test]
+        [Fact]
         public void RicketvScothron()
         {
             var testSubject = new ComLawContract<DonativePromise>

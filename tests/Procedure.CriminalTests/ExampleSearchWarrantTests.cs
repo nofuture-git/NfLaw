@@ -4,14 +4,14 @@ using NoFuture.Law;
 using NoFuture.Law.Procedure.Criminal.US;
 using NoFuture.Law.Procedure.Criminal.US.Warrants;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    [TestFixture]
+    
     public class ExampleSearchWarrantTests
     {
-        [Test]
+        [Fact]
         public void TestSearchWarrantIsValid00()
         {
             var testSubject = new SearchWarrant

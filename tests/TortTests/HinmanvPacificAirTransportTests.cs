@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US;
 using NoFuture.Law.Property.US;
 using NoFuture.Law.Tort.US.IntentionalTort;
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, passing over or under land outside of the useable range is not trespass
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class HinmanvPacificAirTransportTests
     {
-        [Test]
+        [Fact]
         public void HinmanvPacificAirTransport()
         {
             var test = new TrespassToLand(ExtensionMethods.Tortfeasor)

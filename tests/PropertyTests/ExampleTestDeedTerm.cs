@@ -1,14 +1,14 @@
 ﻿using NoFuture.Law.Property.US.FormsOf.InTerra;
 using NoFuture.Law.Property.US.Terms;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Property.Tests
 {
-    [TestFixture]
+    
     public class ExampleTestDeedTerm
     {
-        [Test]
+        [Fact]
         public void TestDeedTermIsValid()
         {
             var property = new ExampleParcelOfLand

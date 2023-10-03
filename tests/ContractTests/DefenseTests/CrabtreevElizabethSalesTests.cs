@@ -5,7 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.Contract.US.Defense;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -17,10 +17,10 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, when agreement is written, but across multiple dox some signed, some not
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class CrabtreevElizabethSalesTests
     {
-        [Test]
+        [Fact]
         public void CrabtreevElizabethSales()
         {
             var testContract = new ComLawContract<Promise>

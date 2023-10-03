@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US.Persons;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, personality identity need not be specific picture or name but enought to recognize
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class MidlervFordMotorCompanyTests
     {
-        [Test]
+        [Fact]
         public void MidlervFordMotorCompany()
         {
             var test = new FalseEndorsement(ExtensionMethods.Defendant)

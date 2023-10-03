@@ -2,14 +2,14 @@
 using System.Linq;
 using NoFuture.Law.Procedure.Criminal.US;
 using NoFuture.Law.Procedure.Criminal.US.Searches;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Criminal.Tests
 {
-    [TestFixture]
+    
     public class ExampleMobileVehicleSearchTests
     {
-        [Test]
+        [Fact]
         public void TestMobileVehicleSearchIsValid00()
         {
             IMobileVehicleSearch testSubject = new MobileVehicleSearch

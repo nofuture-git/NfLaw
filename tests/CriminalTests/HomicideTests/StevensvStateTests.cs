@@ -2,7 +2,7 @@
 using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.Homicide;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.HomicideTests
 {
@@ -12,10 +12,10 @@ namespace NoFuture.Law.Criminal.Tests.HomicideTests
     /// <remarks>
     /// <![CDATA[ doctrine issue, adequate provocation cannot be just words and cannot be due to fear of prosecution ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class StevensvStateTests
     {
-        [Test]
+        [Fact]
         public void StevensvState()
         {
             var testCrime = new Felony

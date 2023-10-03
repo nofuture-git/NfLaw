@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Semiosis;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
@@ -19,10 +19,10 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     /// "extrinsic and parol evidence is not admissible to create an ambiguity in a written agreement which is complete and clear and unambiguous upon its face."
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class WwwAssociatesvGiancontieriTests
     {
-        [Test]
+        [Fact]
         public void WwwAssociatesvGiancontieri()
         {
             var testContract = new ComLawContract<Promise>

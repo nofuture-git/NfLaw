@@ -4,7 +4,7 @@ using System.Linq;
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.ConsiderationTests
 {
@@ -17,10 +17,10 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
     /// tricky.  Appeal court found the arrangement as "gratuitous" so its without consideration.
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class WeavertownvMoranTests
     {
-        [Test]
+        [Fact]
         public void WeavertownvMoran()
         {
             var testSubject = new ComLawContract<Promise>

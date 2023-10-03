@@ -2,7 +2,7 @@
 using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.AgainstProperty.Theft;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.TheftTests
 {
@@ -17,7 +17,7 @@ namespace NoFuture.Law.Criminal.Tests.TheftTests
     [TestFixture()]
     public class PeoplevPrattTests
     {
-        [Test]
+        [Fact]
         public void PeoplevPratt()
         {
             var testCrime = new Felony

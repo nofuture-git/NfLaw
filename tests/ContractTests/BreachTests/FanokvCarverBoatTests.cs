@@ -7,7 +7,7 @@ using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.BreachTests
 {
@@ -19,10 +19,10 @@ namespace NoFuture.Law.Contract.Tests.BreachTests
     /// doctrine issue, limits to the UCC perfect tender rule, Assent to contract is not the same as acceptance of goods
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class FanokvCarverBoatTests
     {
-        [Test]
+        [Fact]
         public void FanokvCarverBoat()
         {
             var testContract = new UccContract<Goods>

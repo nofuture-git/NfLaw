@@ -1,6 +1,6 @@
 ﻿using System;
 using NoFuture.Law.Criminal.US.Terms.Violence;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.US;
 using NoFuture.Law.Criminal.US.Defense.Justification;
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctine issue, necessity defense again 
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class PutnamvPloofTests
     {
-        [Test]
+        [Fact]
         public void PutnamvPloof()
         {
             var test =

@@ -3,7 +3,7 @@ using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.Act;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.ActusReusTests
 {
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Criminal.Tests.ActusReusTests
     /// doctrine issue, there is a difference between being high or drunk and being an addict or alcoholic
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class PowellvTexasTests
     {
-        [Test]
+        [Fact]
         public void PowellvTexas()
         {
             var testSubject = new ActusReus();

@@ -2,17 +2,17 @@
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.MutualAssentTests
 {
     /// <summary>
     /// AUGSTEIN v. LESLIE United States District Court for the Southern District of New York 11 Civ. 7512 (HB), 2012 U.S.Dist.LEXIS 149517 (S.D.N.Y.Oct. 17, 2012)
     /// </summary>
-    [TestFixture]
+    
     public class AugsteinvLeslieTests
     {
-        [Test]
+        [Fact]
         public void AugsteinvLeslie()
         {
             var testSubject = new ComLawContract<Performance>

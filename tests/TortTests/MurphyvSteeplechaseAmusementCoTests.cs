@@ -1,5 +1,5 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.UnintentionalTort;
 using NoFuture.Law.US;
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, plaintiff understood risk, to continue means they contributed 
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class MurphyvSteeplechaseAmusementCoTests
     {
-        [Test]
+        [Fact]
         public void MurphyvSteeplechaseAmusementCo()
         {
             var test = new ContributoryNegligence<AmusementRide>(ExtensionMethods.Tortfeasor)

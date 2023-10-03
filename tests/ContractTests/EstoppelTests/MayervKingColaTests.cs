@@ -3,7 +3,7 @@ using System.Linq;
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.EstoppelTests
 {
@@ -18,7 +18,7 @@ namespace NoFuture.Law.Contract.Tests.EstoppelTests
     [TestFixture()]
     public class MayervKingColaTests
     {
-        [Test]
+        [Fact]
         public void MayervKingCola()
         {
             var testSubject = new ComLawContract<Promise>

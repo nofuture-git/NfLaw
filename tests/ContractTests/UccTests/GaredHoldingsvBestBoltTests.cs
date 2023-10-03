@@ -3,7 +3,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.Contract.US.Ucc;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.UccTests
 {
@@ -18,7 +18,7 @@ namespace NoFuture.Law.Contract.Tests.UccTests
     [TestFixture()]
     public class GaredHoldingsvBestBoltTests
     {
-        [Test]
+        [Fact]
         public void GaredHoldingsvBestBolt()
         {
             var testSubject00 = new BestBolt();

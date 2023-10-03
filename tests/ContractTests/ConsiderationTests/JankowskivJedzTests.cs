@@ -4,7 +4,7 @@ using System.Linq;
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.ConsiderationTests
 {
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
     /// The doctrine issue here is that you can't bargin for what you are already obligated to do
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class JankowskivJedzTests
     {
-        [Test]
+        [Fact]
         public void JankowskivJedz()
         {
             var testSubject = new ComLawContract<Promise>

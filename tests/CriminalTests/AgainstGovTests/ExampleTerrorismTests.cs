@@ -3,17 +3,17 @@ using NoFuture.Law.Criminal.US;
 using NoFuture.Law.Criminal.US.Elements.AgainstGov;
 using NoFuture.Law.Criminal.US.Elements.Intent.ComLaw;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Criminal.Tests.AgainstGovTests
 {
     /// <summary>
     /// (U.S. v. Moussaoui, 2011)
     /// </summary>
-    [TestFixture]
+    
     public class ExampleTerrorismTests
     {
-        [Test]
+        [Fact]
         public void TerrorismTest()
         {
             var testCrime = new Felony

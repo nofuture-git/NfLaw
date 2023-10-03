@@ -2,7 +2,7 @@
 using NoFuture.Law.Property.US.Acquisition;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, example of adverse possession with the concept of "tacking" (where prior owners already satisfied adverse possession)
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class BrownvGobbleTests
     {
-        [Test]
+        [Fact]
         public void BrownvGobble()
         {
             var test = new AdversePossession(ExtensionMethods.Disseisor)

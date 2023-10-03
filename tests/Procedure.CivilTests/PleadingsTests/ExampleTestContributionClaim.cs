@@ -2,14 +2,14 @@
 using NoFuture.Law.Procedure.Civil.US.Pleadings;
 using NoFuture.Law.US.Courts;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Civil.Tests
 {
-    [TestFixture]
+    
     public class ExampleTestContributionClaim
     {
-        [Test]
+        [Fact]
         public void TestContributionClaimIsValid()
         {
             var testSubject = new ContributionClaim()

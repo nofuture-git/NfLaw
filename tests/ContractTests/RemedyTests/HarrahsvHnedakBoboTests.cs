@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Remedy.MoneyDmg;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// doctrine issue, what is foreseeable is true even when neither party actually does so
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class HarrahsvHnedakBoboTests
     {
-        [Test]
+        [Fact]
         public void HarrahsvHnedakBobo()
         {
             var testContract = new ComLawContract<Promise>

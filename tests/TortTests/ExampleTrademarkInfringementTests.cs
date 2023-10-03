@@ -8,14 +8,14 @@ using NoFuture.Law.Property.US.Terms;
 using NoFuture.Law.Property.US.Terms.Tm;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Tort.Tests
 {
-    [TestFixture]
+    
     public class ExampleTrademarkInfringementTests
     {
-        [Test]
+        [Fact]
         public void TestTrademarkInfringementIsValid()
         {
             var plaintiff = new SomePlaintiff();

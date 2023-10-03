@@ -2,7 +2,7 @@
 using NoFuture.Law.Property.US.Acquisition.Found;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Property.Tests
 {
@@ -14,10 +14,10 @@ namespace NoFuture.Law.Property.Tests
     /// doctrine issue, artifacts buired with dead are not relinquished
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class CharriervBellTests
     {
-        [Test]
+        [Fact]
         public void CharriervBell()
         {
             var test = new AbandonedProperty(ExtensionMethods.Defendant)

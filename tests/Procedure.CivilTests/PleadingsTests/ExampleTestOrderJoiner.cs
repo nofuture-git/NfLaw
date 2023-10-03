@@ -1,14 +1,14 @@
 ﻿using System;
 using NoFuture.Law.Procedure.Civil.US.Pleadings;
 using NoFuture.Law.US.Courts;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Civil.Tests
 {
-    [TestFixture]
+    
     public class ExampleTestOrderJoiner
     {
-        [Test]
+        [Fact]
         public void TestOrderJoinerIsValid()
         {
             var testSubject = new OrderJoiner

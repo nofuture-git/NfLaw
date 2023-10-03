@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Remedy.MoneyDmg;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.RemedyTests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Contract.Tests.RemedyTests
     /// doctrine issue, reliance cannot be used as excuse for recovering from a bad deal
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class DoeringvJohnDeereTests
     {
-        [Test]
+        [Fact]
         public void DoeringvJohnDeere()
         {
             var testContract = new ComLawContract<Promise>

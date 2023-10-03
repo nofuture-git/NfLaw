@@ -5,7 +5,7 @@ using NoFuture.Law.Contract.US;
 using NoFuture.Law.Contract.US.Defense.ToFormation;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.DefenseTests
 {
@@ -17,10 +17,10 @@ namespace NoFuture.Law.Contract.Tests.DefenseTests
     /// doctrine issue, capacity to contract limited when still a minor
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class ExParteOdemTests
     {
-        [Test]
+        [Fact]
         public void ExParteOdem()
         {
             var testContract = new ComLawContract<Promise>

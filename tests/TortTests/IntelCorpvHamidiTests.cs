@@ -1,6 +1,6 @@
 ﻿using System;
 using NoFuture.Law.Property.US.FormsOf;
-using NUnit.Framework;
+using Xunit;
 using NoFuture.Law.US.Persons;
 using NoFuture.Law.Tort.US.IntentionalTort;
 using NoFuture.Law.US;
@@ -15,10 +15,10 @@ namespace NoFuture.Law.Tort.Tests
     /// doctrine issue, its not trespass to personal property without damage or loss of possession
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class IntelCorpvHamidiTests
     {
-        [Test]
+        [Fact]
         public void IntelCorpvHamidi()
         {
             var testSubject = new TrespassToChattels

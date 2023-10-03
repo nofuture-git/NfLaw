@@ -6,7 +6,7 @@ using NoFuture.Law.Contract.US.Semiosis;
 using NoFuture.Law.Contract.US.Terms;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.SemiosisTests
 {
@@ -18,10 +18,10 @@ namespace NoFuture.Law.Contract.Tests.SemiosisTests
     /// doctrine issue, separation of substance of consideration and ancillary conditionals which may be dismissed (waived)
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class ClarkvWestTests
     {
-        [Test]
+        [Fact]
         public void ClarkvWest()
         {
             var testContract = new ComLawContract<Promise>

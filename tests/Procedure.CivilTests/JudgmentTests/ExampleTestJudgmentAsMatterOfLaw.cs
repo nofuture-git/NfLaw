@@ -1,14 +1,14 @@
 ﻿using NoFuture.Law.Procedure.Civil.US.Judgment;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Courts;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Procedure.Civil.Tests.JudgmentTests
 {
-    [TestFixture]
+    
     public class ExampleTestJudgmentAsMatterOfLaw
     {
-        [Test]
+        [Fact]
         public void TestJudgmentAsMatterOfLawIsValid()
         {
             var testSubject = new JudgmentAsMatterOfLaw()

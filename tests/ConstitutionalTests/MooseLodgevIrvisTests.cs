@@ -4,7 +4,7 @@ using NoFuture.Law.Constitutional.US;
 using NoFuture.Law.Property.US.FormsOf.InTerra;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Constitutional.Tests
 {
@@ -16,10 +16,10 @@ namespace NoFuture.Law.Constitutional.Tests
     /// Purely private party in private setting and discrimation being had is trival doesn't count
     /// ]]>
     /// </remarks>
-    [TestFixture]
+    
     public class MooseLodgevIrvisTests
     {
-        [Test]
+        [Fact]
         public void MooseLodgevIrvis()
         {
             Func<ILegalPerson[], ILegalPerson> chargedWithDeprivation =

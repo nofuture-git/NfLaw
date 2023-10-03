@@ -4,7 +4,7 @@ using System.Linq;
 using NoFuture.Law.Contract.US;
 using NoFuture.Law.US;
 using NoFuture.Law.US.Persons;
-using NUnit.Framework;
+using Xunit;
 
 namespace NoFuture.Law.Contract.Tests.ConsiderationTests
 {
@@ -32,7 +32,7 @@ namespace NoFuture.Law.Contract.Tests.ConsiderationTests
     [TestFixture()]
     public class QuigleyvWilsonTests
     {
-        [Test]
+        [Fact]
         public void QuigleyvWilson()
         {
             var testSubject = new ComLawContract<Promise>
