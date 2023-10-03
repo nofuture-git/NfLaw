@@ -1,121 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{25A94905-7E58-463C-BED8-D3004135CFCC}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NoFuture.Law.Property</RootNamespace>
-    <AssemblyName>NoFuture.Law.Property</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>NoFuture.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>NoFuture.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>..\..\..\bin\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
+    <ProjectReference Include="..\Law.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="US\Acquisition\AdversePossession.cs" />
-    <Compile Include="US\Acquisition\Donative\GiftByWill.cs" />
-    <Compile Include="US\Acquisition\Donative\InterVivos.cs" />
-    <Compile Include="US\Acquisition\FairUse.cs" />
-    <Compile Include="US\FormsOf\ActOfService.cs" />
-    <Compile Include="US\FormsOf\Intellectus\Copyright.cs" />
-    <Compile Include="US\FormsOf\Intellectus\DesignPatent.cs" />
-    <Compile Include="US\FormsOf\Intellectus\IntellectualProperty.cs" />
-    <Compile Include="US\FormsOf\Intellectus\Patent.cs" />
-    <Compile Include="US\FormsOf\Intellectus\UtilityPatent.cs" />
-    <Compile Include="US\FormsOf\InTerra\Servitudes\Covenant.cs" />
-    <Compile Include="US\FormsOf\InTerra\Servitudes\Easement.cs" />
-    <Compile Include="US\FormsOf\InTerra\Eviction.cs" />
-    <Compile Include="US\FormsOf\InTerra\Ouster.cs" />
-    <Compile Include="US\FormsOf\InTerra\Sequential\AbsolutelyVestedRemainder.cs" />
-    <Compile Include="US\FormsOf\InTerra\Sequential\ContingentRemainder.cs" />
-    <Compile Include="US\FormsOf\InTerra\Sequential\DefeasibleFee.cs" />
-    <Compile Include="US\FormsOf\InTerra\Sequential\FeeSimpleAbsolute.cs" />
-    <Compile Include="US\FormsOf\InTerra\Sequential\FeeSimpleDeterminable.cs" />
-    <Compile Include="US\FormsOf\InTerra\Sequential\FeeSimpleSubject2ConditionSubsequent.cs" />
-    <Compile Include="US\FormsOf\InTerra\Sequential\FeeSimpleSubject2ExecutoryInterest.cs" />
-    <Compile Include="US\FormsOf\InTerra\ILandPropertyInterest.cs" />
-    <Compile Include="US\FormsOf\ILease.cs" />
-    <Compile Include="US\FormsOf\InTerra\LandPropertyInterestBase.cs" />
-    <Compile Include="US\FormsOf\InTerra\Shared\JointTenancy.cs" />
-    <Compile Include="US\FormsOf\InTerra\Shared\TenancyByTheEntirety.cs" />
-    <Compile Include="US\FormsOf\InTerra\Shared\TenancyInCommon.cs" />
-    <Compile Include="US\FormsOf\Lease.cs" />
-    <Compile Include="US\FormsOf\InTerra\Sequential\Leasehold.cs" />
-    <Compile Include="US\FormsOf\InTerra\Sequential\LifeEstate.cs" />
-    <Compile Include="US\FormsOf\InTerra\Sequential\Remainder.cs" />
-    <Compile Include="US\FormsOf\InTerra\Sequential\Reversion.cs" />
-    <Compile Include="US\FormsOf\InTerra\Sequential\VestedRemainderSubjectToDivestment.cs" />
-    <Compile Include="US\FormsOf\InTerra\Sequential\VestedRemainderSubjectToOpen.cs" />
-    <Compile Include="US\FormsOf\InTerra\PropertyInterestFactory.cs" />
-    <Compile Include="US\FormsOf\ResDerelictae.cs" />
-    <Compile Include="US\FormsOf\ResNullius.cs" />
-    <Compile Include="US\Acquisition\Found\AbandonedProperty.cs" />
-    <Compile Include="US\Acquisition\Found\LostProperty.cs" />
-    <Compile Include="US\Acquisition\Found\MislaidProperty.cs" />
-    <Compile Include="US\Acquisition\Found\TreasureTrove.cs" />
-    <Compile Include="US\FormsOf\GovernmentProperty.cs" />
-    <Compile Include="US\FormsOf\IntangiblePersonalProperty.cs" />
-    <Compile Include="US\FormsOf\PersonalProperty.cs" />
-    <Compile Include="US\FormsOf\Intellectus\Trademark.cs" />
-    <Compile Include="US\PropertyBase.cs" />
-    <Compile Include="US\PropertyConsent.cs" />
-    <Compile Include="US\FormsOf\InTerra\RealProperty.cs" />
-    <Compile Include="US\FormsOf\TangiblePersonalProperty.cs" />
-    <Compile Include="US\Acquisition\TakePossession.cs" />
-    <Compile Include="US\Terms\Convenants\AgainstEncumbrancesTerm.cs" />
-    <Compile Include="US\Terms\Convenants\QuietEnjoymentTerm.cs" />
-    <Compile Include="US\Terms\Convenants\SeisinTerm.cs" />
-    <Compile Include="US\Terms\CoOwnership\CoOwnerBaseTerm.cs" />
-    <Compile Include="US\Terms\CoOwnership\ExpensesTerm.cs" />
-    <Compile Include="US\Terms\CoOwnership\NoCotenantRentTerm.cs" />
-    <Compile Include="US\Terms\CoOwnership\ThirdPartyRentTerm.cs" />
-    <Compile Include="US\Terms\CoOwnership\UndividedInterestTerm.cs" />
-    <Compile Include="US\Terms\DeedTerm.cs" />
-    <Compile Include="US\Terms\OptionTerm.cs" />
-    <Compile Include="US\Terms\RightOfFirstRefusalTerm.cs" />
-    <Compile Include="US\Terms\Tm\ArbitraryMark.cs" />
-    <Compile Include="US\Terms\Tm\DescriptiveMark.cs" />
-    <Compile Include="US\Terms\Tm\FancifulMark.cs" />
-    <Compile Include="US\Terms\Tm\GenericMark.cs" />
-    <Compile Include="US\Terms\Tm\StrengthOfMark.cs" />
-    <Compile Include="US\Terms\Tm\SuggestiveMark.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Law.csproj">
-      <Project>{4667e45a-0eb2-40cf-b431-319d2960f469}</Project>
-      <Name>Law</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="PropertyInterestModule.psm1">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
 </Project>

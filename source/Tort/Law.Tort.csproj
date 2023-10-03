@@ -1,109 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E09B2CCE-C5BB-4760-8A42-BAB0B69EB3F1}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NoFuture.Law.Tort</RootNamespace>
-    <AssemblyName>NoFuture.Law.Tort</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>NoFuture.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>NoFuture.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>..\..\..\bin\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
+    <ProjectReference Include="..\Law.csproj" />
+	<ProjectReference Include="..\Criminal\Law.Criminal.csproj" />
+	<ProjectReference Include="..\Property\Law.Property.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="US\Elements\AdiunctusLiability.cs" />
-    <Compile Include="US\Elements\ContributoryLiability.cs" />
-    <Compile Include="US\Elements\EmployeeVicariousLiability.cs" />
-    <Compile Include="US\Elements\Encroachment.cs" />
-    <Compile Include="US\Elements\ImprovingTrespassers.cs" />
-    <Compile Include="US\IntentionalTort\FalseEndorsement.cs" />
-    <Compile Include="US\IntentionalTort\TrademarkInfringement.cs" />
-    <Compile Include="US\IntentionalTort\InvasionOfPrivacy.cs" />
-    <Compile Include="US\Elements\ProductStrictLiability.cs" />
-    <Compile Include="US\IntentionalTort\Defamation.cs" />
-    <Compile Include="US\IntentionalTort\InfoMisappropriation.cs" />
-    <Compile Include="US\IntentionalTort\PrivateNuisance.cs" />
-    <Compile Include="US\IntentionalTort\PublicNuisance.cs" />
-    <Compile Include="US\IntentionalTort\TrespassToPerson.cs" />
-    <Compile Include="US\IntentionalTort\TrespassToProperty.cs" />
-    <Compile Include="US\IntentionalTort\UnjustEnrichment.cs" />
-    <Compile Include="US\ReasonableCare\UnavoidableRisk.cs" />
-    <Compile Include="US\IntentionalTort\AbnormallyDangerousActivity.cs" />
-    <Compile Include="US\Elements\VicariousLiability.cs" />
-    <Compile Include="US\Remedy\CompensatoryDmg.cs" />
-    <Compile Include="US\Remedy\MoneyDmgBase.cs" />
-    <Compile Include="US\Remedy\NominalDmg.cs" />
-    <Compile Include="US\Remedy\NonpecuniaryDmg.cs" />
-    <Compile Include="US\Remedy\PecuniaryDmg.cs" />
-    <Compile Include="US\Remedy\PunitiveDmg.cs" />
-    <Compile Include="US\UnintentionalTort\INegligence.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="US\UnintentionalTort\EconomicLoss.cs" />
-    <Compile Include="US\UnintentionalTort\ComparativeNegligence.cs" />
-    <Compile Include="US\Defense\NecessityPrivilege.cs" />
-    <Compile Include="US\UnintentionalTort\ConcertOfAction.cs" />
-    <Compile Include="US\UnintentionalTort\ContributoryNegligence.cs" />
-    <Compile Include="US\UnintentionalTort\CritiqueLearnedHandsFormula.cs" />
-    <Compile Include="US\UnintentionalTort\EmotionalDistress.cs" />
-    <Compile Include="US\UnintentionalTort\LostChanceApproach.cs" />
-    <Compile Include="US\UnintentionalTort\Negligence.cs" />
-    <Compile Include="US\UnintentionalTort\NegligenceByStatute.cs" />
-    <Compile Include="US\ReasonableCare\OfChildren.cs" />
-    <Compile Include="US\ReasonableCare\OfExpert.cs" />
-    <Compile Include="US\ReasonableCare\OfLandOwner.cs" />
-    <Compile Include="US\ReasonableCare\OfMentalCapacity.cs" />
-    <Compile Include="US\ReasonableCare\OfPhysicalDeficiency.cs" />
-    <Compile Include="US\ReasonableCare\ReasonableCareBase.cs" />
-    <Compile Include="US\Elements\StrongCasualConnection.cs" />
-    <Compile Include="US\IntentionalTort\TortTrespass.cs" />
-    <Compile Include="US\IntentionalTort\TrespassToChattels.cs" />
-    <Compile Include="US\IntentionalTort\TrespassToLand.cs" />
-    <Compile Include="US\UnintentionalTort\LearnedHandsFormula.cs" />
-    <Compile Include="US\Defense\ShopkeeperPrivilege.cs" />
-    <Compile Include="US\Terms\AttractiveNuisanceTerm.cs" />
-    <Compile Include="US\Terms\CustomsTerm.cs" />
-    <Compile Include="US\Terms\RulesTerm.cs" />
-    <Compile Include="US\Terms\StandardsTerm.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Criminal\Law.Criminal.csproj">
-      <Project>{b034d93f-b140-40c0-a640-bba4fb8b85e3}</Project>
-      <Name>Law.Criminal</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Property\Law.Property.csproj">
-      <Project>{25a94905-7e58-463c-bed8-d3004135cfcc}</Project>
-      <Name>Law.Property</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Law.csproj">
-      <Project>{4667e45a-0eb2-40cf-b431-319d2960f469}</Project>
-      <Name>Law</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
 </Project>

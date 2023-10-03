@@ -1,130 +1,35 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\..\..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\..\..\..\packages\NUnit.3.12.0\build\NUnit.props')" />
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F354C3F5-7789-445B-9C9A-D6836B7EE170}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NoFuture.Law.Tort.Tests</RootNamespace>
-    <AssemblyName>NoFuture.Law.Tort.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-    <TargetFrameworkProfile />
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <AssemblyName>NoFuture.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>NoFuture.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.1" />
+    <PackageReference Include="xunit" Version="2.4.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="3.2.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="AndrewsvUnitedAirlinesTests.cs" />
-    <Compile Include="BankervMcLaughlinTests.cs" />
-    <Compile Include="BirdvHolbrookTests.cs" />
-    <Compile Include="BreunigvAmericanFamilyInsCoTests.cs" />
-    <Compile Include="BrunevBelinkoffTests.cs" />
-    <Compile Include="ByrnevBoadleTests.cs" />
-    <Compile Include="ColemanvSoccerAssnofColumbiaTests.cs" />
-    <Compile Include="CooleyvPublicServiceCoTests.cs" />
-    <Compile Include="CourvoisiervRaymondTests.cs" />
-    <Compile Include="DavisvFeinsteinTests.cs" />
-    <Compile Include="DellwovPearsonTests.cs" />
-    <Compile Include="DesnickvAmericanBroadcastingCompaniesIncTests.cs" />
-    <Compile Include="DillonvLeggTests.cs" />
-    <Compile Include="DoughertyvSteppTests.cs" />
-    <Compile Include="EnsignvWallsTests.cs" />
-    <Compile Include="ExampleContributoryLiabilityTests.cs" />
-    <Compile Include="ExampleTrademarkInfringementTests.cs" />
-    <Compile Include="ExampleUnjustEnrichmentTests.cs" />
-    <Compile Include="ExampleVicariousLiabilityTests.cs" />
-    <Compile Include="FortyFiveTwentyFiveIncvFontainebleauHotelCorpTests.cs" />
-    <Compile Include="GoldenPressIncvRylandsTests.cs" />
-    <Compile Include="GorrisvScottTests.cs" />
-    <Compile Include="GortarezvSmittysSuperValuTests.cs" />
-    <Compile Include="HerskovitsvGroupHealthCoopTests.cs" />
-    <Compile Include="HinmanvPacificAirTransportTests.cs" />
-    <Compile Include="IntelCorpvHamidiTests.cs" />
-    <Compile Include="IraSBusheySonsIncvUnitedStatesTests.cs" />
-    <Compile Include="KatkovBrineyTests.cs" />
-    <Compile Include="LandingsAssociationIncvGwynethWilliamsTests.cs" />
-    <Compile Include="LeovGeneralElectricCoTests.cs" />
-    <Compile Include="LevivSWLaElecMembershipCoOpTests.cs" />
-    <Compile Include="MadsenvEastJordanIrrigationCoTests.cs" />
-    <Compile Include="MartinvHerzogTests.cs" />
-    <Compile Include="MidlervFordMotorCompanyTests.cs" />
-    <Compile Include="MohrvWilliamsTests.cs" />
-    <Compile Include="MurphyvSteeplechaseAmusementCoTests.cs" />
-    <Compile Include="NationalBasketballAssociationvMotorolaIncTests.cs" />
-    <Compile Include="NgaLivYellowCabCompanyofCaliforniaTests.cs" />
-    <Compile Include="ParksvLaFaceRecordsTests.cs" />
-    <Compile Include="PeopleExpressAirlinesvConsolidatedRailTests.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PutnamvPloofTests.cs" />
-    <Compile Include="RhodeIslandvLeadIndustriesAssociationTests.cs" />
-    <Compile Include="SindellvAbbottLaboratoriesTests.cs" />
-    <Compile Include="SmithvSnellerTests.cs" />
-    <Compile Include="SomervillevJacobsTests.cs" />
-    <Compile Include="SpanovPeriniCorpTests.cs" />
-    <Compile Include="SpellervSearsRoebuckandCoTests.cs" />
-    <Compile Include="TedlavEllmanTests.cs" />
-    <Compile Include="TemplevWeanUnitedIncTests.cs" />
-    <Compile Include="TrimarcovKleinTests.cs" />
-    <Compile Include="UhrvEastGreenbushCentralSchoolDistrictTests.cs" />
-    <Compile Include="VincentvLakeErieTranspCoTests.cs" />
-    <Compile Include="WhitevSamsungElectronicsAmericaIncTests.cs" />
-    <Compile Include="ZuchowiczvUnitedStatesTests.cs" />
-    <Compile Include="_532MadisonAveGourmetFoodsIncvFinlandiaCenterTests.cs" />
+    <ProjectReference Include="..\source\Law.csproj" />
+	<ProjectReference Include="..\source\Criminal\Law.Criminal.csproj" />
+	<ProjectReference Include="..\source\Property\Law.Property.csproj" />
+	<ProjectReference Include="..\source\Tort\Law.Tort.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\NoFuture\Rand\Law\Criminal\Law.Criminal.csproj">
-      <Project>{b034d93f-b140-40c0-a640-bba4fb8b85e3}</Project>
-      <Name>Law.Criminal</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\NoFuture\Rand\Law\Property\Law.Property.csproj">
-      <Project>{25a94905-7e58-463c-bed8-d3004135cfcc}</Project>
-      <Name>Law.Property</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\NoFuture\Rand\Law\Law.csproj">
-      <Project>{4667e45a-0eb2-40cf-b431-319d2960f469}</Project>
-      <Name>Law</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\NoFuture\Rand\Law\Tort\Law.Tort.csproj">
-      <Project>{e09b2cce-c5bb-4760-8a42-bab0b69eb3f1}</Project>
-      <Name>Law.Tort</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\..\..\..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\NUnit.3.12.0\build\NUnit.props'))" />
-  </Target>
+
 </Project>

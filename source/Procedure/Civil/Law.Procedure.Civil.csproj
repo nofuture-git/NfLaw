@@ -1,93 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3527CF45-740B-4175-BC1F-FF2EB3675E7C}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NoFuture.Law.Procedure.Civil</RootNamespace>
-    <AssemblyName>NoFuture.Law.Procedure.Civil</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>NoFuture.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>NoFuture.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\bin\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
+    <ProjectReference Include="..\Law.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="US\CivilProcedureBase.cs" />
-    <Compile Include="US\Discovery\Depositions.cs" />
-    <Compile Include="US\Discovery\RequestForProduction.cs" />
-    <Compile Include="US\Discovery\Interrogatories.cs" />
-    <Compile Include="US\Discovery\ScopeOfDiscovery.cs" />
-    <Compile Include="US\DomicileLocation.cs" />
-    <Compile Include="US\ILinkedLegalConcept.cs" />
-    <Compile Include="US\Judgment\ConsentJudgment.cs" />
-    <Compile Include="US\Judgment\IJudgment.cs" />
-    <Compile Include="US\Judgment\JudgmentAsMatterOfLaw.cs" />
-    <Compile Include="US\Judgment\JudgmentNotwithstandingVerdict.cs" />
-    <Compile Include="US\Judgment\NewTrial.cs" />
-    <Compile Include="US\Judgment\ResJudicata.cs" />
-    <Compile Include="US\Judgment\SummaryJudgment.cs" />
-    <Compile Include="US\Jurisdiction\FederalDiversityJurisdiction.cs" />
-    <Compile Include="US\Jurisdiction\FederalVenue.cs" />
-    <Compile Include="US\Jurisdiction\IFederalJurisdiction.cs" />
-    <Compile Include="US\Jurisdiction\IJurisdiction.cs" />
-    <Compile Include="US\Jurisdiction\JurisdictionBase.cs" />
-    <Compile Include="US\Jurisdiction\MinimumContact.cs" />
-    <Compile Include="US\Jurisdiction\PersonalJurisdiction.cs" />
-    <Compile Include="US\Jurisdiction\FederalSubjectMatterJurisdiction.cs" />
-    <Compile Include="US\Jurisdiction\Removal.cs" />
-    <Compile Include="US\Jurisdiction\IVenue.cs" />
-    <Compile Include="US\Jurisdiction\CollateralAttackOnJudgment.cs" />
-    <Compile Include="US\Jurisdiction\SubjectMatterJurisdiction.cs" />
-    <Compile Include="US\LinkedLegalConceptExtensions.cs" />
-    <Compile Include="US\Pleadings\Amendment.cs" />
-    <Compile Include="US\Pleadings\Answer.cs" />
-    <Compile Include="US\Pleadings\Complaint.cs" />
-    <Compile Include="US\Pleadings\ContributionClaim.cs" />
-    <Compile Include="US\Pleadings\Counterclaim.cs" />
-    <Compile Include="US\Pleadings\Crossclaim.cs" />
-    <Compile Include="US\Pleadings\InterveneJoiner.cs" />
-    <Compile Include="US\Pleadings\PreAnswerMotion.cs" />
-    <Compile Include="US\Pleadings\OrderJoiner.cs" />
-    <Compile Include="US\Pleadings\PleadingBase.cs" />
-    <Compile Include="US\Jurisdiction\SpecialAppearance.cs" />
-    <Compile Include="US\Pleadings\Summons.cs" />
-    <Compile Include="US\ServiceOfProcess\DeliveryBase.cs" />
-    <Compile Include="US\ServiceOfProcess\InPersonDelivery.cs" />
-    <Compile Include="US\ServiceOfProcess\IProcessService.cs" />
-    <Compile Include="US\ServiceOfProcess\ProcessServiceBase.cs" />
-    <Compile Include="US\ServiceOfProcess\VoluntaryEntry.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Law.csproj">
-      <Project>{4667e45a-0eb2-40cf-b431-319d2960f469}</Project>
-      <Name>Law</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
 </Project>

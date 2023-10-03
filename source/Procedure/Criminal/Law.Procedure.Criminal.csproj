@@ -1,81 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E0F6D6A3-23FB-44EF-8247-89B6CA07C905}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NoFuture.Law.Procedure.Criminal</RootNamespace>
-    <AssemblyName>NoFuture.Law.Procedure.Criminal</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>NoFuture.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>NoFuture.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\bin\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
+    <ProjectReference Include="..\Law.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="US\Challenges\DerivativeExclusionaryRule.cs" />
-    <Compile Include="US\CommencementJudicialProceedings.cs" />
-    <Compile Include="US\Interrogations\MirandaApproach.cs" />
-    <Compile Include="US\Interrogations\RightToCounselApproach.cs" />
-    <Compile Include="US\Interrogations\Voluntariness.cs" />
-    <Compile Include="US\Intrusions\BodilyIntrusion.cs" />
-    <Compile Include="US\Intrusions\ImplicatingFourthAmendment.cs" />
-    <Compile Include="US\Searches\IMobileVehicleSearch.cs" />
-    <Compile Include="US\Intrusions\PlainViewSeizure.cs" />
-    <Compile Include="US\Searches\MobileVehicleSearch.cs" />
-    <Compile Include="US\Challenges\ExclusionaryRule.cs" />
-    <Compile Include="US\Warrants\ArrestWarrant.cs" />
-    <Compile Include="US\Intrusions\Arrest.cs" />
-    <Compile Include="IWarrant.cs" />
-    <Compile Include="US\Searches\SearchIncidentBase.cs" />
-    <Compile Include="US\Searches\SearchIncidentToArrest.cs" />
-    <Compile Include="US\Searches\SearchIncidentToArrestMotorVehicle.cs" />
-    <Compile Include="US\SearchReasons\AdministrativeCause.cs" />
-    <Compile Include="US\Searches\ExpectationOfPrivacy.cs" />
-    <Compile Include="US\Intrusions\Frisk.cs" />
-    <Compile Include="US\Intrusions\IIntrusion.cs" />
-    <Compile Include="US\Searches\InstrumentOfTheState.cs" />
-    <Compile Include="US\Searches\ISearch.cs" />
-    <Compile Include="US\Challenges\ChallengeToProbableCause.cs" />
-    <Compile Include="US\SearchReasons\ExigentCircumstances.cs" />
-    <Compile Include="US\SearchReasons\ProbableCause.cs" />
-    <Compile Include="US\SearchReasons\ReasonableSuspicion.cs" />
-    <Compile Include="US\Searches\Search.cs" />
-    <Compile Include="US\Intrusions\SuspectStop.cs" />
-    <Compile Include="US\Warrants\SearchWarrant.cs" />
-    <Compile Include="US\Warrants\WarrantBase.cs" />
-    <Compile Include="US\Witness\EyewitnessIdentification.cs" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <ProjectReference Include="..\..\Law.csproj">
-      <Project>{4667e45a-0eb2-40cf-b431-319d2960f469}</Project>
-      <Name>Law</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
 </Project>
