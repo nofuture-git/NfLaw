@@ -29,7 +29,7 @@ using NoFuture.Law.US.Contracts;
 using NoFuture.Law.US.Contracts.Terms;
 using Xunit;
 
-namespace NoFuture.Law.Tests.ContractTests.BreachTests
+namespace NoFuture.Law.Contract.Tests
 {
     /// <summary>
     /// 
@@ -39,9 +39,15 @@ namespace NoFuture.Law.Tests.ContractTests.BreachTests
     /// 
     /// ]]>
     /// </remarks>
-    
     public class ${safeNamePlaintiff}v${safeNameDefendant}Tests
     {
+        private readonly ITestOutputHelper output;
+
+        public ${safeNamePlaintiff}v${safeNameDefendant}Tests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ${safeNamePlaintiff}v${safeNameDefendant}()
         {
@@ -132,15 +138,4 @@ namespace NoFuture.Law.Tests.ContractTests.BreachTests
         $filename = Join-Path (Get-Location).Path  ".\${safeNamePlaintiff}v${safeNameDefendant}Tests.cs"
         [System.IO.File]::WriteAllText($filename, $someCode, [System.Text.Encoding]::UTF8)
     }
-}
-
-$testContractDll = (Resolve-Path (".\bin\Debug\NoFuture.Law.Contract.Tests.dll")).Path
-$nunit = (Resolve-Path ("..\..\..\..\packages\NUnit.ConsoleRunner.3.10.0\tools\nunit3-console.exe"))
-
-function Test-NfRandLawContractMethod($MethodName){
-    Invoke-Expression "$nunit $testContractDll --where `"method == $MethodName`""
-}
-
-function Test-NfRandLawContract(){
-    Invoke-Expression "$nunit $testContractDll"
 }

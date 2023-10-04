@@ -43,9 +43,15 @@ namespace NoFuture.Law.Procedure.Civil.Tests
     /// 
     /// ]]>
     /// </remarks>
-    
     public class ${FileNamePrefix}${safeNamePlaintiff}v${safeNameDefendant}Tests
     {
+        private readonly ITestOutputHelper output;
+
+        public ${FileNamePrefix}${safeNamePlaintiff}v${safeNameDefendant}Tests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ${safeNamePlaintiff}v${safeNameDefendant}()
         {
@@ -69,15 +75,4 @@ namespace NoFuture.Law.Procedure.Civil.Tests
         $filename = Join-Path (Get-Location).Path  ".\${FileNamePrefix}${safeNamePlaintiff}v${safeNameDefendant}Tests.cs"
         [System.IO.File]::WriteAllText($filename, $someCode, [System.Text.Encoding]::UTF8)
     }
-}
-
-$testPropertyDll = (Resolve-Path (".\bin\Debug\NoFuture.Law.Procedure.Civil.Tests.dll")).Path
-$nunit = (Resolve-Path ("..\..\..\..\packages\NUnit.ConsoleRunner.3.10.0\tools\nunit3-console.exe"))
-
-function Test-NfRandLawCivilProcedureMethod($MethodName){
-    Invoke-Expression "$nunit $testPropertyDll --where `"method == $MethodName`""
-}
-
-function Test-NfRandLawCivilProcedure(){
-    Invoke-Expression "$nunit $testPropertyDll"
 }

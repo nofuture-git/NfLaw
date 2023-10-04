@@ -42,6 +42,13 @@ namespace NoFuture.Law.Tort.Tests
     
     public class ${safeNamePlaintiff}v${safeNameDefendant}Tests
     {
+        private readonly ITestOutputHelper output;
+
+        public ${safeNamePlaintiff}v${safeNameDefendant}Tests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void ${safeNamePlaintiff}v${safeNameDefendant}()
         {
@@ -64,15 +71,4 @@ namespace NoFuture.Law.Tort.Tests
         $filename = Join-Path (Get-Location).Path  ".\${safeNamePlaintiff}v${safeNameDefendant}Tests.cs"
         [System.IO.File]::WriteAllText($filename, $someCode, [System.Text.Encoding]::UTF8)
     }
-}
-
-$testTortDll = (Resolve-Path (".\bin\Debug\NoFuture.Law.Tort.Tests.dll")).Path
-$nunit = (Resolve-Path ("..\..\..\..\packages\NUnit.ConsoleRunner.3.10.0\tools\nunit3-console.exe"))
-
-function Test-NfRandLawTortMethod($MethodName){
-    Invoke-Expression "$nunit $testTortDll --where `"method == $MethodName`""
-}
-
-function Test-NfRandLawTort(){
-    Invoke-Expression "$nunit $testTortDll"
 }
