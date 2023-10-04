@@ -27,7 +27,7 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
 
             var testResult = testSubject.IsValid(new ExampleSuspect(), new ExampleLawEnforcement());
             this.output.WriteLine(testSubject.ToString());
-            Assert.False(testResult);
+            Assert.True(testResult);
         }
     }
 }

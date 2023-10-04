@@ -39,7 +39,6 @@ namespace NoFuture.Law.Tort.Tests
     /// 
     /// ]]>
     /// </remarks>
-    
     public class ${safeNamePlaintiff}v${safeNameDefendant}Tests
     {
         private readonly ITestOutputHelper output;

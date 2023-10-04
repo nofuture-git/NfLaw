@@ -73,8 +73,15 @@ namespace NoFuture.Law.Tests
                 "New Jersey Div. of Youth &amp; Family Servs. v. A.W., supra, 103 N.J. at 617, and the extent to which a judge \"has already engaged in weighing the evidence,\" In re Guardianship of R., 155 N.J. Super. 186, 195 (App.Div. 1977)",
             };
 
-            foreach(var expect in expectedCitations)
+            foreach (var expect in expectedCitations)
+            {
+                var testResult = testResults.Any(v => string.Equals(v, expect));
+                if (!testResult)
+                {
+                    this.output.WriteLine($"{expect} was not found.");
+                }
                 Assert.True(testResults.Any(v => string.Equals(v, expect)));
+            }
         }
 
         [Fact]

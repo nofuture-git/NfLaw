@@ -2,6 +2,7 @@
 using System.Linq;
 using NoFuture.Law;
 using NoFuture.Law.Procedure.Criminal.US;
+using NoFuture.Law.Procedure.Criminal.US.SearchReasons;
 using NoFuture.Law.Procedure.Criminal.US.Warrants;
 using NoFuture.Law.US.Persons;
 using Xunit;
@@ -38,7 +39,7 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
         }
     }
 
-    public class ExampleProbableCause : LegalConcept
+    public class ExampleProbableCause : ExigentCircumstances
     {
         public override bool IsValid(params ILegalPerson[] persons)
         {

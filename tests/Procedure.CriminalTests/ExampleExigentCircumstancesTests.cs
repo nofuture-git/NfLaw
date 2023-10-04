@@ -22,7 +22,7 @@ namespace NoFuture.Law.Procedure.Criminal.Tests
             {
                 IsAwareOfBeingArrested = lp => true,
                 ProbableCause = new ExampleExigentCircumstances(),
-                IsOccurInPublicPlace = lp => false,
+                IsOccurInPublicPlace = lp => true,
             };
 
             var testResult = testSubject.IsValid(new ExampleSuspect(), new ExampleLawEnforcement());

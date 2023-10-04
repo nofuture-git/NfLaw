@@ -40,7 +40,6 @@ namespace NoFuture.Law.Property.Tests
     /// 
     /// ]]>
     /// </remarks>
-    
     public class ${safeNamePlaintiff}v${safeNameDefendant}Tests
     {
         private readonly ITestOutputHelper output;
